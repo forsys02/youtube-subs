@@ -14,8 +14,8 @@
 <style>
 body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
 #player{position:absolute;top:0;left:0;width:100%;height:100%;}
-#subtitles{position:absolute;bottom:15%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
-.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:4.5vh;font-weight:bold;padding:1vh 2vw;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles{position:absolute;bottom:8%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1vh 2vw;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
 #subtitles.dragging .sub-line{cursor:grabbing !important;}
 #fs-btn{position:absolute;top:20px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:2vh;backdrop-filter:blur(5px);transition:0.2s;}
 #fs-btn:hover{background:rgba(255,255,255,0.2);}
@@ -91,6 +91,39 @@ function dragEnd(e) {
     isDragging = false;
     subEl.classList.remove('dragging');
 }
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 5.5;
+let initialDist = 0;
+let initialFontSize = 5.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+        e.preventDefault();
+    }
+}, {passive: false});
+
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
 </body>
