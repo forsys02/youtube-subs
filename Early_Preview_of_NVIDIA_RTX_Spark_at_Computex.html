@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Preview of NVIDIA RTX Spark at Computex (한글 자막)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Early Preview of NVIDIA RTX Spark at Computex (한글 자막)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/suhxvEb5l2s/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Early Preview of NVIDIA RTX Spark at Computex (한글 자막)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/suhxvEb5l2s/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:20px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:0.2s;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+const videoId="suhxvEb5l2s";
+const subs=[{"start": 0.12, "end": 3.369, "text": "NVIDIA RTX Spark 슈퍼칩이 방금 발표되었습니다."}, {"start": 3.419, "end": 9.818, "text": "개인용 AI 에이전트, 고도화된 창작 기능, 그리고..."}, {"start": 9.818, "end": 14.068, "text": "슬림한 노트북과 컴팩트 PC에서의 고성능 게이밍까지, 윈도우 PC를 새롭게 정의합니다."}, {"start": 14.118, "end": 19.868, "text": "RTX Spark는 NVIDIA Blackwell RTX GPU와 NVIDIA Grace CPU,"}, {"start": 19.919, "end": 26.87, "text": "최대 128GB 통합 메모리와 RTX 기술 기반의 AI 풀 스택을 탑재했습니다."}, {"start": 26.92, "end": 29.17, "text": "어떤 성능을 보여주는지 함께 확인해 보시죠."}, {"start": 29.221, "end": 32.77, "text": "RTX Spark의 강점 중 하나는 개인용 에이전트 구동에 탁월하다는 점입니다."}, {"start": 32.82, "end": 37.669, "text": "128GB의 대용량 통합 메모리 덕분에 거대 모델도 거뜬히 실행할 수 있고,"}, {"start": 37.719, "end": 43.368, "text": "내장된 RTX GPU와 마이크로소프트와의 협력으로 구동 속도 또한 매우 빠르죠."}, {"start": 43.417, "end": 47.468, "text": "모든 작업이 로컬에서 처리되어 보안도 완벽합니다. 직접 보여드리겠습니다."}, {"start": 47.518, "end": 53.219, "text": "이 간단한 컨셉 아트에 참고 사진의 질감을 입히고"}, {"start": 53.219, "end": 59.069, "text": "눈 내리는 배경에 캐릭터를 배치해 보겠습니다. ComfyUI를 사용할 건데요,"}, {"start": 59.118, "end": 65.07, "text": "복잡한 UI를 직접 조작하는 대신 'Open-Coda'에게 부탁해 보겠습니다."}, {"start": 65.12, "end": 74.918, "text": "\"내 스케치와 눈 내리는 배경으로 이미지를 만들어줘\"라고 입력하면"}, {"start": 74.92, "end": 78.87, "text": "Open-Coda가 저를 대신해 ComfyUI를 제어하기 시작합니다."}, {"start": 78.92, "end": 81.87, "text": "프롬프트부터 모든 하이퍼파라미터 설정까지 알아서 처리해주죠."}, {"start": 81.92, "end": 86.87, "text": "잠시 후 이미지가 생성되어 기존 아트워크 위에 나타납니다."}, {"start": 86.92, "end": 93.57, "text": "여기서 더 나아가, 이 이미지를 시작 프레임으로 영상까지 만들 수 있습니다."}, {"start": 93.62, "end": 99.319, "text": "\"카메라를 뒤로 빼며 그리핀을 비춰줘.\""}, {"start": 99.319, "end": 105.40899999999999, "text": "보시는 것처럼 컨셉 아트에 순식간에 생동감이 불어넣어졌습니다."}, {"start": 105.459, "end": 108.50999999999999, "text": "RTX 노트북은 콘텐츠 제작용으로도 아주 훌륭합니다."}, {"start": 108.56, "end": 113.709, "text": "최대 12K 4:2:2 영상 편집은 물론, 거대한 장면의 렌더링도 가능하죠."}, {"start": 113.759, "end": 118.108, "text": "노트북에 탑재된 128GB 메모리 덕분에 최대 90GB까지 지원합니다."}, {"start": 118.158, "end": 122.511, "text": "출시 첫날부터 모든 창작용 앱이 원활하게 구동되도록 주요 앱 개발사들과 협력하고 있습니다."}, {"start": 122.561, "end": 125.01, "text": "일부 앱에는 새로운 기능까지 추가될 예정입니다."}, {"start": 125.06, "end": 132.408, "text": "지금 보시는 건 블렌더입니다. 기존의 OptiX 디노이저에서 새로운 DLSS 4.5의..."}, {"start": 132.459, "end": 138.209, "text": "'레이 재구성' 기술로 전환해, 장면 안을 이동하면서도 실시간으로 최종 렌더링 결과물을 확인할 수 있습니다."}, {"start": 138.25900000000001, "end": 139.209, "text": "직접 보여드리죠."}, {"start": 139.25900000000001, "end": 143.31, "text": "예를 들어 왼쪽 화면을 보시면 이미지가 완전히 구현되지 않는 걸 볼 수 있지만,"}, {"start": 143.36, "end": 148.51, "text": "오른쪽에서는 최종 결과물을 미리 보며 창작자로서 즉각적인 판단을 내릴 수 있습니다."}, {"start": 148.561, "end": 150.911, "text": "그리고 물론 게임도 빼놓을 수 없죠."}, {"start": 150.961, "end": 152.911, "text": "여기서 여러 게임을 시연 중인데요."}, {"start": 152.961, "end": 155.207, "text": "모두 RTX Spark에서 구동되고 있으며,"}, {"start": 155.258, "end": 158.758, "text": "<앨런 웨이크 2>, <워 썬더>, <프라그마타> 등이 포함됩니다."}, {"start": 158.75900000000001, "end": 161.40800000000002, "text": "현재 1600p 해상도에서..."}, {"start": 161.459, "end": 164.608, "text": "레이 트레이싱과 DLSS 4.5를 적용해 실행 중입니다."}, {"start": 164.65800000000002, "end": 166.911, "text": "정말 매끄럽게 돌아가네요."}, {"start": 166.961, "end": 169.709, "text": "DLSS 4.5의 새로운 트랜스포머 모델 덕분에,"}, {"start": 169.75900000000001, "end": 173.709, "text": "환경의 세부적인 묘사가 훨씬 더 살아납니다."}, {"start": 173.75900000000001, "end": 177.629, "text": "RTX Spark는 DirectX, OpenGL, Vulkan에서 구동되는 모든 게임을 지원합니다."}, {"start": 177.68, "end": 181.368, "text": "포트나이트 같은 안티 치트 기반 멀티플레이어 게임도 구동할 수 있죠."}, {"start": 181.419, "end": 186.469, "text": "지금까지 RTX 스파크를 간단히 살펴봤습니다. 이 신형 노트북과 컴팩트 데스크톱은"}, {"start": 186.52, "end": 197.719, "text": "올가을부터 출시될 예정입니다. 더 자세한 내용은 엔비디아 RTX 스파크 소셜 채널에서 확인해 보세요."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState) return;
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+    } else if (e.key === ' ') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+function onPlayerStateChange(event){
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
