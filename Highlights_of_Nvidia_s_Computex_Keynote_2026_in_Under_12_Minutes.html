@@ -172,6 +172,51 @@ document.addEventListener('touchmove', (e) => {
     }
 }, {passive: false});
 
+// [YouTube Keyboard Shortcuts]
+document.addEventListener('keydown', (e) => {
+    if(!player || typeof player.getDuration !== 'function') return;
+    
+    // 0-9: Seek to 0% to 90%
+    if(e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        return;
+    }
+    
+    // Space or k: Play / Pause
+    if(e.key === ' ' || e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if(player.getPlayerState() === YT.PlayerState.PLAYING) player.pauseVideo();
+        else player.playVideo();
+        return;
+    }
+    
+    // j: Rewind 10s
+    if(e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        return;
+    }
+    
+    // l: Fast forward 10s
+    if(e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        return;
+    }
+    
+    // m: Mute / Unmute
+    if(e.key.toLowerCase() === 'm') {
+        if(player.isMuted()) player.unMute();
+        else player.mute();
+        return;
+    }
+    
+    // f: Fullscreen
+    if(e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        return;
+    }
+});
+
 </script>
 <script src="https://www.youtube.com/iframe_api"></script>
 </body>
