@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nvidia’s Computex 2026 Keynote in Less Than 12 Minutes (한글 자막)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Nvidia’s Computex 2026 Keynote in Less Than 12 Minutes (한글 자막)">
+<meta property="og:description" content="자체 제작한 한글 자막 오버레이 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/ugNnw4lAMWA/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nvidia’s Computex 2026 Keynote in Less Than 12 Minutes (한글 자막)">
+<meta name="twitter:description" content="자체 제작한 한글 자막 오버레이 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/ugNnw4lAMWA/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vh;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1vh 2vw;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:20px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:2vh;backdrop-filter:blur(5px);transition:0.2s;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+const videoId="ugNnw4lAMWA";
+const subs=[{"start": 0.0, "end": 4.249, "text": "엔비디아의 창립자이자 CEO, 젠슨 황을 무대로 모십니다!"}, {"start": 4.299, "end": 5.549, "text": "[음악과 환호] 젠슨 황!"}, {"start": 5.599, "end": 14.5, "text": "[열띤 환호] 여러분, 안녕하세요!"}, {"start": 14.499, "end": 20.05, "text": "GTC 대만에 오신 것을 환영합니다. AI의 흐름은 이제 '에이전틱 AI'로 향하고 있습니다."}, {"start": 20.1, "end": 24.05, "text": "그리고 오늘, 드디어 에이전틱 AI의 시대가 도래했다고 할 수 있죠."}, {"start": 24.1, "end": 26.451, "text": "실용적인 AI의 시대가 열린 것입니다."}, {"start": 26.501, "end": 31.048, "text": "AI가 일자리를 줄인다는 말이 있는데, 이건 말도 안 되는 소리입니다."}, {"start": 31.099, "end": 36.05, "text": "오히려 소프트웨어 엔지니어 고용을 늘리고 있죠. 이유는 아주 간단합니다."}, {"start": 36.1, "end": 43.05, "text": "제가 무슨 말을 하는지 잠시 보여드리겠습니다. 이 안을 보면, 이것이 바로 '에이전트'입니다."}, {"start": 43.1, "end": 51.248, "text": "에이전트 애플리케이션이죠. 하나 또는 여러 개의 대규모 언어 모델로 구성되어 있습니다."}, {"start": 51.298, "end": 58.65, "text": "하네스라는 구조 안에서, 에이전트가 생산적인 일을 하도록 조율해 주는 역할을 합니다."}, {"start": 58.7, "end": 65.751, "text": "이 전체 시스템을 에이전트라고 부릅니다. 이것이 새로운 컴퓨팅 방식입니다. 예전에는..."}, {"start": 65.801, "end": 71.599, "text": "앱을 실행하고, 클릭하고 직접 입력해야 했지만,"}, {"start": 71.599, "end": 79.549, "text": "이제는 AI에게 우리의 의도를 설명하기만 하면 됩니다. 그러면 AI가 직접..."}, {"start": 79.599, "end": 84.549, "text": "코드를 짜거나 도구를 사용해서 필요한 결과물을 내놓죠."}, {"start": 84.599, "end": 93.0, "text": "이것이 바로 궁극의 분산형 컴퓨팅 모델입니다."}, {"start": 93.098, "end": 98.447, "text": "지금의 에이전트는 도구를 사용하는 수준이 비교적 단순하지만,"}, {"start": 98.497, "end": 101.85, "text": "미래에는 아주 정교하게 도구를 다루게 될 것입니다."}, {"start": 101.9, "end": 103.95, "text": "그리고 세상이 마주한 가장 중요한 문제들을..."}, {"start": 104.0, "end": 104.989, "text": "해결해 나가겠죠."}, {"start": 105.039, "end": 109.59, "text": "AI 메모리 시스템은 앞으로 스토리지 시스템에"}, {"start": 109.64, "end": 111.888, "text": "엄청난 혁명을 일으킬 것입니다."}, {"start": 111.938, "end": 117.239, "text": "그것이 바로 저희가 차세대 모델인"}, {"start": 117.239, "end": 119.09, "text": "베라 루빈(Vera Rubin)을 개발한 이유입니다."}, {"start": 119.14, "end": 121.09, "text": "베라 루빈은 단순한 칩 하나가 아닙니다."}, {"start": 121.14, "end": 125.09, "text": "이 거대한 구조 전체가 바로 베라 루빈입니다."}, {"start": 125.14, "end": 131.128, "text": "처음부터 끝까지 GPU와 베라 루빈 NVLink 72가 탑재되었죠."}, {"start": 131.179, "end": 134.23, "text": "이 시스템들 하나하나가 그 자체로"}, {"start": 134.281, "end": 135.72899999999998, "text": "완벽한 혁신입니다."}, {"start": 135.78, "end": 139.828, "text": "베라 루빈은 저희 회사 역사상 가장 야심 찬"}, {"start": 139.878, "end": 140.928, "text": "도전 과제입니다."}, {"start": 140.978, "end": 144.328, "text": "아주 오래전, 엔비디아는 그저 GPU 회사였습니다."}, {"start": 144.378, "end": 147.72899999999998, "text": "하지만 수년에 걸쳐 저희는 진화했고"}, {"start": 147.78, "end": 149.929, "text": "이제는 시스템 기업으로 거듭났습니다."}, {"start": 149.97899999999998, "end": 153.328, "text": "여러분은 지금 가장 정교한 시스템을 보고 계십니다."}, {"start": 153.378, "end": 161.911, "text": "밑바닥부터 설계된 사상 유례없는 복잡한 시스템이죠. 하지만 우리 고객과 파트너들은"}, {"start": 161.961, "end": 168.11, "text": "단순한 컴퓨터 구매가 아닌 AI 팩토리 구축을 원합니다. 그것이 바로"}, {"start": 168.161, "end": 174.50900000000001, "text": "엔비디아가 다시 한번 스스로를 혁신하기 시작한 이유입니다. 저희는 풀스택 시스템을 구축하여,"}, {"start": 174.56, "end": 182.408, "text": "고객이 놀라운 AI 인프라를 만들 수 있게 돕고 있습니다. 정말 기쁩니다. 제가 지금 여러분 앞에 서 있는 이 순간,"}, {"start": 182.459, "end": 186.408, "text": "베라 루빈은 본격적인 양산에 들어갔습니다."}, {"start": 186.459, "end": 190.459, "text": "[환호 및 박수]"}, {"start": 190.459, "end": 197.86, "text": "이것이 베라 루빈입니다. 베라 루빈 NVLink입니다."}, {"start": 197.8, "end": 209.447, "text": "72번 랙입니다. 256개의 CPU가 장착된 '베라(Vera)' CPU 랙으로, 모두 수냉식이죠. 이것은 베라 블루필드 스토리지..."}, {"start": 209.497, "end": 218.649, "text": "프로세싱 시스템입니다. 케이블도, 호스도, 팬도 없습니다. 중간에 양쪽을 연결하는 PCB가 있죠."}, {"start": 218.699, "end": 226.25, "text": "예전에는 2시간 걸리던 일이 이제 5분이면 충분합니다. 전 세계가 본 적 없는 새로운 CPU입니다. 우리는 이것을..."}, {"start": 226.3, "end": 237.75, "text": "베라(Vera)라고 부릅니다. 에이전트를 위한 CPU죠. 과거의 모든 CPU는 인간을 위해 만들어졌지만, 이 CPU는 에이전트를 위해 설계되었습니다."}, {"start": 237.8, "end": 249.048, "text": "이제 우리 시스템 내부에서 세 가지 방식으로 사용됩니다. 첫 번째는 물론 사고(thinking)를 담당하는 '베라 루빈(Vera Rubin)'입니다."}, {"start": 249.098, "end": 254.449, "text": "베라 루빈 랙 안에는 이미 두 개의 CPU가 들어있습니다."}, {"start": 254.5, "end": 264.05, "text": "'베라 컴퓨트(Vera compute)'는 AI 모델의 오케스트레이션, 도구 사용, 데이터베이스 액세스를 위한 하네스로 사용됩니다."}, {"start": 264.1, "end": 272.05, "text": "그리고 데이터 서버는 바로 여기 있습니다. 세계에서 가장 빠른 스토리지 시스템인 '베라 블루필드(Vera Bluefield)'입니다."}, {"start": 272.1, "end": 275.05, "text": "이것은 아주 오랜만에 탄생한 최초의 새로운 CPU입니다."}, {"start": 275.1, "end": 282.149, "text": "모든 CPU 코어를 연결하는 패브릭을 통해 물리적 한계에 도달했죠."}, {"start": 282.199, "end": 283.649, "text": "그 속도는 빛의 속도와 같습니다."}, {"start": 283.699, "end": 286.848, "text": "초당 3.6 테라바이트에 달하죠."}, {"start": 286.899, "end": 290.55, "text": "엔비디아 베라는 '에이전틱 루프(agentic loop)'를 위해 설계된 CPU입니다."}, {"start": 290.6, "end": 296.8, "text": "베라는 에이전트 시대를 위한 CPU입니다."}, {"start": 296.8, "end": 300.449, "text": "여기서 주목할 점은 이것이 새로운 애플리케이션 패턴이라는 것입니다."}, {"start": 300.5, "end": 303.85, "text": "이것이 향후 10년 동안의 컴퓨팅 패턴이 될 것입니다."}, {"start": 303.901, "end": 309.949, "text": "그래서 우리는 기업용 AI를 위한 '엔비디아 에이전트 툴킷'을 선보였습니다."}, {"start": 310.0, "end": 313.649, "text": "어떤 에이전트든 실행할 수 있습니다."}, {"start": 313.699, "end": 318.75, "text": "Claude Code나 Codex 같은 훌륭한 에이전트들을 실행할 수 있죠."}, {"start": 318.8, "end": 324.278, "text": "이것을 '오픈셸(OpenShell)'이라 불리는 하네스 내부에서 실행할 수 있으며, 기업을 위해 매우 안전할 것입니다."}, {"start": 324.329, "end": 325.978, "text": "기업 내부에서 말이죠."}, {"start": 326.028, "end": 332.079, "text": "NVIDIA는 전 세계를 위한 오픈 모델을 만드는 데 전념하고 있습니다. 여러분 모두와 우리 모두가..."}, {"start": 332.129, "end": 334.379, "text": "자신만의 에이전트를 만들 수 있도록 말입니다."}, {"start": 334.43, "end": 341.829, "text": "오늘 저희는 '니모트론 3 울트라'를 발표합니다."}, {"start": 341.829, "end": 346.379, "text": "네, 저희의 차세대 오픈 모델이며 아주 똑똑하죠."}, {"start": 346.43, "end": 354.579, "text": "모델부터 트레이닝 스크립트, 데이터까지 이 모든 것을 여러분께 완전히 공개합니다."}, {"start": 354.629, "end": 358.677, "text": "마이크로소프트와 NVIDIA는 PC를 재정의할 것입니다."}, {"start": 358.728, "end": 361.879, "text": "'RTX 스파크'를 소개합니다."}, {"start": 361.93, "end": 364.978, "text": "지난 33년 동안 배운 모든 것을,"}, {"start": 365.028, "end": 367.978, "text": "하나의 칩에 압축해 담았습니다."}, {"start": 368.028, "end": 373.62, "text": "6,144개의 쿠다 코어를 탑재한 '블랙웰 RTX GPU'입니다."}, {"start": 373.67, "end": 376.819, "text": "1페타플롭에 달하는 AI 성능을 자랑하죠."}, {"start": 376.869, "end": 380.97, "text": "미디어텍과의 협업을 통해 탄생한,"}, {"start": 380.87, "end": 382.319, "text": "커스텀 20코어 '그레이스 CPU'입니다."}, {"start": 382.37, "end": 388.17, "text": "NV링크로 연결된 128GB의 통합 메모리까지."}, {"start": 388.17, "end": 393.418, "text": "그리고 마이크로소프트와의 긴밀한 협력을 통해, 에이전트를 위한"}, {"start": 393.468, "end": 397.519, "text": "윈도우 플랫폼을 구축하고 개인용 컴퓨터를 재정의하고 있습니다."}, {"start": 397.569, "end": 404.12, "text": "여기 있습니다. 물론 가장 아름다운 부분인 비디오 게임도 보여드려야겠죠."}, {"start": 404.17, "end": 409.519, "text": "우리에게 가장 소중한 분야이기도 하니까요. 이것은 세계가 지금까지 만든 칩 중"}, {"start": 409.569, "end": 414.899, "text": "가장 놀라운 칩입니다. NVIDIA가 만든 모든 애플리케이션이..."}, {"start": 414.949, "end": 421.598, "text": "Windows에서 구동됐던 모든 애플리케이션은 물론, 마이크로소프트와"}, {"start": 421.649, "end": 429.25, "text": "엔비디아가 모든 것을 세심하게 최적화한 덕분에 이 컴퓨터는 말 그대로"}, {"start": 429.149, "end": 435.098, "text": "세상에 존재하는 모든 것을 구동하며, 이제는 에이전트까지 실행합니다."}, {"start": 435.149, "end": 442.649, "text": "이것은 지난 40년 동안 일어난 변화 중 가장 완전히"}, {"start": 442.649, "end": 451.699, "text": "재설계되고 재탄생한 PC 라인업입니다. 모든 Windows 기능과 768GB의 메모리를 갖췄죠."}, {"start": 451.75, "end": 455.0, "text": "덕분에 1조 개의 파라미터 모델도 구동할 수 있습니다."}, {"start": 455.05, "end": 456.5, "text": "정말 믿기지 않는 수준이죠."}, {"start": 456.55, "end": 461.899, "text": "20 페타플롭스의 성능과 초당 8테라바이트의 메모리 대역폭을 제공하며,"}, {"start": 461.949, "end": 464.401, "text": "이 기기가 바로 여러분의 책상 위에 놓이게 됩니다."}, {"start": 464.451, "end": 467.0, "text": "15년, 20년 전만 해도 우리에겐"}, {"start": 467.05, "end": 469.399, "text": "'전화기'라는 개념이 있었습니다."}, {"start": 469.449, "end": 474.0, "text": "하지만 오늘날 우리에겐 'PC'라는 개념이 있죠."}, {"start": 474.05, "end": 477.0, "text": "요즘 여러분이 스마트폰을 떠올릴 때,"}, {"start": 477.05, "end": 483.35, "text": "가장 안 하는 기능 중 하나가 바로 전화 통화일 겁니다."}, {"start": 483.25, "end": 485.899, "text": "그 외의 거의 모든 일을 스마트폰으로 처리하죠."}, {"start": 485.949, "end": 489.3, "text": "그래서 지금의 전화기는 여러분에게 과거의 전화기와는"}, {"start": 489.35, "end": 492.699, "text": "전혀 다른 의미를 갖게 되었습니다."}, {"start": 492.749, "end": 495.3, "text": "여기서 일어날 변화 또한 확신합니다."}, {"start": 495.35, "end": 497.5, "text": "지금으로부터 10년 후의 PC와"}, {"start": 497.55, "end": 499.74, "text": "여러분이 오늘날 생각하는 PC는 완전히 다를 것이라고요."}, {"start": 499.79, "end": 504.49, "text": "애플리케이션을 실행하고"}, {"start": 504.49, "end": 506.54, "text": "클릭하고 타이핑하던 도구였죠."}, {"start": 506.591, "end": 509.939, "text": "하지만 이 PC는 완전히 달라질 겁니다."}, {"start": 509.99, "end": 512.939, "text": "여러분의 곁을 돕는 AI 에이전트 컴퓨터가"}, {"start": 512.989, "end": 514.54, "text": "집안 곳곳에서 돌아가게 될 테니까요."}, {"start": 514.59, "end": 521.389, "text": "시간이 흐르면 이들은 여러분에게 R2-D2 같은 존재가 되고,"}, {"start": 521.61, "end": 523.9590000000001, "text": "C-3PO 같은 존재가 될 겁니다."}, {"start": 524.009, "end": 528.56, "text": "우리에겐 데스크톱, 노트북, 워크스테이션이 있고"}, {"start": 528.61, "end": 531.759, "text": "또 다른 데스크톱, 노트북, 워크스테이션이 생길 겁니다."}, {"start": 531.808, "end": 534.358, "text": "그리고 제가 정말 기쁘고"}, {"start": 534.408, "end": 539.758, "text": "영광스럽게 생각하는 건, 전 세계 PC 업계가 하나도 빠짐없이"}, {"start": 539.807, "end": 545.199, "text": "PC를 재정의하기 위해 우리와 손을 잡았다는 사실입니다. 새로운 시대의 시작이죠."}, {"start": 545.249, "end": 546.9, "text": "오늘 저희는 '코스모스 3'를 발표합니다."}, {"start": 546.95, "end": 549.6, "text": "여러분의 모든 작업을 위한 파운데이션 모델이죠."}, {"start": 549.649, "end": 552.749, "text": "로봇을 만들고 싶을 때나,"}, {"start": 552.75, "end": 555.8, "text": "공장용 로봇 혹은 공장에서 일하는 로봇 등"}, {"start": 555.85, "end": 561.3, "text": "물리적 세계와 상호작용하는 모든 종류의 로봇을 만들 때"}, {"start": 561.35, "end": 562.999, "text": "이제 든든한 동반자가 생긴 겁니다."}, {"start": 563.048, "end": 565.498, "text": "코스모스는 물리적 세계를 관찰하고"}, {"start": 565.548, "end": 567.759, "text": "무슨 일이 일어나는지 이해합니다."}, {"start": 567.808, "end": 572.1610000000001, "text": "장면을 묘사하고, 중요한 사항을 표시하죠."}, {"start": 572.211, "end": 576.9590000000001, "text": "세계 모델인 코스모스(Cosmos)는 물리적으로 정확한 합성 비디오를 생성합니다."}, {"start": 577.009, "end": 580.859, "text": "이미지, 텍스트 또는 비디오로부터 말이죠. 코스모스입니다."}, {"start": 580.908, "end": 586.261, "text": "물리적 AI 시대의 개발자들을 위한 토대라고 할 수 있습니다."}, {"start": 586.311, "end": 593.4590000000001, "text": "[박수 소리] 오늘 저희는 자율주행차를 위한 오픈 모델인 알파마요 2(Alpamayo 2)를 발표합니다."}, {"start": 593.509, "end": 596.86, "text": "전 세계 자동차 회사들과 협력하고 있죠."}, {"start": 596.909, "end": 600.96, "text": "엔비디아 하이페리온(Nvidia Hyperion)을 도입하여 차량을 개발 중인 브랜드들을 보면,"}, {"start": 601.009, "end": 609.71, "text": "전 세계 자동차 시장의 약 80%를 차지합니다."}, {"start": 609.707, "end": 613.96, "text": "남: 헤이 메르세데스, 내가 제일 좋아하는 샌드위치 가게로 가자."}, {"start": 614.009, "end": 619.36, "text": "차량: 목적지로 경로를 설정합니다. 차선이 확보되어 주행을 시작합니다."}, {"start": 619.409, "end": 623.459, "text": "차량: 전방의 정차된 차량이 차선을 막고 있어 왼쪽으로 살짝 피하겠습니다."}, {"start": 623.509, "end": 627.459, "text": "차량: 정지 신호에 맞춰 속도를 줄이고 교차로 상황을 통제합니다."}, {"start": 627.509, "end": 634.259, "text": "[박수 소리] 알파마요, 세계 최초의 추론형 자율주행 차량입니다."}, {"start": 634.308, "end": 638.259, "text": "엔비디아 아이작 그루트(Isaac GR00T)는 우리의 휴머노이드 로봇 스택입니다."}, {"start": 638.308, "end": 646.509, "text": "데이터 생성, 시뮬레이션, 운영체제를 포함한 런타임까지 모두 갖췄죠."}, {"start": 646.408, "end": 654.509, "text": "이것이 아이작 그루트 플랫폼입니다. 우리의 모든 시스템은"}, {"start": 654.509, "end": 659.56, "text": "보시다시피 동일한 패턴을 따릅니다. 클라우드용 에이전트 시스템이든,"}, {"start": 659.61, "end": 665.858, "text": "PC용 에이전트 시스템이든, 자율주행차용 로봇 시스템이든,"}, {"start": 665.908, "end": 672.459, "text": "휴머노이드 로봇용 시스템이든 전부 마찬가지죠. 로봇 시스템을 위한 레퍼런스 플랫폼이 필요합니다."}, {"start": 672.509, "end": 678.129, "text": "로봇 시스템은 모터와 센서가 너무 많고 매우 복잡하며 다루기가 아주 까다롭죠."}, {"start": 678.178, "end": 683.429, "text": "하지만 여전히 이런 레퍼런스 플랫폼들을 제공할 방법이 필요합니다. 우리가 지금까지"}, {"start": 683.479, "end": 688.329, "text": "PC와 DGX, 클라우드, 그리고 자율주행 자동차를 통해 해왔던 것처럼 말이죠."}, {"start": 688.379, "end": 690.329, "text": "이제 로봇을 위해 그 일을 시작하려 합니다."}, {"start": 690.379, "end": 697.83, "text": "엔비디아 아이작(Isaac) 그룹은 휴머노이드 로봇을 위한 개방형 개발 플랫폼이자 오픈 모델이며, 시뮬레이션 및"}, {"start": 697.879, "end": 701.129, "text": "트레이닝 라이브러리와 데이터 생성기입니다."}, {"start": 701.178, "end": 703.93, "text": "여기에 로봇 컴퓨터가 더해지죠."}, {"start": 703.98, "end": 705.129, "text": "완벽하게 준비되었습니다."}, {"start": 705.178, "end": 708.128, "text": "단 몇 시간 만에 바로 사용할 수 있습니다."}, {"start": 708.177, "end": 709.528, "text": "컴퓨텍스를 즐겨주세요."}, {"start": 709.577, "end": 710.329, "text": "감사합니다."}, {"start": 710.379, "end": 712.429, "text": "멋진 한 해를 만들어 주셔서 감사합니다."}, {"start": 712.479, "end": 715.128, "text": "여러분의 우정과 성원에 깊이 감사드립니다."}, {"start": 715.177, "end": 715.728, "text": "감사합니다."}, {"start": 715.778, "end": 717.577, "text": "안녕히 가십시오."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{videoId:videoId,playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0},events:{'onStateChange':onPlayerStateChange}});
+}
+let syncInterval;
+function onPlayerStateChange(event){
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            currentHtml += `<div class="sub-line">${subs[i].text}</div><br>`;
+        }
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
