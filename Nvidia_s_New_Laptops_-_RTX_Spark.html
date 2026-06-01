@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nvidia's New Laptops - RTX Spark (한글 자막)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Nvidia's New Laptops - RTX Spark (한글 자막)">
+<meta property="og:description" content="자체 제작한 한글 자막 오버레이 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/0-VG9QBm8S8/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nvidia's New Laptops - RTX Spark (한글 자막)">
+<meta name="twitter:description" content="자체 제작한 한글 자막 오버레이 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/0-VG9QBm8S8/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vh;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1vh 2vw;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:20px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:2vh;backdrop-filter:blur(5px);transition:0.2s;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+const videoId="0-VG9QBm8S8";
+const subs=[{"start": 0.0, "end": 2.0, "text": "엔비디아가 새로운 랩톱 칩을 출시했습니다."}, {"start": 2.0, "end": 4.099, "text": "바로 'RTX 스파크(Spark)'라는 모델이죠."}, {"start": 4.099, "end": 6.599, "text": "20코어 ARM 기반의 CPU고요."}, {"start": 6.599, "end": 10.3, "text": "데스크톱 버전과 코어 수가 동일한"}, {"start": 10.4, "end": 11.8, "text": "RTX 5070 GPU를 탑재했습니다."}, {"start": 11.798, "end": 14.198, "text": "통합 RAM은 최대 128GB까지 지원하죠."}, {"start": 14.198, "end": 16.199, "text": "아주 얇은 노트북에도 탑재되는데,"}, {"start": 16.199, "end": 18.8, "text": "두께가 14mm에 불과하면서도"}, {"start": 18.798, "end": 19.998, "text": "배터리는 온종일 사용할 수 있습니다."}, {"start": 20.0, "end": 22.199, "text": "또한 모든 엔비디아 스택을 지원하죠."}, {"start": 22.201, "end": 25.599, "text": "CUDA, DLSS, 레이 트레이싱 같은 기술들 말입니다."}, {"start": 25.699, "end": 29.0, "text": "엔비디아가 랩톱 칩을 만든다고 했을 때,"}, {"start": 28.998, "end": 33.2, "text": "잘 만들 거라는 사실은 의심의 여지가 없었습니다. 저전력에 강력한 성능까지 말이죠."}, {"start": 33.2, "end": 37.899, "text": "걱정할 필요가 없었죠. 하지만 제가 정말 우려하는 건"}, {"start": 37.899, "end": 42.499, "text": "엔비디아가 이 칩을 어디에 쓰길 원하느냐는 겁니다."}, {"start": 42.598, "end": 47.2, "text": "발표 내용의 초반부, 아니 그 이상을 '에이전트' 이야기에 할애했거든요."}, {"start": 47.2, "end": 50.7, "text": "거대언어모델, 즉 LLM이 뭔지 아신다면 거기서부터 시작해 보죠."}, {"start": 50.701, "end": 55.899, "text": "LLM은 챗GPT나 제미나이, 클로드 같은 모델들입니다."}, {"start": 55.901, "end": 62.798, "text": "사용자가 텍스트를 입력하면 답을 해주는 도구 같은 존재죠, 그렇죠?"}, {"start": 62.799, "end": 66.099, "text": "'에이전트'는 그다음 단계의 기술입니다."}, {"start": 66.12, "end": 70.219, "text": "단순히 답변만 하는 게 아니라, 여러분을 위해 직접 행동까지 하죠."}, {"start": 70.219, "end": 76.319, "text": "예를 들어, 부엉이를 그려 달라고 한 뒤 카메라 각도를 바꾸며 날게 해달라고 요청하면"}, {"start": 76.319, "end": 82.12, "text": "에이전트가 실제 앱들을 오가며 필요한 단계를 직접 수행합니다."}, {"start": 82.12, "end": 85.319, "text": "목표를 달성하기 위해 작업 과정을 스스로 점검하면서요."}, {"start": 85.32, "end": 87.12, "text": "마치 조금은 어설픈 인턴 같은 존재라고 할 수 있는데,"}, {"start": 87.219, "end": 90.219, "text": "컴퓨터 속에 살면서 여러분을 위해 온갖 일을 해주죠."}, {"start": 90.219, "end": 93.12, "text": "물론 지금도 이런 일을 할 수 있는 도구들이 있긴 합니다."}, {"start": 93.118, "end": 95.418, "text": "비슷한 작업을 수행할 수는 있지만,"}, {"start": 95.32, "end": 97.618, "text": "어느 정도의 지식이 반드시 필요하죠."}, {"start": 97.62, "end": 100.418, "text": "일반인들은 직접 시도하고 싶지 않을 만큼"}, {"start": 100.519, "end": 102.819, "text": "여러 도구를 복잡하게 조합해야 하거든요."}, {"start": 102.819, "end": 105.12, "text": "현재 엔비디아와 마이크로소프트는"}, {"start": 105.12, "end": 107.719, "text": "이것이 PC의 새로운 시대가 될 거라 확신하고 있습니다."}, {"start": 107.721, "end": 109.418, "text": "실제로 그렇게 부르고 있기도 하고요."}, {"start": 109.42, "end": 112.219, "text": "핵심 아이디어는 이런 에이전트들이 클라우드가 아닌"}, {"start": 112.319, "end": 114.219, "text": "기기 자체에서 로컬로 구동된다는 점입니다."}, {"start": 114.12, "end": 116.819, "text": "그러기 위해서는 방대한 용량의 통합 메모리가 필요합니다."}, {"start": 116.82, "end": 119.519, "text": "진정으로 유능한 에이전트를 구현하려면"}, {"start": 119.521, "end": 121.62, "text": "상당히 큰 규모의 모델이"}, {"start": 121.62, "end": 123.819, "text": "매우 빠른 RAM 위에 상주해야 하기 때문이죠."}, {"start": 123.84, "end": 126.34, "text": "일반 노트북으로는 이런 작업을 할 수 없어요."}, {"start": 126.34, "end": 127.739, "text": "게이밍 노트북이라 해도 마찬가지고요."}, {"start": 127.64, "end": 130.24, "text": "게이밍 노트북에는 그 정도로 빠른 RAM이"}, {"start": 130.24099999999999, "end": 131.34, "text": "충분하지 않기 때문입니다."}, {"start": 131.438, "end": 133.838, "text": "기술적으로는 맥북 프로가 대안이 될 수 있겠네요."}, {"start": 133.84, "end": 136.639, "text": "통합 메모리를 최대 128GB까지 구성할 수 있으니까요."}, {"start": 136.639, "end": 139.239, "text": "AMD 스트릭스 헤일로 노트북도 그렇고요."}, {"start": 139.24, "end": 141.24, "text": "통합 메모리가 아주 넉넉하죠."}, {"start": 141.24, "end": 143.739, "text": "하지만 이 두 장치 모두 지원하지 않는 게 있습니다."}, {"start": 143.74, "end": 145.139, "text": "바로 CUDA 소프트웨어 스택이죠."}, {"start": 145.14, "end": 148.439, "text": "CUDA는 사실상 모든 AI 도구와"}, {"start": 148.439, "end": 152.439, "text": "프레임워크, 모델이 제작되고 가장 먼저 최적화되는 기반입니다."}, {"start": 152.438, "end": 155.938, "text": "반면 128GB 통합 메모리를 갖춘 RTX 스파크는"}, {"start": 155.939, "end": 158.34, "text": "이 CUDA 스택을 완벽하게 활용할 수 있습니다."}, {"start": 158.34, "end": 159.038, "text": "정말 대단하죠."}, {"start": 159.039, "end": 161.639, "text": "마치 이 비전을 위해 태어난 제품 같아요."}, {"start": 161.639, "end": 164.438, "text": "하지만 여기서부터 상황이 조금 복잡해집니다."}, {"start": 164.439, "end": 166.439, "text": "잘 생각해 보면 이건,"}, {"start": 166.439, "end": 169.139, "text": "엔비디아가 넘어야 할 산이 아니거든요."}, {"start": 169.139, "end": 170.639, "text": "사실 마이크로소프트의 몫이죠."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{videoId:videoId,playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0},events:{'onStateChange':onPlayerStateChange}});
+}
+let syncInterval;
+function onPlayerStateChange(event){
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            currentHtml += `<div class="sub-line">${subs[i].text}</div><br>`;
+        }
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vh');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
