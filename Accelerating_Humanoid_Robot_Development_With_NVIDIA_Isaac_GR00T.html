@@ -2,13 +2,13 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)</title>
+<title>Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T를 활용한 휴머노이드 로봇 개발 가속화)</title>
 <meta property="og:type" content="video.other">
-<meta property="og:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)">
+<meta property="og:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T를 활용한 휴머노이드 로봇 개발 가속화)">
 <meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
 <meta property="og:image" content="https://img.youtube.com/vi/yvDDpQZliY8/hqdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)">
+<meta name="twitter:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T를 활용한 휴머노이드 로봇 개발 가속화)">
 <meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
 <meta name="twitter:image" content="https://img.youtube.com/vi/yvDDpQZliY8/hqdefault.jpg">
 <style>
@@ -18,8 +18,9 @@ body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#
 #subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
 .sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
 #subtitles.dragging .sub-line{cursor:grabbing !important;}
-#fs-btn{position:absolute;top:70px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:0.2s;user-select:none;-webkit-user-select:none;touch-action:none;}
-#fs-btn:hover{background:rgba(255,255,255,0.2);}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
 </style>
 </head>
 <body>
@@ -132,7 +133,25 @@ window.addEventListener('blur', function() {
     }, 100);
 });
 let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
 function onPlayerStateChange(event){
+    resetActivity();
     if(event.data==YT.PlayerState.PLAYING){
         if(!syncInterval) syncInterval=setInterval(updateSubs,100);
     }else{
