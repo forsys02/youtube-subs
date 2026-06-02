@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/yvDDpQZliY8/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T으로 휴머노이드 로봇 개발 가속화)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/yvDDpQZliY8/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:70px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:0.2s;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="yvDDpQZliY8";
+const subs=[{"start": 0.02, "end": 5.969, "text": "AI의 다음 도약은 범용 로봇, 즉 휴머노이드입니다. 하지만 이를 만드는 건 결코 쉽지 않죠."}, {"start": 6.019, "end": 13.968, "text": "모든 팀이 시뮬레이터와 원격 조작 시스템, 데이터 파이프라인, 학습 인프라를 연결하며 밑바닥부터 시작합니다."}, {"start": 14.019, "end": 16.968, "text": "본격적인 연구를 시작하기도 전에 준비하는 데만 수개월이 걸리죠."}, {"start": 17.018, "end": 21.968, "text": "엔비디아 '아이작 그루트(Isaac GR00T)'를 소개합니다. 휴머노이드 로봇을 위한 개방형 개발 플랫폼입니다."}, {"start": 22.018, "end": 26.968, "text": "오픈 모델과 시뮬레이션 및 학습 라이브러리, 그리고 데이터 생성기를 제공합니다."}, {"start": 27.018, "end": 30.57, "text": "여기에 로봇 전용 컴퓨터까지 더해졌죠."}, {"start": 30.62, "end": 33.569, "text": "모든 과정이 완벽히 구축되어 단 몇 시간 만에 실행할 준비가 끝납니다."}, {"start": 33.618, "end": 37.069, "text": "먼저 아이작 랩(Isaac Lab)에서 시뮬레이션 환경을 설정합니다."}, {"start": 37.118, "end": 43.569, "text": "그다음 아이작 텔레옵(Isaac Teleop)으로 동작 시연을 캡처합니다."}, {"start": 43.618, "end": 46.069, "text": "실제 로봇이나 시뮬레이션 로봇 모두 가능하죠."}, {"start": 46.118, "end": 51.47, "text": "옴니버스(Omniverse)와 코스모스(Cosmos)를 통해 합성 데이터를 생성하고,"}, {"start": 51.52, "end": 55.068, "text": "단 하나의 시연 데이터를 수천 개로 확장합니다."}, {"start": 55.118, "end": 57.17, "text": "그다음 정책(Policy)을 학습시키고,"}, {"start": 57.219, "end": 59.67, "text": "아이작 랩 아레나에서 이를 평가합니다."}, {"start": 59.719, "end": 64.471, "text": "아이작 로스(Isaac ROS)를 통해 배포하며,"}, {"start": 64.521, "end": 65.971, "text": "젯슨 토르(Jetson Thor)에서 구동합니다."}, {"start": 66.021, "end": 80.218, "text": "모든 요소는 모듈식이며 개방되어 있습니다. [웅장한 음악]"}, {"start": 80.218, "end": 85.168, "text": "저희 것을 그대로 사용하거나 직접 만든 것으로 교체할 수도 있죠."}, {"start": 85.218, "end": 90.57, "text": "'그루트'는 모든 분야와 영역에서 로봇 연구의 원동력이 되고 있습니다."}, {"start": 90.62, "end": 94.319, "text": "연구소부터 공장 현장까지 말이죠."}, {"start": 94.31, "end": 102.009, "text": "하나의 개방형 플랫폼."}, {"start": 102.009, "end": 104.358, "text": "그리고 이제, 새로운 가족이 추가되었습니다."}, {"start": 104.408, "end": 107.459, "text": "Isaac GR00T 로봇 레퍼런스 디자인."}, {"start": 107.509, "end": 110.059, "text": "NVIDIA의 개방형 플랫폼을 기반으로 구축되었습니다."}, {"start": 110.10900000000001, "end": 114.459, "text": "모든 연구실, 어디에서나 프런티어 연구를 수행할 준비가 되어 있습니다."}, {"start": 114.509, "end": 117.06, "text": "로보틱스의 시대가 이곳에서 시작됩니다."}, {"start": 117.11, "end": 120.91, "text": "NVIDIA Isaac GR00T."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+function onPlayerStateChange(event){
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
