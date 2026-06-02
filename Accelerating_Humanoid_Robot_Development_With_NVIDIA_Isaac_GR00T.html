@@ -15,7 +15,8 @@
 :root{--fsize:4.5vmin;}
 body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
 #player{position:absolute;top:0;left:0;width:100%;height:100%;}
-#subtitles{position:absolute;bottom:12%;width:100%;text-align:center;pointer-events:none;z-index:9999;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:3%;}
 .sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
 #subtitles.dragging .sub-line{cursor:grabbing !important;}
 #fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
@@ -136,11 +137,14 @@ let syncInterval;
 let activityTimeout;
 function resetActivity() {
     const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
     if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
     clearTimeout(activityTimeout);
     if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
         activityTimeout = setTimeout(() => {
             if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
         }, 3000);
     }
 }
