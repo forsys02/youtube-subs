@@ -18,6 +18,7 @@ body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#
 #subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
 #subtitles.ui-hidden{bottom:1%;}
 .sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
 #subtitles.dragging .sub-line{cursor:grabbing !important;}
 #fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
 #fs-btn.fade-out{opacity:0.15;}
@@ -202,6 +203,11 @@ function dragStart(e) {
 }
 function dragMove(e) {
     if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
     let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
     let dy = clientY - startY;
     subEl.style.bottom = (currentBottom - dy) + 'px';
