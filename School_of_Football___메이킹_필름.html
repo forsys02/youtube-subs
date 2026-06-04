@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School of Football ｜ 메이킹 필름 (축구 학교 ｜ 메이킹 필름)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="School of Football ｜ 메이킹 필름 (축구 학교 ｜ 메이킹 필름)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/S7JxXwV_M1c/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="School of Football ｜ 메이킹 필름 (축구 학교 ｜ 메이킹 필름)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/S7JxXwV_M1c/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="S7JxXwV_M1c";
+const subs=[{"start": 6.458, "end": 10.41, "text": "로봇 공학의 가장 큰 과제는 로봇이 더 자연스럽게 움직이도록 만드는 것입니다."}, {"start": 10.46, "end": 18.109, "text": "자연스러운 움직임을 위해 로봇은 균형, 타이밍, 협응력, 그리고 적응력을 동시에 습득해야 하죠."}, {"start": 18.16, "end": 23.809, "text": "그래서 이 모든 능력을 요구하는 활동을 찾아봤습니다."}, {"start": 23.859, "end": 32.46, "text": "바로 축구입니다. 균형과 협응력, 정교함을 기반으로 하는 스포츠죠."}, {"start": 32.46, "end": 37.611, "text": "세상에서 가장 완벽한 움직임의 학교라고 할 수 있습니다. 그래서 자문해 봤죠."}, {"start": 37.661, "end": 41.109, "text": "축구가 로봇에게 더 자연스럽게 움직이는 법을 가르칠 수 있을까?"}, {"start": 41.158, "end": 46.81, "text": "현대자동차와 보스턴 다이내믹스가 선보이는 '축구 학교', 축구를 통해 로봇 공학의 한계에 도전합니다."}, {"start": 46.859, "end": 52.309, "text": "현대자동차와 함께 저희는 아틀라스에게 진짜 축구를 가르치는 프로그램을 개발했습니다."}, {"start": 52.359, "end": 65.159, "text": "축구는 인간 신체 능력의 정점입니다. 우리는 매일 인간 선수들이 놀라운 신체적 퍼포먼스를 보여주는 것을 목격하죠."}, {"start": 65.159, "end": 68.30799999999999, "text": "그것은 저희 로봇들도 도달하고 싶은 목표이기도 합니다."}, {"start": 68.358, "end": 76.37, "text": "우선 저희는 위대한 축구 선수들의 생체 역학과 움직임 패턴에서 영감을 얻었습니다."}, {"start": 76.42, "end": 81.168, "text": "이를 아틀라스가 훈련할 수 있는 모션 데이터와 움직임 프로토콜로 변환했죠."}, {"start": 81.218, "end": 85.769, "text": "아틀라스는 실전에서 시도하기 전, 시뮬레이션을 통해 이러한 움직임들을 훈련했습니다."}, {"start": 85.819, "end": 90.368, "text": "휴머노이드 로봇 공학을 준비하는 최선의 방법은 아틀라스가 이전에 해본 적 없는"}, {"start": 90.418, "end": 98.67099999999999, "text": "동작들을 수행하도록 밀어붙이는 것입니다. 공을 차는 동작을 통해 아틀라스는 타이밍, 힘 조절, 협응력을 배웁니다."}, {"start": 98.721, "end": 105.269, "text": "복잡한 킥 동작에서는 회전 움직임, 체중 이동, 그리고 전신 제어 능력을 습득하죠."}, {"start": 105.319, "end": 111.37, "text": "이러한 운동 능력은 축구를 넘어, 아틀라스가 복잡한 실전 환경을"}, {"start": 111.42, "end": 115.969, "text": "헤쳐 나가는 데 큰 도움을 줍니다. 단순히 아틀라스에게 축구공을 주고"}, {"start": 116.019, "end": 121.168, "text": "알아서 차기를 바랄 수는 없다는 게 초기부터 명확했습니다. 물리적 하드웨어의 성능을"}, {"start": 121.218, "end": 126.01, "text": "제대로 보여주기 위해 수많은 새로운 도구와 전략을 개발해야 했습니다. 우리에겐 간단한 일이지만..."}, {"start": 126.06, "end": 130.81, "text": "공을 차는 동작은 아틀라스 같은 휴머노이드에게 정말 어려운 일입니다. 우선..."}, {"start": 130.86, "end": 135.007, "text": "공의 위치를 파악하고, 공을 향해 이동한 뒤 킥 동작을 수행해야 하거든요."}, {"start": 135.057, "end": 139.11, "text": "이 모든 걸 어떻게 하나로 합칠까요? 우리는 그 과정을 통해 배우고 있습니다. 제 생각에 이번이..."}, {"start": 139.161, "end": 145.31, "text": "로봇이 라보나 킥을 성공시킨 사상 초유의 사례일 겁니다. 특히 이 정도로 역동적인 로봇은 전례가 없었죠."}, {"start": 145.36, "end": 147.209, "text": "정말 자랑스럽게 생각합니다."}, {"start": 147.25900000000001, "end": 153.608, "text": "이 기술 개발의 핵심 단계는 먼저 사람이 동작을 수행하는 모습을 캡처하는 겁니다."}, {"start": 153.65800000000002, "end": 154.409, "text": "바로 공을 차는 동작이죠."}, {"start": 154.46, "end": 159.00900000000001, "text": "그런 다음 사람의 움직임을 아틀라스의 운동학 모델로 변환합니다."}, {"start": 159.06, "end": 164.209, "text": "그리고 AI를 활용해 똑같은 행동을 모방하도록 제어 정책을 학습시키죠."}, {"start": 164.25900000000001, "end": 167.00900000000001, "text": "마지막으로 하드웨어에 적용해 실제로 테스트를 진행합니다."}, {"start": 167.06, "end": 171.409, "text": "'놀이'는 로보틱스 분야에서 정말 중요할 수 있습니다. 이유는 두 가지인데,"}, {"start": 171.46, "end": 179.409, "text": "단순히 실용적이고 기능적인 문제를 해결할 때와는 다른 방식으로 로봇의 한계를 시험할 수 있게 해주기 때문입니다."}, {"start": 179.46, "end": 188.50900000000001, "text": "아틀라스가 축구를 배울 수 있도록 우리가 구축한 것들은 앞으로의 개발 공정에서 중요한 자산이 될 겁니다."}, {"start": 188.56, "end": 193.50900000000001, "text": "휴머노이드에게 축구를 가르치는 건 로봇을 더 유연하게 만들고 주변 환경을 더 잘 인식하게 해줄 겁니다."}, {"start": 193.56, "end": 196.50900000000001, "text": "축구 기술의 완성은 로보틱스를 한 단계 더 진보시킬 것입니다."}, {"start": 196.56, "end": 207.96, "text": "현대자동차그룹은 기술의 모든 진보가 인류를 향해야 한다고 믿습니다. 축구보다 더 인간적인 게 있을까요?"}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
