@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韓国ってこんなに楽しい🇰🇷１泊２日で初めてのソウルを遊び尽くす (한국은 이렇게 즐거운 🇰🇷 1박 2일 만에 첫 서울을 다)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="韓国ってこんなに楽しい🇰🇷１泊２日で初めてのソウルを遊び尽くす (한국은 이렇게 즐거운 🇰🇷 1박 2일 만에 첫 서울을 다)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/-KGh2TTQqzQ/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="韓国ってこんなに楽しい🇰🇷１泊２日で初めてのソウルを遊び尽くす (한국은 이렇게 즐거운 🇰🇷 1박 2일 만에 첫 서울을 다)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/-KGh2TTQqzQ/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="-KGh2TTQqzQ";
+const subs=[{"start": 2.81, "end": 4.791, "text": "[음악 소리]"}, {"start": 4.791, "end": 14.704, "text": "(노래) ♪ I saw you in the waterfall ♪"}, {"start": 14.704, "end": 23.199, "text": "(노래) ♪ I saw you coming down ♪"}, {"start": 23.199, "end": 29.713, "text": "(노래) ♪ In your barrel ♪"}, {"start": 29.713, "end": 33.96, "text": "일본에서 비행기로 2시간 반"}, {"start": 33.96, "end": 39.06, "text": "첫 한국 여행, 서울에 왔습니다!"}, {"start": 39.06, "end": 42.02, "text": "와, 예쁘다, 한국 거리!"}, {"start": 42.02, "end": 44.978, "text": "서울 거리 풍경은 처음이야"}, {"start": 44.978, "end": 47.529, "text": "여: 저렇게 큰 문이 다 있네, 봐봐!"}, {"start": 47.579, "end": 48.33, "text": "남: 그러게"}, {"start": 48.38, "end": 51.101, "text": "오오, 대단한데? 이거..."}, {"start": 51.151, "end": 55.72, "text": "여: 뭔가 역사적인 건물 같은 게 곳곳에 있네"}, {"start": 55.77, "end": 57.77, "text": "군데군데 말이야"}, {"start": 57.77, "end": 59.72, "text": "여: 현대랑 역사가 융합된 도시네"}, {"start": 59.77, "end": 61.77, "text": "남: 그러게"}, {"start": 61.77, "end": 62.72, "text": "여: 그치?"}, {"start": 62.77, "end": 65.01, "text": "[음악 소리]"}, {"start": 65.01, "end": 71.093, "text": "한국을 대표하는 관광 명소, 경복궁"}, {"start": 71.093, "end": 78.459, "text": "1395년에 창건된 조선 왕조의 법궁입니다"}, {"start": 78.459, "end": 81.819, "text": "[음악 소리]"}, {"start": 81.819, "end": 84.019, "text": "[음악 소리]"}, {"start": 84.019, "end": 85.029, "text": "여: 예쁘다!"}, {"start": 85.07900000000001, "end": 89.269, "text": "저기 건너편에 보이는 산 좀 봐, 부악산(북악산)?"}, {"start": 89.319, "end": 91.668, "text": "남: 산도 뭐랄까, 디자인처럼 잘 어우러져 있네"}, {"start": 91.718, "end": 94.638, "text": "여: 맞아, 맞아, 정말 딱 들어맞는 느낌이야"}, {"start": 94.688, "end": 96.688, "text": "[음악 소리]"}, {"start": 96.688, "end": 103.569, "text": "여: 아, 한복 입고 오면 입장료가 무료래!"}, {"start": 103.569, "end": 104.219, "text": "남: 진짜?"}, {"start": 104.269, "end": 104.719, "text": "여: 응, 맞아"}, {"start": 104.769, "end": 107.62, "text": "남: 아, 그래서 주변에 다들 한복 빌려 입고 있었구나"}, {"start": 107.67, "end": 108.418, "text": "여: 아, 그런 건 아니고..."}, {"start": 108.468, "end": 109.418, "text": "남: 아, 그렇구나 그렇구나 그렇구나."}, {"start": 109.468, "end": 111.719, "text": "남: 추억 만들기 삼아, 거기 거기 거기 거기..."}, {"start": 111.769, "end": 112.418, "text": "[웃음소리]"}, {"start": 112.468, "end": 114.12, "text": "여: 입장료 때문에 온 거잖아?"}, {"start": 114.17, "end": 115.418, "text": "남: 그치만 교통비가 훨씬 더 비싼걸."}, {"start": 115.468, "end": 116.918, "text": "남: 미안, 으하하하!"}, {"start": 116.968, "end": 121.409, "text": "내레이션: 한국 최대의 목조 건축물, 근정전."}, {"start": 121.459, "end": 125.54, "text": "내레이션: 왕의 즉위식 등을 거행했던..."}, {"start": 125.59, "end": 129.789, "text": "내레이션: 왕권을 상징하는 건물입니다."}, {"start": 140.478, "end": 141.328, "text": "여: 이 돌!"}, {"start": 141.378, "end": 142.78, "text": "여: 뭐야?"}, {"start": 142.78, "end": 144.5, "text": "남: 아, 이거요?"}, {"start": 144.55, "end": 145.0, "text": "여: 응"}, {"start": 145.05, "end": 147.0, "text": "남: 쭉 늘어서 있죠?"}, {"start": 147.05, "end": 147.319, "text": "여: 응"}, {"start": 147.37, "end": 149.018, "text": "여: 이 돌은 뭐야?"}, {"start": 149.068, "end": 150.018, "text": "남: 뭘까요?"}, {"start": 150.068, "end": 151.618, "text": "남: 저게 뭐냐면요"}, {"start": 151.669, "end": 152.338, "text": "남: 무덤이에요"}, {"start": 152.389, "end": 155.348, "text": "[웃음]"}, {"start": 155.348, "end": 158.598, "text": "남: 농담이에요, 다 뻥이에요"}, {"start": 158.598, "end": 159.088, "text": "여: 저기..."}, {"start": 159.139, "end": 160.538, "text": "여: 군인?"}, {"start": 160.538, "end": 161.649, "text": "여: 전사한 군인분들?"}, {"start": 161.699, "end": 163.488, "text": "여: 무덤 같은 거야?"}, {"start": 163.538, "end": 165.72899999999998, "text": "남: 품계석이라고 해서"}, {"start": 165.78, "end": 166.928, "text": "남: 신하들이..."}, {"start": 166.978, "end": 167.328, "text": "여: ...들이?"}, {"start": 167.378, "end": 169.168, "text": "남: 계급별로 서는 곳이에요"}, {"start": 169.21800000000002, "end": 170.368, "text": "여: 저기 말이야."}, {"start": 170.418, "end": 171.56900000000002, "text": "남: 아, 확실히."}, {"start": 171.62, "end": 173.168, "text": "남: 근정전이라든가 말이지."}, {"start": 173.21800000000002, "end": 174.168, "text": "여: 맞아, 맞아."}, {"start": 174.21800000000002, "end": 175.289, "text": "남: 중이층 같은 느낌이네."}, {"start": 175.34, "end": 175.969, "text": "여: 응, 중이층."}, {"start": 176.02, "end": 180.68, "text": "남: 와, 진짜 넓다, 여기."}, {"start": 180.68, "end": 181.388, "text": "여: 대단해."}, {"start": 181.438, "end": 183.149, "text": "남: 왕궁은 이런 색이었구나."}, {"start": 183.199, "end": 184.699, "text": "여: 왕궁이니까 당연하지."}, {"start": 184.75, "end": 185.699, "text": "남: 아, 그렇네."}, {"start": 185.75, "end": 191.96, "text": "(해설) 경복궁에는 수중 누각인 경회루 등"}, {"start": 191.96, "end": 195.909, "text": "(해설) 국보급 역사적 건조물이 다수 있습니다."}, {"start": 195.96, "end": 199.644, "text": "[나팔 소리]"}, {"start": 199.644, "end": 217.538, "text": "(해설) 하루 두 번, 광화문에서 수문장 교대식이 거행됩니다."}, {"start": 217.538, "end": 225.96, "text": "[웅장한 북소리와 악기 연주]"}, {"start": 225.96, "end": 228.269, "text": "(해설) 나부끼는 깃발과"}, {"start": 228.31900000000002, "end": 230.269, "text": "(해설) 선명한 전통 의상에서"}, {"start": 230.31900000000002, "end": 233.629, "text": "(해설) 조선 왕조의 위용을 느낄 수 있습니다."}, {"start": 233.68, "end": 240.348, "text": "[전통 악기 연주 소리]"}, {"start": 240.348, "end": 266.519, "text": "남: 수문군 책임자로서 왕실의 안녕은 물론, 도성문의 개폐와 경비 업무를 수행하고 있습니다."}, {"start": 266.519, "end": 267.24, "text": "여: 거리 풍경이 정말 예쁘네."}, {"start": 267.29, "end": 267.829, "text": "남: 아, 진짜 그러네."}, {"start": 267.879, "end": 268.87, "text": "여: 정말 대단하다."}, {"start": 268.92, "end": 271.67, "text": "여: 아니, 나 정말 서울 도심의 아름다움에 완전히 압도됐어."}, {"start": 271.72, "end": 272.99, "text": "여: 이게 도심인가?"}, {"start": 273.04, "end": 274.389, "text": "여: 아무튼 초록색이 정말 많아."}, {"start": 274.439, "end": 274.99, "text": "여: 싶더라고."}, {"start": 275.04, "end": 277.709, "text": "남: 이 시기에 오길 정말 잘했네."}, {"start": 277.759, "end": 280.199, "text": "남: 이 신록의 계절에 오길 정말 잘한 것 같아."}, {"start": 280.25, "end": 280.718, "text": "여: [감탄] 와아..."}, {"start": 280.769, "end": 282.399, "text": "여: 정말 아름다운 도시야."}, {"start": 282.449, "end": 284.218, "text": "남: 근데 가을도..."}, {"start": 284.269, "end": 285.259, "text": "남: 단풍이 진짜 예쁘대."}, {"start": 285.31, "end": 286.42, "text": "여: 아, 그래?"}, {"start": 286.47, "end": 286.939, "text": "남: 역시 그..."}, {"start": 286.99, "end": 288.18, "text": "남: 추운 지역이라서."}, {"start": 288.23, "end": 289.42, "text": "여: [감탄] 와..."}, {"start": 289.47, "end": 291.439, "text": "남: 단풍은..."}, {"start": 291.439, "end": 292.709, "text": "남: 아름다운 단풍이 거리 곳곳에..."}, {"start": 292.759, "end": 294.348, "text": "남: 아주 넘쳐난대."}, {"start": 294.399, "end": 296.348, "text": "여: 와, 대단하다."}, {"start": 296.399, "end": 297.348, "text": "남: 뭔가, 이 근처에 말야..."}, {"start": 297.399, "end": 297.908, "text": "여: 응."}, {"start": 297.959, "end": 298.949, "text": "남: '어니언'이라는"}, {"start": 299.0, "end": 299.389, "text": "남: 카페가"}, {"start": 299.439, "end": 300.389, "text": "남: 있다고 하더라고요."}, {"start": 300.439, "end": 301.348, "text": "여: 아, 뭔가"}, {"start": 301.399, "end": 303.189, "text": "여: 추천받았던 곳 같아요."}, {"start": 303.24, "end": 304.55, "text": "남: 맞아, 맞아, 맞아, 맞아."}, {"start": 304.6, "end": 305.629, "text": "여: 어?"}, {"start": 305.68, "end": 306.43, "text": "여: 저기 봐요!"}, {"start": 306.48, "end": 307.43, "text": "여: 한국의"}, {"start": 307.48, "end": 308.43, "text": "여: 전통 가옥 느낌 아니에요?"}, {"start": 308.48, "end": 309.43, "text": "여: 봐요, 정말."}, {"start": 309.48, "end": 310.43, "text": "남: 아, 진짜네."}, {"start": 310.48, "end": 311.43, "text": "남: 이런 느낌이죠."}, {"start": 311.48, "end": 312.43, "text": "여: 딱 그렇네요."}, {"start": 312.48, "end": 315.127, "text": "[밝은 음악 소리]"}, {"start": 315.127, "end": 319.362, "text": "여: 딸기 크루아상 맛있겠다!"}, {"start": 319.362, "end": 323.596, "text": "남: 와, 토핑이 엄청나네요."}, {"start": 323.596, "end": 325.978, "text": "여: 그러니까요!"}, {"start": 325.978, "end": 329.949, "text": "[현장 소음 및 음악 소리]"}, {"start": 329.949, "end": 332.862, "text": "남: 잘 먹겠습니다!"}, {"start": 332.862, "end": 338.42, "text": "여: 생크림이 느끼하지 않고 맛있어요."}, {"start": 338.42, "end": 343.98, "text": "여: 블루베리가 상큼하게 잡아줘서..."}, {"start": 343.98, "end": 345.302, "text": "남: 응."}, {"start": 345.302, "end": 348.22, "text": "[경쾌한 음악 소리]"}, {"start": 348.22, "end": 351.17, "text": "남: 티나야, 아빠 좀 봐봐."}, {"start": 351.22, "end": 352.17, "text": "여: [웃음]"}, {"start": 352.22, "end": 357.321, "text": "남: 아빠 봐봐, 귀엽지?"}, {"start": 357.321, "end": 362.422, "text": "[아이의 해맑은 웃음소리]"}, {"start": 362.422, "end": 367.16, "text": "[잔잔해지는 음악 소리]"}, {"start": 369.16, "end": 370.11, "text": "여: 와, 이 거리 진짜 대박이다..."}, {"start": 370.16, "end": 371.11, "text": "여: 좋다."}, {"start": 371.16, "end": 372.11, "text": "남: 좋다."}, {"start": 372.16, "end": 373.11, "text": "여: 분위기 진짜 괜찮지 않아?"}, {"start": 373.16, "end": 374.11, "text": "남: 응."}, {"start": 374.16, "end": 376.019, "text": "여: 저 멀리 산도 보이고 말이야."}, {"start": 376.069, "end": 379.55, "text": "여: 와, 정말 멋지다."}, {"start": 379.55, "end": 380.5, "text": "남: 한옥을 이런 식으로..."}, {"start": 380.55, "end": 381.5, "text": "남: 아기자기하게 잘 꾸며 놨네."}, {"start": 381.55, "end": 383.149, "text": "남: 시내 한복판에 예쁜 카페도 정말 많다."}, {"start": 383.199, "end": 384.598, "text": "여: 그러게."}, {"start": 385.199, "end": 387.288, "text": "여: 아, 저기도 한옥이다!"}, {"start": 387.338, "end": 388.283, "text": "남: 그러게."}, {"start": 388.334, "end": 389.995, "text": "여: 꽤 많다, 그치?"}, {"start": 390.045, "end": 390.709, "text": "남: 응."}, {"start": 390.759, "end": 391.709, "text": "남: 아, 이 근처에서..."}, {"start": 391.759, "end": 392.709, "text": "남: 조금만 더 가면 말이야."}, {"start": 392.759, "end": 394.468, "text": "남: 거 봐, 한옥 마을 맞지?"}, {"start": 394.519, "end": 395.468, "text": "여: 어, 진짜?"}, {"start": 395.519, "end": 398.918, "text": "남: 응, 맞아."}, {"start": 398.918, "end": 400.43, "text": "[음악]"}, {"start": 400.43, "end": 410.028, "text": "[음악]"}, {"start": 410.028, "end": 416.569, "text": "해설: 경복궁에서 도보 10분. 전통적인 거리의 정취가 살아 있는 북촌 한옥 마을."}, {"start": 416.62, "end": 421.37, "text": "한옥이 줄지어 늘어선 아름다운 경관을 자랑하는 곳입니다."}, {"start": 421.42, "end": 424.105, "text": "남: 옛날 한국은 이런 느낌이었구나."}, {"start": 424.156, "end": 427.389, "text": "여: 어머, 잠깐만요, 대박! 진짜 최고다!"}, {"start": 427.439, "end": 429.088, "text": "여: 어머, 여긴 또 어디야?"}, {"start": 429.139, "end": 432.49, "text": "남: 게다가 지나가는 사람들이 한복을 입고 있으니까 더 좋네."}, {"start": 432.54, "end": 435.49, "text": "여: 정말 타임슬립 한 기분이야."}, {"start": 435.54, "end": 436.49, "text": "남: 맞아."}, {"start": 436.54, "end": 437.49, "text": "여: 귀엽다."}, {"start": 437.54, "end": 438.97, "text": "여: [웃음]"}, {"start": 438.97, "end": 441.149, "text": "남: 여기가 원래 한국의 신분 높은 사람들이 살던 집이었지?"}, {"start": 441.199, "end": 467.812, "text": "여: 아, 그렇구나. 우와, 이 분위기에 푹 빠져드네."}, {"start": 467.812, "end": 482.004, "text": "남: 정말 신비로운 세상이야."}, {"start": 482.004, "end": 493.536, "text": "[음악 및 일상의 소음]"}, {"start": 493.536, "end": 519.26, "text": "북촌 최고의 전망대라고 하네요. 와, 정말 대단하다."}, {"start": 519.26, "end": 526.36, "text": "남: 정말이네."}, {"start": 526.36, "end": 527.31, "text": "여: 알록달록해서 재미있네."}, {"start": 527.36, "end": 528.506, "text": "남: 오늘 날씨 진짜 좋다."}, {"start": 528.556, "end": 529.064, "text": "여: 그러게."}, {"start": 529.114, "end": 530.499, "text": "남: 5월의 한국은 정말 최고야."}, {"start": 530.548, "end": 531.14, "text": "여: 상쾌하다."}, {"start": 531.19, "end": 533.14, "text": "남: 이대로 쭉 가면 인사동인가?"}, {"start": 533.19, "end": 536.14, "text": "여: 와, 여기 거리 되게 즐거워 보이네."}, {"start": 536.19, "end": 537.14, "text": "여: 등불이 있으니까 분위기가 더 살아나는 것 같아."}, {"start": 537.19, "end": 543.229, "text": "전통 소품 쇼핑과 한국식 티타임을 즐길 수 있는 곳, 인사동입니다."}, {"start": 543.278, "end": 546.999, "text": "미술품이 모이는 골동품 거리이기도 하죠."}, {"start": 547.048, "end": 548.999, "text": "남: 감 모양 소품이 정말 귀엽네."}, {"start": 549.048, "end": 549.999, "text": "여: 여기에 꽃을 담아서..."}, {"start": 550.048, "end": 550.999, "text": "여: 선물하면 참 좋겠다."}, {"start": 551.048, "end": 552.999, "text": "여: 그러니까 이런 식으로 되는 거야."}, {"start": 553.048, "end": 553.999, "text": "남: 와, 진짜 귀엽다."}, {"start": 554.048, "end": 554.999, "text": "여: 그치? 너무 귀여워."}, {"start": 555.048, "end": 556.469, "text": "여: 이것 좀 봐."}, {"start": 556.519, "end": 558.31, "text": "남: 진짜네, 대박이다."}, {"start": 558.36, "end": 559.31, "text": "여: 뭔가 말랑말랑해서..."}, {"start": 559.36, "end": 560.31, "text": "여: 정말 너무 귀엽지 않아?"}, {"start": 560.36, "end": 561.31, "text": "남: 나 이거 진짜 살 것 같아."}, {"start": 561.36, "end": 562.31, "text": "여: 그건 사야지."}, {"start": 562.36, "end": 563.31, "text": "남: 그치? 사게 된다니까."}, {"start": 563.36, "end": 564.31, "text": "여: 응, 뭔지 알 것 같아."}, {"start": 564.36, "end": 565.31, "text": "남: 난 이해해."}, {"start": 565.36, "end": 567.67, "text": "여: 와, 이거 오랜만에..."}, {"start": 567.72, "end": 571.92, "text": "여: '마이볼 지구본'에 내놓을까 봐."}, {"start": 574.21, "end": 575.16, "text": "남: 어? 너 떨고 있어?"}, {"start": 575.21, "end": 576.82, "text": "남: 너무 귀여워서 떠는 거야?"}, {"start": 576.87, "end": 577.82, "text": "여: 아니, 아니야."}, {"start": 577.87, "end": 579.82, "text": "여: 이건 무사부루이라니까."}, {"start": 579.87, "end": 581.82, "text": "여: 전율이라서 그래, 전율."}, {"start": 581.87, "end": 583.82, "text": "남: 대체 무슨 전율인데? [웃음]"}, {"start": 583.87, "end": 585.82, "text": "좋은 걸 발견했다는..."}, {"start": 585.87, "end": 587.87, "text": "한판 붙으러 왔지"}, {"start": 587.87, "end": 594.322, "text": "[기합 소리] 이야아아!"}, {"start": 594.322, "end": 600.278, "text": "[박진감 넘치는 음악]"}, {"start": 600.278, "end": 602.278, "text": "대박!"}, {"start": 602.278, "end": 604.229, "text": "남1: 이건 뭐예요?"}, {"start": 604.278, "end": 606.278, "text": "남2: 불고기입니다"}, {"start": 606.278, "end": 608.278, "text": "남3: 불고기네"}, {"start": 608.278, "end": 610.229, "text": "남1: 와, 맛있겠다!"}, {"start": 610.278, "end": 612.229, "text": "남1: 장난 아니다, 이거 어떻게 먹어?"}, {"start": 612.278, "end": 614.278, "text": "[음식 먹는 소리]"}, {"start": 614.278, "end": 618.278, "text": "남1: 눈에서 육즙이 나올 줄 알았어"}, {"start": 619.278, "end": 621.229, "text": "남2: 아, 눈물이 아니라요?"}, {"start": 621.278, "end": 623.229, "text": "남1: 소고기 같은 느낌이랄까?"}, {"start": 623.278, "end": 624.229, "text": "남1: 이 감칠맛..."}, {"start": 624.278, "end": 626.229, "text": "남1: 이거 불고기네"}, {"start": 626.278, "end": 627.229, "text": "남2: 불고기 맞네"}, {"start": 627.278, "end": 630.229, "text": "남1: 이건 진짜 싫어할 사람이 없는 맛이야"}, {"start": 630.278, "end": 632.229, "text": "남1: 맛있다, 와, 이 소스 좀 봐"}, {"start": 632.278, "end": 636.479, "text": "남1: 소스 듬뿍 묻혀야지, 소스 듬뿍"}, {"start": 641.278, "end": 643.229, "text": "남1: 치즈 함박 스테이크 같아"}, {"start": 643.278, "end": 645.278, "text": "음식 중에서"}, {"start": 648.278, "end": 650.229, "text": "한국 요리는 역시 맛있네"}, {"start": 650.278, "end": 651.479, "text": "정답이야"}, {"start": 656.278, "end": 658.278, "text": "여름에 말이야"}, {"start": 660.278, "end": 662.229, "text": "어, 이거 괜찮지 않아?"}, {"start": 662.278, "end": 664.278, "text": "응"}, {"start": 664.278, "end": 666.278, "text": "오, 괜찮은데?"}, {"start": 666.278, "end": 668.278, "text": "응"}, {"start": 668.278, "end": 670.278, "text": "꿀꺽꿀꺽 마시더니"}, {"start": 670.278, "end": 672.84, "text": "다 마셨어"}, {"start": 672.84, "end": 674.84, "text": "맛있다!"}, {"start": 674.84, "end": 677.542, "text": "남: 오, 연남동 진짜 재밌네?"}, {"start": 677.591, "end": 680.619, "text": "여: 뭔가 걷는 것만으로도 즐거워져"}, {"start": 680.668, "end": 682.238, "text": "남: 그치, 즐거워"}, {"start": 682.288, "end": 683.05, "text": "여: 네~"}, {"start": 683.1, "end": 685.413, "text": "여: 세련되기도 하고"}, {"start": 685.413, "end": 687.1, "text": "여: 한국..."}, {"start": 687.1, "end": 688.65, "text": "여: 스러움이 묻어난다고 해야 하나?"}, {"start": 688.7, "end": 689.05, "text": "남: 맞아"}, {"start": 689.1, "end": 692.006, "text": "남: 아니, 근데 진짜 세련됐다"}, {"start": 692.056, "end": 693.05, "text": "여: 그치?"}, {"start": 693.1, "end": 695.1, "text": "여: [웃음]"}, {"start": 695.1, "end": 697.1, "text": "여: 신난다!"}, {"start": 697.1, "end": 700.84, "text": "남: 데코폰이래"}, {"start": 701.84, "end": 703.488, "text": "여: 데코폰?"}, {"start": 703.488, "end": 704.379, "text": "남: 응"}, {"start": 704.428, "end": 708.379, "text": "남: 산미와 단맛의 조화가 절묘하지 않아?"}, {"start": 708.428, "end": 709.379, "text": "완전히."}, {"start": 709.428, "end": 711.428, "text": "100%야."}, {"start": 711.428, "end": 712.379, "text": "단맛이랑..."}, {"start": 712.428, "end": 714.379, "text": "신맛의 밸런스가 완벽해."}, {"start": 714.428, "end": 717.629, "text": "그거 방금 내가 한 말이거든."}, {"start": 717.889, "end": 718.8389999999999, "text": "어라?"}, {"start": 718.889, "end": 720.469, "text": "마이즈(MAIZE)잖아."}, {"start": 720.519, "end": 722.519, "text": "내 멘트 가로챘지?"}, {"start": 722.519, "end": 726.519, "text": "편집해서 자기가 말한 것처럼 하려고?"}, {"start": 734.009, "end": 734.959, "text": "'치즈 타임'이래."}, {"start": 735.009, "end": 735.959, "text": "와, 재밌다!"}, {"start": 736.009, "end": 736.959, "text": "치즈를 직접 만드나 봐."}, {"start": 737.009, "end": 737.959, "text": "들어갈까?"}, {"start": 738.009, "end": 742.62, "text": "[경쾌한 음악]"}, {"start": 742.62, "end": 746.658, "text": "우와, 대박!"}, {"start": 746.658, "end": 755.883, "text": "갓 만든 느낌이 장난 아니야."}, {"start": 755.883, "end": 759.918, "text": "[음악 계속]"}, {"start": 759.918, "end": 762.889, "text": "여운..."}, {"start": 762.889, "end": 763.8389999999999, "text": "남: 여운?"}, {"start": 763.889, "end": 765.336, "text": "치즈의..."}, {"start": 765.336, "end": 768.715, "text": "남: 부드러운 여운이..."}, {"start": 768.715, "end": 771.369, "text": "계속 입안에 맴돌아."}, {"start": 771.369, "end": 773.058, "text": "진짜 진하다."}, {"start": 773.058, "end": 774.009, "text": "여기도?"}, {"start": 774.058, "end": 775.093, "text": "이 카페 대박이지 않아?"}, {"start": 775.143, "end": 776.009, "text": "이 마을의 숨은..."}, {"start": 776.058, "end": 777.259, "text": "실력이..."}, {"start": 777.259, "end": 778.009, "text": "그러게."}, {"start": 778.058, "end": 778.954, "text": "남: 한국 카페 진짜 대단하다."}, {"start": 779.004, "end": 780.009, "text": "여: 대단해. 진짜 엄청 세련됐어."}, {"start": 780.058, "end": 782.009, "text": "여: 뭔가 대단해... 진짜 예쁘지?"}, {"start": 782.058, "end": 784.138, "text": "남: 근데 분위기만 좋은 게 아니라 맛도 정말 좋아."}, {"start": 784.187, "end": 785.02, "text": "여: 맛이 아주 진해."}, {"start": 785.07, "end": 787.02, "text": "여: 카페 좋아하는 사람들한테는 최고 아니야?"}, {"start": 787.07, "end": 790.349, "text": "여: 이 동네에 세련된 카페가 진짜 많이 모여 있더라고."}, {"start": 790.399, "end": 792.399, "text": "남: 정말 그러네."}, {"start": 798.889, "end": 806.83, "text": "여: 호텔은 인사동 쪽으로 잡았어요."}, {"start": 806.83, "end": 812.03, "text": "여: 경복궁이나 한옥마을이 도보권이라 편리해요."}, {"start": 826.72, "end": 828.624, "text": "남: 아, 여기가 지하철역이야?"}, {"start": 828.673, "end": 829.2, "text": "여: 응."}, {"start": 829.25, "end": 830.2, "text": "남: 여기서..."}, {"start": 830.25, "end": 831.2, "text": "남: 여기서 아마 갈 수 있을 거야. 그..."}, {"start": 831.25, "end": 832.2, "text": "여: 한강까지?"}, {"start": 832.25, "end": 834.719, "text": "남: 한강까지. 갈 수 있으려나?"}, {"start": 834.769, "end": 837.719, "text": "여: 유심 칩 샀을 때 같이 받은 티머니로..."}, {"start": 837.769, "end": 839.719, "text": "여: 개찰구 통과할 수 있을 거야."}, {"start": 839.769, "end": 841.1, "text": "[현장음]"}, {"start": 841.1, "end": 852.028, "text": "여: 노들역에서 걸어서 10분, 한강에 떠 있는 섬 노들섬에 도착했습니다."}, {"start": 852.028, "end": 854.778, "text": "남: 눈부셔! [웃음]"}, {"start": 854.778, "end": 856.778, "text": "여: 예쁘다."}, {"start": 856.778, "end": 860.158, "text": "남: 진짜네."}, {"start": 860.158, "end": 867.678, "text": "남: 다들 이런 곳에서 피크닉 하며 밥도 먹고 석양을 감상하는구나."}, {"start": 867.678, "end": 870.3389999999999, "text": "여: 아, 나중에 꼭 먹어보고 싶다."}, {"start": 870.389, "end": 872.389, "text": "여: 정말로."}, {"start": 872.389, "end": 873.3389999999999, "text": "여: 치킨 사 오는 걸 깜빡했네."}, {"start": 873.389, "end": 875.389, "text": "[남녀 웃음소리]"}, {"start": 875.389, "end": 876.918, "text": "[음악]"}, {"start": 876.918, "end": 884.543, "text": "[노래: Waterfall]"}, {"start": 884.543, "end": 904.879, "text": "여: 와, 여기서 매일 석양을 보려고 이렇게 많은 사람이 모이는 거구나."}, {"start": 904.879, "end": 906.829, "text": "남: 그치, 오늘 평일인데도 이 정도네."}, {"start": 906.879, "end": 907.829, "text": "여: 그러게."}, {"start": 907.879, "end": 908.829, "text": "여: 왠지 좋다."}, {"start": 908.879, "end": 919.287, "text": "[음악 및 현장음]"}, {"start": 919.287, "end": 938.019, "text": "여: 서울 최대의 번화가, 명동."}, {"start": 938.019, "end": 969.244, "text": "여: 쇼핑객과 관광객들로 밤늦게까지 북적이는 곳입니다."}, {"start": 969.244, "end": 974.45, "text": "[현장음]"}, {"start": 974.45, "end": 976.119, "text": "남: 오, 맛있겠다!"}, {"start": 976.168, "end": 980.0, "text": "[고기 굽는 소리]"}, {"start": 980.0, "end": 989.96, "text": "남1: 야, 내가 아는 선배 중에 한 명이..."}, {"start": 989.96, "end": 996.09, "text": "남2: 아, 진짜? 대박인데."}, {"start": 996.09, "end": 998.09, "text": "남: 연기 괜찮아?"}, {"start": 998.09, "end": 1000.599, "text": "여: 분위기 딱 좋은 것 같아."}, {"start": 1000.649, "end": 1005.5889999999999, "text": "남: 그래도 모바일 중에서는 항상 상위권이라..."}, {"start": 1005.639, "end": 1008.629, "text": "남: 이거 전부 흑우(쿠로게와규) 아니에요?"}, {"start": 1008.678, "end": 1010.629, "text": "남: 옆에서 봐도 비주얼이 대단하네요."}, {"start": 1010.678, "end": 1012.629, "text": "남: 정말이지, 정말이지, 정말..."}, {"start": 1012.678, "end": 1014.629, "text": "남: 이 느낌, 정말 못 참겠네요."}, {"start": 1014.678, "end": 1016.629, "text": "남: 고기가 정말 정말 맛있고."}, {"start": 1016.678, "end": 1018.629, "text": "남: 먹어 볼래? 진짜 맛있어."}, {"start": 1018.678, "end": 1021.349, "text": "남: 참기름이랑 파가 들어간..."}, {"start": 1021.399, "end": 1023.829, "text": "남: 고기 진짜 맛있다, 장난 아니야."}, {"start": 1023.879, "end": 1027.018, "text": "남: 마늘, 마늘이랑 같이 먹으니까 진짜 최고야."}, {"start": 1027.067, "end": 1030.759, "text": "남: 고기랑 궁합이 정말 대박이네."}, {"start": 1030.808, "end": 1032.808, "text": "남: 음!"}, {"start": 1032.808, "end": 1034.759, "text": "남: 이거 진짜 최고야."}, {"start": 1034.808, "end": 1037.63, "text": "남: 진짜 최고라니까."}, {"start": 1037.63, "end": 1040.14, "text": "남: 고기 밑간도 말이야."}, {"start": 1040.19, "end": 1043.99, "text": "남: 꽤 달짝지근하게 되어 있어서."}, {"start": 1047.867, "end": 1050.942, "text": "남: 소스도 좀 달달한가? 이 참깨 소스 말이야."}, {"start": 1050.992, "end": 1053.026, "text": "남: 진짜 맛있다, 이 야키니쿠."}, {"start": 1053.076, "end": 1056.269, "text": "남: 지금까지 내가 알던 야키니쿠랑은 차원이 달라."}, {"start": 1056.318, "end": 1058.67, "text": "남: 이 고깃집 일본에 있으면 업계 평정하겠는데?"}, {"start": 1058.72, "end": 1060.269, "text": "남: 진짜 맛있어서 깜짝 놀랐어."}, {"start": 1060.318, "end": 1065.99, "text": "여: 한국 여행 둘째 날."}, {"start": 1065.99, "end": 1076.519, "text": "여: 아침 일찍 문을 여는 순두부집에 왔습니다."}, {"start": 1076.519, "end": 1080.569, "text": "남: 우와, 대박!"}, {"start": 1080.569, "end": 1089.076, "text": "여: 순두부찌개가 보글보글 끓고 있어."}, {"start": 1089.076, "end": 1101.23, "text": "남: 장난 아니다. 드디어 한국에서 순두부찌개를 먹네."}, {"start": 1101.23, "end": 1103.18, "text": "여: 우와, 진짜 맛있겠다."}, {"start": 1103.23, "end": 1105.18, "text": "남: 잘 먹겠습니다!"}, {"start": 1105.23, "end": 1107.818, "text": "여: 와, 맛있다!"}, {"start": 1107.818, "end": 1108.946, "text": "여: 맛있지 않아?"}, {"start": 1108.996, "end": 1109.769, "text": "남: 맛있어."}, {"start": 1109.818, "end": 1113.938, "text": "여: 매운데 은근히 부드러운 맛이 나."}, {"start": 1113.988, "end": 1115.526, "text": "남: 부드러워?"}, {"start": 1115.576, "end": 1117.709, "text": "여: 계속 들어가네."}, {"start": 1117.759, "end": 1119.709, "text": "남: 멈출 수 없게 되지?"}, {"start": 1119.759, "end": 1121.709, "text": "여: 맞아, 맞아. 멈출 수가 없어."}, {"start": 1121.759, "end": 1123.759, "text": "[먹는 소리]"}, {"start": 1123.759, "end": 1127.16, "text": "남: 역시 본토 음식은 꽤 맵긴 한데..."}, {"start": 1127.21, "end": 1129.16, "text": "남: 밥이랑 같이 먹으면..."}, {"start": 1129.21, "end": 1131.88, "text": "남: 꽤 부드러워지니까 딱 좋아."}, {"start": 1131.93, "end": 1133.723, "text": "여: 맛있다."}, {"start": 1133.723, "end": 1135.519, "text": "남: 최고야."}, {"start": 1135.519, "end": 1137.519, "text": "남: 진짜 맛있네."}, {"start": 1137.519, "end": 1141.842, "text": "[시장 소음]"}, {"start": 1141.842, "end": 1148.633, "text": "여: 아, 저기구나."}, {"start": 1148.633, "end": 1159.13, "text": "남: 진짜네, 역 바로 앞이다."}, {"start": 1159.13, "end": 1169.685, "text": "해설: 서울에서 가장 인기 있는 시장인 광장시장."}, {"start": 1169.685, "end": 1178.68, "text": "해설: 한국의 맛이 모이는 종합 시장이자,"}, {"start": 1178.68, "end": 1192.756, "text": "해설: 시장 음식이 넷플릭스에 소개되어 유명해진 곳이기도 합니다."}, {"start": 1192.756, "end": 1198.621, "text": "여: 떡볶이 처음 먹어 봐."}, {"start": 1198.621, "end": 1202.922, "text": "남: 나도 처음이야."}, {"start": 1202.922, "end": 1208.394, "text": "여: 떡처럼 쫄깃쫄깃하네."}, {"start": 1208.394, "end": 1217.0, "text": "여: 게다가 매콤한 소스가 정말 맛있어."}, {"start": 1217.0, "end": 1220.443, "text": "여: 뭐 먹을까? 뭐 먹을까?"}, {"start": 1220.443, "end": 1223.242, "text": "남: 역시 육회 아니야?"}, {"start": 1223.242, "end": 1225.395, "text": "여: 육회, 육회!"}, {"start": 1225.395, "end": 1228.842, "text": "여: 육회 먹으러 가는 거야?"}, {"start": 1228.842, "end": 1232.069, "text": "남: 글쎄, 조금 고민되네."}, {"start": 1232.069, "end": 1235.516, "text": "남: 아, 저기다! 부촌육회."}, {"start": 1235.516, "end": 1240.9, "text": "해설: 시장 육회 골목에 자리 잡은 부촌육회."}, {"start": 1240.9, "end": 1251.471, "text": "해설: 미슐랭 가이드에 선정된 인기 육회 전문점입니다."}, {"start": 1251.471, "end": 1254.997, "text": "[고기 써는 소리]"}, {"start": 1254.997, "end": 1259.931, "text": "남: 고기가 정말 신선해."}, {"start": 1259.931, "end": 1270.855, "text": "남: 식감도 좋고 진짜 맛있다. 내 인생 최고의 육회야."}, {"start": 1270.855, "end": 1281.779, "text": "남: 배랑 같이 먹으면 배의 단맛이 더해져서 더 맛있어."}, {"start": 1281.779, "end": 1287.067, "text": "여: 배랑 같이 먹는 거야?"}, {"start": 1287.067, "end": 1290.589, "text": "여: 이게 배구나."}, {"start": 1290.589, "end": 1294.47, "text": "여: 잘 먹겠습니다."}, {"start": 1294.47, "end": 1296.913, "text": "남: 와, 진짜 맛있다."}, {"start": 1296.963, "end": 1299.985, "text": "남: 약간 상큼한 맛도 나고."}, {"start": 1300.035, "end": 1303.631, "text": "남: 간만 따로 주문할 수도 있대."}, {"start": 1303.681, "end": 1305.36, "text": "여: 아, 진짜?"}, {"start": 1305.41, "end": 1307.88, "text": "남: 루비처럼 빛나네."}, {"start": 1307.88, "end": 1309.028, "text": "남: 맛의 깊이랑..."}, {"start": 1309.078, "end": 1313.558, "text": "남: 부드러움이 차원이 다른 것 같아."}, {"start": 1313.558, "end": 1318.74, "text": "남: 정말 맛있다."}, {"start": 1318.74, "end": 1321.93, "text": "[시장 소음]"}, {"start": 1321.93, "end": 1328.309, "text": "여: 와, 이거 대박이다!"}, {"start": 1328.309, "end": 1338.794, "text": "여: 그냥 도넛이 아니야, 찹쌀 도넛이네."}, {"start": 1338.794, "end": 1344.72, "text": "남: 정말 쫄깃쫄깃하다."}, {"start": 1344.72, "end": 1351.16, "text": "남: (우물거리며) 와... 식감이 정말 부드럽다."}, {"start": 1351.16, "end": 1351.59, "text": "남: 이야..."}, {"start": 1351.64, "end": 1353.11, "text": "남: 이거 진짜 대박인데."}, {"start": 1353.16, "end": 1354.63, "text": "남: 이런 건 먹어본 적도 없어."}, {"start": 1354.68, "end": 1355.91, "text": "남: 아... 하나 더 살걸 그랬나?"}, {"start": 1355.96, "end": 1357.19, "text": "남: 이거 진짜 최고지?"}, {"start": 1357.24, "end": 1357.59, "text": "여: 응."}, {"start": 1357.64, "end": 1361.757, "text": "[음악 소리 및 주변 소음]"}, {"start": 1361.757, "end": 1364.776, "text": "남: 진짜 맛있었지?"}, {"start": 1364.776, "end": 1367.795, "text": "여: 응, 맛있었어."}, {"start": 1367.795, "end": 1371.088, "text": "여: 즐거웠고 말이야."}, {"start": 1371.088, "end": 1371.84, "text": "남: 맞아, 맞아."}, {"start": 1371.89, "end": 1373.278, "text": "여: 포장마차 분위기가..."}, {"start": 1373.328, "end": 1375.528, "text": "여: 너무 좋더라고."}, {"start": 1376.519, "end": 1378.229, "text": "남: 응, 정겨운 느낌이었어."}, {"start": 1378.278, "end": 1381.99, "text": "남: 아, 이제 좀 배가 부르네."}, {"start": 1381.99, "end": 1382.739, "text": "남: 배도 부른데..."}, {"start": 1382.788, "end": 1383.538, "text": "남: 산책이라도 좀 할까?"}, {"start": 1383.588, "end": 1385.588, "text": "여: 그래, 좋아."}, {"start": 1388.47, "end": 1390.269, "text": "남: 오, 저기 뭐가 보인다."}, {"start": 1390.318, "end": 1391.749, "text": "남: 저게 츠텐카쿠야."}, {"start": 1391.798, "end": 1394.45, "text": "여: 저게 츠텐카쿠라고?"}, {"start": 1394.45, "end": 1394.68, "text": "남: 응."}, {"start": 1394.73, "end": 1398.94, "text": "도시 한복판에 당당히 서 있는 돈의문."}, {"start": 1398.94, "end": 1402.88, "text": "600년 전에 지어진 성곽이"}, {"start": 1402.88, "end": 1405.87, "text": "지금도 사람들을 계속 지켜보고 있습니다."}, {"start": 1405.92, "end": 1410.257, "text": "남1: 여기서 사진 대결이나 하자고."}, {"start": 1410.257, "end": 1415.68, "text": "남2: 하하하! 최고의 무대가 방금 마련됐네."}, {"start": 1415.68, "end": 1419.558, "text": "[웃음소리]"}, {"start": 1419.558, "end": 1420.269, "text": "남2: 좋아."}, {"start": 1420.318, "end": 1425.219, "text": "여: 따라 하는 거 싫으니까 저쪽으로 좀 가줄래?"}, {"start": 1425.269, "end": 1426.18, "text": "남2: 왜?"}, {"start": 1426.23, "end": 1427.38, "text": "남1: 왜 그래?"}, {"start": 1427.43, "end": 1427.739, "text": "여: 왜냐면..."}, {"start": 1427.788, "end": 1428.58, "text": "여: 따라 하면 기분 나쁘잖아."}, {"start": 1428.63, "end": 1428.86, "text": "남1: 아."}, {"start": 1428.91, "end": 1430.219, "text": "남2: 나도 이미 결정했어."}, {"start": 1430.269, "end": 1435.742, "text": "남1: 그럼 내가 먼저 말할게."}, {"start": 1435.742, "end": 1438.318, "text": "남1: 오케이."}, {"start": 1438.318, "end": 1438.87, "text": "남1: 아, 아!"}, {"start": 1438.92, "end": 1439.63, "text": "남1: 위험해."}, {"start": 1439.68, "end": 1440.749, "text": "남1: 그거 위험해."}, {"start": 1440.798, "end": 1443.834, "text": "남1: 됐다."}, {"start": 1443.834, "end": 1446.433, "text": "여: 됐다."}, {"start": 1446.433, "end": 1449.47, "text": "남2: 좋네."}, {"start": 1452.038, "end": 1476.39, "text": "남1: 와, 뒤쪽 풍경 장난 아니다."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
