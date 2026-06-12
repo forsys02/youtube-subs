@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boston Dynamics Atlas Just Got 5 HUGE Upgrades… This Is INSANE! (Boston Dynamics Atlas가 방금 5번의 대규모 업그레이드를 받았습니다… 이것은 미친 짓입니다!)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Boston Dynamics Atlas Just Got 5 HUGE Upgrades… This Is INSANE! (Boston Dynamics Atlas가 방금 5번의 대규모 업그레이드를 받았습니다… 이것은 미친 짓입니다!)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/alcEfaMQChs/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boston Dynamics Atlas Just Got 5 HUGE Upgrades… This Is INSANE! (Boston Dynamics Atlas가 방금 5번의 대규모 업그레이드를 받았습니다… 이것은 미친 짓입니다!)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/alcEfaMQChs/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="alcEfaMQChs";
+const subs=[{"start": 2.459, "end": 8.208, "text": "보스턴 다이내믹스가 아틀라스 사상 최대 규모의 업그레이드를 단행했습니다. 하지만 이번엔 백플립이나..."}, {"start": 8.259, "end": 13.91, "text": "흔한 바이럴 영상에 관한 게 아닙니다. 새로운 '엔터프라이즈 아틀라스'는 '실전 투입'이라는 단 하나의 진지한 목표를 위해 제작되었죠."}, {"start": 13.961, "end": 19.609, "text": "현대차는 공장에 휴머노이드 로봇을 배치하길 원했고, 아틀라스는 그 환경에 맞춰 재설계되었습니다."}, {"start": 19.66, "end": 25.708, "text": "전동식 본체와 56도의 자유도, 강력한 리프팅 시스템에 자가 충전 및 배터리 교체 기능까지 갖췄고,"}, {"start": 25.759, "end": 30.41, "text": "구글 딥마인드의 AI 학습까지 더해졌죠. 이제 아틀라스는 단순히 더 잘 움직이는 것뿐만 아니라..."}, {"start": 30.46, "end": 35.709, "text": "더 잘 배우고, 더 오래 일하며, 인간 작업자를 위한 공간에도 완벽히 적응합니다."}, {"start": 35.759, "end": 41.008, "text": "구형 아틀라스가 짧고 강렬한 순간을 보여줬다면, 신형 아틀라스는..."}, {"start": 41.057, "end": 46.709, "text": "근무 시간 내내 휴머노이드가 무엇을 할 수 있는지 증명하려 합니다. 그럼, 이 모든 걸 가능케 한 5가지 변화를 알아볼까요?"}, {"start": 46.759, "end": 51.91, "text": "모두가 기억하는 유압식 아틀라스는 이제 주인공이 아닙니다."}, {"start": 51.96, "end": 57.309, "text": "백플립과 점프, 파쿠르 시연으로 보스턴 다이내믹스를 알렸던 바로 그 버전 말이죠. 하지만..."}, {"start": 57.359, "end": 60.91, "text": "엔터프라이즈 아틀라스는 훨씬 더 진지한 목적을 위해 재탄생했습니다."}, {"start": 60.96, "end": 65.909, "text": "이 로봇은 이제 연구실을 벗어나 현대차의 실제 제조..."}, {"start": 65.959, "end": 66.909, "text": "환경에 투입될 준비를 마쳤습니다."}, {"start": 66.959, "end": 71.507, "text": "현대차그룹은 로보틱스 메타 플랜트 적용..."}, {"start": 71.557, "end": 72.507, "text": "센터를 통해 실제 공장 배치를 지원하고 있고,"}, {"start": 72.557, "end": 78.007, "text": "구글 딥마인드는 로봇의 두뇌 학습을 돕고, 현대모비스는 관절을 움직이는..."}, {"start": 78.057, "end": 79.40899999999999, "text": "액추에이터를 공급합니다."}, {"start": 79.459, "end": 82.71000000000001, "text": "외형적으로 아틀라스는 여전히 인간의 형태를 띠고 있습니다."}, {"start": 82.76, "end": 89.71000000000001, "text": "키는 약 1.9미터(6피트 3인치) 정도이며, 팔을 뻗을 수 있는 거리는 약..."}, {"start": 89.76, "end": 95.209, "text": "2.3미터(7피트 7인치)에 달합니다. 하지만 겉모습과 달리 내부의 거의 모든 것이 바뀌었죠."}, {"start": 95.259, "end": 100.209, "text": "다섯 가지 주요 업그레이드가 맞물리며 휴머노이드 로봇의 발목을 잡았던"}, {"start": 100.259, "end": 105.709, "text": "수년간의 문제들이 해결됐습니다. 첫 번째 업그레이드는 로봇의 탄생을 가능케 한 핵심이죠."}, {"start": 105.759, "end": 110.90899999999999, "text": "무엇이 더 놀라운가요? 현대차 공장에서 일하는 아틀라스인가요, 아니면 두뇌 학습을 돕는"}, {"start": 110.959, "end": 113.40899999999999, "text": "구글 딥마인드인가요? 댓글로 의견을 남겨주세요."}, {"start": 113.459, "end": 117.00999999999999, "text": "첫 번째 큰 변화는 아틀라스의 기동 방식에서 시작됩니다."}, {"start": 117.06, "end": 121.71, "text": "보스턴 다이내믹스는 구형 유압 시스템을 제거하고 로봇을 전기식"}, {"start": 121.76, "end": 125.01, "text": "액추에이터 기반으로 재설계했습니다. 현대모비스와 공동 개발한 부품이죠."}, {"start": 125.06, "end": 129.608, "text": "단순한 기술적 변화 같지만, 이는 아틀라스가 사람 곁에서"}, {"start": 129.658, "end": 131.007, "text": "일하는 방식을 완전히 바꿔놓았습니다."}, {"start": 131.057, "end": 136.007, "text": "구형 유압식 모델은 액체 구동 방식을 써서 소음이 심했고 유지보수도 까다로웠으며,"}, {"start": 136.057, "end": 138.81, "text": "실제 현장에서 안전하게 사용하기에 제약이 많았습니다."}, {"start": 138.86, "end": 147.61, "text": "반면 전기 시스템은 더 조용한 움직임과 향상된 에너지 효율을 제공하며 보행, 회전, 리프트 조작을 정밀하게 제어합니다."}, {"start": 147.661, "end": 154.81, "text": "또한 엔지니어들이 소프트웨어로 로봇을 개선하기도 쉬워졌습니다. 동작 테스트와 조정 속도가 훨씬 빨라졌기 때문이죠."}, {"start": 154.86, "end": 163.108, "text": "본체도 알루미늄과 티타늄 부품으로 재설계해 더 가볍고 튼튼하며 대규모 유지보수에도 용이합니다."}, {"start": 163.15800000000002, "end": 169.81, "text": "아틀라스는 IP67 등급의 방진 및 방수 성능을 갖췄고 영하 20도에서"}, {"start": 169.86, "end": 172.808, "text": "영상 40도의 기온에서도 작동할 수 있습니다."}, {"start": 172.859, "end": 177.31, "text": "하지만 이번 전기식 설계의 가장 큰 성과는 아틀라스가 이제 인간의 몸으로는"}, {"start": 177.36, "end": 179.108, "text": "도저히 불가능한 방식으로 움직인다는 점입니다."}, {"start": 179.15800000000002, "end": 184.11, "text": "로봇은 시연 단계를 넘어 실제 공장 현장으로 투입되고 있습니다. 이번 업그레이드의"}, {"start": 184.161, "end": 186.289, "text": "진정한 의미를 알기 쉽게 설명해 드리겠습니다."}, {"start": 186.34, "end": 190.088, "text": "로봇 공학 경쟁에서 앞서가려면 차세대 휴머노이드 채널을 구독하세요."}, {"start": 190.139, "end": 195.29, "text": "신형 아틀라스는 자유도가 56도에 달해, 신체를 훨씬 더 다양한 각도로 움직일 수 있습니다."}, {"start": 195.341, "end": 196.887, "text": "일반적인 인간의 몸보다 훨씬 자유롭죠."}, {"start": 196.937, "end": 201.888, "text": "일부 관절은 물리적 한계에 부딪히지 않고 360도 전체를 회전할 수도 있습니다."}, {"start": 201.938, "end": 202.888, "text": "어느 지점까지든 말이죠."}, {"start": 202.938, "end": 205.289, "text": "이건 단순히 데모 영상을 위한 묘기가 아닙니다."}, {"start": 205.34, "end": 209.888, "text": "실제 공장에서는 이런 움직임 덕분에 작업을 더 빠르고 수월하게 처리할 수 있습니다."}, {"start": 209.938, "end": 214.488, "text": "아틀라스는 발을 떼지 않고도 상체를 완전히 뒤로 돌릴 수 있고, 팔과"}, {"start": 214.538, "end": 217.89, "text": "다리를 인간 작업자는 절대 불가능한 자세로 비틀 수도 있습니다."}, {"start": 217.941, "end": 221.088, "text": "또한 물체를 다룰 때 인간의 동작을 흉내 내는 대신,"}, {"start": 221.139, "end": 223.289, "text": "가장 빠른 경로를 스스로 선택합니다."}, {"start": 223.34, "end": 225.887, "text": "냉장고를 들어 올리는 데모가 중요했던 이유가 바로 여기에 있습니다."}, {"start": 225.937, "end": 228.287, "text": "아틀라스는 단순히 무거운 짐을 옮기는 데 그치지 않고,"}, {"start": 228.337, "end": 230.789, "text": "독특한 신체 구조를 활용해"}, {"start": 230.84, "end": 232.189, "text": "하중을 조절하며,"}, {"start": 232.24, "end": 234.189, "text": "매끄럽게 회전하면서도 균형을 잃지 않았습니다."}, {"start": 234.24, "end": 235.888, "text": "불필요한 움직임 하나 없이 말이죠."}, {"start": 235.938, "end": 237.588, "text": "공간이 좁은 공장에서"}, {"start": 237.639, "end": 239.989, "text": "이런 기능은 로봇이 까다로운 각도까지 접근하게 돕고,"}, {"start": 240.039, "end": 241.449, "text": "불필요한 동작을 줄여줄 것입니다."}, {"start": 241.5, "end": 242.75, "text": "...장비 주변에서도 작업하며"}, {"start": 242.8, "end": 245.25, "text": "기존 설비를 재설계할 필요도 없죠."}, {"start": 245.3, "end": 249.75, "text": "촉각 센서가 달린 손은 더 정밀한 작업을 돕습니다. 로봇이"}, {"start": 249.8, "end": 252.85, "text": "무작정 집는 게 아니라 무엇을 잡고 있는지 느껴야 하는 작업 말이죠."}, {"start": 252.901, "end": 258.651, "text": "하지만 아무리 유연한 로봇이라도 전력 때문에 몇 시간마다 멈춰야 한다면 쓸모가 없겠죠."}, {"start": 258.701, "end": 263.449, "text": "전력 문제는 보스턴 다이내믹스가 해결해야 할 다음 과제였습니다. 공장 로봇이"}, {"start": 263.5, "end": 266.949, "text": "직원들이 하루 종일 붙어서 관리해야 한다면 유용할 리 없으니까요."}, {"start": 267.0, "end": 271.348, "text": "아틀라스는 배터리 팩 하나로 약 4시간 동안 구동되도록 설계되었습니다. 그리고"}, {"start": 271.399, "end": 274.848, "text": "배터리가 부족해지면 로봇이 스스로 다음 단계를 처리합니다."}, {"start": 274.899, "end": 278.949, "text": "충전소로 걸어가 배터리를 교체하고 업무에 복귀하죠."}, {"start": 279.0, "end": 281.75, "text": "사람이 플러그를 꽂아주거나 옆에서 기다릴 필요가 없습니다."}, {"start": 281.8, "end": 286.25, "text": "이는 휴머노이드 로봇이 생산 라인에 어떻게 녹아드는지에 대한 개념 자체를 바꿉니다."}, {"start": 286.3, "end": 290.449, "text": "끊임없이 돌봐야 하는 기계가 아니라, 아틀라스는 이제"}, {"start": 290.5, "end": 293.949, "text": "스스로 전력 주기를 관리하는 작업자의 모습에 더 가까워졌습니다."}, {"start": 293.999, "end": 299.05, "text": "보스턴 다이내믹스는 공장이나 창고 내의 수많은 아틀라스 로봇을"}, {"start": 299.1, "end": 303.25, "text": "효율적으로 조율하는 통합 관리 시스템 '오빗(Orbit)'도 구축했습니다."}, {"start": 303.3, "end": 308.348, "text": "오빗은 제조 및 물류 시스템과 연동되며, 울타리 없는 안전 기능 덕분에"}, {"start": 308.399, "end": 313.75, "text": "작업 공간마다 칸막이를 치지 않아도 주변 사람을 감지합니다. 이 덕분에"}, {"start": 313.8, "end": 318.949, "text": "공장의 장시간 교대 근무가 가능해졌지만, 강력한 하드웨어와 지능형 전력 관리만으로는 부족합니다."}, {"start": 319.0, "end": 324.49, "text": "로봇이 눈앞의 작업을 이해하지 못한다면 말이죠. 무엇이 더 놀라우신가요? 아틀라스가 몸을 회전시키는..."}, {"start": 324.54, "end": 330.588, "text": "360도로 회전하거나 배터리 교체를 위해 직접 걸어가기도 하죠. 여러분의 의견을 댓글로 들려주세요."}, {"start": 330.639, "end": 333.29, "text": "바로 이 지점에서 구글 딥마인드의 존재감이 빛을 발합니다."}, {"start": 333.341, "end": 338.49, "text": "보스턴 다이내믹스는 아틀라스에 더 진보된 AI 학습 기능을 도입하고자 딥마인드와 협력 중이며,"}, {"start": 338.54, "end": 343.288, "text": "덕분에 로봇은 개별 작업마다 단순하고 고정된 명령에만 얽매이지 않게 되었습니다."}, {"start": 343.338, "end": 346.987, "text": "엔지니어가 모든 동작을 일일이 프로그래밍하는 대신,"}, {"start": 347.038, "end": 349.189, "text": "아틀라스는 직접 시연해 보이는 방식이나"}, {"start": 349.24, "end": 352.889, "text": "원격 조종, 시뮬레이션, 그리고 실제 현장 연습을 통해 학습할 수 있죠."}, {"start": 352.939, "end": 356.889, "text": "이는 매우 중요한데, 실제 공장은 완벽하게 통제된 비디오 게임이 아니기 때문입니다."}, {"start": 356.939, "end": 359.389, "text": "물건의 배치가 미세하게 달라질 수도 있고,"}, {"start": 359.439, "end": 363.99, "text": "작업자가 주변을 돌아다니거나 교대 근무에 따라 작업 내용이 바뀔 수도 있습니다."}, {"start": 364.04, "end": 369.389, "text": "더 똑똑해진 아틀라스는 이런 작은 변화를 이해하고 전체 워크플로를 방해하지 않으면서 적응해야 합니다."}, {"start": 369.439, "end": 371.49, "text": "더 큰 비전은 훨씬 더 강력합니다."}, {"start": 371.54, "end": 375.889, "text": "아틀라스 한 대가 유용한 기술을 배우면, 그 지식은 전체 로봇 군단과 공유될 수 있어"}, {"start": 375.939, "end": 378.588, "text": "다른 로봇들이 처음부터 다시 시작할 필요가 없습니다."}, {"start": 378.639, "end": 382.689, "text": "엔비디아 칩은 실시간 인식과 계획 수립을 돕고, 카메라와"}, {"start": 382.74, "end": 389.35, "text": "촉각 피드백, 바코드 스캔, RFID 지원은 아틀라스가 세상을 보고,"}, {"start": 389.401, "end": 395.247, "text": "느끼고, 식별하며 반응하는 데 필요한 정보를 제공하죠. 이는 단순히 스크립트만 따르던"}, {"start": 395.298, "end": 401.25, "text": "로봇에서 실무 교육이 가능한 로봇으로의 전환입니다. 하지만 아무리 똑똑해도"}, {"start": 401.3, "end": 406.747, "text": "결국 공장 현장에 잘 녹아들어야 하죠. 마지막 업그레이드는 아틀라스를 인상적인 로봇에서"}, {"start": 406.798, "end": 412.17, "text": "기업이 실제로 도입할 수 있는 수준으로 탈바꿈시켰습니다. 보스턴 다이내믹스는 이를 특정 로봇만을 위해 설계한 게..."}, {"start": 412.22, "end": 417.67, "text": "공간뿐만이 아닙니다. 아틀라스는 인간 작업자를 위해 이미 구축된 스테이션에서 작동하도록 설계되었습니다. 즉,"}, {"start": 417.721, "end": 422.37, "text": "공장의 바닥을 뜯어내거나 맞춤형 셀을 구축할 필요가 없으며, 로봇이 도착하기 전에 모든 작업을"}, {"start": 422.42, "end": 424.668, "text": "재설계할 필요도 없다는 뜻입니다."}, {"start": 424.718, "end": 429.87, "text": "손은 인간의 손과 크기가 비슷하고 촉각 센서를 사용하므로 도구, 부품 및"}, {"start": 429.92, "end": 431.971, "text": "물체를 더 정밀하게 제어할 수 있습니다."}, {"start": 432.021, "end": 436.269, "text": "본체 또한 모듈식이며 부품 수가 감소했기 때문에, 서비스가 필요할 때 팀은"}, {"start": 436.319, "end": 439.069, "text": "하위 시스템을 더 빠르게 교체할 수 있습니다."}, {"start": 439.12, "end": 442.468, "text": "작업에 따라 운영자는 아틀라스가 스스로 작동하게 하거나,"}, {"start": 442.519, "end": 445.769, "text": "원격 조작을 통해 제어하거나 태블릿에서 감독할 수 있습니다."}, {"start": 445.819, "end": 449.968, "text": "그런 다음 '오빗(Orbit)'이 전체 차량 군단을 관리하는 데 도움을 주어 한 대의 로봇이 혼자 일하지 않도록 합니다."}, {"start": 450.019, "end": 453.968, "text": "그룹 전체가 공장이나 창고 전반에 걸쳐 협업할 수 있습니다."}, {"start": 454.019, "end": 458.37, "text": "바로 이 지점에서 현대차의 역할이 막중해집니다. 현대차의 제조 역량은 아틀라스를"}, {"start": 458.42, "end": 461.968, "text": "소규모 시범 프로그램에서 본격적인 생산 단계로 끌어올리는 데 도움을 줄 수 있기 때문입니다."}, {"start": 462.019, "end": 467.17, "text": "전용 시설에서 연간 3만 대 생산을 목표로 하고 있으며, 이미 로보틱스 메타플랜(Robotics Metaplan) 활용 센터에서 시범 운영 중입니다."}, {"start": 467.22, "end": 472.769, "text": "또한 물류, 건설 및 기타 중공업 분야로의 미래 확장을 목표로 하고 있습니다."}, {"start": 472.819, "end": 475.269, "text": "이것이 바로 아틀라스를 단순한 첨단 로봇 이상의 존재로 만드는 업그레이드입니다."}, {"start": 475.319, "end": 479.17, "text": "아틀라스를 실전 배치 가능한 인력의 시작처럼 보이게 하죠."}, {"start": 479.22, "end": 483.269, "text": "그렇다면 이 다섯 가지 업그레이드가 한꺼번에 적용되면 어떤 일이 벌어질까요?"}, {"start": 483.319, "end": 487.37, "text": "만약 한 대의 아틀라스 로봇이 새로운 기술을 배우면, 다른 모든 아틀라스도"}, {"start": 487.42, "end": 492.519, "text": "그 기술을 똑같이 사용할 수 있게 됩니다."}, {"start": 492.5, "end": 496.747, "text": "이게 노동의 미래일까요, 아니면 위험한 변화의 시작일까요?"}, {"start": 496.798, "end": 498.848, "text": "댓글로 여러분의 의견을 들려주세요."}, {"start": 498.899, "end": 503.548, "text": "이 다섯 가지 업그레이드가 모두 합쳐지면, 아틀라스는 단순한 시연용 로봇을 넘어"}, {"start": 503.598, "end": 508.151, "text": "본격적인 산업용 플랫폼의 면모를 갖추게 됩니다. 전기 구동 방식이라 소음이 적고 관리도"}, {"start": 508.201, "end": 509.05, "text": "수월해졌죠."}, {"start": 509.1, "end": 511.949, "text": "초인적인 관절 덕분에 좁은 공간도 자유롭게 이동할 수 있습니다."}, {"start": 512.0, "end": 515.45, "text": "배터리 시스템 덕분에 외부 도움 없이도 더 오래 작동할 수 있고요."}, {"start": 515.5, "end": 519.95, "text": "딥마인드 학습을 통해 새로운 작업을 더 똑똑하게 배울 수 있고, 기업 맞춤형 설계는"}, {"start": 520.0, "end": 523.248, "text": "이미 사람에게 맞춰진 작업 환경에도 자연스럽게 녹아들게 해줍니다."}, {"start": 523.298, "end": 525.248, "text": "이것이 바로 지금 이 순간이 중요한 이유입니다."}, {"start": 525.298, "end": 529.849, "text": "보스턴 다이내믹스는 단순히 잘 움직이는 로봇이 아니라,"}, {"start": 529.899, "end": 537.099, "text": "실제 노동력의 일부가 될 수 있는 로봇을 보여주고 있는 것입니다."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
