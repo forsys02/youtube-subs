@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android 17 Deep Dive： Bubbles, Gaming Upgrades, & Privacy Features (Android 17 심층 분석: 버블, 게임 업그레이드 및 개인 정보 보호 기능)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Android 17 Deep Dive： Bubbles, Gaming Upgrades, & Privacy Features (Android 17 심층 분석: 버블, 게임 업그레이드 및 개인 정보 보호 기능)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/Utmu5Sk3G54/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android 17 Deep Dive： Bubbles, Gaming Upgrades, & Privacy Features (Android 17 심층 분석: 버블, 게임 업그레이드 및 개인 정보 보호 기능)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/Utmu5Sk3G54/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="Utmu5Sk3G54";
+const subs=[{"start": 0.25, "end": 4.6, "text": "안드로이드 쇼에서 발표된 주요 소식들을 모두 확인하셨길 바랍니다."}, {"start": 4.65, "end": 8.599, "text": "혹시 놓치셨다면 링크를 찾아서 먼저 보고 오시는 걸 추천드려요."}, {"start": 8.65, "end": 13.718, "text": "이번 영상에서는 메인 쇼에서 미처 다루지 못했던, 저희가 정말 좋아하는 안드로이드 17의 업데이트 소식을 더 공유해 드릴게요."}, {"start": 13.769, "end": 20.199, "text": "업계에서는 이걸 '벤토 박스' 그래픽이라고 부르는데요. 왜 그런지는..."}, {"start": 20.25, "end": 25.8, "text": "딱 보시면 아실 겁니다. 보시는 것처럼 업데이트 내용들이 벤토 박스 모양으로 담겨 있는데, 보통 대규모 테크 키노트 마지막에 등장하죠."}, {"start": 25.85, "end": 31.429, "text": "모든 기능을 한눈에 보여주는 방식이에요. 이 벤토 박스 안에는 정말 멋진 업데이트들이 가득한데요."}, {"start": 31.48, "end": 37.65, "text": "제가 직접 소개해 드리고 싶어서 입이 근질근질하네요. 그럼 바로 시작해 볼까요?"}, {"start": 37.7, "end": 43.65, "text": "첫 번째는 '버블'입니다. 버블은 자주 사용하는 앱을 고정해 두고 언제든 빠르게 실행할 수 있는 기능이에요."}, {"start": 43.7, "end": 48.29, "text": "화면 분할보다 더 강력하고, 앱 사이를 스와이프하며 전환하는 것보다 훨씬 간편하죠."}, {"start": 48.34, "end": 53.249, "text": "전 '구글 키프'나 '메시지' 앱을 버블에 넣어두는 걸 좋아해요. 그러면 무엇을 하고 있든..."}, {"start": 53.298, "end": 55.249, "text": "쉽고 빠르게 팝업으로 열 수 있거든요."}, {"start": 55.298, "end": 58.65, "text": "예를 들어 유튜브 영상을 보면서 메모를 남길 때 유용하죠. 나중에 찾아보고 싶은 것들을..."}, {"start": 58.7, "end": 61.05, "text": "영상이 끝난 뒤에 바로 기억해낼 수 있으니까요."}, {"start": 61.1, "end": 65.609, "text": "버블은 겹쳐서 쌓아둘 수도 있고, 탭 한 번으로 열어서 간단히 작업을 마친 뒤에..."}, {"start": 65.659, "end": 67.329, "text": "다시 탭 해서 닫는 것도 아주 쉽습니다."}, {"start": 67.379, "end": 70.769, "text": "홈 화면이나 런처로 돌아갈 필요가 전혀 없죠."}, {"start": 70.819, "end": 73.049, "text": "그야말로 버블이 '톡톡' 터지는 느낌이랄까요?"}, {"start": 73.099, "end": 74.609, "text": "방금 아재 개그는 못 들은 걸로 해주세요."}, {"start": 74.659, "end": 79.71000000000001, "text": "대화면 기기에서 버블의 진가가 발휘되는데요. 작업 표시줄에 버블 전용 섹션이 있어서..."}, {"start": 79.76, "end": 81.57, "text": "버블들이 그곳에 상주하게 됩니다."}, {"start": 81.62, "end": 86.32900000000001, "text": "정말 직관적이라 제 작업 공간을 취향대로 꾸미기에 딱이죠. 👍"}, {"start": 86.379, "end": 89.049, "text": "다음은 게임 컨트롤러 네이티브 리맵핑 기능입니다. 🎮"}, {"start": 89.099, "end": 93.72999999999999, "text": "평소에 비디오 게임을 즐기신다면 'QoL(편의성 개선)'이라는 말을 들어보셨을 거예요."}, {"start": 93.78, "end": 97.168, "text": "게임 속의 사소한 불편함을 해결해 주는 아주 작은 기능이죠. ✨"}, {"start": 97.218, "end": 98.969, "text": "자, 이걸 한 번 보세요."}, {"start": 99.019, "end": 102.489, "text": "안드로이드 17에는 게이밍을 위한 편의성 개선 사항이 포함되어 있습니다. 📱"}, {"start": 102.539, "end": 104.888, "text": "바로 네이티브 게임 컨트롤러 리맵핑 기능이죠."}, {"start": 104.938, "end": 109.45, "text": "제가 안드로이드 기기에 쓰려고 구매한 게임패드가 몇 개 있는데요."}, {"start": 109.5, "end": 114.888, "text": "네, 제가 좀 그런 쪽으로 너드거든요. 🤓 그런데 게임에서 요구하는 버튼과 패드 버튼이 안 맞을 때가 많아요."}, {"start": 114.938, "end": 120.49, "text": "컨트롤러가 가진 버튼이랑 딱 떨어지지 않는 거죠. 이제 게임이나 특정 컨트롤러 설정을..."}, {"start": 120.54, "end": 125.85, "text": "일일이 만지며 씨름할 필요 없이, 안드로이드 내장 리맵퍼로 숄더 버튼을 설정해서..."}, {"start": 125.9, "end": 130.72899999999998, "text": "제대로 작동하도록 할 수 있습니다. 화살을 쏘려는데 엉뚱하게 웅크리는 일은 이제 없을 거예요. 다음은... 🏹"}, {"start": 130.78, "end": 136.088, "text": "위치 정보 액세스에 대해 이야기해 봅시다. 아주 자극적인 업데이트는 아닐지 몰라도..."}, {"start": 136.139, "end": 138.088, "text": "여러분의 개인 정보를 보호해 주는 훌륭한 기능들이 아주 많습니다. 🛡️"}, {"start": 138.139, "end": 147.649, "text": "요즘 위치 정보를 제공해야 하는 앱이 많지만, 앱을 쓸 때마다 위치 정보에 접근하는 건 원치 않으실 수도 있잖아요."}, {"start": 147.699, "end": 152.649, "text": "이제 특정 앱을 열 때 버튼 하나로 '이번만 허용'을 선택할 수 있습니다. 📍"}, {"start": 152.699, "end": 158.649, "text": "한 번 사용하고 나면, 그 버튼을 다시 누르기 전까지 앱은 사용자의 위치에 다시 접근할 수 없죠."}, {"start": 158.699, "end": 161.649, "text": "위치 정보 액세스에 있어 또 하나 아주 멋진 기능이 있어요. 😎"}, {"start": 161.699, "end": 165.649, "text": "안드로이드는 항상 '대략적인 위치'와 '정확한 위치' 중 선택할 수 있게 해왔죠."}, {"start": 165.699, "end": 171.25, "text": "'정확한 위치'는 핀포인트 지점인 반면, '대략적인 위치'는 특정 범위 내의 위치 정보만 제공합니다."}, {"start": 171.3, "end": 172.25, "text": "더 넓은 영역을 의미하죠."}, {"start": 172.3, "end": 178.21800000000002, "text": "하지만 생각해 보면, 대략적인 위치 정보만으로도"}, {"start": 178.21800000000002, "end": 182.729, "text": "인구 밀도가 아주 낮은 곳에서는 사용자의 위치를 쉽게 파악할 수 있습니다."}, {"start": 182.78, "end": 187.608, "text": "그래서 안드로이드 17에서는 인구 밀도가 낮은 지역에 있을 때"}, {"start": 187.658, "end": 191.25, "text": "대략적인 위치 범위를 더 넓혀서 개인 정보를 더욱 보호합니다."}, {"start": 191.3, "end": 194.069, "text": "다시 말해, '대략적'이라는 말이 정말 그 의미에 충실해진 거죠."}, {"start": 194.12, "end": 195.069, "text": "당신이 어디에 있든 말이죠."}, {"start": 195.12, "end": 200.358, "text": "정말 영리한 기능이지만, '대략적'이라는 단어는 이제 충분히 말한 것 같네요."}, {"start": 200.40800000000002, "end": 204.56, "text": "자, 지금까지 슬라이드의 주요 항목들을 살펴봤는데"}, {"start": 204.61, "end": 205.838, "text": "살펴볼 만한 작은 기능들도 아주 많습니다."}, {"start": 205.889, "end": 208.709, "text": "그럼, 빠르게 한 번 훑어볼까요?"}, {"start": 208.75900000000001, "end": 213.388, "text": "안드로이드에는 자체 다크 모드를 지원하지 않는 앱에도 적용할 수 있는"}, {"start": 213.438, "end": 214.789, "text": "자동 다크 모드 기능이 이미 있죠."}, {"start": 214.84, "end": 218.668, "text": "하지만 이제는 이 기능을 앱별로 설정할 수 있습니다."}, {"start": 218.71800000000002, "end": 222.428, "text": "분할 화면 조절을 위한 아주 직관적인 새 인터페이스도 생겼고요."}, {"start": 222.478, "end": 227.469, "text": "보청기 사용자는 어떤 오디오 스트림을 보청기로 보낼지,"}, {"start": 227.52, "end": 230.029, "text": "어떤 소리를 휴대폰 스피커로 내보낼지 선택할 수 있습니다."}, {"start": 230.079, "end": 234.22899999999998, "text": "오디오 스트림 얘기가 나와서 말인데, 음성 비서용 스트림을 따로 만들어서"}, {"start": 234.28, "end": 236.668, "text": "볼륨을 별도로 조절할 수 있게 했습니다."}, {"start": 236.71800000000002, "end": 239.548, "text": "마지막으로, 다들 정말 좋아하실 만한 소식입니다."}, {"start": 239.598, "end": 243.069, "text": "빠른 설정 창에서 Wi-Fi와 모바일 데이터 토글을 분리했습니다."}, {"start": 243.12, "end": 245.03, "text": "이 기능에 대한 여러분의 의견을 반영했습니다."}, {"start": 245.08, "end": 250.50900000000001, "text": "안드로이드 17의 더 많은 변경 사항은 developer.android.com에서 확인해 보세요."}, {"start": 250.56, "end": 252.201, "text": "네, 여기까지가 '벤토 박스'였습니다."}, {"start": 252.252, "end": 261.252, "text": "와, 벤토 박스 얘길 했더니 정말 배고프네요. 우리 점심 먹으러 가면 안 될까요?"}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
