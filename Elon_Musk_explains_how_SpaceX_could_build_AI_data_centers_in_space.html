@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elon Musk explains how SpaceX could build AI data centers in space (Elon Musk가 SpaceX가 우주에 AI 데이터 센터를 구축할 수 있는 방법을 설명합니다.)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Elon Musk explains how SpaceX could build AI data centers in space (Elon Musk가 SpaceX가 우주에 AI 데이터 센터를 구축할 수 있는 방법을 설명합니다.)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/k3Un1TizSNg/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Elon Musk explains how SpaceX could build AI data centers in space (Elon Musk가 SpaceX가 우주에 AI 데이터 센터를 구축할 수 있는 방법을 설명합니다.)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/k3Un1TizSNg/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="k3Un1TizSNg";
+const subs=[{"start": 0.0, "end": 2.07, "text": "사람들은 아마 상상하기 좀 힘들 거예요."}, {"start": 2.12, "end": 3.91, "text": "'우주 데이터 센터'라고 하면요."}, {"start": 3.96, "end": 6.91, "text": "건물에 엔진을 달아서 통째로 쏘아 올리는 건 아니니까요."}, {"start": 6.96, "end": 10.388, "text": "실제 모습은 지상과는 상당히 다르거든요."}, {"start": 10.439, "end": 13.868, "text": "그러니까 지상의 거대한 건물을 어떤 식으로 개조해서"}, {"start": 13.919, "end": 16.149, "text": "우주에서 작동 가능한 장치로 만드는지"}, {"start": 16.199, "end": 18.87, "text": "그 과정을 한번 설명해 주세요."}, {"start": 18.92, "end": 20.87, "text": "네, 아주 흥미로운 주제네요."}, {"start": 20.92, "end": 22.75, "text": "사실 데이터 센터 내부가 어떻게 생겼는지"}, {"start": 22.8, "end": 24.028, "text": "잘 모르는 분들이 많거든요. 그쵸?"}, {"start": 24.079, "end": 25.028, "text": "남1: 그렇죠."}, {"start": 25.079, "end": 27.628, "text": "남2: 인터넷이 '클라우드'라는 곳에 떠 있는"}, {"start": 27.678, "end": 28.87, "text": "무슨 신비한 공간인 줄 알기도 하고요."}, {"start": 28.92, "end": 33.2, "text": "남2: 배선 더미나 박스 형태를 떠올리기도 하지만"}, {"start": 33.25, "end": 37.37, "text": "사실 알고 보면 수많은 칩의 집합체일 뿐입니다."}, {"start": 37.42, "end": 42.569, "text": "우주로 보낼 부품들도 실제로 보면 꽤 작거든요."}, {"start": 42.618, "end": 46.346, "text": "더 어려운 과제는 전력을 어떻게 공급하느냐인데"}, {"start": 46.396, "end": 52.69, "text": "그 부분은 기존 '스타링크' 기술의 태양광 패널 노하우를 많이 활용했습니다."}, {"start": 52.74, "end": 58.27, "text": "그 전문 기술을 바탕으로 위성을 제작하려는 거죠."}, {"start": 58.27, "end": 60.22, "text": "데이터 센터의 핵심 부품들을 싣고"}, {"start": 60.27, "end": 62.22, "text": "우주로 직접 쏘아 올릴 수 있는"}, {"start": 62.27, "end": 64.219, "text": "그런 위성을 만드는 게 목표입니다."}, {"start": 64.269, "end": 68.32, "text": "저희는 이 문제를 볼 때 보통 이렇게 말하곤 하죠"}, {"start": 68.37, "end": 70.32, "text": "\"여기서 실제적인 공학적 과제는 무엇인가?\""}, {"start": 70.37, "end": 74.37, "text": "그건 결국 전력을 공급하는 문제와"}, {"start": 74.37, "end": 77.32, "text": "발생하는 폐열과 에너지를 제거해서"}, {"start": 77.37, "end": 79.32, "text": "말씀하신 대로 우주의 진공 상태로 내보내는 일의 결합입니다"}, {"start": 79.37, "end": 81.37, "text": "네, 그렇군요"}, {"start": 81.37, "end": 87.81, "text": "사실 AI 위성은 스타링크 위성보다 훨씬 단순합니다"}, {"start": 87.81, "end": 92.6, "text": "스타링크 위성에는 거대한 위상 배열 안테나가 달려 있고"}, {"start": 92.65, "end": 96.269, "text": "파라볼라 안테나도 갖추고 있죠"}, {"start": 96.269, "end": 102.45, "text": "레이저 링크도 아주 많이 들어가고요"}, {"start": 102.45, "end": 105.719, "text": "AI 위성보다 훨씬 복잡한 구조입니다"}, {"start": 105.769, "end": 113.559, "text": "AI 위성은 기본적으로 수많은 태양 전지와 방열판으로 구성되고 레이저 링크도 일부 필요하긴 하지만"}, {"start": 113.60900000000001, "end": 119.078, "text": "스타링크 위성에서 볼 수 있는 초복잡 안테나들은 들어가지 않거든요"}, {"start": 119.128, "end": 125.30799999999999, "text": "그래서 둘 중 하나를 설계한다면 AI 위성 쪽이 훨씬 수월합니다"}, {"start": 125.358, "end": 126.30799999999999, "text": "그렇군요"}, {"start": 126.358, "end": 127.30799999999999, "text": "덩치가 좀 더 클 뿐이죠"}, {"start": 127.358, "end": 128.31, "text": "네, 더 큽니다"}, {"start": 128.36, "end": 129.31, "text": "그냥 더 크게 만드는 거예요, 네"}, {"start": 129.36, "end": 130.31, "text": "그렇군요"}, {"start": 130.36, "end": 134.358, "text": "그러니까 저희가 지금 보고 있는 게 바로 이 AI-1 위성이군요"}, {"start": 134.408, "end": 135.918, "text": "직접 설명을 좀 해주시겠어요?"}, {"start": 135.968, "end": 138.301, "text": "네, 우선 저희가 가장 중요하게 생각하는 건"}, {"start": 138.352, "end": 141.75900000000001, "text": "사람들의 마음을 끌 수 있는 매력적인 걸 만드는 겁니다."}, {"start": 141.81, "end": 145.164, "text": "맞습니다. 그래서 시작점으로 적절한 수준은"}, {"start": 145.215, "end": 149.238, "text": "최대 전력 150킬로와트 정도라고 생각했죠."}, {"start": 149.288, "end": 153.47899999999998, "text": "하지만 xAI를 운영하며 워크로드를 분석해 본 결과,"}, {"start": 153.53, "end": 155.983, "text": "약 120킬로와트의 평균 연산 능력을"}, {"start": 156.03300000000002, "end": 158.361, "text": "지원할 수 있다는 걸 확인했습니다."}, {"start": 158.412, "end": 160.019, "text": "상대: 네, 맞아요."}, {"start": 160.06900000000002, "end": 161.838, "text": "여기서 보여드리는 건 일종의..."}, {"start": 161.889, "end": 167.4, "text": "SpaceX AI 위성 1호기의 초안입니다."}, {"start": 167.4, "end": 170.949, "text": "'AI-1'이라고 불러도 될 것 같은데요."}, {"start": 171.0, "end": 175.789, "text": "시작하기에 적절한 지점은 150킬로와트인 것 같습니다."}, {"start": 175.84, "end": 178.949, "text": "최대 전력 150, 지속 전력 120킬로와트죠."}, {"start": 179.0, "end": 181.789, "text": "실제로 어떤 모습인지 감을 잡으실 수 있게,"}, {"start": 181.84, "end": 185.868, "text": "방열판과 태양광 패널의 크기를 말씀드리자면,"}, {"start": 185.919, "end": 189.629, "text": "태양광 어레이는 제곱미터당 250와트,"}, {"start": 189.68, "end": 194.629, "text": "방열판은 제곱미터당 약 1,400와트로 가정했습니다."}, {"start": 194.68, "end": 195.31, "text": "방열판 기준이죠."}, {"start": 195.36, "end": 197.388, "text": "이 방열판들은 양면형입니다."}, {"start": 197.438, "end": 199.668, "text": "양면 모두에서 열을 방출하도록 설계되었죠."}, {"start": 199.718, "end": 203.409, "text": "태양에 대해 칼날처럼 수직으로 세워져 있고,"}, {"start": 203.46, "end": 209.86, "text": "제곱미터당 1,400와트는 충분히 달성 가능한 목표입니다."}, {"start": 209.938, "end": 211.70499999999998, "text": "시간이 지나면 제곱미터당 250와트 이상도"}, {"start": 211.756, "end": 213.048, "text": "충분히 가능할 것으로 보입니다."}, {"start": 213.098, "end": 216.078, "text": "남1: 태양광 패널은 제곱미터당 1,400와트 이상,"}, {"start": 216.128, "end": 220.519, "text": "남1: 방열판은 1,500와트 이상의 전력을 각각 생산합니다."}, {"start": 220.56900000000002, "end": 225.31900000000002, "text": "남1: 이걸 보시면 위성이 대략 어떤 모습일지 짐작이 가실 겁니다."}, {"start": 225.37, "end": 229.798, "text": "남2: 네, 태양광 패널과 방열판이 대부분이고 나머지는 그에 비하면"}, {"start": 229.848, "end": 230.599, "text": "남2: 아주 작은 편이죠."}, {"start": 230.65, "end": 235.719, "text": "남1: 이건 우리가 현재 스타링크 위성군에 실제로"}, {"start": 235.77, "end": 237.56, "text": "남1: 발사해 온 기술들의 진화형이라 할 수 있습니다."}, {"start": 237.61, "end": 238.56, "text": "남2: 그렇죠."}, {"start": 238.61, "end": 243.53, "text": "남2: 제게 가장 흥미로운 점은 우리가 이미"}, {"start": 243.53, "end": 248.039, "text": "남2: V3 스타링크 위성에 사용하려는 태양광 기술을 보고 있다는 겁니다."}, {"start": 248.09, "end": 252.798, "text": "남2: 그래서 그걸 그대로 가져와서 확장하는 작업이 정말 기대되네요."}, {"start": 252.848, "end": 259.37, "text": "남1: 네, 저희가 여기서 강조하고 싶은 건 AI 위성을 만드는 데"}, {"start": 259.42, "end": 264.209, "text": "남1: 존재하지 않는 마법 같은 기술이 필요한 건 아니라는 점입니다."}, {"start": 264.259, "end": 271.528, "text": "남1: 이안이 말했듯이, 상당 부분은 이미 스타링크 V3 위성을 위해 개발된 기술들이니까요."}, {"start": 271.579, "end": 277.609, "text": "남1: 그래서 이미 해온 일들에 비하면 그리 어려운 문제는 아니라고 봅니다."}, {"start": 277.659, "end": 282.25, "text": "남1: 또한 위성으로부터 대략 테라비트급의 연결성, 즉"}, {"start": 282.3, "end": 286.009, "text": "남1: 레이저 링크 연결이 가능해질 것입니다."}, {"start": 286.06, "end": 295.209, "text": "남1: 150킬로와트의 피크 전력 수준은 엔비디아 GB300 랙 하나가 내는 성능과 거의 맞먹습니다."}, {"start": 295.259, "end": 299.769, "text": "남1: 72개의 GPU가 들어가는 GB300의 경우"}, {"start": 299.819, "end": 300.449, "text": "남1: 피크 전력이..."}, {"start": 300.5, "end": 302.769, "text": "제 생각엔 140kW 정도 되는 것 같아요."}, {"start": 302.819, "end": 305.05, "text": "하지만 그 출력에 도달하는 건 드문 일이고, 거의 불가능하죠."}, {"start": 305.1, "end": 307.848, "text": "최고 전력 수치를 기록하기란 말이에요."}, {"start": 307.899, "end": 312.05, "text": "좀 더 현실적인 가동 범위는 약 120kW 정도일 겁니다."}, {"start": 312.1, "end": 314.088, "text": "평균 전력 기준으로요."}, {"start": 314.139, "end": 316.37, "text": "하지만 최대 150kW까지 올라갈 수도 있습니다."}, {"start": 316.42, "end": 321.37, "text": "기본적으로 우주에 있는 컴퓨터 랙이라고 생각하시면 됩니다."}, {"start": 321.42, "end": 332.949, "text": "그리고 이 컴퓨터 랙들을 레이저 링크로 서로 연결하거나, 스타링크 군집 위성에 직접 연결하죠."}, {"start": 332.949, "end": 346.509, "text": "스타링크 위성과 링크를 형성하면, 기체에 있는 기존 Ka 및 Ku 안테나를 이용해 지상으로 데이터를 보낼 수 있습니다."}, {"start": 346.509, "end": 350.459, "text": "지상과 연결되는 레이저 링크도 갖추고 있고요."}, {"start": 350.509, "end": 356.0, "text": "지연 시간도 특별히 길지 않을 겁니다."}, {"start": 356.0, "end": 358.56, "text": "그러니까 제 말은..."}, {"start": 358.56, "end": 364.56, "text": "지구 상공 약 600~800km 정도에 위치하니까요."}, {"start": 364.56, "end": 368.56, "text": "빛은 밀리초당 300km를 이동하죠."}, {"start": 368.56, "end": 372.509, "text": "그러니 당연히 3밀리초 정도 거리밖에 안 되는 겁니다."}, {"start": 372.56, "end": 374.509, "text": "아주 가까운 거리죠."}, {"start": 374.56, "end": 376.509, "text": "너무 걱정할 필요 없어요."}, {"start": 376.56, "end": 379.509, "text": "가끔 지연 시간이 길어질까 봐 걱정하는 분들도 계시는데..."}, {"start": 379.56, "end": 380.348, "text": "전 이렇게 대답하죠."}, {"start": 380.399, "end": 380.848, "text": "남: 네."}, {"start": 380.899, "end": 382.75, "text": "남1: 아니, 빛의 속도는 꽤 빠르지."}, {"start": 382.8, "end": 383.949, "text": "남2: 빛은 정말 빨라요."}, {"start": 384.0, "end": 385.348, "text": "남1: [웃음] 정말 그렇네요."}, {"start": 385.399, "end": 386.348, "text": "남1: 네, 그렇죠."}, {"start": 386.399, "end": 389.348, "text": "남1: 제 생각엔 또 하나 멋진 점이 방열판 그 자체인데요."}, {"start": 389.399, "end": 392.949, "text": "남1: 현재 V3 차량에 탑재된 기존 태양광 방열판과"}, {"start": 393.0, "end": 395.509, "text": "남1: 크기가 거의 비슷하다는 점입니다."}, {"start": 395.56, "end": 397.87, "text": "남1: 오늘날 우리가 비행하고 있는 것과 비슷한 영역이죠."}, {"start": 397.92, "end": 399.028, "text": "남2: 네."}, {"start": 399.079, "end": 401.468, "text": "남2: 날개 폭이 한 70미터 정도 되니까,"}, {"start": 401.519, "end": 403.43, "text": "남2: 이건 상당히 큰 셈이죠."}, {"start": 403.48, "end": 405.87, "text": "남2: 이걸 아주 많이 만들어서"}, {"start": 405.92, "end": 407.109, "text": "남2: 저 위로 쏘아 올릴 계획입니다."}, {"start": 407.159, "end": 411.158, "text": "남2: 하지만 말씀하셨듯 이름에도 '공간(Space)'이 들어가 있잖아요."}, {"start": 411.209, "end": 413.319, "text": "남2: 저 위에는 정말 엄청난 공간이 있거든요."}, {"start": 413.37, "end": 416.519, "text": "남2: 그래서 수천 개는 물론이고"}, {"start": 416.569, "end": 419.359, "text": "남2: 위성이 백만 개가 된다고 해도"}, {"start": 419.409, "end": 421.519, "text": "남2: 돌아다닐 공간은 충분합니다."}, {"start": 421.569, "end": 423.24, "text": "남1: 네, 우주는 정말 광활하죠."}, {"start": 423.29, "end": 427.728, "text": "남1: 그래서 공간이 부족하거나 북적거릴 일은 없을 거예요."}, {"start": 427.778, "end": 429.17, "text": "우주는 정말 광대합니다."}, {"start": 429.22, "end": 431.689, "text": "위성을 가까이서 확대해 보면 커 보이지만"}, {"start": 431.74, "end": 433.66, "text": "실제로 보면"}, {"start": 433.66, "end": 436.37, "text": "지구에 비하면 위성은 아주 작아서"}, {"start": 436.42, "end": 438.99, "text": "보이지도 않을 정도입니다."}, {"start": 439.04, "end": 444.24, "text": "그러니까 지구와 비교하면 정말, 정말 작은 셈이죠."}, {"start": 444.29, "end": 448.8, "text": "현재 궤도에는 약 만 개의 스타링크 위성이 떠 있습니다."}, {"start": 448.85, "end": 452.439, "text": "저희는 대규모 군집 위성을 운용하는 방법과"}, {"start": 452.49, "end": 456.24, "text": "이를 안전하게 관리하는 법을 이제 잘 알고 있습니다, 그렇죠?"}, {"start": 456.29, "end": 458.439, "text": "저희는 그런 규모의 운용 경험을 가진"}, {"start": 458.49, "end": 460.278, "text": "유일한 운영사입니다."}, {"start": 460.329, "end": 463.838, "text": "이런 풍부한 경험을 갖췄다는 건 정말 대단한 일이죠."}, {"start": 463.889, "end": 466.0, "text": "덕분에 위성을 얼마나 조밀하게 배치하고"}, {"start": 466.05, "end": 467.399, "text": "안전하게 비행시킬 수 있는지 압니다."}, {"start": 467.449, "end": 471.199, "text": "군집 위성을 구축할 때 그게 저희의 최우선 목표입니다."}, {"start": 471.25, "end": 473.359, "text": "남: 저희는 수많은 위성을 제작할 예정이고"}, {"start": 473.409, "end": 476.889, "text": "이곳 배스트롭에서 제작하게 될 겁니다, 그렇죠?"}, {"start": 476.939, "end": 482.05, "text": "남: 그래서 지금 이 단지 중앙에 있는 건물에서..."}, {"start": 482.1, "end": 484.05, "text": "남2: 네, 지금 바로 그 건물 안에 저희가 앉아 있습니다."}, {"start": 484.1, "end": 487.05, "text": "남: 전 여기가 처음인데, 건물이 정말 거대하네요."}, {"start": 487.1, "end": 490.37, "text": "모퉁이를 돌면 나무 사이로 건물이 보이는데, 그러면 다들 이럴 거예요"}, {"start": 490.42, "end": 495.759, "text": "\"와, 대박이다\"라고요. 하지만 우린 곧 이 건물을 무색하게 만들 거죠?"}, {"start": 495.81, "end": 501.759, "text": "네, 그렇습니다. 사실 이미 태양광 제조 시설은 갖췄고요"}, {"start": 501.81, "end": 503.759, "text": "이미 건설이 진행 중입니다"}, {"start": 503.81, "end": 511.199, "text": "그리고 곧 스타십 생산 건물도 건설할 예정입니다"}, {"start": 511.199, "end": 518.2, "text": "네, 그래서 내년 말쯤이면 스타십과 태양광 생산 시설이"}, {"start": 518.2, "end": 525.759, "text": "모두 상당한 규모로 가동될 것으로 예상합니다"}, {"start": 525.759, "end": 528.829, "text": "그러니 스타십 관련 일을 하고 싶은 분이 있다면"}, {"start": 528.879, "end": 531.31, "text": "이곳이 바로 그 중심지가 될 겁니다"}, {"start": 531.36, "end": 534.349, "text": "또한 우리 바로 뒤에서 기계 소리가 들리듯이"}, {"start": 534.399, "end": 538.509, "text": "이곳에선 여전히 스타링크 사용자 단말기를 생산하고 있습니다"}, {"start": 538.558, "end": 544.03, "text": "생산은 계속될 거고, 신제품을 위한 신규 라인도 가동 중입니다. 그렇죠?"}, {"start": 544.08, "end": 548.749, "text": "네. 사실 이것들이 새로운 스타링크 단말기인데요"}, {"start": 548.798, "end": 552.509, "text": "기존보다 훨씬 더 많은 물량을 생산하고 있습니다"}, {"start": 552.558, "end": 558.31, "text": "궁극적으로는 전 세계에 수억 개의 스타링크 단말기가 보급될 것이고"}, {"start": 558.36, "end": 565.519, "text": "스타링크 '다이렉트 투 셀' 군집 위성이 사람들의 휴대전화와"}, {"start": 565.519, "end": 570.27, "text": "직접 연결되어 우주와 고대역폭 통신을 가능하게 할 겁니다"}, {"start": 570.32, "end": 571.27, "text": "좋네요"}, {"start": 571.32, "end": 573.27, "text": "이제 두 가지 제한 요소를 해결했군요"}, {"start": 573.32, "end": 574.55, "text": "궤도 수송 능력을 확보했으니까요"}, {"start": 574.6, "end": 578.67, "text": "태양광 패널을 설치하고... [숨소리] 세 번째는 칩입니다."}, {"start": 578.72, "end": 580.36, "text": "네."}, {"start": 580.36, "end": 587.32, "text": "일단 초기에는 당연히 이미 생산되고 있는 칩들을 발사할 수 있겠죠."}, {"start": 587.37, "end": 596.969, "text": "현재 레퍼런스 디자인은 엔비디아 루빈(Rubin) 칩용이에요. GB300이나 루빈일 수도 있고..."}, {"start": 597.019, "end": 605.519, "text": "칩들이죠. TPU용 레퍼런스 디자인도 갖출 예정이라 기본적으로는..."}, {"start": 605.519, "end": 608.469, "text": "기존의 어떤 칩이든 궤도에 올릴 수 있습니다."}, {"start": 608.519, "end": 615.538, "text": "하지만 현재 업계 상황을 보면..."}, {"start": 615.538, "end": 621.95, "text": "연간 약 100기가와트 정도의 AI 연산량에 도달할 것 같지만..."}, {"start": 622.0, "end": 623.95, "text": "AI 컴퓨팅 능력이 말이죠."}, {"start": 624.0, "end": 627.77, "text": "하지만 '어떻게 테라와트까지 가느냐'라는 질문에는 답이 되지 않죠."}, {"start": 627.82, "end": 632.94, "text": "그래서 테라팹(Terafab)이 필요한 겁니다."}, {"start": 632.99, "end": 634.94, "text": "항상 한 단계 더 큰 걸 보시네요."}, {"start": 634.99, "end": 638.18, "text": "네, 다음 자릿수 규모로 넘어가기 위해서는..."}, {"start": 638.23, "end": 641.519, "text": "거대한 칩 공장이 필요합니다."}, {"start": 641.519, "end": 644.469, "text": "규모를 짐작하실 수 있게 말씀드리자면,"}, {"start": 644.519, "end": 648.158, "text": "테라팹의 크기는 약..."}, {"start": 648.158, "end": 650.15, "text": "1억 평방피트(약 280만 평) 정도가 될 것으로 예상하는데,"}, {"start": 650.2, "end": 653.558, "text": "이건 테슬라의..."}, {"start": 653.558, "end": 657.28, "text": "기가팩토리 텍사스보다 10배나 큰 규모죠."}, {"start": 657.33, "end": 660.119, "text": "그리고 그 외에 그냥... 아시다시피..."}, {"start": 660.168, "end": 663.959, "text": "한쪽 끝에서 다른 쪽 끝으로 이동하려면 스타십(Starship)의 포인트 투 포인트 기능이 필요할 거예요."}, {"start": 664.009, "end": 666.56, "text": "단순히 규모를 떠나서, 무엇이 이곳을..."}, {"start": 666.61, "end": 671.32, "text": "지구상의 다른 반도체 제조 공정과 차별화되는 특별한 곳으로 만들까요?"}, {"start": 671.37, "end": 675.959, "text": "글쎄요, 시간이 지나면서 테라팹(Terafab)에도 많은 기술적 진보가 있겠지만,"}, {"start": 676.009, "end": 677.959, "text": "근본적으로는 '규모'의 문제입니다."}, {"start": 678.009, "end": 683.19, "text": "설령 근본적인 기술 혁신이 없더라도 말이죠."}, {"start": 683.19, "end": 690.389, "text": "기존의 칩 제조 기술을 단순히 확장하는 것만으로도..."}, {"start": 690.389, "end": 695.4590000000001, "text": "엄청난 어려움을 뚫고 연간 테라팹 출력을 달성할 수 있습니다."}, {"start": 695.509, "end": 698.4590000000001, "text": "논리 소자(Logic Die) 측면에서만 본다면,"}, {"start": 698.509, "end": 704.509, "text": "그건 레티클당 1킬로와트급 칩을"}, {"start": 704.509, "end": 707.4590000000001, "text": "연간 10억 개씩 생산하는 것과 같습니다."}, {"start": 707.509, "end": 709.4590000000001, "text": "그러니까 10억 개의 풀 레티클(Full Reticle),"}, {"start": 709.509, "end": 712.4590000000001, "text": "각각 1킬로와트를 소모하는 칩들이죠."}, {"start": 712.509, "end": 716.4590000000001, "text": "거기에 맞춰 엄청난 양의 메모리도 필요할 거고요."}, {"start": 716.509, "end": 718.4590000000001, "text": "요즘 많은 사람이 그런 말을 하더군요."}, {"start": 718.509, "end": 721.989, "text": "궤도 데이터 센터 같은 건 10년은 더 걸릴 일이라고요."}, {"start": 722.038, "end": 727.45, "text": "사람들이 타임프레임에 대해 어느 정도 감을 잡을 수 있게 해주고 싶네요."}, {"start": 727.5, "end": 730.45, "text": "적어도 우리가 목표로 하는 타임프레임에 대해서요."}, {"start": 730.5, "end": 734.969, "text": "물론 이건 우리의 예상일 뿐이니 어느 정도 가려 들으셔야겠지만요."}, {"start": 735.019, "end": 735.969, "text": "이건 최선의 추측일 뿐이니까요."}, {"start": 736.019, "end": 744.709, "text": "이건 우리가 꼭 하겠다고 드리는 약속은 아닙니다. 우리가 시도하려는 것이고, 아마 해낼 수 있을 거라 생각하는 일들이죠."}, {"start": 744.759, "end": 751.0, "text": "즉, 내년 말까지 연간 약 1기가와트 규모의..."}, {"start": 751.0, "end": 754.349, "text": "우주 기반 AI 연산 능력을 확보하는 것입니다."}, {"start": 754.399, "end": 757.989, "text": "그러고 나서 포부 있게 그 규모를 매년..."}, {"start": 758.038, "end": 759.95, "text": "자릿수가 달라질 정도로 확장해 나가려고 합니다."}, {"start": 760.0, "end": 762.43, "text": "그렇게 2년 반 뒤에는 연간 가동률이..."}, {"start": 762.48, "end": 766.27, "text": "10기가와트에 도달하고, 3년 반 뒤에는..."}, {"start": 766.32, "end": 767.95, "text": "아마 100기가와트가 될 겁니다."}, {"start": 768.0, "end": 771.109, "text": "그러고 나서 기술 발전 상황이나..."}, {"start": 771.158, "end": 774.55, "text": "전 세계 칩 제조 현황, 그리고 테라팹(Terafab)의 상황에 따라..."}, {"start": 774.6, "end": 779.03, "text": "그 단계를 넘어 연간 1테라와트까지 확장할 계획입니다."}, {"start": 779.08, "end": 781.509, "text": "1,000기가와트에 해당하는 규모죠."}, {"start": 781.558, "end": 784.8, "text": "남1: 현재 미국 전체 전력 소비량의 두 배에 달하는 수치입니다."}, {"start": 784.85, "end": 785.349, "text": "남2: 네."}, {"start": 785.399, "end": 787.95, "text": "남1: 그만한 수요가 충분히 있을 것 같지만, 두고 봐야겠죠."}, {"start": 788.0, "end": 790.79, "text": "남2: 위성 숫자가 정말 어마어마하겠네요."}, {"start": 790.84, "end": 792.95, "text": "남1: AI가 무슨 생각을 할지는 저도 모르겠지만..."}, {"start": 793.0, "end": 795.479, "text": "아마 엄청난 양의 시뮬레이션 같은 걸 돌리겠죠."}, {"start": 795.528, "end": 796.479, "text": "남2: 그렇겠네요."}, {"start": 796.528, "end": 798.44, "text": "남1: 그래서 일단 우리가..."}, {"start": 798.49, "end": 801.53, "text": "모든 제약 요인들을 하나씩 해결해 나가다 보면..."}, {"start": 801.58, "end": 804.45, "text": "남1: 지구에서 할 수 있는 일은 이제 거의 정점에 도달했어요."}, {"start": 804.5, "end": 808.469, "text": "남1: 다음 단계는 뭘까요? 다시 말해서,"}, {"start": 808.519, "end": 811.629, "text": "남1: 실제로 몇 퍼센트 포인트라도 더 기록하려면요."}, {"start": 811.678, "end": 814.349, "text": "남1: 카르다쇼프 척도 2단계 문명이 되기 위해서 말이죠."}, {"start": 814.399, "end": 819.849, "text": "남2: 거기서 멈출 이유가 있나요? 왜 작게 생각하죠? 사실 1테라와트는 아주 적은 수치거든요."}, {"start": 819.899, "end": 821.349, "text": "남1: 작게 생각하는 건 아니에요. 그게 작다는 게 아니고요."}, {"start": 821.399, "end": 830.82, "text": "남2: 그러니까, 연간 1테라와트의 천 배인 다음 단계로 넘어가려면 세 자릿수 차이를 극복해야 합니다."}, {"start": 830.87, "end": 837.82, "text": "남2: 우리가 보기에 그걸 달성할 수 있는 유일한 방법은 달에서 '매스 드라이버'를 사용하는 거예요."}, {"start": 837.87, "end": 843.87, "text": "남2: 기본적으로 달 현지에서 태양광 발전기와"}, {"start": 843.87, "end": 849.219, "text": "남2: 방사냉각기를 생산하는 거죠. 칩은 지구에서 가져올 수도 있고, 아니면"}, {"start": 849.269, "end": 856.918, "text": "남2: 달에서 직접 칩을 만들 수도 있겠죠. 하지만 질량의 대부분은"}, {"start": 856.918, "end": 860.95, "text": "남2: 달에서 만들어야 합니다. 지구에서 달까지 운송할 필요가 없도록요. 그리고"}, {"start": 861.0, "end": 866.07, "text": "남2: 달은 대기가 없고 중력이 지구의 6분의 1밖에 안 되기 때문에"}, {"start": 866.12, "end": 871.07, "text": "남2: 로켓 없이도 AI 위성을 심우주로 가속해 보낼 수 있습니다."}, {"start": 871.12, "end": 879.07, "text": "남2: 그러니까 기본적으로 레일건 같은 전자기 포를 사용해 우주로 쏘아 올리는 거죠."}, {"start": 879.12, "end": 887.919, "text": "남2: 제 말은, 기본적으로 선형 전기 모터라고 생각하시면 이해가 빠를 겁니다."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
