@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Mobility UCLA] CVPR 2026 DriveX Workshop Keynote 7 Phil Duan (Tesla) - Self-Driving at Scale with Foundation Models (한글 자막)</title>
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Mobility UCLA] CVPR 2026 DriveX Workshop Keynote 7 Phil Duan (Tesla) - Self-Driving at Scale with Foundation Models (한글 자막)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/cjzFjeSmh8M/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Mobility UCLA] CVPR 2026 DriveX Workshop Keynote 7 Phil Duan (Tesla) - Self-Driving at Scale with Foundation Models (한글 자막)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/cjzFjeSmh8M/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
+#subtitles.ui-hidden{bottom:1%;}
+.sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
+#subtitles.dragging{transition:none !important;}
+#subtitles.dragging .sub-line{cursor:grabbing !important;}
+#fs-btn{position:absolute;top:55px;right:20px;z-index:10000;background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;-webkit-user-select:none;touch-action:none;}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="player"></div>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="cjzFjeSmh8M";
+const subs=[{"start": 0.0, "end": 5.88, "text": "다음 기조연설자는 테슬라 AI의<br>엔지니어링 디렉터 필 두안 박사입니다."}, {"start": 9.0, "end": 16.68, "text": "그의 팀은 대규모 자율주행을 해결하고 있으며,<br>로보택시 출시와 FSD V14 개발을 이끌었습니다."}, {"start": 18.0, "end": 25.2, "text": "이전에는 FSD V12 및 V13 개발을 공동 주도했고,<br>데이터 및 인지 AI 팀을 이끌며"}, {"start": 31.0, "end": 38.68, "text": "오큐펀시 네트워크 구축과 세계 최대 물리 AI<br>데이터 엔진 개발에 기여했습니다. 환영해 주십시오."}, {"start": 72.0, "end": 74.64, "text": "화면이 잘 보이시나요?"}, {"start": 121.0, "end": 123.5, "text": "죄송합니다."}, {"start": 131.0, "end": 134.36, "text": "전체 화면으로 전환해 보겠습니다."}, {"start": 150.0, "end": 153.8, "text": "네, 좋습니다."}, {"start": 154.0, "end": 160.8, "text": "소개 감사합니다. 오늘 테슬라 AI를 대표하여<br>저희의 최근 진전 사항을 공유해 드리고자 합니다."}, {"start": 161.0, "end": 165.8, "text": "저희의 최근 성과와 기술에 대한 내용입니다."}, {"start": 166.0, "end": 171.8, "text": "테슬라의 사명은 인류를 위해<br>놀라운 풍요로움을 창출하는 것입니다."}, {"start": 172.0, "end": 178.8, "text": "지난 10년간 저희는 아름다운<br>전기차를 만드는 회사로 알려져 왔지만,"}, {"start": 179.0, "end": 185.0, "text": "이제는 AI와 로보틱스를 통해<br>인류의 풍요로운 미래를 열어가고 있습니다."}, {"start": 187.0, "end": 191.8, "text": "현재 구매할 수 있는 차량 중<br>사람의 개입 없이"}, {"start": 192.0, "end": 196.8, "text": "A 지점에서 B 지점까지 스스로 이동하는 차량은<br>테슬라가 유일합니다."}, {"start": 197.0, "end": 203.24, "text": "내비게이션에 목적지를 입력하고 버튼만 누르면<br>차량이 어디든 스스로 주행하며,"}, {"start": 206.0, "end": 212.36, "text": "차선 변경, 회전, 공사 구간 주행 등을<br>일반 사람처럼 자연스럽게 수행합니다."}, {"start": 214.0, "end": 220.12, "text": "입력은 차량 주변을 감싸는 8개의 카메라와<br>차량 내부의 로컬 컴퓨팅뿐이며,"}, {"start": 222.0, "end": 228.8, "text": "추가 센서나 외부 인프라 없이도<br>사람처럼 운전할 수 있습니다."}, {"start": 229.0, "end": 235.8, "text": "매우 멋지고 편리할 뿐만 아니라,<br>저희는 편의성을 넘어"}, {"start": 236.0, "end": 241.16, "text": "고객에게 스트레스 없는<br>압도적인 안전성을 제공하고자 합니다."}, {"start": 244.0, "end": 250.8, "text": "정량적 데이터를 보시면, 도로 위의 테슬라 차량은<br>미국 내 일반 차량보다"}, {"start": 251.0, "end": 255.56, "text": "이미 훨씬 안전합니다. 테슬라를 직접 수동 운전해도"}, {"start": 259.0, "end": 265.8, "text": "미국 전국 평균보다 약 3배 더 안전하며,<br>여기에 FSD를 활성화하면"}, {"start": 266.0, "end": 272.8, "text": "추가로 2배 더 안전해집니다.<br>이를 정량적 수치와 함께"}, {"start": 273.0, "end": 279.8, "text": "실제 고객들의 주행 사례 영상으로 보시면,<br>차량은 주변의 모든 상황을"}, {"start": 280.0, "end": 286.8, "text": "매우 높은 프레임레이트로 주시하며,<br>도로 위의 돌발 상황에 극도로 민첩하게 대응합니다."}, {"start": 287.0, "end": 293.8, "text": "영상에서 보시듯 회전하는 버스 때문에<br>주행 공간이 부족한 경우,"}, {"start": 294.0, "end": 298.8, "text": "차량이 상황을 이해하고 후진 기어를 넣어<br>공간을 확보한 뒤 다시 진행합니다."}, {"start": 299.0, "end": 304.8, "text": "신호를 무시하고 교차로를 질주하는 차량 같은<br>도로 위의 가장 위험한 상황도"}, {"start": 305.0, "end": 310.8, "text": "정확히 감지하여 충돌을 회피합니다.<br>이것이 도로 위에서 가장 안전한 차를 만든 비결입니다."}, {"start": 311.0, "end": 316.8, "text": "저희는 여기서 한 걸음 더 나아가<br>완전 무인 자율주행 차량을 구축하고 있습니다."}, {"start": 317.0, "end": 323.8, "text": "현재 오스틴, 댈러스, 휴스턴에서는<br>수십 대의 로보택시가 운행 중이며,"}, {"start": 324.0, "end": 329.8, "text": "운전석에 아무도 타지 않고<br>감독자도 전혀 탑승하지 않습니다."}, {"start": 330.0, "end": 334.8, "text": "우버처럼 앱으로 호출하여 탑승하기만 하면"}, {"start": 335.0, "end": 339.08, "text": "목적지까지 데려다줍니다. 이 차량들은 시중의"}, {"start": 343.0, "end": 350.92, "text": "일반 모델 Y와 동일한 센서 및 컴퓨팅을 탑재하고 있습니다.<br>저희는 서비스 지역과 차량 대수 모두에서"}, {"start": 352.0, "end": 357.8, "text": "차량 규모를 빠르게 확장하고 있으며,"}, {"start": 358.0, "end": 363.8, "text": "앞으로 몇 달 내에 더 많은 도시에서 운행될 것입니다.<br>일반 대중에게 열려 있으니 꼭 체험해 보세요."}, {"start": 364.0, "end": 369.8, "text": "저희가 나아갈 다음 단계는 처음부터<br>완전 자율주행 전용으로 설계한 '사이버캡'입니다."}, {"start": 370.0, "end": 375.8, "text": "스티어링 휠과 가속/브레이크 페달이 전혀 없는<br>2인승 전용 차량으로,"}, {"start": 376.0, "end": 382.8, "text": "오직 완전 자율주행만을 위해 제작되었습니다.<br>안락하고 마치 미래에서 온 차량처럼 생겼죠."}, {"start": 383.0, "end": 388.8, "text": "마일당 주행 비용이 극히 낮아"}, {"start": 389.0, "end": 395.8, "text": "현재의 대중교통보다도<br>더 저렴한 비용으로 이동할 수 있습니다."}, {"start": 396.0, "end": 402.8, "text": "이는 운송 산업 전체의 판도를 바꿀 게임체인저가 될 것이며,"}, {"start": 403.0, "end": 409.8, "text": "앞으로 몇 달 내에 대량 생산에 들어갑니다.<br>현재 도로에서 하드웨어 검증 주행 중입니다."}, {"start": 410.0, "end": 415.8, "text": "도로 위의 테슬라 차량으로 돌아가 보면,<br>이미 수백만 대가 운행 중이며"}, {"start": 416.0, "end": 422.72, "text": "이번 달 누적 FSD 주행 거리가<br>100억 마일(약 160억 km)을 돌파했습니다."}, {"start": 424.0, "end": 430.8, "text": "차트를 보시면 2021년경 FSD 배포 시작 당시에는<br>진행 속도가 매우 완만했지만,"}, {"start": 431.0, "end": 436.8, "text": "파란색 차트처럼 V12를 배포한 이후부터"}, {"start": 437.0, "end": 443.72, "text": "FSD 주행 거리가 기하급수적으로 증가했습니다.<br>V12에서 어떤 변화가 있었을까요?"}, {"start": 447.0, "end": 453.36, "text": "저희가 깨달은 것은 V12 이전의<br>접근 방식 자체가 잘못되었다는 점이었습니다."}, {"start": 455.0, "end": 461.8, "text": "이전에는 업계의 다른 곳들과 마찬가지로<br>인지, 위치 추정, 내비게이션 팀이 나뉘어"}, {"start": 462.0, "end": 468.8, "text": "자차와 타차량의 움직임을 예측하고<br>경로를 계획하는 모듈형 방식을 썼습니다."}, {"start": 469.0, "end": 475.8, "text": "하지만 이는 잘못된 접근 방식이었습니다.<br>사람은 운전할 때"}, {"start": 476.0, "end": 480.8, "text": "수많은 결정을 암묵적(implicit)으로 내립니다.<br>모듈별 출력을 일일이 계산하여"}, {"start": 481.0, "end": 485.8, "text": "연결하려 하지 않고,<br>그저 5성급 우버 드라이버처럼 운전하죠."}, {"start": 486.0, "end": 492.12, "text": "그래서 저희는 인간의 운전 방식을 학습하여<br>신경망으로 차량을 직접 제어하는"}, {"start": 494.0, "end": 498.8, "text": "새로운 엔드투엔드(E2E) 방식으로<br>완전히 전환했습니다."}, {"start": 499.0, "end": 505.12, "text": "각종 지표상 고객들의 반응도 폭발적입니다.<br>엔드투엔드 주행으로 전환하게 된"}, {"start": 507.0, "end": 512.8, "text": "배경 맥락을 몇 가지 설명해 드리겠습니다.<br>첫째, 인간의 판단 가치를 코드로 규정하는 것은"}, {"start": 513.0, "end": 517.8, "text": "믿을 수 없을 만큼 어렵습니다. 과거에는 운전 시<br>인간의 의사결정을 코드로 작성하는 데"}, {"start": 518.0, "end": 524.8, "text": "수많은 시간을 쏟았습니다. 일반적인 상황에서는<br>잘 작동했지만, 운전에는 수많은 엣지 케이스와"}, {"start": 525.0, "end": 530.8, "text": "롱테일 이벤트가 존재하여 한계에 부딪힙니다.<br>예를 들어 대규모 공사 현장이나"}, {"start": 531.0, "end": 537.8, "text": "사고 현장, 신호등이 고장 난 교차로에 진입하면"}, {"start": 538.0, "end": 544.8, "text": "상황을 벗어나기 위해 관례를 벗어나거나<br>교통 법규를 유연하게 적용해야 할 때도 있습니다."}, {"start": 545.0, "end": 551.8, "text": "그런 상황에서 어떻게 행동해야 하는지 규칙 코드로<br>일일이 작성하는 것은 극도로 어렵습니다."}, {"start": 552.0, "end": 557.8, "text": "반면 인간에게는 아주 단순한 일입니다.<br>우리는 일상 운전에서 이런 상황을 늘 겪고,"}, {"start": 558.0, "end": 563.8, "text": "운전면허가 있는 대부분의 사람들은"}, {"start": 564.0, "end": 572.28, "text": "복잡해 보이는 상황을 매우 간단히 헤쳐나갑니다.<br>또한 인지, 예측, 계획 간의 인터페이스도 큰 문제입니다."}, {"start": 573.0, "end": 577.8, "text": "과거 모듈 방식 시절, 저는 객체 탐지나<br>온톨로지 같은 인지 작업을 많이 수행했습니다."}, {"start": 578.0, "end": 584.8, "text": "예측과 계획 모듈이 활용할 수 있도록"}, {"start": 585.0, "end": 591.8, "text": "불확실성 예측까지 포함해야 했죠.<br>하지만 저희가 발견한 사실은,"}, {"start": 592.0, "end": 598.72, "text": "더 나은 인지 모델이 반드시 더 나은 주행 결과로<br>이어지지는 않는다는 점이었습니다."}, {"start": 600.0, "end": 604.8, "text": "이 방식은 전혀 확장성이 없었습니다.<br>현실 세계의 롱테일 상황에서는"}, {"start": 605.0, "end": 610.88, "text": "무엇을 해야 할지 직접 예측하는 엔드투엔드가<br>훨씬 우수한 접근법입니다."}, {"start": 614.0, "end": 620.8, "text": "마지막으로, 이 방식은 확정적 지연 시간을 갖는<br>균일한 컴퓨팅을 가능하게 합니다."}, {"start": 621.0, "end": 627.8, "text": "현재 테슬라 차량에서는 여러 소프트웨어 모듈이<br>연산 자원을 쪼개어 쓰지 않습니다."}, {"start": 628.0, "end": 634.8, "text": "단 하나의 거대한 신경망만이 존재하며,<br>36fps로 들어오는 카메라 광자(photon) 데이터를 받아"}, {"start": 635.0, "end": 639.8, "text": "신경망 전체를 통과시켜 즉시 판단을 내립니다."}, {"start": 640.0, "end": 645.28, "text": "따라서 상황이 단순하든 복잡하든<br>지연 시간이 극도로 일정하며,"}, {"start": 648.0, "end": 654.0, "text": "동일한 주기로 실행되어 연산 최적화에 유리합니다.<br>전반적으로 이 접근법은"}, {"start": 656.0, "end": 661.8, "text": "인간의 지식을 끼워 넣기보다 컴퓨팅, 모델, 데이터를<br>확장하여 성능을 높이는"}, {"start": 662.0, "end": 666.8, "text": "'비터 레슨(The Bitter Lesson)'의<br>올바른 확장 법칙 위에 서 있습니다."}, {"start": 667.0, "end": 670.36, "text": "그럼 저희 모델의 핵심 아키텍처를"}, {"start": 677.0, "end": 681.8, "text": "요약해서 설명해 드리겠습니다.<br>핵심은 매우 단순한 함수입니다."}, {"start": 682.0, "end": 687.88, "text": "모든 비디오를 입력받아 무엇을 할지<br>결정하는 함수를 호출하는 것입니다."}, {"start": 690.0, "end": 694.8, "text": "텍스트를 입력받아 텍스트를 출력하는"}, {"start": 695.0, "end": 699.8, "text": "대형 언어 모델(LLM)과 매우 유사하며,"}, {"start": 700.0, "end": 707.5, "text": "저희는 '비디오 입력, 행동(Action) 출력' 방식입니다.<br>주변 환경의 모든 관측 정보를 입력받아"}, {"start": 708.0, "end": 714.8, "text": "차량이 수행해야 할 다음 제어 동작을 직접 예측합니다."}, {"start": 715.0, "end": 720.8, "text": "이 제어 동작이 현실 세계에서 실행되면 환경이 변화하고,<br>다시 다음 관측 정보가 주어집니다."}, {"start": 721.0, "end": 727.8, "text": "저희는 이 과정을 초고속 프레임레이트로 실행하여<br>자율주행을 직접 해결합니다."}, {"start": 728.0, "end": 733.8, "text": "LLM 훈련과 다른 점은,"}, {"start": 734.0, "end": 739.8, "text": "현실 세계는 매우 복잡하고 어지럽다는 점입니다."}, {"start": 740.0, "end": 744.8, "text": "LLM은 질문을 하면 답변할 때까지 세상이 멈춰 있고"}, {"start": 745.0, "end": 749.8, "text": "단계별로 진행되지만,"}, {"start": 750.0, "end": 754.8, "text": "자율주행에서는 판단을 내리는 동안에도<br>주변 세상이 계속 움직입니다."}, {"start": 755.0, "end": 761.8, "text": "첫째, 비전 입력부터 제어 출력까지<br>0이 아닌 지연 시간(latency)이 존재합니다."}, {"start": 762.0, "end": 767.8, "text": "판단과 실행 사이에 지연이 발생하므로"}, {"start": 768.0, "end": 773.8, "text": "극한 상황에서는 매 밀리초가 매우 중요합니다.<br>둘째, 세상은 차량 주위를 중심으로 돌아가며"}, {"start": 774.0, "end": 777.84, "text": "주변 도로 참여자들의 불확실성이 큽니다."}, {"start": 782.0, "end": 788.8, "text": "다른 차량이 예측 불가능하게 움직이거나<br>상식을 벗어난 돌발 행동을 할 수도 있어,"}, {"start": 789.0, "end": 795.8, "text": "이를 모두 모델에 반영해야 합니다.<br>셋째, 자연환경의 변화가 매우 다양합니다."}, {"start": 796.0, "end": 801.8, "text": "대규모 자율주행을 해결한다는 것은"}, {"start": 802.0, "end": 807.8, "text": "차량이 어떤 환경에서도 임무를 수행할 수 있어야 함을 의미합니다."}, {"start": 808.0, "end": 813.8, "text": "덴버의 혹독한 겨울은"}, {"start": 814.0, "end": 820.8, "text": "남부 캘리포니아와 완전히 다르고,<br>남부 지역 우기의 날씨는 극도로 까다롭습니다."}, {"start": 821.0, "end": 826.8, "text": "모델은 이 모든 것을 이해해야 합니다."}, {"start": 827.0, "end": 833.8, "text": "실제 플릿에서 수집된 주행 영상 사례를 보시면,<br>가끔 극도로 복잡한 상황이 발생합니다."}, {"start": 834.0, "end": 840.8, "text": "도로 위에서 비정상적인 차량이 미친 듯이 돌진할 때<br>즉각 반응해야 하죠."}, {"start": 841.0, "end": 845.8, "text": "모듈형 방식으로 이 차를 피하는 코드를 짠다고 상상해 보세요."}, {"start": 846.0, "end": 850.8, "text": "다가오는 차를 보고 오른쪽으로 피하려 했는데"}, {"start": 851.0, "end": 854.8, "text": "상대방도 오른쪽으로 꺾으면 다시 왼쪽으로 틀어야 합니다."}, {"start": 855.0, "end": 860.8, "text": "이런 규칙을 코드로 작성하는 것은 극도로 어렵지만,<br>인간에게는 '부딪히지 마라'처럼 아주 단순합니다."}, {"start": 861.0, "end": 867.8, "text": "따라서 가장 자연스러운 API는<br>'비디오 입력, 행동 출력'입니다."}, {"start": 868.0, "end": 874.8, "text": "그 외의 모든 예측 작업은 보조적인 프록시 태스크일 뿐,"}, {"start": 875.0, "end": 880.04, "text": "최종 제품에 본질적인 것은 아닙니다.<br>하지만 이를 위해서는"}, {"start": 883.0, "end": 888.8, "text": "엄청난 양의 데이터로 훈련해야 합니다.<br>다행히 테슬라는 비디오-행동 쌍의"}, {"start": 889.0, "end": 894.8, "text": "초대규모 데이터셋을 보유하고 있습니다.<br>도로 위 700만 대의 차량이 데이터를 수집하며"}, {"start": 895.0, "end": 901.48, "text": "온갖 시나리오를 망라하고 있습니다.<br>매일 테슬라 플릿 전체가 달리는 주행 시간만"}, {"start": 903.0, "end": 909.8, "text": "약 500년 치에 달합니다.<br>데이터 규모 면에서 실로 엄청나죠."}, {"start": 910.0, "end": 914.8, "text": "하지만 이 데이터를 그냥 다 집어넣기만 하면<br>저절로 잘 작동할까요? 그렇지 않습니다."}, {"start": 915.0, "end": 920.8, "text": "저희는 이를 '차원의 저주'라고 부릅니다."}, {"start": 921.0, "end": 927.8, "text": "입력 레벨에서 공간이 극도로 방대합니다.<br>8개 카메라의 36Hz 고해상도 비디오가 입력되므로,"}, {"start": 928.0, "end": 934.8, "text": "단순히 픽셀을 패치화하고 토큰화하면"}, {"start": 935.0, "end": 939.8, "text": "수천억 개의 토큰이 발생하여 감당할 수 없습니다."}, {"start": 940.0, "end": 946.8, "text": "따라서 입력 비디오를 다룰 수 있는 컨텍스트 길이로<br>압축하는 정교한 기법이 필요합니다."}, {"start": 947.0, "end": 951.44, "text": "반면 출력 공간에서는 정반대의 문제가 발생합니다."}, {"start": 957.0, "end": 961.8, "text": "운전 동작의 대부분은 '조향'과 '속도'라는"}, {"start": 962.0, "end": 966.8, "text": "단 2개의 자유도(Degree of Freedom)뿐입니다.<br>가끔 기어 변속이나 깜빡이 조작이 있지만"}, {"start": 967.0, "end": 970.8, "text": "대부분은 2개의 숫자로 귀결됩니다."}, {"start": 971.0, "end": 977.8, "text": "즉, 방대한 입력 공간이 들어와서<br>단 2개의 숫자로 출력되는 구조입니다."}, {"start": 978.0, "end": 983.8, "text": "대형 모델을 훈련해 보신 분들은 아시겠지만,"}, {"start": 984.0, "end": 989.8, "text": "이를 단순하게 훈련하면 매우 불안정해집니다.<br>예를 들어 보여드리겠습니다."}, {"start": 990.0, "end": 995.8, "text": "여기 4개의 서로 다른 환경이 있습니다.<br>입력 관점에서는 완전히 다른 4개의 환경이지만,"}, {"start": 996.0, "end": 999.96, "text": "출력 행동은 모두 '직진'으로 동일합니다."}, {"start": 1004.0, "end": 1009.8, "text": "이 상태로 단순 훈련하면 모델이 환경을 이해하지 못하고"}, {"start": 1010.0, "end": 1015.8, "text": "'그냥 직진하면 대부분 정답이다'라고"}, {"start": 1016.0, "end": 1021.8, "text": "학습해 버립니다. 이는 결코 좋은 모델이 아니죠.<br>그렇다면 이 문제를 어떻게 해결할까요?"}, {"start": 1022.0, "end": 1025.24, "text": "상황을 더 어렵게 만드는 것은,"}, {"start": 1031.0, "end": 1036.8, "text": "방대한 데이터셋 속 수백만 픽셀로부터<br>올바른 인과관계(causation)를 학습하는 일입니다."}, {"start": 1037.0, "end": 1043.8, "text": "이 화면을 보시면 수많은 요소가 복잡하게 얽혀 있습니다."}, {"start": 1044.0, "end": 1047.8, "text": "인간은 좌회전 녹색 화살표를 보고<br>좌회전하는 것이 당연하지만,"}, {"start": 1048.0, "end": 1051.8, "text": "신경망은 모든 정보를 파싱하려고 합니다."}, {"start": 1052.0, "end": 1057.8, "text": "주변의 수많은 표지판과 배경의 녹색 신호등,"}, {"start": 1058.0, "end": 1063.8, "text": "심지어 저 멀리 있는 진입금지 표지판까지 인식하죠."}, {"start": 1064.0, "end": 1070.8, "text": "모델이 올바른 인과관계를 학습하도록 만드는 것은"}, {"start": 1071.0, "end": 1078.5, "text": "출력 공간이 좁은 엔드투엔드 모델에서 극도로 어려운 문제입니다.<br>여기서 과거 모듈 방식의 경험이 큰 도움이 되었습니다."}, {"start": 1079.0, "end": 1084.8, "text": "모듈 방식 자체는 확장되지 못했지만,"}, {"start": 1085.0, "end": 1091.8, "text": "그때 정의했던 명시적 태스크들이 모델의 효율적인 학습을 돕는"}, {"start": 1092.0, "end": 1100.28, "text": "훌륭한 프록시(proxy) 태스크가 되었습니다.<br>이들을 공동 훈련(co-training) 태스크로 활용하여"}, {"start": 1101.0, "end": 1107.8, "text": "동시에 예측하도록 학습시키면<br>신경망에 그래디언트가 원활하게 흐르게 됩니다."}, {"start": 1108.0, "end": 1114.0, "text": "덕분에 비디오로부터 주행 결정을<br>훨씬 더 정밀하게 유도해낼 수 있습니다."}, {"start": 1116.0, "end": 1122.8, "text": "저희가 훈련하는 태스크의 예시를 보여드리겠습니다."}, {"start": 1123.0, "end": 1127.8, "text": "대규모 비디오 모델에서 입력을 받아 비전 인코더를 실행할 때,"}, {"start": 1128.0, "end": 1133.8, "text": "추론 시점에는 운전 행동만 출력하지만,"}, {"start": 1134.0, "end": 1140.8, "text": "훈련 시점에는 세그멘테이션, 3D 기하구조, 인체 메시, 궤적 추적 등"}, {"start": 1141.0, "end": 1147.8, "text": "주변 상황을 이해하기 위한 모든 태스크를 함께 예측합니다.<br>또한 모델의 추론과 일반화 능력을 높이기 위해"}, {"start": 1148.0, "end": 1151.84, "text": "인터넷 데이터도 적극 활용하고 있습니다."}, {"start": 1156.0, "end": 1160.8, "text": "현실에서 희귀한 사건이 일어날 때까지 마냥 기다릴 필요 없이,"}, {"start": 1161.0, "end": 1165.8, "text": "인터넷의 방대한 데이터를 학습에 활용할 수 있습니다."}, {"start": 1166.0, "end": 1171.8, "text": "심지어 옵티머스 휴머노이드 로봇 맵에서 수집한"}, {"start": 1172.0, "end": 1177.8, "text": "실내 환경 데이터까지 포함하여 사물 인식을 돕습니다.<br>예를 들어 고속도로에 의자가 떨어져 있는 경우,"}, {"start": 1178.0, "end": 1181.8, "text": "고속도로 위의 의자를 수없이 보지 않아도"}, {"start": 1182.0, "end": 1188.84, "text": "인터넷 비디오나 실내 데이터를 통해<br>그것이 의자임을 쉽게 인식하고 피할 수 있습니다."}, {"start": 1190.0, "end": 1192.76, "text": "결국 성공의 핵심 비결은"}, {"start": 1198.0, "end": 1204.8, "text": "더 큰 모델에 더 많은 데이터를 투입하고,"}, {"start": 1205.0, "end": 1211.8, "text": "압도적인 컴퓨팅으로 훈련하여<br>뛰어난 일반화 성능을 달성하는 것입니다."}, {"start": 1212.0, "end": 1218.8, "text": "데이터 측면에서 엔지니어들이 일상적으로 다루는 데이터셋은"}, {"start": 1219.0, "end": 1224.4, "text": "120년 이상의 주행 시간과<br>수백 페타바이트(PB)에 달합니다."}, {"start": 1227.0, "end": 1233.8, "text": "이를 처리할 오픈소스 라이브러리가 없어"}, {"start": 1234.0, "end": 1239.8, "text": "초고속 I/O 처리를 위한 사내 도구를 직접 개발했습니다.<br>하지만 데이터의 양만이 중요한 것은 아닙니다."}, {"start": 1240.0, "end": 1244.8, "text": "높은 품질과 다양성이 필수적이며,"}, {"start": 1245.0, "end": 1250.8, "text": "여기서 700만 대의 테슬라 플릿이 진가를 발휘합니다.<br>자율주행에서 엣지 케이스를 많이 이야기하지만,"}, {"start": 1251.0, "end": 1254.8, "text": "도로 위에 700만 대의 차량이 있으면"}, {"start": 1255.0, "end": 1261.8, "text": "모든 엣지 케이스가 매일 발생합니다."}, {"start": 1262.0, "end": 1267.8, "text": "일반 운전자가 평생 한 번 볼까 말까 한"}, {"start": 1268.0, "end": 1272.8, "text": "희귀한 상황들이 매일 수집되는 것이죠."}, {"start": 1273.0, "end": 1277.8, "text": "다른 곳들은 시뮬레이션을 돌려야 하지만,"}, {"start": 1278.0, "end": 1283.8, "text": "대규모 플릿 데이터 엔진을 갖춘 저희는<br>매일 실제 데이터를 확보합니다."}, {"start": 1284.0, "end": 1293.48, "text": "그리고 이 데이터를 초대형 GPU 슈퍼컴퓨터에 투입합니다.<br>저희 컴퓨팅 규모는 H100 30만 대 수준에 근접하고 있습니다."}, {"start": 1297.0, "end": 1301.8, "text": "더욱 놀라운 점은 저희 팀이 매우 소수 정예라는 것입니다."}, {"start": 1302.0, "end": 1308.8, "text": "소수 정예의 강력한 팀과 막대한 컴퓨팅이 결합하여,"}, {"start": 1309.0, "end": 1314.8, "text": "업계에서 엔지니어 1인당 가장 많은<br>GPU 자원을 보유하고 있습니다."}, {"start": 1315.0, "end": 1321.8, "text": "모든 엔지니어가 수천 대의 GPU를 활용할 수 있으며,"}, {"start": 1322.0, "end": 1327.16, "text": "이는 개발자들에게 강력한 권한을 부여하고 제품을 혁신합니다."}, {"start": 1330.0, "end": 1336.8, "text": "오늘 참석하신 청중 중 학생분들이 많으실 텐데요,"}, {"start": 1337.0, "end": 1340.8, "text": "이 문제를 해결하고 싶다면 독점적 대규모 데이터와"}, {"start": 1341.0, "end": 1347.8, "text": "막대한 컴퓨팅을 갖추고 수백만 대의 차량으로<br>현실 세계에 영향을 미치는 곳에서 일하길 추천합니다."}, {"start": 1348.0, "end": 1352.2, "text": "경청해 주셔서 감사합니다. 질문을 받겠습니다."}, {"start": 1358.0, "end": 1363.8, "text": "훌륭한 발표 감사합니다.<br>롱테일 사례 영상이 매우 인상적이었습니다."}, {"start": 1364.0, "end": 1369.8, "text": "VLA(Vision-Language-Action) 모델과<br>VA(Vision-Action) 모델 간의 비교에 대해 질문이 있습니다."}, {"start": 1370.0, "end": 1376.8, "text": "많은 사람들이 왜 VLA 대신"}, {"start": 1377.0, "end": 1382.8, "text": "VA 모델을 쓰는지 묻곤 합니다.<br>대규모 데이터로 VA가 이미 잘 작동하지만,"}, {"start": 1383.0, "end": 1388.8, "text": "이 거대한 데이터셋으로 VLA 모델을 훈련하면<br>더 나은 성능을 낼 수도 있지 않을까요?"}, {"start": 1389.0, "end": 1395.8, "text": "두 모델의 차이에 대한 연사님의 견해가 궁금합니다."}, {"start": 1396.0, "end": 1401.8, "text": "핵심은 '언어' 자체가 아닙니다.<br>진짜 중요한 것은 두 가지인데,"}, {"start": 1402.0, "end": 1407.8, "text": "첫째는 '인터넷 지식'이고 둘째는 '추론(Reasoning)'입니다."}, {"start": 1408.0, "end": 1413.8, "text": "주행 데이터뿐만 아니라, 인간이 운전을 배우기 전<br>다양한 방식으로 습득하는 지식을 활용해야 합니다."}, {"start": 1414.0, "end": 1419.8, "text": "인간도 16세 이전에는 면허를 딸 수 없듯이 말이죠."}, {"start": 1420.0, "end": 1427.08, "text": "따라서 훈련 데이터와 추론 과정을 통해 차량이<br>복잡하고 처음 보는 상황을 해결하는 능력이"}, {"start": 1428.0, "end": 1432.8, "text": "언어 그 자체보다 훨씬 중요합니다."}, {"start": 1433.0, "end": 1441.76, "text": "언어는 수단일 뿐이며 다른 방식으로도 추론할 수 있습니다.<br>저희는 일반화 성능을 위해 이 역량을 적극 활용합니다."}, {"start": 1446.0, "end": 1451.8, "text": "감사합니다. 발표의 핵심은 대규모 플릿 데이터와"}, {"start": 1452.0, "end": 1459.32, "text": "다양한 프록시 태스크로 주행 파운데이션 모델을<br>구축한다는 것인데요, 차량 센서는 카메라뿐인데"}, {"start": 1463.0, "end": 1466.36, "text": "월드 파운데이션 모델을 훈련할 때"}, {"start": 1471.0, "end": 1476.8, "text": "정답(Ground Truth) 데이터는 어떻게 구축하시나요?"}, {"start": 1477.0, "end": 1483.24, "text": "3D 오큐펀시나 객체 탐지 프록시 태스크의<br>정답 데이터는 어디서 얻으시나요?"}, {"start": 1486.0, "end": 1489.8, "text": "네, 모든 3D 태스크의 경우<br>저희가 오랫동안 연구해 온 내부 모델들과"}, {"start": 1490.0, "end": 1496.8, "text": "자동 라벨링 파이프라인을 활용하여"}, {"start": 1497.0, "end": 1503.8, "text": "정답 데이터를 생성합니다. 감사합니다."}, {"start": 1504.0, "end": 1510.84, "text": "강연 감사합니다. V12의 발전이 대단하고<br>저도 직접 타봤는데 매우 인상적이었습니다."}, {"start": 1512.0, "end": 1518.8, "text": "두 가지 질문이 있습니다. 첫째,"}, {"start": 1519.0, "end": 1523.8, "text": "로보택시의 경우 출력된 주행 궤적에 대해"}, {"start": 1524.0, "end": 1530.36, "text": "안전 백업 레이어로 충돌 검사를 하거나<br>여러 궤적 중 선택하는 과정이 있나요?"}, {"start": 1532.0, "end": 1537.8, "text": "이를 위해 예측 모듈이 필요한가요?"}, {"start": 1538.0, "end": 1544.8, "text": "보조 태스크에 예측이 보이지 않아 여쭤봅니다.<br>둘째 질문은, 테슬라가 최대 데이터셋을 보유하고 있는데"}, {"start": 1545.0, "end": 1551.8, "text": "훈련 시 데이터 큐레이션(선별)이 얼마나 중요한가요?"}, {"start": 1552.0, "end": 1557.8, "text": "아니면 모델 용량이 워낙 커서 신경 쓰지 않아도 되나요?"}, {"start": 1558.0, "end": 1563.8, "text": "첫 번째 질문의 경우, 강화학습(RL)을 통해<br>훈련 과정 자체에 충돌 검사를 내장합니다."}, {"start": 1564.0, "end": 1569.8, "text": "충돌 검사는 검증 가능한 보상(verifiable reward) 역할을 하므로"}, {"start": 1570.0, "end": 1576.8, "text": "훈련 시점에 적용하기 매우 명확합니다.<br>추론 시점에는 모델을 신뢰하여 실행하며,"}, {"start": 1577.0, "end": 1583.8, "text": "안전성을 보장하기 위해 철저한 사전 검증을 거칩니다."}, {"start": 1584.0, "end": 1589.8, "text": "두 번째 데이터 큐레이션 질문의 경우,"}, {"start": 1590.0, "end": 1595.8, "text": "데이터셋이 작을 때는 큐레이션보다 양이 중요하지만,"}, {"start": 1596.0, "end": 1599.8, "text": "저희처럼 방대한 양을 다룰 때는"}, {"start": 1600.0, "end": 1604.8, "text": "데이터 큐레이션에 엄청난 시간을 쏟습니다."}, {"start": 1605.0, "end": 1609.8, "text": "수백만 대 차량에서 무작위 샘플링하면<br>90% 이상이 고속도로 직선 주행이라 쓸모가 없습니다."}, {"start": 1610.0, "end": 1613.8, "text": "따라서 흥미로운 이벤트나"}, {"start": 1614.0, "end": 1618.32, "text": "모델의 판단과 사람의 운전이 불일치하는 데이터를"}, {"start": 1623.0, "end": 1629.8, "text": "선별하여 학습시키는 것이 훨씬 데이터 효율적입니다."}, {"start": 1630.0, "end": 1636.96, "text": "이해가 잘 되었습니다. 감사합니다.<br>안녕하세요, 프록시 태스크에 대해 질문이 있습니다."}, {"start": 1639.0, "end": 1644.28, "text": "실제 주행 행동이 가장 중요하고 나머지는 프록시라고 하셨는데,"}, {"start": 1647.0, "end": 1651.44, "text": "어떤 프록시 태스크가 더 중요한지, 어느 방향으로"}, {"start": 1657.0, "end": 1662.8, "text": "개선해야 하는지 어떻게 판단하시나요?"}, {"start": 1663.0, "end": 1670.5, "text": "특정 프록시 성능이 올라도 전체 주행 향상으로 이어지지 않을 때<br>어떤 경험과 직관을 활용하시나요?"}, {"start": 1671.0, "end": 1677.8, "text": "우선 최종 모델이 특정 동작에 실패했을 때<br>원인을 역추적하는 직관이 필요합니다."}, {"start": 1678.0, "end": 1682.8, "text": "신호등을 감지하지 못해 빨간불에 달린 것인지,"}, {"start": 1683.0, "end": 1687.8, "text": "차량을 인지하지 못해 양보하지 않은 것인지,"}, {"start": 1688.0, "end": 1694.8, "text": "아니면 관련 데이터가 부족한 것인지 분석해야 합니다.<br>수많은 시행착오를 통한 디버깅이 필요하며,"}, {"start": 1695.0, "end": 1701.8, "text": "궁극적으로 프록시 태스크는"}, {"start": 1702.0, "end": 1707.8, "text": "신경망에 그래디언트가 잘 흐르도록 돕는 역할일 뿐,<br>그 정확도 자체가 최종 제품의 목표는 아닙니다."}, {"start": 1708.0, "end": 1712.8, "text": "우리가 원하는 것은 오직 '올바른 주행'입니다."}, {"start": 1713.0, "end": 1717.8, "text": "모든 프록시 지표에서 최고 성능을 내려 할 필요는 없습니다.<br>그것이 최종 모델 개선을 보장하진 않으니까요."}, {"start": 1718.0, "end": 1722.8, "text": "프록시 태스크는 신경망 학습을 돕기에 충분할 정도로"}, {"start": 1723.0, "end": 1729.8, "text": "건전한 수준만 유지하면 됩니다."}, {"start": 1730.0, "end": 1735.8, "text": "궁극적으로 현실 세계에 배포되어 작동하는"}, {"start": 1736.0, "end": 1741.8, "text": "실제 주행 행동만을 기준으로 평가해야 합니다.<br>감사합니다. 훌륭한 강연 다시 한번 감사드립니다."}, {"start": 1742.0, "end": 1744.5, "text": "박수 부탁드립니다."}, {"start": 1750.0, "end": 1754.8, "text": "점심시간 전 마지막 순서로 오전 발표자분들을 모시고<br>패널 토의를 진행하겠습니다."}, {"start": 1755.0, "end": 1760.8, "text": "아직 현장에 계신 발표자분들께서는<br>무대 위로 올라와 주시기 바랍니다."}, {"start": 1761.0, "end": 1765.56, "text": "마르코, 필 박사님도 함께해 주시면 감사하겠습니다."}, {"start": 1769.0, "end": 1772.8, "text": "몇 가지 질문으로 시작한 뒤"}, {"start": 1773.0, "end": 1778.16, "text": "청중 질문을 받는 방식으로 진행하겠습니다.<br>마르코 계신가요?"}, {"start": 1781.0, "end": 1786.8, "text": "토니 발표자분도 참여하시겠습니까?"}, {"start": 1787.0, "end": 1791.8, "text": "아직 안 오셨나요?"}, {"start": 1792.0, "end": 1795.12, "text": "편하게 자리해 주시면 됩니다."}, {"start": 1802.0, "end": 1807.8, "text": "자리가 있나요?"}, {"start": 1808.0, "end": 1812.8, "text": "네, 이쪽으로 오시면 됩니다."}];
+let player;
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        videoId:videoId,
+        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        events:{
+            'onReady': function(e){ 
+                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
+                try { e.target.unloadModule("captions"); } catch(err) {} 
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+let syncInterval;
+let activityTimeout;
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) subsEl.classList.remove('ui-hidden');
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) subsEl.classList.add('ui-hidden');
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div><br>`;
+    }
+    if(document.getElementById('subtitles').innerHTML !== currentHtml){
+        document.getElementById('subtitles').innerHTML=currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottom, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottom = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    subEl.style.bottom = (currentBottom - dy) + 'px';
+    if(e.cancelable) e.preventDefault();
+}
+function dragEnd(e) {
+    isDragging = false;
+    subEl.classList.remove('dragging');
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1, Math.min(20, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / initialDist;
+        currentFontSize = Math.max(1, Math.min(20, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+// [YouTube Keyboard Shortcuts]
+
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
