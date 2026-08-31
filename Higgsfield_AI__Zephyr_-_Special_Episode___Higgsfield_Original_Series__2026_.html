@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Higgsfield AI] Zephyr - Special Episode ｜ Higgsfield Original Series (2026) (한글 자막)</title>
+<link rel="preconnect" href="https://www.youtube-nocookie.com">
 <link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://www.google.com">
 <link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://googlevideo.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="[Higgsfield AI] Zephyr - Special Episode ｜ Higgsfield Original Series (2026) (한글 자막)">
@@ -20,7 +20,9 @@
 <style>
 :root{--fsize:4.5vmin;}
 body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
-#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+#unmute-badge{position:absolute;top:20px;left:20px;z-index:10000;background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;display:none;user-select:none;}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
 #subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
 #subtitles.ui-hidden{bottom:1%;}
 .sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
@@ -32,9 +34,14 @@ body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#
 </style>
 </head>
 <body>
-<div id="player"></div>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/HjXWZ-BdyS0?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 <div id="subtitles"></div>
 <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
 <script>
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
@@ -49,34 +56,29 @@ function toggleFullScreen() {
 const videoId="HjXWZ-BdyS0";
 const subs=[{"start": 10.5, "end": 13.2, "text": "잠깐, 잠깐만요, 처음부터 다시 짚어보죠."}, {"start": 13.5, "end": 16.5, "text": "이 모든 일이 대체 어떻게 시작된 겁니까?"}, {"start": 28.5, "end": 32.0, "text": "그녀가 매달려 있는데 바람이 거세게 불었지."}, {"start": 32.2, "end": 36.0, "text": "무전기를 잡더니 \"완전 좆됐어\"라고 하더군."}, {"start": 38.5, "end": 40.2, "text": "그래서 당신은요?"}, {"start": 40.5, "end": 42.8, "text": "\"조금만 버텨\"라고 말해줬지."}, {"start": 43.0, "end": 45.8, "text": "사방에 거대 벌레들이 우글거렸거든."}, {"start": 46.0, "end": 48.2, "text": "하나를 쓰러뜨리고, 또 다른 놈을 잡고, 세 번째 놈까지..."}, {"start": 48.5, "end": 52.0, "text": "진짜 악몽이었지만 어떻게든 해냈지."}, {"start": 64.5, "end": 67.5, "text": "이 녀석 봐라..."}, {"start": 67.8, "end": 71.5, "text": "우리가 벌레를 잡는 동안 그녀는 폭식을 하고 있었잖아."}, {"start": 94.5, "end": 97.2, "text": "음, 대단하네요."}, {"start": 106.5, "end": 109.5, "text": "나오미 걱정은 아무도 안 한 거예요?"}, {"start": 109.8, "end": 112.5, "text": "그녀가 죽을 수도 있었잖아요."}, {"start": 113.0, "end": 116.0, "text": "아냐, 우리가 지켜줬으니까 괜찮아."}, {"start": 123.5, "end": 126.5, "text": "스트레스받고 고립된 상황..."}, {"start": 126.8, "end": 129.8, "text": "카메라를 위해 만들어진 장면 같았지."}, {"start": 130.0, "end": 133.2, "text": "각도마다 전혀 다른 대답이 나오는군."}, {"start": 134.5, "end": 137.5, "text": "말도 안 돼요, 온 지 며칠밖에 안 됐잖아요."}, {"start": 137.8, "end": 141.5, "text": "왜 그렇게 그녀를 신뢰하는 겁니까, 캡틴?"}, {"start": 142.0, "end": 146.5, "text": "메카닉을 그렇게 한계까지 몰아붙이는 사람을 본 적 있나?"}, {"start": 172.5, "end": 175.5, "text": "훈련을 많이 했을 뿐이에요, 그게 다예요."}, {"start": 176.5, "end": 179.0, "text": "그래, 그래. 당신의 몸..."}, {"start": 179.2, "end": 183.5, "text": "아니, 당신의 메카닉은 정말이지 빌어먹을 걸작이야."}, {"start": 184.5, "end": 186.8, "text": "그래서 그 후엔 어떻게 됐죠?"}, {"start": 187.0, "end": 190.5, "text": "그녀는 자신이 가장 잘하는 일을 했을 뿐이지."}, {"start": 194.5, "end": 197.5, "text": "알았어, 알았어, 알았다고!"}, {"start": 270.5, "end": 273.0, "text": "고마워요."}, {"start": 282.5, "end": 285.5, "text": "잠깐, 잠깐, 잠깐만 기다려..."}, {"start": 292.5, "end": 295.5, "text": "하나, 둘..."}];
 let player;
-let playerReady = false;
+let isMutedState = true;
+
+function handleUnmute() {
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
 function onYouTubeIframeAPIReady(){
     player=new YT.Player('player',{
-        videoId:videoId,
-        playerVars:{
-            autoplay:1,
-            controls:1,
-            rel:0,
-            modestbranding:1,
-            fs:0,
-            disablekb:1,
-            cc_load_policy:0,
-            iv_load_policy:3,
-            enablejsapi:1,
-            playsinline:1,
-            origin: window.location.origin || (window.location.protocol + '//' + window.location.host),
-            widget_referrer: window.location.href
-        },
         events:{
             'onReady': function(e){ 
-                playerReady = true;
-                // [V168.2] 즉시 재생 트리거 (최신 유튜브 임베드 뺑뺑이/버퍼링 방지 🚀⚡)
                 try {
-                    var p = e.target.playVideo();
-                    if (p && typeof p.catch === 'function') {
-                        p.catch(function() {
-                            try { e.target.mute(); e.target.playVideo(); } catch(ex) {}
-                        });
+                    e.target.playVideo();
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
                     }
                 } catch(err) {}
                 try {
@@ -90,18 +92,15 @@ function onYouTubeIframeAPIReady(){
     });
 }
 
-// [V168.2] 사용자의 첫 인터랙션 시 플레이어가 대기 중이면 즉시 쾌속 재생 🖱️⚡
-function ensurePlayback(){
-    if (player && typeof player.playVideo === 'function' && typeof player.getPlayerState === 'function') {
-        var st = player.getPlayerState();
-        if (st === -1 || st === 2 || st === 5) {
-            try { player.playVideo(); } catch(err) {}
-        }
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
     }
 }
-window.addEventListener('click', ensurePlayback, {once: true});
-window.addEventListener('keydown', ensurePlayback, {once: true});
-window.addEventListener('touchstart', ensurePlayback, {once: true, passive: true});
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
 
 // [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
 window.addEventListener('keydown', function(e) {
