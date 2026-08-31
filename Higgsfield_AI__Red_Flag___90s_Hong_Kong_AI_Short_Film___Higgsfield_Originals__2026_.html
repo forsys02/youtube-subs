@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Higgsfield AI] Red Flag ｜ 90s Hong Kong AI Short Film ｜ Higgsfield Originals (2026) (한글 자막)</title>
+<link rel="preconnect" href="https://www.youtube-nocookie.com">
 <link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://www.google.com">
 <link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://googlevideo.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="[Higgsfield AI] Red Flag ｜ 90s Hong Kong AI Short Film ｜ Higgsfield Originals (2026) (한글 자막)">
@@ -20,7 +20,9 @@
 <style>
 :root{--fsize:4.5vmin;}
 body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
-#player{position:absolute;top:0;left:0;width:100%;height:100%;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+#unmute-badge{position:absolute;top:20px;left:20px;z-index:10000;background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;display:none;user-select:none;}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
 #subtitles{position:absolute;bottom:10%;width:100%;text-align:center;pointer-events:none;z-index:9999;transition:bottom 0.5s ease;}
 #subtitles.ui-hidden{bottom:1%;}
 .sub-line{display:inline-block;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:var(--fsize);font-weight:bold;padding:1.5vmin 3vmin;border-radius:12px;margin:5px;font-family:'Pretendard',sans-serif;text-shadow:2px 2px 4px #000;line-height:1.4;pointer-events:auto;cursor:grab;}
@@ -32,9 +34,14 @@ body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#
 </style>
 </head>
 <body>
-<div id="player"></div>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/2z7Y6G84Iy4?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 <div id="subtitles"></div>
 <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
 <script>
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
@@ -49,34 +56,29 @@ function toggleFullScreen() {
 const videoId="2z7Y6G84Iy4";
 const subs=[{"start": 31.5, "end": 33.8, "text": "너 남자친구 생겼니?"}, {"start": 34.2, "end": 35.7, "text": "한 명 있긴 해요."}, {"start": 36.0, "end": 38.5, "text": "하지만 아직 지켜보는 중이에요."}, {"start": 39.8, "end": 43.0, "text": "너처럼 다정하고 세심한 아가씨라면,"}, {"start": 43.5, "end": 47.2, "text": "누구든 널 데려가는 사람은 정말 복 받은 거야."}, {"start": 47.8, "end": 49.5, "text": "안녕히 주무세요, 할머니."}, {"start": 65.5, "end": 68.0, "text": "이게 무슨 냄새지?"}, {"start": 70.5, "end": 73.0, "text": "여기서 무슨 냄새가 나는 거지?"}, {"start": 91.5, "end": 93.5, "text": "이봐, 놔줘!"}, {"start": 102.5, "end": 104.5, "text": "여기서 뭐 하는 거야, 리?"}, {"start": 105.0, "end": 107.8, "text": "깜짝 놀라게 해주고 싶었어."}, {"start": 117.5, "end": 120.5, "text": "너한테선 온통 위험 신호(레드 플래그) 냄새만 나, 리."}, {"start": 135.5, "end": 137.2, "text": "불쌍한 총각 같으니."}, {"start": 137.5, "end": 140.0, "text": "운도 참 없지."}];
 let player;
-let playerReady = false;
+let isMutedState = true;
+
+function handleUnmute() {
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
 function onYouTubeIframeAPIReady(){
     player=new YT.Player('player',{
-        videoId:videoId,
-        playerVars:{
-            autoplay:1,
-            controls:1,
-            rel:0,
-            modestbranding:1,
-            fs:0,
-            disablekb:1,
-            cc_load_policy:0,
-            iv_load_policy:3,
-            enablejsapi:1,
-            playsinline:1,
-            origin: window.location.origin || (window.location.protocol + '//' + window.location.host),
-            widget_referrer: window.location.href
-        },
         events:{
             'onReady': function(e){ 
-                playerReady = true;
-                // [V168.2] 즉시 재생 트리거 (최신 유튜브 임베드 뺑뺑이/버퍼링 방지 🚀⚡)
                 try {
-                    var p = e.target.playVideo();
-                    if (p && typeof p.catch === 'function') {
-                        p.catch(function() {
-                            try { e.target.mute(); e.target.playVideo(); } catch(ex) {}
-                        });
+                    e.target.playVideo();
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
                     }
                 } catch(err) {}
                 try {
@@ -90,18 +92,15 @@ function onYouTubeIframeAPIReady(){
     });
 }
 
-// [V168.2] 사용자의 첫 인터랙션 시 플레이어가 대기 중이면 즉시 쾌속 재생 🖱️⚡
-function ensurePlayback(){
-    if (player && typeof player.playVideo === 'function' && typeof player.getPlayerState === 'function') {
-        var st = player.getPlayerState();
-        if (st === -1 || st === 2 || st === 5) {
-            try { player.playVideo(); } catch(err) {}
-        }
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
     }
 }
-window.addEventListener('click', ensurePlayback, {once: true});
-window.addEventListener('keydown', ensurePlayback, {once: true});
-window.addEventListener('touchstart', ensurePlayback, {once: true, passive: true});
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
 
 // [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
 window.addEventListener('keydown', function(e) {
