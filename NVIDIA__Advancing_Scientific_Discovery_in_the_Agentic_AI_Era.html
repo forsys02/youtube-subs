@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[NVIDIA] Advancing Scientific Discovery in the Agentic AI Era ([NVIDIA] Agentic AI 시대의 과학적 발견 발전)</title>
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.google.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="[NVIDIA] Advancing Scientific Discovery in the Agentic AI Era ([NVIDIA] Agentic AI 시대의 과학적 발견 발전)">
 <meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
@@ -43,19 +49,59 @@ function toggleFullScreen() {
 const videoId="Il4dhCv0Li0";
 const subs=[{"start": 7.378, "end": 13.568, "text": "수 세기 동안 과학은 인간과 세월의 속도로 전진해 왔습니다."}, {"start": 13.618, "end": 21.528, "text": "그러다 가속 컴퓨팅과 전 세계 뛰어난 연구진의 등장으로 공식이 완전히 뒤바뀌었죠."}, {"start": 21.579, "end": 29.289, "text": "한때 몇 달씩 걸리던 시뮬레이션 연산이 단 하루로 단축되었고,"}, {"start": 29.289, "end": 37.67, "text": "우리는 분자의 움직임과 질병이 발현되는 과정을 지켜볼 수 있게 되었습니다."}, {"start": 37.67, "end": 45.679, "text": "모든 과학 장비가 이 가속화를 체감했습니다. 염기 서열 분석기,"}, {"start": 45.679, "end": 45.827, "text": ","}, {"start": 45.877, "end": 52.157, "text": "세포 분석기, 현미경, 엑스레이까지요. 모든 신호와 구조,"}, {"start": 52.207, "end": 63.239, "text": "그리고 생명체가 품은 모든 비밀이 밝혀지며 인간이 이해하는 것보다 빠르게 데이터가 생성되고 있습니다."}, {"start": 63.289, "end": 63.519, "text": ","}, {"start": 63.569, "end": 71.947, "text": "그래서 우리는 이를 해결할 지능형 기술을 구축했습니다."}, {"start": 71.947, "end": 78.65, "text": "분자와 생명 현상을 이해하는 오픈 모델이죠."}, {"start": 82.549, "end": 90.21000000000001, "text": "모든 연구자와 기업, 그리고 실현을 기다리는 모든 혁신을 위해 만들어졌습니다."}, {"start": 90.26, "end": 90.34, "text": ","}, {"start": 90.39, "end": 94.975, "text": "이제 다양한 에이전트들이 이 도구를 품고 나아가기 시작했습니다."}, {"start": 95.025, "end": 99.559, "text": "새로운 발견은 이제 인간을 기다려주지 않습니다."}, {"start": 99.60900000000001, "end": 102.80799999999999, "text": "번)는 화면 싱크와 호흡에 맞춰서 한 단계 더 쪼개어 가독성을 높였어! 👍"}, {"start": 102.858, "end": 104.233, "text": "아래가 최종 자막 결과물이야! 👇"}, {"start": 104.283, "end": 104.548, "text": "text"}, {"start": 104.598, "end": 106.451, "text": "과학은 이제 인간 호기심의 속도로 진화하며,"}, {"start": 106.501, "end": 110.1, "text": "연산의 속도로 작동하고 있습니다."}];
 let player;
+let playerReady = false;
 function onYouTubeIframeAPIReady(){
     player=new YT.Player('player',{
         videoId:videoId,
-        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        playerVars:{
+            autoplay:1,
+            controls:1,
+            rel:0,
+            modestbranding:1,
+            fs:0,
+            disablekb:1,
+            cc_load_policy:0,
+            iv_load_policy:3,
+            enablejsapi:1,
+            playsinline:1,
+            origin: window.location.origin || (window.location.protocol + '//' + window.location.host),
+            widget_referrer: window.location.href
+        },
         events:{
             'onReady': function(e){ 
-                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
-                try { e.target.unloadModule("captions"); } catch(err) {} 
+                playerReady = true;
+                // [V168.2] 즉시 재생 트리거 (최신 유튜브 임베드 뺑뺑이/버퍼링 방지 🚀⚡)
+                try {
+                    var p = e.target.playVideo();
+                    if (p && typeof p.catch === 'function') {
+                        p.catch(function() {
+                            try { e.target.mute(); e.target.playVideo(); } catch(ex) {}
+                        });
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
             },
             'onStateChange':onPlayerStateChange
         }
     });
 }
+
+// [V168.2] 사용자의 첫 인터랙션 시 플레이어가 대기 중이면 즉시 쾌속 재생 🖱️⚡
+function ensurePlayback(){
+    if (player && typeof player.playVideo === 'function' && typeof player.getPlayerState === 'function') {
+        var st = player.getPlayerState();
+        if (st === -1 || st === 2 || st === 5) {
+            try { player.playVideo(); } catch(err) {}
+        }
+    }
+}
+window.addEventListener('click', ensurePlayback, {once: true});
+window.addEventListener('keydown', ensurePlayback, {once: true});
+window.addEventListener('touchstart', ensurePlayback, {once: true, passive: true});
 
 // [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
 window.addEventListener('keydown', function(e) {
@@ -253,6 +299,11 @@ document.addEventListener('touchmove', (e) => {
 // [YouTube Keyboard Shortcuts]
 
 </script>
-<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
 </body>
 </html>
