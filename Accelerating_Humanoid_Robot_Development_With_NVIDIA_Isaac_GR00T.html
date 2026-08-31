@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T를 활용한 휴머노이드 로봇 개발 가속화)</title>
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.google.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://i.ytimg.com">
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="Accelerating Humanoid Robot Development With NVIDIA Isaac GR00T (NVIDIA Isaac GR00T를 활용한 휴머노이드 로봇 개발 가속화)">
 <meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
@@ -42,19 +48,59 @@ function toggleFullScreen() {
 const videoId="yvDDpQZliY8";
 const subs=[{"start": 0.02, "end": 5.969, "text": "AI의 다음 도약은 범용 로봇, 즉 휴머노이드입니다. 하지만 이를 만드는 건 결코 쉽지 않죠."}, {"start": 6.019, "end": 13.968, "text": "모든 팀이 시뮬레이터와 원격 조작 시스템, 데이터 파이프라인, 학습 인프라를 연결하며 밑바닥부터 시작합니다."}, {"start": 14.019, "end": 16.968, "text": "본격적인 연구를 시작하기도 전에 준비하는 데만 수개월이 걸리죠."}, {"start": 17.018, "end": 21.968, "text": "엔비디아 '아이작 그루트(Isaac GR00T)'를 소개합니다. 휴머노이드 로봇을 위한 개방형 개발 플랫폼입니다."}, {"start": 22.018, "end": 26.968, "text": "오픈 모델과 시뮬레이션 및 학습 라이브러리, 그리고 데이터 생성기를 제공합니다."}, {"start": 27.018, "end": 30.57, "text": "여기에 로봇 전용 컴퓨터까지 더해졌죠."}, {"start": 30.62, "end": 33.569, "text": "모든 과정이 완벽히 구축되어 단 몇 시간 만에 실행할 준비가 끝납니다."}, {"start": 33.618, "end": 37.069, "text": "먼저 아이작 랩(Isaac Lab)에서 시뮬레이션 환경을 설정합니다."}, {"start": 37.118, "end": 43.569, "text": "그다음 아이작 텔레옵(Isaac Teleop)으로 동작 시연을 캡처합니다."}, {"start": 43.618, "end": 46.069, "text": "실제 로봇이나 시뮬레이션 로봇 모두 가능하죠."}, {"start": 46.118, "end": 51.47, "text": "옴니버스(Omniverse)와 코스모스(Cosmos)를 통해 합성 데이터를 생성하고,"}, {"start": 51.52, "end": 55.068, "text": "단 하나의 시연 데이터를 수천 개로 확장합니다."}, {"start": 55.118, "end": 57.17, "text": "그다음 정책(Policy)을 학습시키고,"}, {"start": 57.219, "end": 59.67, "text": "아이작 랩 아레나에서 이를 평가합니다."}, {"start": 59.719, "end": 64.471, "text": "아이작 로스(Isaac ROS)를 통해 배포하며,"}, {"start": 64.521, "end": 65.971, "text": "젯슨 토르(Jetson Thor)에서 구동합니다."}, {"start": 66.021, "end": 80.218, "text": "모든 요소는 모듈식이며 개방되어 있습니다. [웅장한 음악]"}, {"start": 80.218, "end": 85.168, "text": "저희 것을 그대로 사용하거나 직접 만든 것으로 교체할 수도 있죠."}, {"start": 85.218, "end": 90.57, "text": "'그루트'는 모든 분야와 영역에서 로봇 연구의 원동력이 되고 있습니다."}, {"start": 90.62, "end": 94.319, "text": "연구소부터 공장 현장까지 말이죠."}, {"start": 94.31, "end": 102.009, "text": "하나의 개방형 플랫폼."}, {"start": 102.009, "end": 104.358, "text": "그리고 이제, 새로운 가족이 추가되었습니다."}, {"start": 104.408, "end": 107.459, "text": "Isaac GR00T 로봇 레퍼런스 디자인."}, {"start": 107.509, "end": 110.059, "text": "NVIDIA의 개방형 플랫폼을 기반으로 구축되었습니다."}, {"start": 110.10900000000001, "end": 114.459, "text": "모든 연구실, 어디에서나 프런티어 연구를 수행할 준비가 되어 있습니다."}, {"start": 114.509, "end": 117.06, "text": "로보틱스의 시대가 이곳에서 시작됩니다."}, {"start": 117.11, "end": 120.91, "text": "NVIDIA Isaac GR00T."}];
 let player;
+let playerReady = false;
 function onYouTubeIframeAPIReady(){
     player=new YT.Player('player',{
         videoId:videoId,
-        playerVars:{autoplay:1,controls:1,rel:0,modestbranding:1,fs:0,disablekb:1,cc_load_policy:3},
+        playerVars:{
+            autoplay:1,
+            controls:1,
+            rel:0,
+            modestbranding:1,
+            fs:0,
+            disablekb:1,
+            cc_load_policy:0,
+            iv_load_policy:3,
+            enablejsapi:1,
+            playsinline:1,
+            origin: window.location.origin || (window.location.protocol + '//' + window.location.host),
+            widget_referrer: window.location.href
+        },
         events:{
             'onReady': function(e){ 
-                // [V160.4] 유튜브 기본 자막이 같이 켜져서 두 개로 겹쳐 보이는 현상 방지 🐾
-                try { e.target.unloadModule("captions"); } catch(err) {} 
+                playerReady = true;
+                // [V168.2] 즉시 재생 트리거 (최신 유튜브 임베드 뺑뺑이/버퍼링 방지 🚀⚡)
+                try {
+                    var p = e.target.playVideo();
+                    if (p && typeof p.catch === 'function') {
+                        p.catch(function() {
+                            try { e.target.mute(); e.target.playVideo(); } catch(ex) {}
+                        });
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
             },
             'onStateChange':onPlayerStateChange
         }
     });
 }
+
+// [V168.2] 사용자의 첫 인터랙션 시 플레이어가 대기 중이면 즉시 쾌속 재생 🖱️⚡
+function ensurePlayback(){
+    if (player && typeof player.playVideo === 'function' && typeof player.getPlayerState === 'function') {
+        var st = player.getPlayerState();
+        if (st === -1 || st === 2 || st === 5) {
+            try { player.playVideo(); } catch(err) {}
+        }
+    }
+}
+window.addEventListener('click', ensurePlayback, {once: true});
+window.addEventListener('keydown', ensurePlayback, {once: true});
+window.addEventListener('touchstart', ensurePlayback, {once: true, passive: true});
 
 // [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
 window.addEventListener('keydown', function(e) {
@@ -247,6 +293,11 @@ document.addEventListener('touchmove', (e) => {
 // [YouTube Keyboard Shortcuts]
 
 </script>
-<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
 </body>
 </html>
