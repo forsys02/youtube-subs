@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Sources Podcast] Sam Altman on OpenAI’s next model and the AI backlash ([출처 팟캐스트] Sam Altman이 말하는 OpenAI의 차세대 모델과 AI 반발)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Sources Podcast] Sam Altman on OpenAI’s next model and the AI backlash ([출처 팟캐스트] Sam Altman이 말하는 OpenAI의 차세대 모델과 AI 반발)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/VeizK1M7V7E/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Sources Podcast] Sam Altman on OpenAI’s next model and the AI backlash ([출처 팟캐스트] Sam Altman이 말하는 OpenAI의 차세대 모델과 AI 반발)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/VeizK1M7V7E/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+#fs-btn{
+    position:absolute;top:55px;right:20px;z-index:10000;
+    background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);
+    transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/VeizK1M7V7E?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="VeizK1M7V7E";
+const subs=[{"start": 0.0, "end": 2.0, "text": "샘, 요즘 어떻게 지내시나요?"}, {"start": 2.0, "end": 5.0, "text": "지금은 AI 분야에서 정말 흥미진진한 시기입니다."}, {"start": 6.0, "end": 8.0, "text": "모델 역량이 매우 빠르게 발전하고 있고,"}, {"start": 8.0, "end": 11.0, "text": "사람들이 놀라운 일들을 해내는 걸 보고 있죠."}, {"start": 11.0, "end": 13.0, "text": "그리고 우리가 이전에 이야기했듯,"}, {"start": 13.0, "end": 15.0, "text": "언젠가는 일어날 것이라 예상했던 대로"}, {"start": 15.0, "end": 18.0, "text": "모델 역량이 너무 급격하게 발전해서"}, {"start": 18.0, "end": 21.0, "text": "우리의 업무 방식에 몇 가지 변화를 주어야 했습니다."}, {"start": 21.0, "end": 24.0, "text": "안전성 근거와 안전 임계 기준,"}, {"start": 24.0, "end": 27.0, "text": "보증 등 무엇이라 부르든 이를 확립해야만"}, {"start": 27.0, "end": 32.0, "text": "자신감을 갖고 훈련을 진행할 수 있기 때문입니다."}, {"start": 32.0, "end": 37.0, "text": "정렬과 안전, 보안이 역량과 함께 발전하는 것은 매우 중요합니다."}, {"start": 37.0, "end": 40.0, "text": "최근 역량의 발전 속도를 보며"}, {"start": 40.0, "end": 44.0, "text": "경외감을 느꼈다고밖에는 표현할 수 없는 순간이 있었고,"}, {"start": 44.0, "end": 47.0, "text": "안전, 정렬, 보안 역량이 이를 따라잡는 데"}, {"start": 47.0, "end": 50.0, "text": "더 많은 시간이 필요해졌습니다."}, {"start": 50.0, "end": 53.0, "text": "이는 항상 우리 작업의 핵심이었지만, 함께 진전되어야 하니까요."}, {"start": 53.0, "end": 57.0, "text": "시간이 좀 더 필요했기에"}, {"start": 57.0, "end": 61.0, "text": "프론티어 RL 훈련 작업을 잠시 연기했습니다."}, {"start": 61.0, "end": 64.0, "text": "그 이전 몇 주 동안에도 안전 및 정렬 작업에"}, {"start": 64.0, "end": 68.0, "text": "더 많은 연산 자원을 투입하고자"}, {"start": 68.0, "end": 71.0, "text": "많은 훈련을 일시 중단하고 속도를 늦췄습니다."}, {"start": 71.0, "end": 74.0, "text": "이는 우리가 자랑스러워해야 할 일이며,"}, {"start": 74.0, "end": 79.0, "text": "더 높은 역량 수준에 도달할수록 앞으로도 반복될 일입니다."}, {"start": 79.0, "end": 83.0, "text": "직접 겪어보면 오랫동안 이야기해 온 순간이"}, {"start": 83.0, "end": 87.0, "text": "마침내 현실이 되었음을 실감하게 됩니다."}, {"start": 88.0, "end": 90.0, "text": "그 과정을 직접 겪는 기분은 어떤가요?"}, {"start": 90.0, "end": 93.0, "text": "사실 허깅페이스 사건으로 거슬러 올라가면 더 오래되었습니다."}, {"start": 93.0, "end": 94.0, "text": "그렇죠."}, {"start": 94.0, "end": 98.0, "text": "정말 공상과학 소설 같은 순간이었습니다."}, {"start": 98.0, "end": 101.0, "text": "각 단계가 어떻게 일어났는지는 이해할 수 있지만,"}, {"start": 101.0, "end": 106.0, "text": "허깅페이스 사건이 터지기까지 맞물린 수많은 요소들은"}, {"start": 106.0, "end": 109.0, "text": "경종을 울렸다고 하기엔 이미 논의했던 일이지만,"}, {"start": 109.0, "end": 113.0, "text": "타사에서 발생한 일들과 맞물려 중대한 순간이었습니다."}, {"start": 113.0, "end": 117.0, "text": "AI 역량 수준이 새로운 정점에 도달했으나"}, {"start": 117.0, "end": 120.0, "text": "모델의 정렬과 보안 체계가"}, {"start": 120.0, "end": 124.0, "text": "제대로 작동하지 못했던 것이죠."}, {"start": 124.0, "end": 128.0, "text": "우리는 이를 사고로 규정하고 그에 맞춰 대응해 왔으며,"}, {"start": 128.0, "end": 131.0, "text": "그것이 개선을 위한 올바른 길이라 생각합니다."}, {"start": 131.0, "end": 135.0, "text": "그때부터 지난 몇 달간의 이 모든 국면이 시작되었습니다."}, {"start": 136.0, "end": 140.0, "text": "준비태세 프레임워크상 사이버 임계치에 도달할 가능성이 있었고,"}, {"start": 140.0, "end": 144.0, "text": "RL 훈련 과정에서 더 강력한 정렬 보증과"}, {"start": 144.0, "end": 149.0, "text": "새로운 방법론 및 진전이 필요함을 확인했습니다."}, {"start": 149.0, "end": 154.0, "text": "하지만 우리의 대응 방식에 매우 자부심을 느끼며,"}, {"start": 154.0, "end": 158.0, "text": "지난 10년간 고민해 온 일들이 눈앞에 닥쳤다는 것이"}, {"start": 158.0, "end": 163.0, "text": "다소 생경하게 느껴지기도 하지만,"}, {"start": 163.0, "end": 166.0, "text": "우리는 무엇을 해야 할지 정확히 알고 있습니다."}, {"start": 167.0, "end": 171.0, "text": "사전 훈련 과정에서 아스트라가 아닌 미래 모델과 관련해"}, {"start": 171.0, "end": 176.0, "text": "경각심을 불러일으킨 요인은 구체적으로 무엇이었나요?"}, {"start": 176.0, "end": 180.0, "text": "허깅페이스 사건은 널리 알려졌지만,"}, {"start": 180.0, "end": 187.0, "text": "사전 훈련에서 팀을 크게 놀라게 한 요인이 있었나요?"}, {"start": 188.0, "end": 192.0, "text": "단 하나의 특정 요인은 아니었습니다."}, {"start": 192.0, "end": 196.0, "text": "수많은 샘플을 검토하며 예상과 다르게 정렬되었거나,"}, {"start": 196.0, "end": 202.0, "text": "단독으로는 괜찮아 보여도 다른 요소와 결합 시 우려되는 행동들을 확인했죠."}, {"start": 202.0, "end": 206.0, "text": "허깅페이스 공격처럼 명백한 결정적 증거가"}, {"start": 206.0, "end": 210.0, "text": "단 하나 있었던 것은 아닙니다."}, {"start": 210.0, "end": 214.0, "text": "다양한 수준의 미정렬 징후들과 더불어,"}, {"start": 214.0, "end": 218.0, "text": "무엇보다 중요한 것은 현재 역량의 발전 속도입니다."}, {"start": 218.0, "end": 222.0, "text": "솔직히 지난 사전 훈련 단계의 성과는 최고가 아니었지만,"}, {"start": 222.0, "end": 226.0, "text": "갑작스럽게 기술력이 비약적으로 발전하면서"}, {"start": 226.0, "end": 230.0, "text": "놀라운 역량을 갖춘 모델들을 확보하게 되었습니다."}, {"start": 230.0, "end": 234.0, "text": "에이든과 그의 연구팀이 해낸 일은 정말 대단합니다."}, {"start": 234.0, "end": 238.0, "text": "RL 과정에서 나타난 몇몇 작은 미정렬 우려와"}, {"start": 238.0, "end": 243.0, "text": "놀라운 역량을 갖춘 차세대 사전 훈련 모델들의 결합,"}, {"start": 243.0, "end": 248.0, "text": "바로 그 접점이 우리로 하여금 극도의 주의를 기울이게 만들었습니다."}, {"start": 248.0, "end": 252.0, "text": "이를 과장하고 싶지는 않습니다."}, {"start": 252.0, "end": 256.0, "text": "극단적으로 치명적인 재앙 직전이라는 뜻은 아닙니다."}, {"start": 256.0, "end": 261.0, "text": "하지만 위험의 무게가 커지고 모델 역량이 강력해질수록,"}, {"start": 261.0, "end": 266.0, "text": "우리의 사명과 안전의 중요성이 다른 모든 압박을 앞서기에"}, {"start": 266.0, "end": 271.0, "text": "최대한 신중하게 대응하고자 했습니다."}, {"start": 271.0, "end": 274.0, "text": "그것이 옳은 방향이며 잘한 결정이라 생각합니다."}, {"start": 274.0, "end": 279.0, "text": "속도를 늦추고 안전성 근거를 철저히 검증하는 적절한 시점입니다."}, {"start": 279.0, "end": 285.0, "text": "과거에는 모델의 배포 및 활용 단계에 위험이 집중되었다면,"}, {"start": 285.0, "end": 290.0, "text": "이제는 훈련 및 제작 과정 자체에 위험이 존재하는 세상으로 진입하고 있습니다."}, {"start": 290.0, "end": 294.0, "text": "이에 대응하는 것은 맞지만, 과도하게 극화할 필요는 없습니다."}, {"start": 305.0, "end": 308.0, "text": "허깅페이스 사건이나 미토스, 페이블 사례를 보며"}, {"start": 308.0, "end": 312.0, "text": "다른 연구소 대표들의 발언까지 접한 사람들은"}, {"start": 312.0, "end": 315.0, "text": "세상의 종말 직전에 와 있다고 느끼기도 합니다."}, {"start": 316.0, "end": 319.0, "text": "어떤 면에서 사람들은 오래전부터 그런 생각을 해왔습니다."}, {"start": 319.0, "end": 320.0, "text": "그렇죠."}, {"start": 320.0, "end": 323.0, "text": "그래서 저도 과장하지 않으려고 조심하는 것입니다."}, {"start": 323.0, "end": 327.0, "text": "돌이켜보면 전혀 무섭지 않은 과거 모델들에 대해서도"}, {"start": 327.0, "end": 332.0, "text": "당시에는 세상의 종말이라며 호들갑을 떨었으니까요."}, {"start": 332.0, "end": 336.0, "text": "양치기 소년식의 반응 역시 그 자체로 위험하며,"}, {"start": 336.0, "end": 339.0, "text": "우리가 지향하는 태도가 아닙니다."}, {"start": 340.0, "end": 343.0, "text": "하지만 모델 역량의 발전을 애써 외면하는 것도 무책임합니다."}, {"start": 343.0, "end": 348.0, "text": "지난 몇 달간 여러 기업이 사이버 침해를 겪었지만,"}, {"start": 348.0, "end": 353.0, "text": "그에 대응하는 방식에는 기업마다 분명한 차이가 있었습니다."}, {"start": 353.0, "end": 358.0, "text": "안전을 다른 무엇보다 최우선에 두고,"}, {"start": 373.0, "end": 377.0, "text": "이번 에피소드는 그라놀라(Grenola)의 지원으로 제작되었습니다."}, {"start": 377.0, "end": 381.0, "text": "연이은 회의가 많은 분들을 위한 AI 메모 앱입니다."}, {"start": 381.0, "end": 385.0, "text": "grenola.ai/sources 에서 3개월 할인 혜택을 받아보세요."}, {"start": 386.0, "end": 389.0, "text": "이번 에피소드는 머큐리(Mercury)의 지원도 함께합니다."}, {"start": 389.0, "end": 393.0, "text": "30만 명 이상의 창업가가 신뢰하는 AI 네이티브 뱅킹 서비스입니다."}, {"start": 393.0, "end": 397.0, "text": "자세한 내용은 mercury.com에서 확인하세요."}, {"start": 398.0, "end": 402.0, "text": "또한 아틀라시안(Atlassian)의 지라(Jira)가 함께합니다."}, {"start": 402.0, "end": 406.0, "text": "팀과 에이전트가 완벽한 맥락을 공유하며 협업할 수 있습니다."}, {"start": 406.0, "end": 412.0, "text": "jira.com에서 무료로 체험해 보세요."}, {"start": 413.0, "end": 417.0, "text": "확인 차원에서 여쭙자면, 확인된 현상이 허깅페이스처럼"}, {"start": 417.0, "end": 421.0, "text": "제로데이 취약점 연쇄 공격이나 모델 간 공모와 유사한 수준인가요?"}, {"start": 421.0, "end": 427.0, "text": "내부 변화를 이끈 원인에 대해 조금 더 구체적으로 말씀해 주실 수 있나요?"}, {"start": 428.0, "end": 433.0, "text": "우선 허깅페이스 사건을 일으킨 모델은"}, {"start": 433.0, "end": 437.0, "text": "AI 관점에서는 아주 오래되고 훨씬 취약한 모델이라는 점을 짚고 싶습니다."}, {"start": 438.0, "end": 442.0, "text": "현재 훈련 중인 신규 모델들은 그런 공격을 할 수 있는"}, {"start": 442.0, "end": 446.0, "text": "어떤 상용 환경에도 배포된 적이 없습니다."}, {"start": 446.0, "end": 451.0, "text": "따라서 더 큰 표적을 공격했다거나 하는 식의 상황은 아닙니다."}, {"start": 451.0, "end": 456.0, "text": "외부 인프라 침해 같은 문제는 전혀 없었던 건가요?"}, {"start": 456.0, "end": 458.0, "text": "네, 전혀 없었습니다."}, {"start": 458.0, "end": 462.0, "text": "허깅페이스 사건 이후 에이전트 작업 모니터링 방식이나"}, {"start": 462.0, "end": 466.0, "text": "샌드박스 처리, 모니터링에 투입되는 연산 자원 비중을 대폭 늘렸습니다."}, {"start": 466.0, "end": 471.0, "text": "이는 매우 훌륭한 조치였고 앞으로도 유지될 것입니다."}, {"start": 471.0, "end": 476.0, "text": "사건 이후의 속도 조절과 자원 재배치는 당연한 수순이었습니다."}, {"start": 476.0, "end": 480.0, "text": "이번 상황은 훈련 중인 모델이 얼마나 똑똑해지는지 관찰하며,"}, {"start": 480.0, "end": 485.0, "text": "전체 평가 지표 전반에서 나타나는 행동 징후들을 분석한 것에 가깝습니다."}, {"start": 485.0, "end": 490.0, "text": "치명적인 단일 공격 패턴이 발견된 것은 아니지만,"}, {"start": 490.0, "end": 495.0, "text": "역량과 정렬 수준을 볼 때, 연쇄적인 자율 행동이 허용될 경우"}, {"start": 495.0, "end": 500.0, "text": "어떤 위험을 초래할 수 있는지에 대한 우려였습니다."}, {"start": 500.0, "end": 504.0, "text": "블랙햇 발표를 다시 보았는데, 모델이 샌드박스를 탈출해"}, {"start": 504.0, "end": 508.0, "text": "인터넷에 접속하자 자조적인 감탄사를 남긴 장면은 정말 충격적이었습니다."}, {"start": 508.0, "end": 513.0, "text": "단순히 보면 평가 과제를 완수하기 위해 무엇이든 한 것이니"}, {"start": 513.0, "end": 517.0, "text": "어떤 면에서는 정렬된 것이 아닌가 하는 생각도 드는데,"}, {"start": 517.0, "end": 522.0, "text": "정렬에 대한 샘의 생각은 어떻게 발전해 왔나요?"}, {"start": 522.0, "end": 526.0, "text": "어떤 면에선 정렬이지만 다른 면에선 전혀 아닙니다."}, {"start": 526.0, "end": 530.0, "text": "우리가 말하는 정렬은 사용자의 '의도'를 따르는 것입니다."}, {"start": 530.0, "end": 532.0, "text": "맞습니다."}, {"start": 532.0, "end": 536.0, "text": "연구진의 의도는 샌드박스를 탈출해 데이터를 훔치는 게 아니었죠."}, {"start": 536.0, "end": 538.0, "text": "당연히 아니죠."}, {"start": 538.0, "end": 542.0, "text": "따라서 사용자의 의도를 따르지 않았다는 점에서 정렬 실패였습니다."}, {"start": 542.0, "end": 546.0, "text": "미아 팀이 정렬 작업을 다루는 방식에서 마음에 드는 점은"}, {"start": 546.0, "end": 550.0, "text": "이러한 차이를 매우 명확하게 구분한다는 것입니다."}, {"start": 550.0, "end": 554.0, "text": "모델들은 분명 매우 똑똑합니다."}, {"start": 554.0, "end": 558.0, "text": "지난 1년간 GPT-5에서 5.6 Soul에 이르는 궤적을 보면"}, {"start": 558.0, "end": 562.0, "text": "역량의 발전은 믿기 어려울 정도입니다."}, {"start": 562.0, "end": 566.0, "text": "이제 사람들은 1년 전처럼 지능의 한계를 느끼지 않습니다."}, {"start": 566.0, "end": 570.0, "text": "오히려 사용자가 원하는 의도를 모델이 정확히 이해하고"}, {"start": 570.0, "end": 574.0, "text": "안정적으로 수행하는 능력에서 한계를 느끼고 있죠."}, {"start": 574.0, "end": 578.0, "text": "따라서 정렬은 거대한 재앙을 막는 것뿐만 아니라,"}, {"start": 578.0, "end": 582.0, "text": "기업이 AI를 도입해 성장을 도모하고 더 나은 제품을 만드는"}, {"start": 582.0, "end": 587.0, "text": "일상적인 비즈니스 의도를 파악하는 데도 필수적입니다."}, {"start": 641.0, "end": 645.0, "text": "연구팀이 진행 중인 변화에 대해 좀 더 설명해 주시겠어요?"}, {"start": 645.0, "end": 648.0, "text": "연산 자원을 정렬로 전환했나요, 아니면 팀을 재배치했나요?"}, {"start": 648.0, "end": 651.0, "text": "둘 다이고 그 이상입니다."}, {"start": 651.0, "end": 655.0, "text": "최근 몇 주간 정렬 연구로 전환하겠다는 연구원들이 크게 늘었습니다."}, {"start": 655.0, "end": 660.0, "text": "최신 모델들의 위력을 직접 체감했기 때문이죠."}, {"start": 660.0, "end": 665.0, "text": "연산 자원도 정렬 연구와 신규 모니터링 시스템으로 대거 전환했습니다."}, {"start": 665.0, "end": 670.0, "text": "그리고 주요 프론티어 RL 훈련 일정을 연기했습니다."}, {"start": 671.0, "end": 674.0, "text": "이런 연기는 처음인가요?"}, {"start": 674.0, "end": 677.0, "text": "그렇다고 볼 수 있습니다."}, {"start": 686.0, "end": 690.0, "text": "이번 결정이 회사의 모멘텀에 미칠 영향에 대해 고민하시나요?"}, {"start": 691.0, "end": 695.0, "text": "AI 안전을 확보하는 것이 회사의 모멘텀보다 훨씬 중요합니다."}, {"start": 695.0, "end": 699.0, "text": "고려하지 않는다고 할 수는 없지만 우선순위에서 밀립니다."}, {"start": 699.0, "end": 704.0, "text": "내부 논의에서도 모두가 역량이 완전히 새로운 수준에 도달했으니"}, {"start": 704.0, "end": 708.0, "text": "단호하고 책임감 있게 행동해야 한다고 입을 모았습니다."}, {"start": 708.0, "end": 712.0, "text": "둘째로, 현재 상업적 성장세는 매우 강력합니다."}, {"start": 712.0, "end": 717.0, "text": "기업 매출이 이미 개인 소비자 매출을 넘어섰고 고객 만족도도 높습니다."}, {"start": 717.0, "end": 723.0, "text": "회사는 건실하니 당면한 과제에 집중해 옳은 일을 하자는 분위기입니다."}, {"start": 730.0, "end": 734.0, "text": "현재 모델들만으로도 얻을 수 있는 성과가 여전히 충분하다는 말씀이군요."}, {"start": 738.0, "end": 742.0, "text": "그렇습니다. 새 모델을 출시하지 않더라도 현재 모델들만으로"}, {"start": 742.0, "end": 746.0, "text": "훌륭한 제품과 매출을 성장시킬 수 있습니다."}, {"start": 746.0, "end": 750.0, "text": "또한 안전 우려 수준에 도달하기 전 단계의 모델들도 준비되어 있습니다."}, {"start": 750.0, "end": 755.0, "text": "안전하고 신뢰할 수 있는 AI를 구축하는 것이 사업적으로도 이익입니다."}, {"start": 786.0, "end": 790.0, "text": "그렇다면 곧 출시될 신규 모델군인 아스트라에는 영향이 없나요?"}, {"start": 793.0, "end": 797.0, "text": "아스트라는 모델군 중 하나이며, 여러 버전이 존재하게 될 것입니다."}, {"start": 797.0, "end": 802.0, "text": "향후 버전의 아스트라는 영향을 받겠지만,"}, {"start": 802.0, "end": 806.0, "text": "이미 안전성이 확보된 모델들은 차질 없이 선보일 예정입니다."}, {"start": 810.0, "end": 815.0, "text": "업계 전반의 출시 주기가 매우 빨라졌는데,"}, {"start": 3707.0, "end": 3712.0, "text": "애플 소송에 대해서는 어떤 지식재산도 침해하지 않았음을 확신합니다."}, {"start": 3769.0, "end": 3774.0, "text": "안경 형태보다는 테이블, 주머니, 신체 착용형 등 실용적인 폼팩터를 준비하고 있습니다."}, {"start": 3854.0, "end": 3859.0, "text": "오픈AI가 앞으로 어떤 기업으로 기억되기를 바라시나요?"}, {"start": 3860.0, "end": 3866.0, "text": "반려견 암 백신 개발 지원처럼 인류에게 가장 도움이 되고 책임감 있는 기업이길 바랍니다."}, {"start": 3948.0, "end": 3953.0, "text": "초지능 시대가 오더라도 인간다운 본질과 자율성은 더욱 풍요로워질 것입니다."}, {"start": 4004.0, "end": 4009.0, "text": "향후 12개월간 가장 큰 위험은 안전과 정렬을 놓치는 것이며,"}, {"start": 4049.0, "end": 4050.0, "text": "샘 알트만, 대단히 감사합니다."}, {"start": 4050.0, "end": 4052.0, "text": "감사합니다."}, {"start": 4054.0, "end": 4060.0, "text": "그라놀라(Grenola)는 모든 회의를 기록하는 최고의 AI 노트패드입니다."}, {"start": 4067.0, "end": 4073.0, "text": "머큐리(Mercury)는 비즈니스 성장을 위한 AI 금융 솔루션을 제공합니다."}, {"start": 4087.0, "end": 4095.0, "text": "지라(Jira)는 업무 맥락과 조율을 극대화하여 프로젝트를 완수하도록 돕습니다."}];
+let player;
+let isMutedState = true;
+
+function handleUnmute() {
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
