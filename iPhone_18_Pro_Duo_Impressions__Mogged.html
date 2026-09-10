@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone 18 Pro Duo Impressions： Mogged (한글 자막)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="iPhone 18 Pro Duo Impressions： Mogged (한글 자막)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/Od6M0AXpcxQ/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iPhone 18 Pro Duo Impressions： Mogged (한글 자막)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/Od6M0AXpcxQ/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+#fs-btn{
+    position:absolute;top:55px;right:20px;z-index:10000;
+    background:rgba(0,0,0,0.6);color:#fff;padding:10px 15px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.5vmin;backdrop-filter:blur(5px);
+    transition:opacity 0.5s, background 0.2s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#fs-btn.fade-out{opacity:0.15;}
+#fs-btn:hover{background:rgba(255,255,255,0.2);opacity:1 !important;}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/Od6M0AXpcxQ?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+<script>
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+    }
+}
+
+const videoId="Od6M0AXpcxQ";
+const subs=[{"start": 2.0, "end": 5.04, "text": "자, 자, 드디어 테크템버의 계절이 돌아왔습니다."}, {"start": 5.04, "end": 6.29, "text": "오늘 애플이"}, {"start": 6.29, "end": 9.0, "text": "매년 열리는 가을 스페셜 이벤트를 진행했습니다."}, {"start": 9.0, "end": 11.64, "text": "신형 아이폰을 공개했는데, 전부는 아니었죠."}, {"start": 11.64, "end": 14.0, "text": "최신 아이폰이 다 나온 건 아니죠. 음, 자리를 비워줘야 했거든요."}, {"start": 14.0, "end": 17.35, "text": "아주 중요하고 거대한 폴더블 때문입니다. 그래서 이번 행사에서는"}, {"start": 17.35, "end": 20.0, "text": "새로운 아이폰 18 프로와 프로 맥스만 나왔고"}, {"start": 20.0, "end": 22.81, "text": "그리고 새로운 폴더블 모델까지였죠. 기본형 아이폰과"}, {"start": 22.81, "end": 25.0, "text": "아마도 새로운 에어, 새로운 SE는"}, {"start": 25.0, "end": 27.94, "text": "내년 초에 나올 예정인데, 솔직히 반가운 출시 주기 변화입니다."}, {"start": 27.94, "end": 30.0, "text": "신제품 핸즈온 및 첫인상 영상에 오신 걸 환영합니다."}, {"start": 30.0, "end": 31.88, "text": "완전히 새로워진 프로 아이폰들과"}, {"start": 31.88, "end": 34.57, "text": "오랫동안 기다려온 폴더블 모델을 살펴보죠. 우선"}, {"start": 34.57, "end": 37.0, "text": "18 프로는 꽤 간단합니다. 왜냐하면"}, {"start": 37.0, "end": 38.89, "text": "겉모습이 똑같거든요. 디자인과"}, {"start": 38.89, "end": 41.29, "text": "크기, 그리고 기본적인 모든 요소들이"}, {"start": 41.29, "end": 44.0, "text": "여전히 그대로입니다. 기본적으로"}, {"start": 44.0, "end": 46.67, "text": "내부에 새롭게 들어간 것들은 제 생각에"}, {"start": 46.67, "end": 50.0, "text": "실제로 얼마나 큰 차이를 만들어내는지"}, {"start": 50.0, "end": 52.52, "text": "테스트를 좀 해봐야 할 것 같습니다. 새로운 A20 프로처럼요."}, {"start": 52.52, "end": 55.0, "text": "대단한 칩이 들어갔죠. 무려 2나노 공정 기반의"}, {"start": 55.0, "end": 57.14, "text": "칩이고 메모리 대역폭도 50%나 넓어졌는데,"}, {"start": 57.14, "end": 60.0, "text": "이것 역시 대박이죠. 과연 실제 성능 향상으로 얼마나"}, {"start": 60.0, "end": 62.71, "text": "이어질지, 혹은 전력 효율 면에서 얼마나"}, {"start": 62.71, "end": 64.76, "text": "이득을 볼 수 있을지는"}, {"start": 64.76, "end": 67.0, "text": "아직 미지수입니다. 하지만 키노트에서"}, {"start": 67.0, "end": 69.33, "text": "기대감을 갖게 만든 몇 가지 핵심 포인트가 있었죠."}, {"start": 69.33, "end": 72.0, "text": "배터리 타임이 엄청 늘어났다는 주장인데요, 애플 측에선"}, {"start": 72.0, "end": 74.8, "text": "신형 18 프로의 배터리 사용 시간이"}, {"start": 74.8, "end": 77.0, "text": "17 프로 맥스와 같고, 신형 18 프로"}, {"start": 77.0, "end": 79.16, "text": "맥스는 역대 아이폰 중 최고의 배터리를 보여준다고 합니다."}, {"start": 79.16, "end": 81.0, "text": "아시다시피 매년 개선되길 바라는 부분이지만"}, {"start": 81.0, "end": 83.81, "text": "배터리 용량 자체는 크게 달라진 게 없어 보이거든요."}, {"start": 83.81, "end": 86.0, "text": "그러니 기대해 볼 만하죠. 그리고 메인 카메라에는"}, {"start": 86.0, "end": 88.45, "text": "새로운 가변 조리개 렌즈도 탑재되었습니다."}, {"start": 88.45, "end": 90.28, "text": "이미 루머로도 들었던 내용이죠."}, {"start": 90.28, "end": 92.0, "text": "항상 최대 개방으로"}, {"start": 92.0, "end": 93.93, "text": "고정되어 있는 대신에"}, {"start": 93.93, "end": 96.46000000000001, "text": "수동 제어를 통해 실제로 조리개를 조일 수 있습니다."}, {"start": 96.46000000000001, "end": 99.0, "text": "네 맞습니다, 댓글 달기 전에 말씀드리자면"}, {"start": 99.0, "end": 101.22999999999999, "text": "이건 우리가 8년 전에 봤던"}, {"start": 101.22999999999999, "end": 102.86, "text": "삼성 갤럭시 S9의 그것과 같습니다."}, {"start": 102.86, "end": 105.0, "text": "다만 그건 조리개 값이 2개뿐이었죠."}, {"start": 105.0, "end": 108.2, "text": "최대 개방이거나 조인 상태, 즉 f/1.5 아니면"}, {"start": 108.2, "end": 109.59, "text": "f/2.4였는데, 이번 아이폰은"}, {"start": 109.59, "end": 110.89, "text": "기본 카메라"}, {"start": 110.89, "end": 113.0, "text": "앱에서 실제로 4단계의"}, {"start": 113.0, "end": 115.72, "text": "조리개 스톱을 전환할 수 있습니다. 네, 그리고"}, {"start": 115.72, "end": 118.0, "text": "예전 삼성 스마트폰들처럼"}, {"start": 118.0, "end": 120.95, "text": "물리 조리개가 열리고 닫히는 모습을 직접 볼 수 있습니다."}, {"start": 120.95, "end": 124.0, "text": "수동 제어로 조작하면 조리개 날개가 보이죠. 빛을"}, {"start": 124.0, "end": 126.16, "text": "충분히 비춰준다면요. 게다가 이번엔 훨씬 더 큰 센서죠."}, {"start": 126.16, "end": 129.0, "text": "그 당시 삼성이 다루던 센서보다"}, {"start": 129.0, "end": 132.08, "text": "갤럭시 S9 시절 센서보다 훨씬 커서 차이가 더 날 수도 있죠"}, {"start": 132.08, "end": 135.0, "text": "최대 개방과 조리개를 조였을 때의 차이 말입니다, 하지만"}, {"start": 135.0, "end": 137.52, "text": "직접 테스트를 좀 해봐야겠죠, 그래도 저는"}, {"start": 137.52, "end": 140.0, "text": "새로운 하드웨어 기능을 높게 평가하기 때문에"}, {"start": 140.0, "end": 142.94, "text": "기꺼이 기대해 보려고 합니다, 상단의 다이내믹 아일랜드는"}, {"start": 142.94, "end": 146.0, "text": "25% 더 작아졌는데, 특히 이번에"}, {"start": 146.0, "end": 147.97, "text": "Face ID 적외선 카메라를 옮긴 덕분입니다"}, {"start": 147.97, "end": 150.81, "text": "이제 완전히 왼쪽 구석의"}, {"start": 150.81, "end": 153.0, "text": "디스플레이 아래로 들어갔거든요"}, {"start": 153.0, "end": 155.62, "text": "그래서 좌측 상단의 픽셀 배열이 살짝 다른데요"}, {"start": 155.62, "end": 158.0, "text": "솔직히 육안으로는 99%는"}, {"start": 158.0, "end": 159.98, "text": "전혀 알아챌 수 없습니다, 그리고 중앙 펀치홀이 작아져서"}, {"start": 159.98, "end": 162.0, "text": "공간에 여유가 생긴 덕분에"}, {"start": 162.0, "end": 165.23, "text": "라이브 액티비티를 2개가 아닌 최대 3개까지 띄울 수 있죠, 반가운 변화입니다"}, {"start": 165.23, "end": 168.0, "text": "그리고 네, 그 외에 진짜 새로워진 점이라면"}, {"start": 168.0, "end": 169.96, "text": "사실상 새로운 색상들뿐인데요, 우선"}, {"start": 169.96, "end": 172.0, "text": "이번 메인 컬러로 보이는"}, {"start": 172.0, "end": 175.03, "text": "버건디가 있고, 연하늘색 느낌의"}, {"start": 175.03, "end": 177.45, "text": "글래시어와 새로운 실버도 있습니다"}, {"start": 177.45, "end": 179.0, "text": "실버는 좀 심심하긴 하지만"}, {"start": 179.0, "end": 181.1, "text": "이전보다 일체감이 훨씬 좋아졌습니다"}, {"start": 181.1, "end": 183.0, "text": "전작은 유리 부분과 메탈 프레임의"}, {"start": 183.0, "end": 185.57, "text": "색감이 서로 달랐으니까요, 그리고 마침내"}, {"start": 185.57, "end": 188.64, "text": "드디어, 드디어, 드디어 완전히"}, {"start": 188.64, "end": 190.42, "text": "매트 블랙 18 프로가 나왔습니다"}, {"start": 190.42, "end": 193.0, "text": "제 생각엔 바로 이 모델이"}, {"start": 193.0, "end": 196.0, "text": "제 마음을 제대로 사로잡은 것 같네요, 지금 당장 여러분이 하셔야 할 일은"}, {"start": 196.0, "end": 197.98, "text": "바로 구독을 누르시는 겁니다, 그래야"}, {"start": 197.98, "end": 201.0, "text": "다양한 테스트 결과와 실제 쓸만한지 여부를"}, {"start": 201.0, "end": 203.35, "text": "곧 올라올 상세 리뷰에서 가장 먼저 확인하실 수 있으니까요"}, {"start": 203.35, "end": 206.0, "text": "아래 구독 버튼을 꾹 눌러주세요, 그냥"}, {"start": 206.0, "end": 209.1, "text": "바로 클릭해 주세요, 좋습니다, 그럼 새로운"}, {"start": 209.1, "end": 212.0, "text": "프로 모델은 1,199달러부터 시작하고"}, {"start": 212.0, "end": 214.19, "text": "프로 맥스는 1,299달러부터 시작합니다, 네"}, {"start": 214.19, "end": 216.23, "text": "작년보다 또다시 100달러"}, {"start": 216.23, "end": 219.0, "text": "인상된 셈이죠, 가격 인상의 여파가"}, {"start": 219.0, "end": 221.86, "text": "모두에게 닥치고 있는데, 애플은 조용히"}, {"start": 221.86, "end": 223.93, "text": "여전히 판매 중인 구형 아이폰 가격도"}, {"start": 223.93, "end": 226.0, "text": "슬그머니 인상했습니다, 아이폰 16이나"}, {"start": 226.0, "end": 228.44, "text": "17e도 각각 100달러씩 올랐는데"}, {"start": 228.44, "end": 231.0, "text": "애플 공홈에서 직접 확인해 보실 수 있습니다"}, {"start": 231.0, "end": 233.57999999999998, "text": "하지만 이제 프로가 최상위 라인업이 아닙니다"}, {"start": 233.57999999999998, "end": 236.0, "text": "진정한 최상위 모델은 우리 모두가 예상했던"}, {"start": 236.0, "end": 238.91, "text": "바로 그 '원 모어 씽(One more thing)',"}, {"start": 238.91, "end": 241.82, "text": "2007년에 처음 출시된 이래로"}, {"start": 241.82, "end": 245.0, "text": "아이폰 사상 최초로 등장한"}, {"start": 245.0, "end": 247.49, "text": "진정한 새로운 폼팩터이자"}, {"start": 247.49, "end": 249.64, "text": "최초의 폴더블 아이폰,"}, {"start": 249.64, "end": 252.84, "text": "바로 아이폰 듀오(iPhone Duo)입니다, 와, 진짜 이 폰은"}, {"start": 252.84, "end": 256.0, "text": "너무나 흥미롭습니다, 그래서"}, {"start": 256.0, "end": 259.0, "text": "다른 건 나중에 다룰 테니 이번 영상에선 이 녀석에 집중해 보려 합니다"}, {"start": 259.0, "end": 261.61, "text": "추후 영상에서 더 다루겠지만, 재미있게도 이미 예상은 했었죠"}, {"start": 261.61, "end": 264.0, "text": "루머도 다 돌았고 대충 어떤 모습일지"}, {"start": 264.0, "end": 266.14, "text": "다 알고 있었음에도 불구하고"}, {"start": 266.14, "end": 268.0, "text": "실제로 쥐고 써보는 순간 정말 설렜습니다"}, {"start": 268.0, "end": 270.26, "text": "주름과 무게, 그립감 등 모든 게 궁금했죠"}, {"start": 270.26, "end": 273.0, "text": "자, 우선 기본적인 하드웨어부터 살펴보면"}, {"start": 273.0, "end": 275.98, "text": "여권 비율의 인폴딩 북스타일 폴더블 폰으로"}, {"start": 275.98, "end": 277.79, "text": "전면에는 5.4인치 디스플레이가 탑재되었습니다"}, {"start": 277.79, "end": 280.0, "text": "다소 작게 느껴질 수 있지만 고주사율을 지원하고"}, {"start": 280.0, "end": 282.76, "text": "코너 펀치홀 카메라가 적용됐죠"}, {"start": 282.76, "end": 285.38, "text": "프레임은 티타늄 소재에 레일 모서리가 둥글어서"}, {"start": 285.38, "end": 287.0, "text": "화면을 펼칠 때 그립감이 아주 좋습니다"}, {"start": 287.0, "end": 288.93, "text": "기기를 완전히 펼치면"}, {"start": 288.93, "end": 291.72, "text": "7.6인치 대화면이 나타나며, 역시 고주사율에"}, {"start": 291.72, "end": 294.0, "text": "충분한 밝기와 균일한 베젤을 갖췄습니다"}, {"start": 294.0, "end": 297.0, "text": "사방 베젤이 균일하죠. 그런데 몇 가지 흥미로운 점이 더 있습니다"}, {"start": 297.0, "end": 289.35, "text": "쉽게 말해 닫았을 때는 일반 아이폰이고"}, {"start": 289.35, "end": 302.0, "text": "열었을 때는 아이패드 미니에 가깝다는 점입니다"}, {"start": 302.0, "end": 305.12, "text": "그게 핵심 가치죠. 맞잖아요, 아이패드 미니는"}, {"start": 305.12, "end": 307.0, "text": "주머니에 쏙 들어가지 않아서 항상"}, {"start": 307.0, "end": 309.81, "text": "들고 다니긴 어렵지만, 반으로 접힌다면 어떨까요?"}, {"start": 309.81, "end": 313.0, "text": "바로 이런 형태가 되는 겁니다. 네, 그래서 닫았을 때는"}, {"start": 313.0, "end": 315.6, "text": "대체로 살짝 땅딸막한 아이폰 느낌이지만"}, {"start": 315.6, "end": 317.6, "text": "몇 가지 달라진 부분이 있습니다"}, {"start": 317.6, "end": 320.0, "text": "폴더블 기기인 만큼 당연히 두께는 좀 더 도톰하고"}, {"start": 320.0, "end": 322.59, "text": "경쟁 기종과의 비교는 잠시 뒤에 하겠지만"}, {"start": 322.59, "end": 325.0, "text": "Face ID가 빠졌다는 점도 눈에 띌 겁니다"}, {"start": 325.0, "end": 327.76, "text": "우측 전원 버튼이 지문인식을 겸하는"}, {"start": 327.76, "end": 331.0, "text": "Touch ID 센서로 바뀌었기 때문이죠"}, {"start": 331.0, "end": 333.81, "text": "그리고 소프트웨어적으로도 흥미로운 점이"}, {"start": 333.81, "end": 335.37, "text": "한 손 조작성을 높이기 위해 UI 요소를"}, {"start": 335.37, "end": 338.0, "text": "오른쪽 측면에 집중 배치했다는 것입니다"}, {"start": 338.0, "end": 341.2, "text": "개인적으로 작은 화면이라 기본 배치로도 손이 잘 닿긴 하지만"}, {"start": 341.2, "end": 344.0, "text": "앱 도크 전체를 화면 하단 대신"}, {"start": 344.0, "end": 347.18, "text": "오른쪽 측면으로 옮겨 두었습니다"}, {"start": 347.18, "end": 347.76, "text": "그리고"}, {"start": 347.76, "end": 351.0, "text": "기기를 열면 아주 멋진 애니메이션이 나타납니다"}, {"start": 351.0, "end": 353.97, "text": "보고 있던 커버 화면이 부드럽게 페이드아웃되면서"}, {"start": 353.97, "end": 357.0, "text": "전환하려는 내부 화면으로 매끄럽게 이어지죠"}, {"start": 357.0, "end": 359.83, "text": "그렇게 7.6인치의 시원한 내부 화면이 펼쳐집니다"}, {"start": 359.83, "end": 362.0, "text": "쉽게 생각하면"}, {"start": 362.0, "end": 365.2, "text": "외부 화면 두 개를 나란히 붙여놓은 구조라고 볼 수 있죠"}, {"start": 365.2, "end": 368.0, "text": "실제로 화면이 연동되어 있어서 다른 폴더블처럼"}, {"start": 368.0, "end": 370.48, "text": "외부 화면에서 홈 화면 배치를 바꾸면"}, {"start": 370.48, "end": 373.0, "text": "내부 화면에도 그대로 적용됩니다"}, {"start": 373.0, "end": 375.6, "text": "한쪽에 페이지를 추가하면 다른 쪽에도 같이 생성되죠"}, {"start": 375.6, "end": 378.0, "text": "그리고 이 내부 디스플레이를 자세히 보면"}, {"start": 378.0, "end": 380.68, "text": "모서리 끝까지 걸리는 곳 없이 매끄러운데요"}, {"start": 380.68, "end": 382.81, "text": "전면 셀피 카메라를"}, {"start": 382.81, "end": 385.0, "text": "글래스 아래로 숨겨두었기 때문입니다. 바로 여기"}, {"start": 385.0, "end": 387.1, "text": "오른쪽 상단 중앙 쪽에 위치해 있는데"}, {"start": 387.1, "end": 388.7, "text": "평소에는 거의 눈에 띄지 않습니다"}, {"start": 388.7, "end": 391.0, "text": "화면에 무언가 떠 있을 때마다요"}, {"start": 391.0, "end": 393.27, "text": "하지만 분명 존재하고, 또 디스플레이 전체에"}, {"start": 393.27, "end": 395.6, "text": "이런 나노 텍스처 같은 일종의"}, {"start": 395.6, "end": 398.0, "text": "매트 코팅이 최상단 레이어에 적용되어 있어서"}, {"start": 398.0, "end": 400.99, "text": "몇 가지 역할을 해주는데, 빛 반사를 정말 효과적으로 줄여줍니다"}, {"start": 400.99, "end": 403.0, "text": "밝은 환경에서 직접 써보면 확실히 체감되는데요"}, {"start": 403.0, "end": 406.08, "text": "어떻게 쥐고 있든 조명이"}, {"start": 406.08, "end": 409.0, "text": "전혀 방해되지 않습니다. 게다가 반사를 워낙"}, {"start": 409.0, "end": 411.12, "text": "많이 잡아주다 보니 실제로는"}, {"start": 411.12, "end": 412.6, "text": "주름을 가려주는 데도 큰 몫을 하죠"}, {"start": 412.6, "end": 416.0, "text": "주름 자체도 이미 꽤 미미한 편이고요. 솔직히 이건"}, {"start": 416.0, "end": 418.38, "text": "거의 오포(Oppo)의"}, {"start": 418.38, "end": 420.54, "text": "Find N6와 비슷한 수준으로, 기본적으로"}, {"start": 420.54, "end": 423.0, "text": "제가 지금까지 폴더블폰에서 본 것 중"}, {"start": 423.0, "end": 424.86, "text": "주름이 가장 덜합니다. 완전히 사라진 건 아니지만"}, {"start": 424.86, "end": 427.52, "text": "아시다시피 카본 파이버 지지판이 들어간"}, {"start": 427.52, "end": 430.0, "text": "힌지 설계와 꽤 단단한"}, {"start": 430.0, "end": 432.42, "text": "최상단의 초박형 유리(UTG) 레이어,"}, {"start": 432.42, "end": 433.9, "text": "그리고 눈부심 방지 마감까지 더해져서"}, {"start": 433.9, "end": 436.0, "text": "현실적으로 이 주름을 인지하게 되는"}, {"start": 436.0, "end": 437.95, "text": "유일한 순간은 작정하고 주름을 찾으려 하거나"}, {"start": 437.95, "end": 441.0, "text": "손가락으로 쓱 문지를 때뿐인데, 그럴 일은 거의 없죠"}, {"start": 441.0, "end": 443.66, "text": "이 아이폰에도 맥세이프가 들어가 있고, 음"}, {"start": 443.66, "end": 445.64, "text": "내부에는 A20 Pro 칩이"}, {"start": 445.64, "end": 448.0, "text": "탑재되었습니다. 더 빠르고 5G 밀리미터파를 지원하는"}, {"start": 448.0, "end": 451.2, "text": "새로운 C2 셀룰러 모뎀도 들어갔고"}, {"start": 451.2, "end": 452.34000000000003, "text": "후면에는 듀얼"}, {"start": 452.34000000000003, "end": 455.0, "text": "카메라가 탑재되었습니다. 새로운 4,800만 화소"}, {"start": 455.0, "end": 458.1, "text": "메인 카메라는, 아직 테스트 전이지만"}, {"start": 458.1, "end": 461.0, "text": "일반 플래그십들에 비하면 크기가 약간 작을 것으로 추정되며"}, {"start": 461.0, "end": 464.2, "text": "초광각 카메라는 18 Pro와 완전히 동일합니다"}, {"start": 464.2, "end": 467.0, "text": "그리고 이 소프트웨어는 짚고 넘어갈 게 많은데요, 저도"}, {"start": 467.0, "end": 470.3, "text": "처음 봤을 때는 감을 잡으려고 애썼거든요"}, {"start": 470.3, "end": 471.83, "text": "이게 iOS인지,"}, {"start": 471.83, "end": 474.0, "text": "아니면 iPadOS인지, 둘 다 아닌 건지,"}, {"start": 474.0, "end": 477.12, "text": "아니면 둘 다인지 말이죠. 정체가 뭘까요? 제가 내린 결론은"}, {"start": 477.12, "end": 479.0, "text": "마치 iOS에 무언가 살짝,"}, {"start": 479.0, "end": 482.2, "text": "양념을 약간 친 느낌입니다. 물론 한 손 조작 편의 기능이나"}, {"start": 482.2, "end": 485.0, "text": "측면 독(Dock)은 완전히 새로운 요소죠"}, {"start": 485.0, "end": 487.57, "text": "일반 아이폰에서는 찾아볼 수 없는 부분이고요. 그리고"}, {"start": 487.57, "end": 489.42, "text": "내부 화면과 외부 화면 사이의"}, {"start": 489.42, "end": 491.0, "text": "화면 연속성도 마찬가지입니다"}, {"start": 491.0, "end": 494.1, "text": "이런 건 꽤 표준적인 기능이지만"}, {"start": 494.1, "end": 497.01, "text": "정말 매끄럽게 잘 구현해 뒀습니다"}, {"start": 497.01, "end": 499.08, "text": "화면을 열고 닫을 때의"}, {"start": 499.08, "end": 502.0, "text": "이 전환 애니메이션이 정말 훌륭해요"}, {"start": 502.0, "end": 505.2, "text": "보기에도 정말 멋지지만, 정말 빠르게 열리면서"}, {"start": 505.2, "end": 508.0, "text": "내부 화면 오른쪽에 떠 있던"}, {"start": 508.0, "end": 510.8, "text": "내용으로 곧바로 이어집니다. 화면을 펼쳐서 앱을"}, {"start": 510.8, "end": 512.73, "text": "사용할 때는 작동 방식이"}, {"start": 512.73, "end": 515.0, "text": "거의 iPad 앱과 다름없는데요"}, {"start": 515.0, "end": 517.75, "text": "다중 열 레이아웃으로 동작하고 물론 멀티태스킹도 어느 정도"}, {"start": 517.75, "end": 520.0, "text": "두 개의 앱을 나란히 띄워두고"}, {"start": 520.0, "end": 522.82, "text": "몇 가지 제스처를 쓰는 식인데, 자세한 건 정식 리뷰에서 다루겠지만"}, {"start": 522.82, "end": 526.0, "text": "전반적으로 꽤 직관적이고"}, {"start": 526.0, "end": 528.56, "text": "예상한 대로 매끄럽게 작동합니다. 자, 그런데"}, {"start": 528.56, "end": 531.0, "text": "제 기준에서 가장 눈에 띄는 존재는 바로"}, {"start": 531.0, "end": 534.21, "text": "여기 있는 삼성 갤럭시 Z 폴드 8입니다."}, {"start": 534.21, "end": 537.0, "text": "몇 달 전에 출시된 제품인데, 인기가"}, {"start": 537.0, "end": 539.57, "text": "정말 대단했죠. 다들 이 폰을 정말 좋아했고"}, {"start": 539.57, "end": 540.78, "text": "저 역시 아주 좋아합니다."}, {"start": 540.78, "end": 544.0, "text": "제품 콘셉트 자체는 기본적으로 동일해요."}, {"start": 544.0, "end": 547.2, "text": "작고 납작한 여권 형태의 폴더블폰이고,"}, {"start": 547.2, "end": 549.33, "text": "후면에는 듀얼 카메라가"}, {"start": 549.33, "end": 551.07, "text": "탑재되어 있으며 플래그십 칩에"}, {"start": 551.07, "end": 553.0, "text": "아주 얇죠. 그래서 다들"}, {"start": 553.0, "end": 556.2, "text": "\"좋아 마키스, 그럼 둘을 비교하면 어때?\"라고 궁금해하실 텐데요."}, {"start": 556.2, "end": 556.99, "text": "제 생각에는요,"}, {"start": 556.99, "end": 559.59, "text": "기능적으로 둘은"}, {"start": 559.59, "end": 562.0, "text": "굉장히 비슷합니다. 둘 사이에"}, {"start": 562.0, "end": 564.74, "text": "그다지 큰 차이는 없어요. 둘 다 듀얼 카메라이고,"}, {"start": 564.74, "end": 567.0, "text": "말씀드렸듯 메인 하나에 초광각 하나죠. 둘 다"}, {"start": 567.0, "end": 568.96, "text": "최고 사양의 플래그십 칩을"}, {"start": 568.96, "end": 571.66, "text": "탑재했고, 배터리도 탄탄합니다."}, {"start": 571.66, "end": 574.0, "text": "USB-C 포트보다 겨우 두꺼운 수준인데도 말이죠."}, {"start": 574.0, "end": 577.4, "text": "전원 버튼 지문 인식 센서도 둘 다 탑재되어 있고요."}, {"start": 577.4, "end": 580.0, "text": "하지만 오늘 아이폰 듀오를 몇 시간 동안"}, {"start": 580.0, "end": 582.24, "text": "이것저것 만져본 바로는요,"}, {"start": 582.24, "end": 584.2, "text": "아이폰에는 솔직히"}, {"start": 584.2, "end": 587.0, "text": "굳이 없어도 되는 자잘한 요소들이지만,"}, {"start": 587.0, "end": 590.0, "text": "사용자 경험을 정말 좋게 만들어주는"}, {"start": 590.0, "end": 593.33, "text": "아주 멋진 디테일들이 많아서 폰 쓰는 재미가 훨씬 좋습니다."}, {"start": 593.33, "end": 596.0, "text": "스펙이나 숫자, 단순한"}, {"start": 596.0, "end": 599.16, "text": "성능 수치나 화소수 같은 건 차치하더라도,"}, {"start": 599.16, "end": 602.0, "text": "마감 완성도와 자잘한 애니메이션,"}, {"start": 602.0, "end": 604.73, "text": "그리고 만졌을 때의 손맛 같은 부분에서"}, {"start": 604.73, "end": 608.0, "text": "아이폰이 삼성을 완전히 압도하는 느낌입니다."}, {"start": 608.0, "end": 609.94, "text": "그 시작은 바로"}, {"start": 609.94, "end": 613.2, "text": "내부 화면과 외부 화면 사이를 전환할 때의"}, {"start": 613.2, "end": 614.94, "text": "애니메이션인데요,"}, {"start": 614.94, "end": 617.0, "text": "정말 군더더기 없이 깔끔하고 빠릅니다."}, {"start": 617.0, "end": 619.09, "text": "보통 폴더블폰을 닫을 때는 외부 화면이 켜지기까지"}, {"start": 619.09, "end": 621.0, "text": "약간의 딜레이가 있는 것에 익숙해져 있었는데,"}, {"start": 621.0, "end": 623.68, "text": "이 녀석은 딜레이가 전혀 없었습니다."}, {"start": 623.68, "end": 627.0, "text": "애니메이션이 동작하는 중에도 매번 놀라울 정도로 빨랐죠."}, {"start": 627.0, "end": 630.18, "text": "다른 소소한 애니메이션들도 마찬가지입니다."}, {"start": 630.18, "end": 631.96, "text": "예를 들어 내부 화면에서 카메라 앱을"}, {"start": 631.96, "end": 634.0, "text": "닫을 때를 보면,"}, {"start": 634.0, "end": 636.5, "text": "카메라 렌즈가 비추던 검게 꺼진 픽셀들이"}, {"start": 636.5, "end": 639.0, "text": "원래 배경화면 픽셀들로 싹 채워져 돌아오는데"}, {"start": 639.0, "end": 641.82, "text": "그게 정말 깔끔하죠. 또 오른쪽 제어 센터를"}, {"start": 641.82, "end": 644.0, "text": "쓸어내릴 때 구석에서 쏟아지듯 내려오는"}, {"start": 644.0, "end": 646.82, "text": "그 느낌도 참 좋았습니다. 어, 그리고"}, {"start": 646.82, "end": 650.0, "text": "내부 디스플레이의 코팅도 말씀드렸듯이"}, {"start": 650.0, "end": 653.01, "text": "정말 똑똑한 게, 빛 반사를 엄청나게 잘 차단합니다"}, {"start": 653.01, "end": 655.71, "text": "덕분에 시각적으로 주름도 꽤 깔끔하게 가려지죠"}, {"start": 655.71, "end": 657.0, "text": "게다가 만져보면"}, {"start": 657.0, "end": 660.2, "text": "오포 파인드 N6처럼 촉감이 꽤나 매끄러워요"}, {"start": 660.2, "end": 663.0, "text": "손가락이 스르륵 미끄러지듯 넘어가죠"}, {"start": 663.0, "end": 665.54, "text": "그리고 놀랍게도 올해 말에는"}, {"start": 665.54, "end": 668.38, "text": "USB-C 타입 애플 펜슬을 지원할 예정입니다"}, {"start": 668.38, "end": 671.0, "text": "내부 화면과 외부 화면 둘 다 말이죠"}, {"start": 671.0, "end": 673.64, "text": "흥미롭게도 볼륨 버튼이 전원 버튼 옆인"}, {"start": 673.64, "end": 676.0, "text": "스마트폰 측면에 있지 않고"}, {"start": 676.0, "end": 677.98, "text": "상단에 위치해 있습니다. 처음엔 좀 이상해서"}, {"start": 677.98, "end": 680.0, "text": "어떻게 받아들여야 할지 몰랐는데요"}, {"start": 680.0, "end": 682.55, "text": "확실한 건 볼륨 조절이 항상"}, {"start": 682.55, "end": 685.0, "text": "버튼 방향을 따른다는 점입니다. 오른쪽이 올림,"}, {"start": 685.0, "end": 686.93, "text": "왼쪽이 내림이죠. 그리고 스피커는"}, {"start": 686.93, "end": 689.0, "text": "폴더블폰 기준으로 객관적으로 가장 좋은 위치에"}, {"start": 689.0, "end": 691.33, "text": "배치되어 있어요. 상단 스피커는 전면에,"}, {"start": 691.33, "end": 694.0, "text": "하단 스피커는 후면에 위치해서"}, {"start": 694.0, "end": 696.1, "text": "화면을 펼쳐도 좌우 양쪽에 각각"}, {"start": 696.1, "end": 698.0, "text": "스피커가 하나씩 위치하게 되죠"}, {"start": 698.0, "end": 701.2, "text": "덕분에 확실한 스테레오 사운드를 들려주고, 뜻밖에도"}, {"start": 701.2, "end": 702.14, "text": "기기 전체가 IP68 등급의"}, {"start": 702.14, "end": 704.35, "text": "방수·방진을 지원합니다"}, {"start": 704.35, "end": 707.0, "text": "이론적으로 물에 완전히 담그거나"}, {"start": 707.0, "end": 709.19, "text": "물을 쏟아도 멀쩡해야 하죠"}, {"start": 709.19, "end": 712.0, "text": "폴더블폰 중에서 이게 가능하다고 말할 수 있는 건"}, {"start": 712.0, "end": 714.91, "text": "픽셀 10 프로 폴드뿐이라, 내구성 면에서"}, {"start": 714.91, "end": 718.0, "text": "꽤 기대되는 부분입니다. 그리고 폰을"}, {"start": 718.0, "end": 720.55, "text": "반쯤 펼친 채 다양하게 쓸 수 있는 점도 마음에 들어요"}, {"start": 720.55, "end": 723.0, "text": "일부 폴더블폰은 힌지 스프링 장력이 너무 뻑뻑해서"}, {"start": 723.0, "end": 726.15, "text": "삼성의 폴드 8처럼 이런 각도 조절이 잘 안 되는데,"}, {"start": 726.15, "end": 729.0, "text": "아이폰 듀오는 원할 때 언제든"}, {"start": 729.0, "end": 730.66, "text": "반쯤 열어둘 수 있고, 많은 앱들도"}, {"start": 730.66, "end": 733.0, "text": "이에 맞춰 반응형으로 아주 잘 대응합니다"}, {"start": 733.0, "end": 735.04, "text": "심지어 텐트 모드로 세워두고 잠그면"}, {"start": 735.04, "end": 737.0, "text": "스탠바이 모드로 진입해 시계를 띄워주거나"}, {"start": 737.0, "end": 739.21, "text": "알람을 보여주고, 은은하고 부드러운 불빛으로"}, {"start": 739.21, "end": 741.14, "text": "아침에 깨워주기도 하죠"}, {"start": 741.14, "end": 744.0, "text": "이런 소소하고 센스 넘치는 디테일들이 가득해서"}, {"start": 744.0, "end": 745.61, "text": "정말 매력적인 요소들이"}, {"start": 745.61, "end": 748.24, "text": "차곡차곡 잘 갖춰져 있습니다"}, {"start": 748.24, "end": 751.0, "text": "깔끔한 애니메이션과 정돈된 마감까지요. 하지만"}, {"start": 751.0, "end": 752.9, "text": "제가 이 채널에서 수많은 폴더블폰을 리뷰해 왔고"}, {"start": 752.9, "end": 755.0, "text": "여러분도 제 이전 영상들을 많이 보셨을 텐데요"}, {"start": 755.0, "end": 758.04, "text": "이 제품 역시 분명한"}, {"start": 758.04, "end": 761.24, "text": "단점들이 존재합니다. 가장 뚜렷한 단점은"}, {"start": 761.24, "end": 763.0, "text": "바로 시각적인 부분인데요,"}, {"start": 763.0, "end": 765.97, "text": "적어도 제 생각엔 그렇습니다. 음, 커버 화면의"}, {"start": 765.97, "end": 769.0, "text": "디스플레이 오른쪽 모서리는 둥글게 처리된 반면"}, {"start": 769.0, "end": 771.77, "text": "왼쪽은 각진 형태라 완전히 비대칭이거든요"}, {"start": 771.77, "end": 775.0, "text": "기능적으로 큰 차이는 없지만, 어떤 사람들은"}, {"start": 775.0, "end": 776.94, "text": "이걸 절대 그냥 넘어가지 못할 테고, 어쩌면..."}, {"start": 776.94, "end": 779.0, "text": "그래서 '듀오'라 부르나 봅니다 화면이"}, {"start": 779.0, "end": 782.2, "text": "알파벳 D처럼 생겼거든요 기능적으로 더 중요한 점은"}, {"start": 782.2, "end": 785.0, "text": "이 폰을 다른 여러 폴더블폰처럼"}, {"start": 785.0, "end": 787.63, "text": "오른손으로 쥐고 써야 한다는 사실인데요"}, {"start": 787.63, "end": 790.0, "text": "독(Dock)을 비롯한 모든 UI 요소가"}, {"start": 790.0, "end": 792.25, "text": "오른쪽으로 쏠려 있어 그 점이 두 배로 체감됩니다"}, {"start": 792.25, "end": 795.0, "text": "이걸 왼쪽으로 옮길 수 있는 설정도 안 보이더군요"}, {"start": 795.0, "end": 797.58, "text": "그리고 독 얘기가 나와서 말인데 4개밖에 안 들어갑니다"}, {"start": 797.58, "end": 800.0, "text": "하나 더 추가해보려 했지만 안 되더군요"}, {"start": 800.0, "end": 802.62, "text": "기존 앱을 뺄 순 있어도 다섯 번째 항목을"}, {"start": 802.62, "end": 805.0, "text": "독에 추가할 수는 없었습니다 그리고 대화면의"}, {"start": 805.0, "end": 808.15, "text": "화면 내장형(UDC) 셀피 카메라는"}, {"start": 808.15, "end": 811.0, "text": "숨겨져 있어서 멋지긴 하지만 예전에도 써봤잖아요"}, {"start": 811.0, "end": 813.8, "text": "요즘 안 쓰이는 데는 다 그만한 이유가 있습니다"}, {"start": 813.8, "end": 817.0, "text": "그냥 별로이기 때문이죠 화질 면에서"}, {"start": 817.0, "end": 820.2, "text": "정말 심하게 떨어집니다 삼성도 몇 년간 구형 폴드에"}, {"start": 820.2, "end": 823.0, "text": "탑재해오다가 결국 중단했었죠"}, {"start": 823.0, "end": 825.11, "text": "사람들이 화질 좋은 카메라를 훨씬 더 선호하고"}, {"start": 825.11, "end": 827.0, "text": "작은 펀치홀 구멍 정도는 사실"}, {"start": 827.0, "end": 830.14, "text": "크게 신경 쓰지 않는다는 걸 알았으니까요 지금 보시는 건"}, {"start": 830.14, "end": 832.0, "text": "제가 만져보던 듀오의"}, {"start": 832.0, "end": 834.72, "text": "언더스크린 셀피 카메라로 직접 찍어본 영상인데요"}, {"start": 834.72, "end": 835.69, "text": "네, 보시다시피"}, {"start": 835.69, "end": 839.0, "text": "꽤 괜찮은 조명인데도 동영상 화질이 상당히 떨어집니다"}, {"start": 839.0, "end": 842.0, "text": "게다가 실리콘 카본 배터리도 없고 초급속"}, {"start": 842.0, "end": 845.0, "text": "충전도 안 되고 줌 카메라도 없는 등 뻔히 알던"}, {"start": 845.0, "end": 848.19, "text": "단점들도 여전하죠 네, 그래서 제 생각엔"}, {"start": 848.19, "end": 851.0, "text": "완벽한 기기는 아니지만"}, {"start": 851.0, "end": 854.0, "text": "매력적인 요소가 많아서 꽤나 재미있는 폰이 될 것 같습니다"}, {"start": 854.0, "end": 857.27, "text": "폴더블폰을 살까 고민했었지만"}, {"start": 857.27, "end": 860.0, "text": "아이폰 생태계에 묶여 있어서"}, {"start": 860.0, "end": 861.78, "text": "그동안 사지 못했던 분들에게 말이죠"}, {"start": 861.78, "end": 864.0, "text": "하지만 이젠 살 수 있죠 유튜브에서 이 영상을 보며"}, {"start": 864.0, "end": 867.2, "text": "\"도대체 누가 이런 걸 원한다고 그래?\""}, {"start": 867.2, "end": 868.57, "text": "\"누가 폴더블을 원해?\"라고"}, {"start": 868.57, "end": 870.33, "text": "생각하실 수도 있겠지만 어..."}, {"start": 870.33, "end": 872.0, "text": "여기 미국에선 인기가 별로 없어도"}, {"start": 872.0, "end": 874.33, "text": "중국에서는 인기가 정말 많거든요 어..."}, {"start": 874.33, "end": 877.31, "text": "실제로 작년에 중국에서 팔린 폴더블폰이"}, {"start": 877.31, "end": 880.0, "text": "전 세계 나머지 국가를 모두 합친 것보다"}, {"start": 880.0, "end": 882.22, "text": "더 많았을 정도로 시장 규모가 엄청납니다"}, {"start": 882.22, "end": 884.0, "text": "애플도 당연히 그 시장에 뛰어들어"}, {"start": 884.0, "end": 886.9, "text": "그 사람들에게도 폰을 팔고 싶겠죠"}, {"start": 886.9, "end": 888.8, "text": "그리고 이제 접히는 아이폰이"}, {"start": 888.8, "end": 892.0, "text": "나온 겁니다 시작가는 2,000달러(2 bands),"}, {"start": 892.0, "end": 894.36, "text": "가장 저렴하게 사도 2,000달러부터 시작하는데요"}, {"start": 894.36, "end": 897.0, "text": "분명 비싸긴 하지만 솔직히 처음에"}, {"start": 897.0, "end": 899.4, "text": "제가 예상했던 가격대보다는 약간 더"}, {"start": 899.4, "end": 901.87, "text": "낮게 나왔습니다 비교해보자면"}, {"start": 901.87, "end": 904.0, "text": "폴드 8도 시작가가 1,800달러이고"}, {"start": 904.0, "end": 906.79, "text": "다른 여러 폴더블폰도 워낙 비싸다 보니"}, {"start": 906.79, "end": 909.0, "text": "아시다시피 '애플 프리미엄'을 감안하면 납득이 가네요"}, {"start": 909.0, "end": 912.38, "text": "램 대란에 전반적인 신제품 가격 인상을 감안하면"}, {"start": 912.38, "end": 915.0, "text": "더 비쌀 수도 있었는데, 생각보다는"}, {"start": 915.0, "end": 917.0, "text": "낮은 가격대로 나온 것 같습니다, 어..."}, {"start": 917.0, "end": 920.0, "text": "하지만 10월 출시 예정이라"}, {"start": 920.0, "end": 923.06, "text": "사전 주문 시작 전까지 몇 주간 고민해 볼 시간은 있겠네요."}, {"start": 923.06, "end": 926.0, "text": "그리고 솔직히 객관적으로 봐도 정말 웃긴 게,"}, {"start": 926.0, "end": 929.2, "text": "2026년에 애플이라는 회사가"}, {"start": 929.2, "end": 932.59, "text": "'네오'라는 이름의 제품과"}, {"start": 932.59, "end": 935.0, "text": "'듀오'를 함께 판매한다는 점인데요, 아는 분들은"}, {"start": 935.0, "end": 938.0, "text": "다 아실 겁니다. 풀 리뷰에서 다뤘으면 하는 점이나"}, {"start": 938.0, "end": 940.83, "text": "궁금한 점이 있다면 댓글로 남겨주시고요. 오늘 애플은"}, {"start": 940.83, "end": 944.0, "text": "이 폰들과 함께 다른 신제품들도 선보였습니다."}, {"start": 944.0, "end": 947.4, "text": "노이즈 캔슬링이 개선되고 프로 기능이 몇 가지 추가된"}, {"start": 947.4, "end": 950.0, "text": "129달러짜리 신형 에어팟 5, 그리고"}, {"start": 950.0, "end": 952.71, "text": "정말 소름 돋을 정도로 신기한"}, {"start": 952.71, "end": 955.71, "text": "상시 대기 청취 기능이 들어간 애플워치 시리즈 12도 있죠."}, {"start": 955.71, "end": 959.0, "text": "이에 대해선 저만의 음모론도 좀 있으니"}, {"start": 959.0, "end": 962.2, "text": "기대해 주시고요. 테크템버의 시작입니다, 구독 누르고 꽉 잡으세요!"}, {"start": 962.2, "end": 965.0, "text": "이번 영상을 후원해 준 Ridge에도 감사드립니다."}, {"start": 965.0, "end": 968.08, "text": "채널 스폰서인 Ridge에는 다양한 액세서리가 있어서"}, {"start": 968.08, "end": 969.53, "text": "아이폰 색상과 정말 깔끔하게"}, {"start": 969.53, "end": 972.0, "text": "어울리도록 매치할 수 있습니다."}, {"start": 972.0, "end": 975.2, "text": "신형 아이폰도 마찬가지고요. 유명한 보조배터리는 5-in-1 출력을 지원해"}, {"start": 975.2, "end": 978.0, "text": "여러 기기를 한 번에 충전할 수 있고,"}, {"start": 978.0, "end": 981.09, "text": "맥세이프와 호환되어 이동 중에도 간편하게"}, {"start": 981.09, "end": 984.0, "text": "충전할 수 있습니다. Ridge 보조배터리는 아이폰 듀오와도"}, {"start": 984.0, "end": 987.02, "text": "유선이나 맥세이프로 모두 작동합니다. 발표 때는 말이 없었지만"}, {"start": 987.02, "end": 989.0, "text": "그 폰도 분명 지원하거든요. 그리고 신용카드 크기로"}, {"start": 989.0, "end": 991.37, "text": "소지품을 쉽게 추적할 수 있는"}, {"start": 991.37, "end": 994.0, "text": "트래커 카드도 있습니다. 지갑이나"}, {"start": 994.0, "end": 996.05, "text": "가방에 쏙 넣어두면, 물건 위치를 찾아야 할 때"}, {"start": 996.05, "end": 999.0, "text": "가까이 다가가면 큰 알림음이 울립니다."}, {"start": 999.0, "end": 1001.42, "text": "무엇보다 아이폰과 안드로이드에"}, {"start": 1001.42, "end": 1003.27, "text": "모두 호환된다는 게 가장 좋고, 이제"}, {"start": 1003.27, "end": 1005.0, "text": "베이스캠프 오렌지 색상도 선택 가능합니다. 마지막으로"}, {"start": 1005.0, "end": 1007.8, "text": "Ridge 지갑인데요, 맥세이프 버전을 새롭게 개선해서"}, {"start": 1007.8, "end": 1010.0, "text": "폰에 들뜸 없이 딱 밀착되고 자력도 더 강해져"}, {"start": 1010.0, "end": 1011.76, "text": "훨씬 안전합니다. 그리고 무엇보다"}, {"start": 1011.76, "end": 1015.0, "text": "보조배터리처럼 신형 아이폰 색상과 깔맞춤할 수 있는"}, {"start": 1015.0, "end": 1017.06, "text": "버전들이 나와 있어서 아주 깔끔하죠. 아니면"}, {"start": 1017.06, "end": 1020.0, "text": "저처럼 팬텀 같은 투명 버전을 좋아하실 수도 있고요."}, {"start": 1020.0, "end": 1022.44, "text": "궁금하신 분들은 지금 바로"}, {"start": 1022.44, "end": 1024.75, "text": "ridge.com/mkbhd에서 확인해 보세요. 시청해 주셔서 감사드리고,"}, {"start": 1024.75, "end": 1027.0, "text": "저는 아주 조만간"}, {"start": 1027.0, "end": 1028.31, "text": "다음"}, {"start": 1028.31, "end": 1031.51, "text": "영상에서 찾아뵙겠습니다."}, {"start": 1031.51, "end": 1034.0, "text": "피스."}];
+let player;
+let isMutedState = true;
+
+function handleUnmute() {
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) player.pauseVideo();
+        else player.playVideo();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        player.seekTo(player.getCurrentTime() - 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        player.seekTo(player.getCurrentTime() + 5, true);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        player.setVolume(player.getVolume() + 5);
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        player.setVolume(player.getVolume() - 5);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        player.isMuted() ? player.unMute() : player.mute();
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        player.seekTo(player.getCurrentTime() - 10, true);
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        player.seekTo(player.getCurrentTime() + 10, true);
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        player.seekTo(player.getDuration() * fraction, true);
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const fsBtn = document.getElementById('fs-btn');
+    const subsEl = document.getElementById('subtitles');
+    if(fsBtn) fsBtn.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(fsBtn) fsBtn.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data==YT.PlayerState.PLAYING){
+        if(!syncInterval) syncInterval=setInterval(updateSubs,100);
+    }else{
+        clearInterval(syncInterval); syncInterval=null;
+    }
+}
+
+function updateSubs(){
+    const t=player.getCurrentTime();
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    startY = clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    subEl.classList.add('dragging');
+    e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
