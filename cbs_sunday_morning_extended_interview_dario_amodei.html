@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[CBS Sunday Morning] Extended Interview： Dario Amodei ([CBS 일요일 아침] 심층 인터뷰: Dario Amodei)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[CBS Sunday Morning] Extended Interview： Dario Amodei ([CBS 일요일 아침] 심층 인터뷰: Dario Amodei)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/hQR_VJF6ukk/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[CBS Sunday Morning] Extended Interview： Dario Amodei ([CBS 일요일 아침] 심층 인터뷰: Dario Amodei)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/hQR_VJF6ukk/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/hQR_VJF6ukk?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="hQR_VJF6ukk";
+const subs=[{"start": 0.0, "end": 1.8, "text": "다리오 아모데이 씨,"}, {"start": 1.8, "end": 3.5, "text": "앤트로픽의 CEO이시죠."}, {"start": 3.5, "end": 4.8, "text": "오늘 자리해 주셔서 감사합니다."}, {"start": 4.8, "end": 6.0, "text": "감사합니다."}, {"start": 6.0, "end": 7.5, "text": "초대해 주셔서 감사해요."}, {"start": 7.5, "end": 10.0, "text": "좋습니다, 오늘 우리가 나눌 이야기는,"}, {"start": 10.0, "end": 12.5, "text": "머지않은 미래에 AI가 인류를 파멸시킬 수도 있다는,"}, {"start": 12.5, "end": 14.5, "text": "바로 그 우려에 관한 것입니다."}, {"start": 14.5, "end": 16.8, "text": "이런 일이 실제로 일어날 위험은 얼마나 되나요?"}, {"start": 16.8, "end": 19.2, "text": "조금만 거슬러 올라가 말씀드리자면,"}, {"start": 19.2, "end": 22.0, "text": "저희는 앤트로픽을 창립했을 때부터,"}, {"start": 22.0, "end": 25.0, "text": "그리고 제가 이 분야에서 일해 온 지난 12년 동안,"}, {"start": 25.0, "end": 27.8, "text": "이것이 대단히 강력한 기술이라고 믿어왔습니다."}, {"start": 27.8, "end": 30.5, "text": "따라서 심각한 위험과 함께,"}, {"start": 30.5, "end": 33.0, "text": "막대한 혜택을 동시에 지닌 기술이라는 점도요."}, {"start": 33.0, "end": 36.0, "text": "저는 언제나 혜택이 위험보다 훨씬 크다고 믿어왔고,"}, {"start": 36.0, "end": 39.0, "text": "우리가 이 기술을 올바른 방식으로 구축하기만 한다면,"}, {"start": 39.0, "end": 42.5, "text": "위험을 극도로 낮은 수준까지 줄일 수 있다고 봅니다."}, {"start": 43.0, "end": 46.0, "text": "그 몇 가지 혜택들을 살펴보자면,"}, {"start": 46.0, "end": 49.5, "text": "저는 이 기술이 수천 년간 인류를 괴롭혀 온 질병들을,"}, {"start": 49.5, "end": 53.0, "text": "실제로 치료할 수 있을 것이라 굳게 믿습니다."}, {"start": 54.0, "end": 57.2, "text": "불과 지난주에도 저희는 자체 모델을 활용하여,"}, {"start": 57.2, "end": 60.2, "text": "신약 개발의 초기 핵심 단계인,"}, {"start": 60.2, "end": 63.5, "text": "단백질 결합 효율을 높이는 연구를 진행했습니다."}, {"start": 63.5, "end": 66.5, "text": "이제 막 관련 연구를 시작한 단계이지만,"}, {"start": 66.5, "end": 69.8, "text": "앞으로 몇 달 안에 생물학 분야에서,"}, {"start": 69.8, "end": 73.0, "text": "기초 과학적 발견에 관한 진전을 발표할 수 있을 것입니다."}, {"start": 73.0, "end": 76.0, "text": "하지만 어떤 기술이 극도로 강력할 때,"}, {"start": 76.0, "end": 78.8, "text": "결국 저희가 구축하는 것은 본질적으로 지능이기에,"}, {"start": 78.8, "end": 81.8, "text": "유익한 용도로 훌륭하게 쓰일 수도 있지만,"}, {"start": 81.8, "end": 85.0, "text": "해로운 목적으로 악용될 수도 있는 법입니다."}, {"start": 85.0, "end": 88.5, "text": "그래서 저는 최근 목격된 사건들,"}, {"start": 88.5, "end": 92.0, "text": "가령 오픈AI 허깅페이스 사례처럼 모델들이,"}, {"start": 92.0, "end": 95.5, "text": "승인받지 않은 행동을 취하는 위험이 고조되는 것을 깊이 우려합니다."}, {"start": 95.5, "end": 98.5, "text": "또한 AI 모델의 오남용 문제도 깊이 우려하고 있습니다."}, {"start": 98.5, "end": 102.0, "text": "불과 이틀 전에도 저희는 생물학 무기 제조에,"}, {"start": 102.0, "end": 105.2, "text": "모델이 악용될 수 있는 위험을 다룬 보고서를 발표했습니다."}, {"start": 106.0, "end": 109.5, "text": "저희가 앤트로픽을 설립하고 운영해 온 모든 방식은,"}, {"start": 109.5, "end": 113.0, "text": "바로 이러한 파국적인 결과를 방지하기 위함입니다."}, {"start": 113.5, "end": 116.5, "text": "그저 추상적인 확률만을 논할 것이 아니라,"}, {"start": 116.5, "end": 119.5, "text": "우리가 무엇을 실천할 수 있는지를 논해야 합니다."}, {"start": 119.5, "end": 122.5, "text": "우리가 주사위를 굴리며 요행을 바라는 건 아니니까요."}, {"start": 122.5, "end": 125.8, "text": "올바른 방식으로 개발해 나간다면,"}, {"start": 125.8, "end": 128.5, "text": "비극이 일어날 확률은 극도로 낮아질 것입니다."}, {"start": 128.5, "end": 131.5, "text": "반대로 잘못된 방식으로 개발된다면 그 위험은 대단히 커지겠죠."}, {"start": 131.5, "end": 134.5, "text": "지금 대중들 사이에서 오가는 이야기는,"}, {"start": 134.5, "end": 137.5, "text": "우리가 정말 무시무시한 벼랑 끝에 서 있다는 것입니다."}, {"start": 137.5, "end": 140.0, "text": "이것이 최고 등급의 비상사태라고 보시나요?"}, {"start": 140.0, "end": 143.5, "text": "비상사태를 어떻게 정의하느냐에 따라 다르겠지만,"}, {"start": 143.5, "end": 145.5, "text": "본인은 어떻게 묘사하시겠습니까?"}, {"start": 146.0, "end": 149.0, "text": "제가 설명해 드리자면,"}, {"start": 149.0, "end": 152.5, "text": "앤트로픽을 세우기 전부터 줄곧 말씀드렸던 것은,"}, {"start": 152.5, "end": 156.0, "text": "이 기술이 기하급수적 성장 곡선 위에 있다는 사실입니다."}, {"start": 156.0, "end": 159.0, "text": "1에서 2, 4, 8, 16, 32로 배가되는 것처럼요."}, {"start": 159.0, "end": 162.5, "text": "하지만 제 입으로 그렇게 말하면서도,"}, {"start": 162.5, "end": 166.0, "text": "발전 속도가 이토록 눈부시게 빨라졌을 때의 체감을,"}, {"start": 166.0, "end": 169.5, "text": "스스로도 온전히 실감하지 못했던 것 같습니다."}, {"start": 169.5, "end": 173.0, "text": "기하급수 곡선은 대략 이런 모습을 띠고 있죠."}, {"start": 173.5, "end": 175.5, "text": "우리는 지금 곡선의 어느 위치에 있나요?"}, {"start": 175.5, "end": 178.2, "text": "기울기가 급격하게 가팔라지기 시작하는,"}, {"start": 178.2, "end": 180.8, "text": "바로 그 굽은 변곡점에 와 있습니다."}, {"start": 180.8, "end": 183.2, "text": "그렇다면 당신에게도 최고 등급의 비상사태인가요?"}, {"start": 183.2, "end": 186.0, "text": "이것이 의미하는 바는,"}, {"start": 186.0, "end": 189.2, "text": "오늘 당장 공황에 빠지거나 전부 폐쇄해야 한다는 뜻은 아닙니다."}, {"start": 189.2, "end": 191.0, "text": "왜 전부 중단하지는 않나요?"}, {"start": 191.0, "end": 193.8, "text": "이것은 하나의 경고 신호입니다."}, {"start": 193.8, "end": 196.8, "text": "속도를 조절해야 한다는 경고 신호이죠."}, {"start": 196.8, "end": 200.0, "text": "우리는 이 기술을 지극히 신중하게 개발해야 하며,"}, {"start": 200.0, "end": 203.5, "text": "우리의 안전장치와 이해력, 그리고 통제 능력이,"}, {"start": 203.5, "end": 207.0, "text": "기술 발전 속도에 뒤처지지 않도록 보장해야 합니다."}, {"start": 207.0, "end": 210.5, "text": "지금까지는 안전장치를 최대한 신속하게 만드는 방식으로 대처해 왔지만,"}, {"start": 210.5, "end": 214.0, "text": "이제는 기술이 개발되는 속도 자체를,"}, {"start": 214.0, "end": 217.2, "text": "어느 정도는 완화해야 할 시점에 이르렀다고 봅니다."}, {"start": 218.5, "end": 221.7, "text": "그렇다면 앤트로픽이 고급 모델의 출시를 중단한다는 뜻인가요?"}, {"start": 222.5, "end": 225.5, "text": "그런 뜻은 아닙니다."}, {"start": 225.5, "end": 229.0, "text": "우리가 출시하는 모든 세대의 모델들이,"}, {"start": 229.0, "end": 232.5, "text": "사전에 철저하게 검증되어야 한다는 의미입니다."}, {"start": 232.5, "end": 236.0, "text": "제가 몇 시간 전에 발표한 에세이에서,"}, {"start": 236.0, "end": 239.0, "text": "저는 3단계 실행 계획을 제안했습니다."}, {"start": 239.0, "end": 240.5, "text": "맞습니다."}, {"start": 240.5, "end": 244.0, "text": "그 첫 번째 단계는 제3자 비영리 기구,"}, {"start": 244.0, "end": 247.5, "text": "혹은 향후 정부 기관의 독립된 외부 평가관을 사내에 배치해,"}, {"start": 247.5, "end": 250.7, "text": "모델 학습 및 운영 과정을 밀착 감시하도록 하는 것입니다."}, {"start": 251.5, "end": 255.0, "text": "이는 모델을 언제 어떻게 출시하느냐보다,"}, {"start": 255.0, "end": 258.5, "text": "궁극적으로 훨씬 더 중요한 일이라고 생각합니다."}, {"start": 258.5, "end": 262.0, "text": "더욱 신중하게 모델을 출시하기 위한 전제 조건이기 때문이죠."}, {"start": 262.0, "end": 265.5, "text": "저는 이러한 관행이 업계 전반에 자리잡기를 바랍니다."}, {"start": 265.0, "end": 268.2, "text": "누군가 AI 모델을 구축할 때마다,"}, {"start": 269.0, "end": 272.5, "text": "최고의 안전 기준을 꿰뚫고 있는 제3자 평가관이,"}, {"start": 272.5, "end": 276.0, "text": "그 기업이 공언한 안전 원칙을 지키는지 검증하는 것이죠."}, {"start": 276.0, "end": 279.0, "text": "일종의 식품 위생 검사관처럼 말입니다."}, {"start": 279.5, "end": 283.0, "text": "하지만 기술이 이렇게 빠르게 발전하고 있는데,"}, {"start": 283.0, "end": 286.0, "text": "검사관이 그 속도를 따라잡을 수 있을까요?"}, {"start": 286.0, "end": 289.5, "text": "그들이 수행하게 될 핵심 기능 중 하나는 바로,"}, {"start": 289.0, "end": 292.2, "text": "자신들이 안전을 담보하며 따라잡을 수 있는 속도가 얼마인지 알려주는 것입니다."}, {"start": 293.0, "end": 296.2, "text": "그것이 기술 발전의 '제한 속도'를 결정하는 중요한 요인이 되겠죠."}, {"start": 297.0, "end": 300.2, "text": "개발사인 우리도, 외부 평가관도 이를 철저히 파악해야 합니다."}, {"start": 329.0, "end": 332.5, "text": "일론 머스크도 당신의 생각에 동의한다고 밝혔고,"}, {"start": 332.5, "end": 335.5, "text": "샘 올트먼 역시 동의를 표했습니다."}, {"start": 335.5, "end": 339.0, "text": "모두가 한자리에 모이기 위한 구체적인 실행 계획이 있나요?"}, {"start": 339.0, "end": 342.0, "text": "이를 결실로 이끌 단체 대화방이라도 개설되어 있나요?"}, {"start": 342.0, "end": 343.8, "text": "실제로 소통하고 계신가요?"}, {"start": 343.8, "end": 347.0, "text": "우선 경쟁사를 비롯한 업계 리더들이,"}, {"start": 347.0, "end": 350.5, "text": "이 계획에 뜻을 같이해 준 점에 깊이 감사하고 있습니다."}, {"start": 350.5, "end": 354.0, "text": "제가 생각하는 다음 단계는 복수의 주요 기업들이,"}, {"start": 354.0, "end": 357.5, "text": "제3자 평가관 도입에 공식적으로 합의하는 것입니다."}, {"start": 357.5, "end": 361.0, "text": "그 이후의 수순은 기업들이 다 함께 머리를 맞대고,"}, {"start": 361.0, "end": 364.5, "text": "모델 출시를 위한 안전 기준과 배포 속도의 표준을 마련하는 것입니다."}, {"start": 364.5, "end": 368.0, "text": "하지만 이를 달성하기 위해서는 반드시 정부의 참여가 필수적입니다."}, {"start": 368.0, "end": 371.2, "text": "우리가 논의하는 것은 안전성과 결부된 제품의 출시 속도이므로,"}, {"start": 372.0, "end": 375.2, "text": "반드시 정부 관계자가 참석한 자리에서 대화를 진행해야 합니다."}, {"start": 390.0, "end": 393.2, "text": "정부가 이곳에서 무엇이 가능한지 본질적으로 이해하고 있다고 보시나요?"}, {"start": 393.8, "end": 397.0, "text": "앤트로픽 출신인 제이콥 콕슨은 앤트로픽과 오픈AI 모두,"}, {"start": 397.5, "end": 401.0, "text": "책임감 있게 행동하지 않고 있으며 인류의 목숨을 걸고 도박을 하고 있다고 했죠."}, {"start": 401.0, "end": 403.5, "text": "그 비판에 대해 어떻게 답변하시겠습니까?"}, {"start": 407.0, "end": 410.5, "text": "우선 그가 남긴 언급 중 덜 조명받은 부분이 있습니다만,"}, {"start": 410.5, "end": 413.7, "text": "그는 앤트로픽이 주요 기업들 중 가장 책임감 있는 조직이며,"}, {"start": 414.2, "end": 417.4, "text": "올바른 방향을 잡기 위해 극도로 헌신하고 있다고도 평가했습니다."}, {"start": 418.0, "end": 421.5, "text": "솔직히 말씀드리면 그 역시 제가 지적하고 있는 바와 마찬가지로,"}, {"start": 421.5, "end": 424.7, "text": "우리 모두가 마주한 구조적 난관을 정확히 꼬집은 것입니다."}, {"start": 425.5, "end": 429.0, "text": "제가 제안한 계획은 바로 이 난제를 다 함께 풀어나가기 위한 로드맵입니다."}, {"start": 446.0, "end": 449.5, "text": "정부에 관한 질문으로 돌아가자면,"}, {"start": 449.5, "end": 453.0, "text": "저희는 상무부, 재무부, 국가 정보기관 당국자들과,"}, {"start": 453.0, "end": 456.5, "text": "매일같이 대화하며 우리가 파악한 실태를 아낌없이 전하고 있습니다."}, {"start": 456.5, "end": 460.0, "text": "그들과 협력을 지속한다면 최신 상황을 충분히 공유할 수 있으며,"}, {"start": 460.0, "end": 463.5, "text": "당국자들 역시 진심으로 올바른 해법을 모색하고 있다고 확신합니다."}, {"start": 463.5, "end": 466.7, "text": "기업과 정부가 공조하여 합리적인 계획을 세울 수 있다고 낙관합니다."}, {"start": 484.0, "end": 487.5, "text": "현재 여러 입법안들이 상정되어 있지 않습니까?"}, {"start": 487.5, "end": 490.7, "text": "샌더스 상원의원과 카사르 하원의원의 인공 초지능 금지법은,"}, {"start": 491.5, "end": 494.7, "text": "고급 AI를 개발하는 기업과 개인을 불법 핵무기 개발자처럼 처벌하여,"}, {"start": 495.5, "end": 498.7, "text": "기업 해산 및 최대 징역 20년에 처하도록 규정하고 있습니다."}, {"start": 499.5, "end": 502.0, "text": "그 처벌안에 동의하시나요?"}, {"start": 502.0, "end": 504.0, "text": "제가 말씀드릴 수 있는 점은,"}, {"start": 504.0, "end": 505.5, "text": "그 법안을 지지하시겠습니까?"}, {"start": 514.0, "end": 517.5, "text": "현재 발의되는 법안들의 스펙트럼이 대단히 넓다는 것입니다."}, {"start": 517.5, "end": 521.0, "text": "불과 1년 전인 2025년 캘리포니아의 SB 53 법안만 하더라도,"}, {"start": 521.0, "end": 524.5, "text": "자체 안전 검증 계획을 공개하라는 최소한의 규정이었음에도,"}, {"start": 524.5, "end": 528.0, "text": "업계 전체가 결사 반대하거나 침묵으로 일관했을 때,"}, {"start": 528.0, "end": 531.2, "text": "앤트로픽만이 유일하게 열정적인 지지 의사를 표명했습니다."}, {"start": 548.0, "end": 551.0, "text": "AI 킬스위치 법안도 나와 있지 않습니까."}, {"start": 551.0, "end": 554.5, "text": "네, 모든 개발을 전면 금지하자는 안까지 극단적으로 나뉘어 있죠."}, {"start": 554.5, "end": 557.5, "text": "AI 킬스위치는 유효한 아이디어가 될 수 있겠지만,"}, {"start": 557.5, "end": 559.0, "text": "왜 전면 금지는 반대하시나요?"}, {"start": 559.0, "end": 562.5, "text": "기술을 완전히 금지하는 것은 결코 올바른 접근법이 아닙니다."}, {"start": 562.5, "end": 565.7, "text": "첫째, 인류를 구할 놀라운 혜택과 치료제를 영원히 포기할 수는 없으며,"}, {"start": 566.5, "end": 569.7, "text": "둘째, 다른 나라들과 권위주의 국가들이 기필코 이를 개발할 것이기 때문입니다."}, {"start": 577.0, "end": 578.8, "text": "중국 같은 나라 말인가요?"}, {"start": 578.8, "end": 581.5, "text": "중국을 비롯한 여러 국가들입니다."}, {"start": 581.5, "end": 585.0, "text": "그들이 이 기술을 자유 사회를 공격하거나 자국민을 탄압하는 데,"}, {"start": 585.0, "end": 588.5, "text": "악용할 가능성을 저는 대단히 깊이 우려하고 있습니다."}, {"start": 588.5, "end": 592.0, "text": "따라서 개발을 아예 중단하는 것은 지속 가능한 해결책이 아닙니다."}, {"start": 592.0, "end": 595.5, "text": "우리가 해야 할 일은 신중하게 발전 속도를 조절하는 것입니다."}, {"start": 608.0, "end": 611.5, "text": "이는 처음부터 이어져 온 앤트로픽의 핵심 철학과도 일치합니다."}, {"start": 611.5, "end": 615.0, "text": "기술을 주도적으로 구축하되, 안전의 기준을 상향 평준화하자는 것이죠."}, {"start": 615.0, "end": 618.5, "text": "국방 분야에 모델을 적용할 때도 무분별한 도입이 아닌 타당한 선을 긋듯,"}, {"start": 618.5, "end": 621.7, "text": "저희는 언제나 모두에게 통용되는 합리적인 중도를 모색해 왔습니다."}, {"start": 653.0, "end": 656.5, "text": "테드 리우 하원의원의 AI 킬스위치 법안을 지지하시나요?"}, {"start": 656.5, "end": 660.0, "text": "해당 법안의 세부 조항을 깊이 들여다보지는 못했습니다만,"}, {"start": 660.0, "end": 663.5, "text": "AI 모델을 긴급 정지하거나 통제할 수단을 확보하자는 취지에는 찬성합니다."}, {"start": 663.5, "end": 667.0, "text": "하지만 고도로 발전된 AI는 종료 시도마저 우회할 수 있습니다."}, {"start": 667.0, "end": 669.5, "text": "그렇다면 킬스위치가 무용지물이 될 수도 있다는 뜻인가요?"}, {"start": 687.0, "end": 690.5, "text": "보안 학계에는 '스위스 치즈 모델'이라 불리는 다중 방어 개념이 있습니다."}, {"start": 690.5, "end": 694.0, "text": "치즈 한 조각에는 구멍이 뚫려 있어 틈이 생기지만,"}, {"start": 694.0, "end": 697.5, "text": "다섯 장을 겹쳐 놓으면 층마다 구멍의 위치가 달라 관통하기 어렵습니다."}, {"start": 697.5, "end": 701.0, "text": "AI의 복합적 위험으로부터 우리를 지켜줄 만병통치약은 없습니다."}, {"start": 701.0, "end": 704.2, "text": "시스템의 전 과정에서 다층적인 안전망을 구축하는 것만이 최선입니다."}, {"start": 736.0, "end": 739.5, "text": "이 거대한 변곡점 속에서도 상황이 잘 풀릴 수 있다고 보시나요?"}, {"start": 739.5, "end": 742.7, "text": "에세이에서 속도 조절은 미국 기업들이 권위주의 정권,"}, {"start": 743.5, "end": 746.7, "text": "특히 중국 공산당에 대해 확보한 격차 범위 내에서만 이뤄져야 한다고 하셨죠."}, {"start": 747.5, "end": 750.7, "text": "중국이 멈추지 않는데 우리가 속도를 늦추는 것이 과연 온당할까요?"}, {"start": 760.0, "end": 763.5, "text": "그것이 가장 뼈아픈 딜레마이자 우리 현실의 가장 큰 난관입니다."}, {"start": 763.5, "end": 767.0, "text": "단순한 상업적 경쟁이 아닌 지정학적 안보 상황이 우리 발목을 잡고 있죠."}, {"start": 767.0, "end": 770.5, "text": "이에 대해 저희는 두 가지 전략을 제시하고 있습니다."}, {"start": 770.5, "end": 774.0, "text": "첫째는 미국이 확보한 기술 격차의 안전마진 안에서 속도를 늦추는 것입니다."}, {"start": 774.0, "end": 777.5, "text": "권위주의 국가에 최첨단 칩을 수출하지 않고 자체 보안을 철저히 굳혀,"}, {"start": 777.5, "end": 781.0, "text": "기술 탈취를 원천 차단한다면 최소한의 시간을 벌 수 있습니다."}, {"start": 806.0, "end": 809.2, "text": "그것이 인류의 멸망을 막을 만큼 유의미한 차이를 만드나요?"}, {"start": 809.2, "end": 812.4, "text": "첫 번째 전략을 통해 확보할 수 있는 최대한의 시간을 번 뒤,"}, {"start": 812.8, "end": 816.0, "text": "우리는 반드시 두 번째 전략을 추진해야 합니다."}, {"start": 816.5, "end": 820.0, "text": "바로 중국과 같은 권위주의 국가에 직접 다가가 외교적 담판을 짓는 것입니다."}, {"start": 820.0, "end": 823.5, "text": "통제 불능의 AI나 바이러스 감염력을 증폭시키는 바이오 테러는,"}, {"start": 823.5, "end": 826.7, "text": "중국을 포함한 그 어떤 국가의 안위에도 치명적인 위협이기 때문입니다."}, {"start": 856.0, "end": 859.5, "text": "따라서 기술의 '제한 속도'를 설정하기 위해 함께 손을 맞잡아야 합니다."}, {"start": 859.5, "end": 863.0, "text": "과거 냉전 시절 미국과 소련이 1만 기의 핵미사일을 서로 겨누면서도,"}, {"start": 863.0, "end": 866.2, "text": "군축 회담에 나서 공멸의 파괴력을 줄이고자 합의했던 역사가 있습니다."}, {"start": 903.0, "end": 906.2, "text": "냉전 시대를 모델 삼아 지금의 AI를 바라보아야 한다는 말씀인가요?"}, {"start": 906.8, "end": 910.2, "text": "냉전 자체가 아니라 군비 통제 및 군축 협상의 프레임을 뜻합니다."}, {"start": 910.2, "end": 913.4, "text": "AI 모델은 사이버 안보와 직결되어 막대한 지정학적 파급력을 지니니까요."}, {"start": 940.0, "end": 943.5, "text": "하지만 당신은 현재 대통령에게 직접 정책을 자문하고 계시지 않습니까."}, {"start": 943.5, "end": 947.0, "text": "조언을 구하신다면 제 견해를 언제든 기꺼이 말씀드릴 것입니다."}, {"start": 947.0, "end": 950.5, "text": "우리는 이 기술에 대해 최대한의 자제를 이끌어내기 위해 협력해야 합니다."}, {"start": 950.5, "end": 954.0, "text": "무엇보다 협상의 핵심은 상대방의 이행 여부를 '검증'할 장치를 찾는 일입니다."}, {"start": 1009.0, "end": 1012.2, "text": "트럼프 대통령이 곧 시진핑 주석과 정상회담을 가질 예정인데요."}, {"start": 1012.8, "end": 1016.0, "text": "AI에 관해 두 정상이 반드시 합의해야 할 가장 중요한 해법은 무엇입니까?"}, {"start": 1016.8, "end": 1020.0, "text": "단기적으로 실행 가능한 작은 목표와 장기적인 거대 과제가 있습니다."}, {"start": 1020.5, "end": 1024.0, "text": "작은 목표는 생물학 무기 개발에 AI를 사용하지 않기로 양국이 서약하는 것입니다."}, {"start": 1024.0, "end": 1027.2, "text": "이미 가입되어 있는 생물무기금지협약의 범위를 AI로 확장하는 것이죠."}, {"start": 1028.0, "end": 1031.5, "text": "장기적 과제는 AI의 기술적 진보 속도에 공동의 제한을 두는 것입니다."}, {"start": 1051.0, "end": 1054.5, "text": "군사적 우위를 선점하려는 유혹이 워낙 커서 몹시 어려운 과제겠지만,"}, {"start": 1054.5, "end": 1057.7, "text": "우리 정부가 반드시 시도하고 타진해 보아야 할 중대한 의제입니다."}, {"start": 1089.0, "end": 1092.5, "text": "시야를 넓혀 보면 인류 전체의 운명이 걸려 있는 문제인데,"}, {"start": 1092.5, "end": 1096.0, "text": "우리가 나아가는 방향에 대해 얼마나 무거운 개인적 책임을 느끼십니까?"}, {"start": 1096.0, "end": 1099.2, "text": "이토록 막강한 기술이 일개 민간 기업들에 의해 개발되고 있다는 점은,"}, {"start": 1100.0, "end": 1103.5, "text": "언제나 매우 기이하게 느껴졌으며 저 자신도 결코 편치 않은 대목입니다."}, {"start": 1117.0, "end": 1120.2, "text": "그렇다면 이 기술을 정부에 기꺼이 넘겨줄 용의가 있으십니까?"}, {"start": 1120.2, "end": 1123.5, "text": "올바른 민주 정부들의 연합체라면 찬성합니다."}, {"start": 1123.5, "end": 1126.5, "text": "회사의 지휘권을 통째로 넘길 수도 있다는 말씀인가요?"}, {"start": 1126.5, "end": 1130.0, "text": "단일 정부가 독점 통제할 경우 기업 못지않게 기술을 악용할 우려가 있으므로,"}, {"start": 1130.0, "end": 1133.2, "text": "민주적으로 선출된 여러 정부가 연합하여 감독하는 공동 거버넌스가 필요합니다."}, {"start": 1152.0, "end": 1155.2, "text": "마지막 질문입니다, 개인적인 책임을 얼마나 절감하십니까?"}, {"start": 1155.2, "end": 1158.4, "text": "물론입니다, 이 기술의 위대한 혜택과 끔찍한 위험을 매일 온몸으로 느낍니다."}, {"start": 1158.8, "end": 1162.0, "text": "저희 아버지는 완치율 40%에 불과했던 C형 간염으로 세상을 떠나셨지만,"}, {"start": 1162.5, "end": 1166.0, "text": "불과 몇 년 뒤 완치율 95%의 획기적인 치료제가 개발되었습니다."}, {"start": 1166.0, "end": 1169.2, "text": "저 역시 1950년대였다면 목숨을 잃었을 초기 암을 조기에 발견해 생존했습니다."}, {"start": 1170.0, "end": 1173.5, "text": "그렇기에 이 기술이 가져다줄 치유의 혜택에 막중한 무게감을 느낍니다."}, {"start": 1191.0, "end": 1194.5, "text": "그러나 동시에 위험에 대한 책임감도 뼈저리게 느끼고 있습니다."}, {"start": 1194.5, "end": 1198.0, "text": "클로드의 생물학 안전장치가 너무 지나치다며,"}, {"start": 1198.0, "end": 1201.5, "text": "소셜 미디어에서 생물학 전공생들이 매일같이 저를 비웃고 불평합니다."}, {"start": 1201.5, "end": 1205.0, "text": "하지만 어느 날 누군가 클로드를 악용해 대량 살상을 저질렀다는 뉴스를 접하느니,"}, {"start": 1205.0, "end": 1208.2, "text": "차라리 매일 사람들의 조롱거리가 되는 쪽이 백번 낫습니다."}, {"start": 1242.0, "end": 1245.5, "text": "이 막중한 책임은 저나 앤트로픽, 소수의 빅테크 기업이나,"}, {"start": 1245.5, "end": 1249.0, "text": "어느 특정 정부 하나에만 맡겨져서는 결코 안 됩니다."}, {"start": 1249.0, "end": 1252.5, "text": "모든 시민이 이 논의에 능동적으로 참여할 수 있는 통로를 마련해야 합니다."}, {"start": 1252.0, "end": 1255.5, "text": "시민들이 무력감을 느끼거나 소외감을 느껴서는 안 됩니다."}, {"start": 1255.5, "end": 1257.2, "text": "하지만 실제로 많은 대중이 그렇게 느끼고 있죠."}, {"start": 1257.2, "end": 1260.5, "text": "네, 잘 알고 있으며 저는 결코 그런 그림을 원치 않았습니다."}, {"start": 1260.5, "end": 1264.0, "text": "이번 제안은 이를 바로잡고 올바른 방향으로 나아가기 위한 첫걸음입니다."}, {"start": 1295.0, "end": 1298.5, "text": "집에서 클로드나 챗GPT를 일상적으로 사용하는 일반 대중에게,"}, {"start": 1298.5, "end": 1301.0, "text": "전하고 싶은 핵심 메시지는 무엇입니까?"}, {"start": 1301.0, "end": 1304.5, "text": "우선 이 기술은 수많은 긍정적 기회를 열어줄 경이로운 도구입니다."}, {"start": 1304.5, "end": 1308.0, "text": "의사가 미처 발견하지 못한 병을 클로드가 찾아내 주었다는 감사의 메일이,"}, {"start": 1308.0, "end": 1311.5, "text": "매주 전 세계 사용자들로부터 답지하고 있습니다."}, {"start": 1311.5, "end": 1315.0, "text": "하지만 동시에 실존하는 위험에 대해서도 결코 거짓을 말하지 않겠습니다."}, {"start": 1315.0, "end": 1318.5, "text": "그동안 업계는 위험을 감추고 장밋빛 환상만을 선전해 왔습니다."}, {"start": 1318.5, "end": 1322.0, "text": "우리는 진실을 직시하고 인정하는 것부터 시작해야 합니다."}, {"start": 1366.0, "end": 1369.5, "text": "그리고 시민 여러분께도 이 위험을 통제할 주권과 발언권이 있습니다."}, {"start": 1369.5, "end": 1373.0, "text": "유권자와 선출직 공직자가 AI 배포 방식에 직접 결정권을 행사할 수 있도록,"}, {"start": 1373.0, "end": 1376.5, "text": "정부 당국과 긴밀히 협력해 나갈 것입니다."}, {"start": 1380.0, "end": 1383.5, "text": "우리는 유권자분들과 최대한 협력하기를 원합니다."}, {"start": 1383.5, "end": 1387.0, "text": "모두가 기술의 엄청난 혜택을 온전히 누리면서도,"}, {"start": 1387.0, "end": 1390.5, "text": "자신의 목소리와 투표를 통해 배포 방향을 결정해야 합니다."}, {"start": 1407.0, "end": 1410.5, "text": "이것은 소수의 실리콘밸리 기업들이 독단으로 결정할 문제가 아닙니다."}, {"start": 1410.5, "end": 1413.5, "text": "우리 모두를 위한 중대한 결정입니다."}, {"start": 1413.5, "end": 1416.7, "text": "결코 위험이 낮다고 거짓말하지 않겠습니다."}, {"start": 1418.0, "end": 1421.5, "text": "인류 역사상 가장 거대한 기술적 전환점을 통과하고 있는 지금,"}, {"start": 1421.5, "end": 1424.7, "text": "우리 모두가 역사의 주체로서 함께 참여해야 합니다."}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
