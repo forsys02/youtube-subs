@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Marques Brownlee] iPhone 18 Pro Review： All About that Chip ([Marques Brownlee] iPhone 18 Pro 리뷰: 칩에 관한 모든 것)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Marques Brownlee] iPhone 18 Pro Review： All About that Chip ([Marques Brownlee] iPhone 18 Pro 리뷰: 칩에 관한 모든 것)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/ohqxP8EEumo/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Marques Brownlee] iPhone 18 Pro Review： All About that Chip ([Marques Brownlee] iPhone 18 Pro 리뷰: 칩에 관한 모든 것)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/ohqxP8EEumo/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/ohqxP8EEumo?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="ohqxP8EEumo";
+const subs=[{"start": 16.0, "end": 18.5, "text": "만약 지금이 2011년이었다면,"}, {"start": 18.5, "end": 21.5, "text": "이 제품은 이른바 'S 모델' 업데이트라고 불렸을 겁니다."}, {"start": 21.5, "end": 24.5, "text": "아이폰 18 프로는 기본적으로 아이폰 17 프로에,"}, {"start": 24.5, "end": 26.5, "text": "새로운 칩셋 업그레이드와,"}, {"start": 26.5, "end": 28.0, "text": "카메라 개선,"}, {"start": 28.0, "end": 29.8, "text": "그리고 배터리 수명이 향상된 모델이죠."}, {"start": 29.8, "end": 31.5, "text": "새 폰인 걸 티 내기 위한 몇 가지 새 색상도 더해졌고요."}, {"start": 31.5, "end": 33.2, "text": "그야말로 전형적인 S 업데이트의 표본입니다."}, {"start": 33.2, "end": 35.5, "text": "그래서 다소 실망스러워 보일 수도 있겠지만,"}, {"start": 35.5, "end": 37.5, "text": "지난 일주일 동안 직접 써보고 나니,"}, {"start": 37.5, "end": 39.2, "text": "오히려 상당히 과소평가되었다는 생각이 듭니다."}, {"start": 39.2, "end": 41.2, "text": "알아요, 앱등이 쉴드 치지 말라는 댓글 달리겠죠."}, {"start": 41.2, "end": 43.8, "text": "\"1,200달러짜리 아이폰이 과소평가라니 그게 무슨 소리야?\""}, {"start": 44.0, "end": 46.8, "text": "가격이 싸다고 한 게 아니라, 가치가 저평가됐다는 뜻입니다."}, {"start": 47.0, "end": 48.5, "text": "비싼 건 맞지만,"}, {"start": 48.5, "end": 50.2, "text": "과소평가된 기기라는 거죠."}, {"start": 50.2, "end": 53.2, "text": "지난 2년 연속으로 프로 라인업은 주목받지 못한 채,"}, {"start": 53.2, "end": 56.5, "text": "애플의 모험적인 시도들의 그늘에 가려져 있었습니다."}, {"start": 56.5, "end": 58.8, "text": "작년에는 아이폰 에어가 스포트라이트를 독차지했고,"}, {"start": 58.8, "end": 61.0, "text": "모두가 그 이야기만 나눴었죠."}, {"start": 61.0, "end": 63.8, "text": "그리고 올해는 최초의 폴더블 아이폰인,"}, {"start": 63.8, "end": 65.5, "text": "아이폰 듀오가 주인공입니다."}, {"start": 65.5, "end": 68.5, "text": "플래그십인 프로 라인은 지난 10년간 혁신적 신기능이 없었습니다."}, {"start": 68.5, "end": 71.5, "text": "파격적인 시도는 원래 다른 라인업의 몫이었으니까요."}, {"start": 71.5, "end": 73.5, "text": "하지만 바로 이 프로 아이폰에서 여러분은,"}, {"start": 73.5, "end": 76.8, "text": "애플이 만드는 가장 완성도 높은 아이폰을 만나볼 수 있습니다."}, {"start": 77.0, "end": 79.8, "text": "조용하지만 정말 눈부시게 발전해 왔거든요."}, {"start": 80.0, "end": 82.0, "text": "그럼 먼저 카메라 시스템부터 살펴볼까요?"}, {"start": 82.0, "end": 84.5, "text": "사실 하드웨어 구성상 크게 바뀐 부분은 없습니다."}, {"start": 84.5, "end": 86.8, "text": "작년 17 프로와 똑같은 트리플 카메라 구성으로,"}, {"start": 86.8, "end": 88.8, "text": "4,800만 화소 메인 광각 카메라와,"}, {"start": 88.8, "end": 91.0, "text": "4,800만 화소 초광각, 4,800만 화소 4배 망원 렌즈죠."}, {"start": 91.0, "end": 94.5, "text": "하지만 메인 카메라에 바로 이 가변 조리개 렌즈가 탑재되었습니다."}, {"start": 95.0, "end": 98.0, "text": "아이폰 역대 전 모델을 비롯해,"}, {"start": 98.0, "end": 101.5, "text": "삼성 일부 모델을 제외한 거의 모든 스마트폰은 고정 조리개였죠."}, {"start": 102.0, "end": 105.0, "text": "카메라 스펙을 볼 때 f/2.2라든가,"}, {"start": 105.0, "end": 108.0, "text": "f/2.0, 혹은 f/1.8 같은 조리개 수치를 보셨을 겁니다."}, {"start": 108.0, "end": 110.5, "text": "카메라를 잘 아시는 분들은 이미 익숙하시겠지만,"}, {"start": 110.5, "end": 113.8, "text": "숫자가 낮을수록 상대적 조리개 구경이 커지고,"}, {"start": 113.8, "end": 117.2, "text": "센서에 더 많은 빛이 유입되게 됩니다."}, {"start": 117.2, "end": 120.5, "text": "최대한 센서에 빛을 많이 모으기 위해 조리개가 크길 원하죠,"}, {"start": 120.5, "end": 123.5, "text": "대부분의 상황에서는 말입니다."}, {"start": 124.0, "end": 127.5, "text": "하지만 사진을 찍다 보면 피사계 심도를 깊게 하고 싶을 때도 있습니다."}, {"start": 127.5, "end": 131.0, "text": "조리개를 최대로 개방하면 빛이 많이 들어오지만,"}, {"start": 131.0, "end": 134.2, "text": "그만큼 배경 흐림, 즉 보케가 강해지게 되죠."}, {"start": 134.2, "end": 137.5, "text": "하지만 배경까지 선명하고 또렷하게 담아내고 싶다면,"}, {"start": 137.5, "end": 140.5, "text": "지금처럼 조리개를 조여주면 됩니다."}, {"start": 140.5, "end": 144.0, "text": "빛 유입량은 줄어들지만 훨씬 더 넓은 영역에 초점이 맞고,"}, {"start": 144.0, "end": 147.5, "text": "전체적으로 한층 더 선명한 사진을 얻을 수 있죠."}, {"start": 147.5, "end": 150.5, "text": "물론 그 중간 단계로도 맞출 수 있고요."}, {"start": 151.0, "end": 154.2, "text": "아이폰 18 프로는 최대 f/1.48까지 개방되는 가변 조리개를 지원합니다."}, {"start": 154.2, "end": 157.5, "text": "정말 대단한 수치죠."}, {"start": 158.0, "end": 161.0, "text": "원할 때는 f/1.8, f/2.8,"}, {"start": 161.0, "end": 164.0, "text": "또는 f/4까지 단계별로 조여줄 수 있습니다."}, {"start": 164.0, "end": 167.0, "text": "서드파티 앱에서는 무단 가변 조절도 지원하여,"}, {"start": 167.0, "end": 169.5, "text": "조리개 값을 매끄럽게 변경할 수 있다고 하네요."}, {"start": 169.5, "end": 172.0, "text": "그렇다면 이게 과연 얼마나 큰 차이를 만들어낼까요?"}, {"start": 172.0, "end": 175.0, "text": "제가 다양한 상황에서 직접 수많은 사진을 찍어본 결과,"}, {"start": 175.0, "end": 178.5, "text": "이 폰에서는 사실 드라마틱하게 큰 차이가 나진 않았습니다."}, {"start": 178.5, "end": 181.8, "text": "차이가 꽤 미묘한 편이죠."}, {"start": 181.8, "end": 183.8, "text": "이 사진이 최대 개방인 f/1.48이고,"}, {"start": 183.8, "end": 185.8, "text": "이 사진이 f/4로 조인 결과물입니다."}, {"start": 185.8, "end": 188.2, "text": "f/4 쪽이 배경까지 더 또렷하게 초점이 맞은 게 보이죠."}, {"start": 188.2, "end": 190.2, "text": "다시 f/1.48과,"}, {"start": 190.2, "end": 191.8, "text": "f/4 비교입니다."}, {"start": 191.8, "end": 194.2, "text": "더 깊은 심도와 샤프니스를 보여줍니다."}, {"start": 194.2, "end": 197.2, "text": "사진에서 조절할 수 있는 아주 섬세한 영역 중 하나인 셈이죠."}, {"start": 197.2, "end": 200.5, "text": "일반 사용자가 언뜻 보고 f/1.48과 f/4의 차이를 알아챌 수 있을까요?"}, {"start": 200.5, "end": 202.8, "text": "솔직히 쉽지 않습니다."}, {"start": 202.8, "end": 206.0, "text": "화이트 밸런스 4800K와 5400K의 차이를 구별하기 힘든 것처럼요."}, {"start": 206.0, "end": 208.5, "text": "이 역시 거의 느끼기 힘들죠."}, {"start": 208.5, "end": 211.5, "text": "셔터 스피드 1/60초와 1/48초의 차이도 마찬가지로 미묘합니다."}, {"start": 211.5, "end": 213.8, "text": "하지만 제 생각에 이런 게 바로 프로용 도구의 존재 이유입니다."}, {"start": 214.0, "end": 217.5, "text": "창작자가 원하는 결과물을 한층 더 쉽게 연출할 수 있도록 돕고,"}, {"start": 217.5, "end": 220.5, "text": "이미지의 세부 요소들을 직접 세밀하게 통제할 수 있게 해주는 거죠."}, {"start": 220.5, "end": 223.8, "text": "가변 조리개가 추가되면서 제어할 수 있는 옵션이 하나 더 늘어난 겁니다."}, {"start": 223.8, "end": 226.8, "text": "배경에 초점을 더 맞추거나 전체 이미지를 날카롭게 만들 수도 있고,"}, {"start": 226.8, "end": 229.5, "text": "야간 조명 불빛을 조리개로 조여서,"}, {"start": 229.5, "end": 232.5, "text": "멋진 빛갈라짐 스타버스트 효과를 연출할 수도 있습니다."}, {"start": 232.5, "end": 236.0, "text": "6엽 조리개 날이 완벽한 원형이 아니기 때문에 가능한 효과죠."}, {"start": 236.0, "end": 239.5, "text": "바로 이런 디테일한 표현들이,"}, {"start": 239.5, "end": 241.5, "text": "손쉽게 가능해진 겁니다."}, {"start": 241.5, "end": 244.5, "text": "참고로 자동 모드에서는 대부분 f/1.48이나 f/1.8로 기본 설정됩니다."}, {"start": 244.5, "end": 248.0, "text": "가장 밝은 두 조리개 값으로 빛을 최대한 많이 확보하려는 거죠."}, {"start": 248.0, "end": 251.5, "text": "일상 촬영에서 자동으로 그 이상 조여지는 경우는,"}, {"start": 251.5, "end": 254.0, "text": "거의 보지 못했습니다."}, {"start": 254.0, "end": 256.5, "text": "하지만 그렇다고 실망스러운 건 아닙니다."}, {"start": 256.5, "end": 259.5, "text": "새로운 f/1.48 최대 개방 조리개는 크게 주목받지 못했지만 정말 훌륭하거든요."}, {"start": 259.5, "end": 262.5, "text": "셔터 스피드를 더 빠르게 확보해 움직임을 포착할 수 있고,"}, {"start": 262.5, "end": 265.5, "text": "저조도에서도 ISO를 낮춰 노이즈를 효과적으로 줄여줍니다."}, {"start": 265.5, "end": 268.5, "text": "그렇다면 왜 이 기능이 과소평가되었다고 말하는 걸까요?"}, {"start": 269.0, "end": 272.0, "text": "현재 세대의 이 카메라 센서 크기에서는 차이가 크지 않지만,"}, {"start": 272.0, "end": 275.5, "text": "가변 조리개는 센서가 커질수록 그 진가를 제대로 발휘합니다."}, {"start": 275.5, "end": 278.5, "text": "여기 보시는 거대한 센서처럼 말이죠."}, {"start": 278.5, "end": 282.0, "text": "제 채널을 오래 보신 분들은 아시겠지만,"}, {"start": 282.0, "end": 285.5, "text": "지난 몇 년간 1인치 대형 센서를 탑재한 다른 폰들을 리뷰했었죠."}, {"start": 285.5, "end": 289.0, "text": "정말 어마어마하게 큰 센서들이 탑재된 폰들이었습니다."}, {"start": 289.0, "end": 292.5, "text": "그런 대형 센서 폰들은 자연적인 심도가 너무 얕아서,"}, {"start": 292.5, "end": 295.5, "text": "때로는 심도가 너무 얕아 곤란할 때가 많았습니다."}, {"start": 296.0, "end": 299.0, "text": "피사체를 가까이서 찍으면 초점 맞는 범위가 너무 좁아서,"}, {"start": 299.0, "end": 302.5, "text": "물체 전체에 초점이 맞지 않아 사진이 어색해 보이곤 했죠."}, {"start": 302.5, "end": 305.5, "text": "초점 면이 워낙 얇다 보니 AF가 초점을 잡느라 헤매면서,"}, {"start": 305.5, "end": 308.8, "text": "자동 초점 반응 속도가 느려지기도 했습니다."}, {"start": 308.8, "end": 312.0, "text": "바로 그런 대형 센서에 이 가변 조리개가 들어가면 환상적이죠."}, {"start": 312.0, "end": 315.5, "text": "따라서 아이폰이 향후 훨씬 더 큰 센서로 업그레이드될 때까지,"}, {"start": 315.5, "end": 318.5, "text": "이 기능이 계속 유지된다면 엄청난 강점이 될 겁니다."}, {"start": 318.5, "end": 322.0, "text": "앞으로 더 정교하게 다듬어지고,"}, {"start": 322.0, "end": 325.5, "text": "다른 스마트폰 제조사들도 다시 도입하길 기대해 봅니다."}, {"start": 325.5, "end": 329.0, "text": "갤럭시 S9 시절이 떠오르네요."}, {"start": 330.0, "end": 333.0, "text": "애플이 구글의 방식을 차용해 프로 모델에만,"}, {"start": 333.0, "end": 336.5, "text": "정밀한 프로 수동 제어 기능을 카메라 앱에 추가한 것은,"}, {"start": 336.5, "end": 340.0, "text": "하드웨어 변경보다 사용자 경험에 훨씬 큰 체감을 줍니다."}, {"start": 340.0, "end": 343.0, "text": "그동안 모든 아이폰에 동일하게 단순한 카메라 앱만 제공해서,"}, {"start": 343.0, "end": 346.2, "text": "프로 모델의 잠재력을 오랜 기간 억누르고 있었죠."}, {"start": 346.2, "end": 349.5, "text": "카메라 성능을 100% 끌어내려면 항상 서드파티 앱을 써야 했습니다."}, {"start": 349.5, "end": 352.5, "text": "하지만 이제 기본 카메라 앱도 훌륭해졌습니다."}, {"start": 352.5, "end": 355.5, "text": "컨트롤 바를 길게 눌러 원하는 설정을 상단에 원하는 순서대로 배치할 수 있죠."}, {"start": 355.5, "end": 358.5, "text": "셔터 스피드, 포맷, 수동 초점은 물론이고,"}, {"start": 358.5, "end": 361.8, "text": "드디어 수동 화이트 밸런스까지 조절할 수 있습니다!"}, {"start": 361.8, "end": 365.0, "text": "정말 최고입니다."}, {"start": 367.0, "end": 370.5, "text": "애플이 프로 모델답게 만들 의지가 남아있다면 두 가지만 더 제안할게요."}, {"start": 370.5, "end": 373.8, "text": "첫째, 로그 영상 촬영 시 화면에서 플랫한 로그 대신,"}, {"start": 373.8, "end": 377.2, "text": "노출을 정확히 맞출 수 있도록 Rec.709 프리뷰를 볼 수 있게 해주세요."}, {"start": 377.2, "end": 380.5, "text": "촬영 중에 바로 색감이 적용된 화면을 볼 수 있다면 좋겠습니다."}, {"start": 380.5, "end": 384.0, "text": "그리고 둘째, 이제 8K 비디오 촬영도 지원해 줄 때가 되지 않았나요?"}, {"start": 384.0, "end": 387.5, "text": "센서 화소도 4,800만 화소로 충분하잖아요."}, {"start": 387.5, "end": 389.8, "text": "8K 30프레임이라도 제발 지원해 주세요."}, {"start": 389.8, "end": 393.0, "text": "iOS 27에서는 ProRes 용량 한도를 설정하는 옵션까지 추가했잖아요."}, {"start": 393.0, "end": 396.5, "text": "저장 공간을 초과하지 않도록 제한하는 기능도 생겼으니,"}, {"start": 396.5, "end": 400.0, "text": "진짜 지금이야말로 8K를 도입하기에 완벽한 타이밍입니다."}, {"start": 400.0, "end": 403.5, "text": "도입된다면 정말 좋을 겁니다."}, {"start": 404.0, "end": 407.5, "text": "자, 이제 새로운 칩셋 이야기를 해보죠."}, {"start": 408.0, "end": 411.5, "text": "18 프로와 18 프로 맥스에는 신형 A20 프로 칩이 탑재되었습니다."}, {"start": 411.5, "end": 414.8, "text": "칩셋 넘버링과 아이폰 넘버링은 언제쯤 일치시켜 줄까요?"}, {"start": 414.8, "end": 418.0, "text": "아이폰 18에 A20, 아이폰 19에 A21..."}, {"start": 418.0, "end": 421.0, "text": "저만 이거 신경 쓰이나요? 어쩌면 그럴 수도 있겠네요."}, {"start": 421.0, "end": 424.5, "text": "어쨌든 M6와 함께 공개된 완전히 새로운 2나노 공정 칩입니다."}, {"start": 424.5, "end": 428.0, "text": "지난 일주일간 사용해 보면서 느낀 점은,"}, {"start": 428.0, "end": 431.5, "text": "이 칩셋이 정말 엄청나게 과소평가되었다는 겁니다."}, {"start": 431.5, "end": 434.8, "text": "물론 벤치마크 점수로 피크 성능 향상을 보여드릴 수도 있지만,"}, {"start": 435.0, "end": 438.5, "text": "점수가 전부는 아닙니다."}, {"start": 438.5, "end": 442.0, "text": "iOS의 빠른 전환이나 멀티태스킹, 앱 실행 속도를 보여줄 수도 있겠죠."}, {"start": 442.0, "end": 445.5, "text": "하지만 요즘 새 아이폰은 다 빠르잖아요."}, {"start": 445.5, "end": 448.5, "text": "그 정도로는 더 이상 감흥이 없습니다."}, {"start": 448.5, "end": 452.0, "text": "이 칩셋의 진가를 보여주는 가장 확실한 지표는,"}, {"start": 452.0, "end": 455.5, "text": "동일한 폼팩터에서 체감될 만큼 대폭 늘어난 배터리 수명입니다."}, {"start": 455.5, "end": 459.0, "text": "보통 S 업데이트나 칩셋 업그레이드에서는,"}, {"start": 459.0, "end": 461.0, "text": "성능만 올라가고 배터리는 그대로이거나,"}, {"start": 461.0, "end": 464.5, "text": "반대로 효율만 개선되고 성능은 거의 정체되는 경우가 많았죠."}, {"start": 464.5, "end": 468.0, "text": "하지만 한 번의 칩셋 업그레이드로 성능과 효율 두 마리 토끼를,"}, {"start": 468.0, "end": 471.5, "text": "동시에 극적으로 끌어올렸다는 점이,"}, {"start": 471.5, "end": 475.0, "text": "바로 2나노 공정이 만들어낸 혁신입니다."}, {"start": 475.0, "end": 478.0, "text": "내부 구조에서도 중요한 변화가 있었는데요."}, {"start": 478.0, "end": 481.0, "text": "기존에 CPU 위에 적층되어 있던 D램을 옆으로 분리 배치했습니다."}, {"start": 481.0, "end": 484.5, "text": "거리는 여전히 가깝게 유지하면서,"}, {"start": 485.0, "end": 488.5, "text": "CPU에 표면적이 3배 커진 베이퍼 챔버를 직접 얹을 수 있게 된 거죠."}, {"start": 488.5, "end": 492.0, "text": "덕분에 냉각 효율이 비약적으로 향상되었습니다."}, {"start": 492.0, "end": 495.5, "text": "M1, M2급에 달하는 이런 강력한 성능이,"}, {"start": 495.5, "end": 499.0, "text": "일반 사용자들의 일상에 꼭 필요할까요?"}, {"start": 499.0, "end": 501.5, "text": "전혀 그렇지 않습니다."}, {"start": 501.5, "end": 504.5, "text": "하지만 장시간 고사양 게임을 즐기는 하드코어 유저나,"}, {"start": 504.5, "end": 507.5, "text": "한여름 야외에서 대량의 4K 영상을 촬영하는 저 같은 사람에게는,"}, {"start": 507.5, "end": 511.0, "text": "이야기가 완전히 다릅니다."}, {"start": 511.0, "end": 514.5, "text": "뉴저지의 뜨거운 여름 야외에서 AF 테스트 영상을 찍을 때,"}, {"start": 514.5, "end": 518.0, "text": "아이폰이 얼마나 뜨거워졌는지 이루 말할 수 없을 정도였죠."}, {"start": 518.0, "end": 521.5, "text": "하지만 대형 베이퍼 챔버와 프레임이 연결되어 열을 방출해 주니,"}, {"start": 521.5, "end": 524.5, "text": "발열 제어에 확실히 큰 도움이 됩니다."}, {"start": 524.5, "end": 527.5, "text": "이게 바로 '프로'라는 이름에 걸맞은 기능이죠."}, {"start": 527.5, "end": 531.0, "text": "순간적인 작업 처리가 빠른 것은 물론이고,"}, {"start": 531.0, "end": 534.5, "text": "영상 렌더링 내보내기 속도도 대폭 빨라졌으며,"}, {"start": 534.5, "end": 537.5, "text": "이미지 프로세싱 처리 속도 역시 눈에 띄게 개선되었습니다."}, {"start": 537.5, "end": 540.5, "text": "그리고 AI 성능도 마찬가지입니다."}, {"start": 540.5, "end": 543.5, "text": "뉴럴 엔진의 규모가 2배로 커지면서,"}, {"start": 543.5, "end": 546.8, "text": "시리 작업 처리가 정말 빨라졌습니다."}, {"start": 546.8, "end": 550.0, "text": "처음엔 AI 때문에 굳이 칩까지 바꿀 필요가 있나 싶었지만,"}, {"start": 550.0, "end": 553.0, "text": "설계부터 AI용으로 만들어졌다던 아이폰 16을 포함해,"}, {"start": 553.0, "end": 556.5, "text": "최신 기기들에서도 시리가 꽤 느리게 작동하곤 했거든요."}, {"start": 556.5, "end": 560.0, "text": "하지만 온디바이스에서 시리가 처리해야 하는 많은 작업들이,"}, {"start": 560.0, "end": 563.5, "text": "이제는 훨씬 더 민첩하고 빠르게 반응합니다."}, {"start": 563.5, "end": 566.0, "text": "이 점도 아주 만족스러운 부분입니다."}, {"start": 566.0, "end": 569.5, "text": "솔직히 이 칩을 보면서 차세대 맥북 네오가 더욱 기대되더군요."}, {"start": 569.5, "end": 573.0, "text": "그만큼 완성도가 뛰어납니다."}, {"start": 573.0, "end": 576.5, "text": "현재 맥북 네오는 A18 프로 컷칩에 8GB 램 구성이지만,"}, {"start": 576.5, "end": 580.0, "text": "12GB 램과 결합된 이 A20 프로가 맥북 네오에 들어간다면,"}, {"start": 580.0, "end": 583.5, "text": "거의 M1 칩급의 성능을 내며 시장을 평정할 겁니다."}, {"start": 583.5, "end": 587.0, "text": "정말 기대가 큽니다."}, {"start": 587.0, "end": 590.5, "text": "제가 몸을 작게 줄여 프로세서 내부를 걸어 다니며 찍었던,"}, {"start": 590.5, "end": 594.0, "text": "초미세 칩셋 스케일 영상을 아직 못 보셨다면,"}, {"start": 594.0, "end": 596.8, "text": "좋아요 버튼 아래에 링크를 남겨둘 테니 꼭 확인해 보세요."}, {"start": 596.8, "end": 600.0, "text": "정말 많은 공을 들였고 제가 가장 아끼는 영상 중 하나입니다."}, {"start": 600.0, "end": 603.5, "text": "그 영상은 지난 세대의 3나노 공정을 기준으로 제작되었는데요,"}, {"start": 603.5, "end": 607.0, "text": "이번 신형 칩은 완전히 새로운 2나노 노드로 생산되었습니다."}, {"start": 607.0, "end": 610.5, "text": "무어의 법칙이 여전히 유효하다는 걸 증명하듯,"}, {"start": 610.5, "end": 614.0, "text": "이제는 개별 원자 크기에 근접하는 트랜지스터를 만들어내고 있죠."}, {"start": 614.0, "end": 617.5, "text": "정말 경이로운 수준입니다."}, {"start": 618.0, "end": 621.5, "text": "이번 신형 아이폰의 마지막 핵심 포인트는 역대 최장 배터리 타임입니다."}, {"start": 621.5, "end": 625.0, "text": "매년 최고급 모델의 배터리가 향상되는 건 당연한 기대치겠지만,"}, {"start": 625.0, "end": 628.5, "text": "작년 애플의 행보를 떠올려보세요."}, {"start": 628.5, "end": 632.0, "text": "작년 아이폰 에어가 출시되면서,"}, {"start": 632.0, "end": 635.5, "text": "17 프로는 두께와 무게 제약에서 벗어나 역대 가장 프로다운 모델이 되었고,"}, {"start": 635.5, "end": 639.0, "text": "더 두껍고 무거워진 대신 역대 최대 배터리를 탑재해 큰 호평을 받았습니다."}, {"start": 639.0, "end": 642.5, "text": "그런데 이번 18 프로가 거기서 또 한 번 비약적인 도약을 이뤄냈다는 점이,"}, {"start": 642.5, "end": 646.0, "text": "매우 흥미롭습니다."}, {"start": 646.0, "end": 649.5, "text": "키노트 발표에서는 동영상 36시간, 혼합 사용 30시간 등 숫자를 나열했지만,"}, {"start": 649.5, "end": 652.5, "text": "그런 수치들은 피부에 와닿지 않죠."}, {"start": 652.5, "end": 656.0, "text": "하지만 제 눈을 사로잡은 수치는 단 하나였습니다."}, {"start": 656.0, "end": 659.5, "text": "기본 18 프로의 배터리 타임이,"}, {"start": 659.5, "end": 662.5, "text": "전작 17 프로 맥스와 동등하다는 점이었죠."}, {"start": 662.5, "end": 665.0, "text": "그리고 실제로도 그렇습니다."}, {"start": 665.0, "end": 668.0, "text": "일주일 내내 작은 크기의 18 프로 모델을 주로 테스트했는데요,"}, {"start": 668.0, "end": 671.5, "text": "밤에 충전하지 않아도 하루 반은 거뜬히 버팁니다."}, {"start": 671.5, "end": 674.5, "text": "사용량이 적은 날에는 이틀까지도 쓸 수 있죠."}, {"start": 674.5, "end": 677.5, "text": "화면 밝기를 높이고 사진도 많이 찍고,"}, {"start": 677.5, "end": 681.0, "text": "매일 카플레이를 2시간씩 쓰는 제 패턴에서도 말입니다."}, {"start": 681.0, "end": 684.5, "text": "정말 인상적입니다."}, {"start": 684.5, "end": 687.5, "text": "그런데 핵심은 배터리 물리적 용량이 거의 늘지 않았다는 사실입니다."}, {"start": 687.5, "end": 690.5, "text": "고작 3% 정도 커졌을 뿐이죠."}, {"start": 690.5, "end": 694.0, "text": "즉, 거대한 대용량 배터리를 욱여넣어서 늘어난 수명이 아니라,"}, {"start": 694.0, "end": 697.5, "text": "전적으로 A20 프로 칩셋의 공이라는 점입니다."}, {"start": 697.5, "end": 701.0, "text": "2나노 아키텍처가 가져온 전력 효율성의 승리인 셈이죠."}, {"start": 701.0, "end": 704.5, "text": "실리콘-탄소 배터리 대신 순수한 반도체 기술력으로 이뤄낸 결과입니다."}, {"start": 704.5, "end": 707.5, "text": "두 가지를 다 적용했다면 어땠을지 상상해 보세요."}, {"start": 707.5, "end": 711.0, "text": "배터리 용량 자체는 크게 바뀌지 않았지만,"}, {"start": 711.0, "end": 714.5, "text": "충전 속도는 확실히 빨라졌습니다."}, {"start": 714.5, "end": 717.5, "text": "그리고 그 차이는 매우 체감됩니다."}, {"start": 717.5, "end": 720.5, "text": "완전히 방전시킨 후 67W 충전기에 연결해 보았더니,"}, {"start": 720.5, "end": 723.8, "text": "상당 시간 동안 45W 충전 속도를,"}, {"start": 723.8, "end": 726.5, "text": "꾸준히 유지하더군요."}, {"start": 726.5, "end": 729.8, "text": "유선 충전 5분에 7시간 비디오 재생이 가능하다는 발표는,"}, {"start": 729.8, "end": 732.5, "text": "결코 과장이 아니었습니다."}, {"start": 732.5, "end": 735.5, "text": "한편 프로 맥스는 전작 대비 배터리 용량이 약 10% 증가하여,"}, {"start": 735.5, "end": 738.5, "text": "대략 5,500mAh 수준에 달하는 것으로 보입니다."}, {"start": 738.5, "end": 741.5, "text": "여기서 짚고 넘어갈 점이 하나 있는데요,"}, {"start": 741.5, "end": 744.5, "text": "애플이 배터리 용량을 직접 밝히지 않는 건 납득하기 어렵습니다."}, {"start": 744.5, "end": 746.8, "text": "그렇지 않나요?"}, {"start": 746.8, "end": 749.5, "text": "명색이 빅테크 기업인데 왜 용량을 숨기는 걸까요?"}, {"start": 749.5, "end": 752.5, "text": "누군가 기기를 완전히 분해해서,"}, {"start": 752.5, "end": 755.5, "text": "배터리를 까볼 때까지 기다려야 하나요?"}, {"start": 755.5, "end": 758.5, "text": "재미있게도 유럽 모델은 유심 트레이가 탑재되는데,"}, {"start": 758.5, "end": 761.5, "text": "에너지 라벨 규정상 정확한 배터리 수치를 의무 제출해야 합니다."}, {"start": 761.5, "end": 764.5, "text": "덕분에 수치를 알 수 있죠. 18 프로는 4,056mAh이고,"}, {"start": 764.5, "end": 767.5, "text": "18 프로 맥스는 5,391mAh입니다."}, {"start": 767.5, "end": 770.5, "text": "eSIM 전용으로 출시되는 미국 모델은 내부 공간이 더 확보되어,"}, {"start": 770.5, "end": 773.8, "text": "몇 퍼센트 더 클 것으로 추정되지만 분해 전까진 지켜봐야겠죠."}, {"start": 773.8, "end": 777.0, "text": "어쨌든 대략 5,500mAh 수준일 겁니다."}, {"start": 777.0, "end": 780.5, "text": "이런 정보 공개를 강제해 준 EU에 감사해야겠네요."}, {"start": 781.0, "end": 784.5, "text": "EU 최고네요!"}, {"start": 785.5, "end": 789.0, "text": "그 외에도 신형 C2 모뎀이 탑재되어 전력 효율과 배터리에 기여하고,"}, {"start": 789.0, "end": 792.5, "text": "새로운 색상들도 추가되었습니다."}, {"start": 792.5, "end": 796.0, "text": "화제가 된 버건디 색상은 이미 많이들 보셨을 텐데요."}, {"start": 796.0, "end": 799.0, "text": "솔직히 말씀드리면 제 눈엔 정말 별로입니다."}, {"start": 799.0, "end": 801.5, "text": "예쁜 색은 아닌 것 같아요."}, {"start": 801.5, "end": 804.5, "text": "반면 밝은 하늘색 느낌의 글레이셔 블루는 꽤 매력적이고,"}, {"start": 804.5, "end": 807.5, "text": "제가 사용 중인 매트 블랙도 새로 출시되었습니다."}, {"start": 807.5, "end": 810.5, "text": "생각보다 지문이 조금 묻긴 하지만 아무래도 상관없습니다."}, {"start": 810.5, "end": 813.5, "text": "역대 최고의 색상이라 너무 마음에 들거든요."}, {"start": 814.0, "end": 817.5, "text": "다이내믹 아일랜드도 최초로 크기가 살짝 줄어들었습니다."}, {"start": 817.5, "end": 821.0, "text": "기존 중앙에 있던 적외선 Face ID 센서를,"}, {"start": 821.0, "end": 824.5, "text": "좌측 상단 모서리의 디스플레이 아래 언더디스플레이로 옮겼기 때문입니다."}, {"start": 824.5, "end": 828.0, "text": "진작 이렇게 했어야 할 만큼 아주 합리적인 방식이죠."}, {"start": 828.0, "end": 831.5, "text": "전면 카메라와 달리 적외선 센서는 초고해상도가 필요 없어서,"}, {"start": 831.5, "end": 835.0, "text": "화소 밀도를 일부 낮춰 적외선 투과율을 확보해도,"}, {"start": 835.0, "end": 838.0, "text": "동일한 인식 성능을 낼 수 있기 때문입니다."}, {"start": 838.0, "end": 841.5, "text": "현미경으로 보지 않는 한 픽셀 밀도 차이가 거의 안 보일 정도로,"}, {"start": 841.5, "end": 845.0, "text": "완성도 높게 구현해 냈습니다."}, {"start": 845.0, "end": 848.5, "text": "직사광선 아래에서 희미한 원형 윤곽을 딱 한 번 본 게 전부였죠."}, {"start": 848.5, "end": 852.0, "text": "덕분에 상단 라이브 액티비티를 2개가 아닌 3개까지 띄울 수 있습니다."}, {"start": 852.0, "end": 855.0, "text": "누군가에겐 꽤 유용한 변화일 겁니다."}, {"start": 855.5, "end": 859.0, "text": "판도를 바꿀 혁신일 수도 있죠."}, {"start": 860.5, "end": 864.0, "text": "결론적으로 이 폰은 파격적인 놀라움을 주는 기기는 아닙니다."}, {"start": 864.5, "end": 867.0, "text": "당연히 그럴 수밖에 없죠."}, {"start": 867.0, "end": 870.5, "text": "프로 아이폰은 수년간 급격한 모험을 피하고,"}, {"start": 870.5, "end": 874.0, "text": "완성도를 천천히 다듬어가는 기기로 자리매김해 왔으니까요."}, {"start": 874.0, "end": 877.5, "text": "전작 프로 아이폰은 오랜만에 꽤 큰 변화를 준 편이었습니다."}, {"start": 877.5, "end": 881.0, "text": "새로운 메탈 디자인과 두꺼워진 섀시, 대용량 배터리,"}, {"start": 881.0, "end": 884.0, "text": "그리고 새로운 카메라 섬 구조까지 적용되었죠."}, {"start": 884.0, "end": 887.0, "text": "3,000니트 최대 밝기와 PWM 디밍,"}, {"start": 887.0, "end": 890.0, "text": "반사 방지 코팅 같은 소소한 개선점들도 많았습니다."}, {"start": 890.0, "end": 893.0, "text": "업데이트 주기에서 전작이 큰 변화를 준 '틱'이었다면,"}, {"start": 893.0, "end": 896.5, "text": "이번 제품은 완성도를 끌어올린 꽤 훌륭한 '톡' 업데이트입니다."}, {"start": 896.5, "end": 900.0, "text": "2나노 칩셋이 전체적인 성능을 든든하게 견인하고 있고,"}, {"start": 900.0, "end": 903.5, "text": "가변 조리개는 당장은 체감이 크지 않더라도,"}, {"start": 903.5, "end": 907.0, "text": "향후 카메라 센서 진화에 큰 잠재력을 가지고 있습니다."}, {"start": 907.0, "end": 910.0, "text": "아이폰 18 프로가 완벽하냐고요? 아닙니다."}, {"start": 910.0, "end": 913.0, "text": "비싼가요? 물론 비쌉니다."}, {"start": 913.0, "end": 916.0, "text": "우리가 기대했던 모습 그대로냐고요?"}, {"start": 916.0, "end": 919.0, "text": "그렇습니다."}, {"start": 919.2, "end": 922.2, "text": "그리고 그 자체만으로도 충분한 가치가 있죠."}, {"start": 922.5, "end": 925.8, "text": "앞으로 더 많은 테크 소식이 쏟아질 테니 구독 잊지 마시고요."}, {"start": 926.0, "end": 929.5, "text": "이번에 채널 스폰서인 디브랜드의 전략도 눈에 띄는데요,"}, {"start": 930.0, "end": 933.5, "text": "새 아이폰이 나올 때마다 새로운 케이스 라인업을 함께 선보이고 있습니다."}, {"start": 933.5, "end": 937.0, "text": "2년 전 16 프로 때는 고스트 케이스를 출시했었죠."}, {"start": 937.0, "end": 940.5, "text": "블랙 색상이 부활한 이번 18 프로에도 아주 잘 어울립니다."}, {"start": 940.5, "end": 944.0, "text": "버건디 모델을 쓰시는 분들을 위해 컬러 매칭 고스트 케이스도 준비되어 있죠."}, {"start": 944.0, "end": 947.5, "text": "작년 17 프로 때 선보였던 탱크 케이스도,"}, {"start": 947.5, "end": 951.0, "text": "이번 18 프로용으로 여전히 견고한 디자인을 뽐냅니다."}, {"start": 951.0, "end": 954.5, "text": "그리고 올해 새롭게 선보이는 신제품은,"}, {"start": 954.5, "end": 957.0, "text": "바로 '미니멀' 케이스입니다."}, {"start": 957.0, "end": 960.5, "text": "이름 그대로 아주 깔끔하고 군더더기 없는 미니멀리즘 케이스죠."}, {"start": 960.5, "end": 963.8, "text": "4가지 컬러로 출시되며 후면에 샌드스톤 질감이 적용되어,"}, {"start": 963.8, "end": 967.0, "text": "옛날 원플러스 폰 특유의 그립감을,"}, {"start": 967.0, "end": 969.5, "text": "기분 좋게 떠올리게 합니다."}, {"start": 969.5, "end": 973.0, "text": "미니멀 케이스와 프리즘 액정 보호 필름 번들 구매 시 10달러 할인도 되니,"}, {"start": 973.0, "end": 976.5, "text": "부착도 쉽고 화면 보호 필름을 찾으신다면 추천드립니다."}, {"start": 976.5, "end": 979.5, "text": "신형 아이폰을 위한 디브랜드 제품 링크는 하단에 남겨둘게요."}, {"start": 979.5, "end": 982.5, "text": "미국 거주자분들은 베스트바이 매장에서 직접 체험해 보실 수도 있습니다."}, {"start": 982.5, "end": 985.0, "text": "어느 쪽이든 시청해 주셔서 감사합니다."}, {"start": 985.0, "end": 987.5, "text": "그럼 다음 영상에서 뵙겠습니다."}, {"start": 987.5, "end": 989.5, "text": "피스!"}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
