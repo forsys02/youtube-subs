@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Figure] Helix 2.5 30-Home Generalization ([그림] Helix 2.5 30가구 일반화)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Figure] Helix 2.5 30-Home Generalization ([그림] Helix 2.5 30가구 일반화)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/lJpM_2a1zrE/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Figure] Helix 2.5 30-Home Generalization ([그림] Helix 2.5 30가구 일반화)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/lJpM_2a1zrE/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/lJpM_2a1zrE?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="lJpM_2a1zrE";
+const subs=[{"start": 0.0, "end": 2.2, "text": "로봇 공학의 궁극적인 목표는,"}, {"start": 2.2, "end": 3.6, "text": "바로 일반화 능력입니다."}, {"start": 3.8, "end": 6.0, "text": "이는 본 적 없는 새로운 공간에서도 작업을 수행함을 의미하죠."}, {"start": 6.3, "end": 9.0, "text": "오늘 저희는 Helix 2.5를 공개합니다."}, {"start": 9.3, "end": 11.0, "text": "단언컨대 이번 프로젝트는,"}, {"start": 11.0, "end": 14.0, "text": "저희 Figure가 지금까지 착수한 프로젝트 중 가장 중요합니다."}, {"start": 14.3, "end": 16.3, "text": "로봇을 대규모로 보급하기 위해서는,"}, {"start": 16.3, "end": 18.3, "text": "각 가정에 로봇을 배송했을 때,"}, {"start": 18.3, "end": 20.3, "text": "상자에서 꺼내자마자 즉시 작동해야만 합니다."}, {"start": 20.6, "end": 23.0, "text": "이전까지는 Helix를 자율 운영하더라도,"}, {"start": 23.0, "end": 25.5, "text": "데이터를 해당 환경 내부에서만 수집해 왔습니다."}, {"start": 25.8, "end": 28.5, "text": "하지만 이번 혁신을 통해 완전히 처음 접하는 환경에도 일반화할 수 있고,"}, {"start": 28.5, "end": 31.8, "text": "어디에 놓여 있든 완전히 새로운 가정용 물품들을 척척 다룰 수 있게 되었습니다."}, {"start": 32.4, "end": 35.3, "text": "오늘 저희는 완전히 새로운 실제 가정집에서,"}, {"start": 35.3, "end": 38.5, "text": "Helix 2.5 기반으로 구동되는 3가지 작업을 보여드리겠습니다."}, {"start": 38.8, "end": 41.2, "text": "첫 번째 작업은 거실을 정리하는 Figure 03입니다."}, {"start": 41.4, "end": 43.5, "text": "저희 집 아이들은 늘 집안을 어지럽히고,"}, {"start": 43.5, "end": 46.0, "text": "장난감들이 온 사방에 널브러져 있거든요."}, {"start": 46.4, "end": 49.6, "text": "이곳은 로봇이 단 한 번도 와본 적 없는 집이며,"}, {"start": 49.8, "end": 52.4, "text": "여기 있는 물건들도 전혀 본 적이 없습니다."}, {"start": 52.5, "end": 55.0, "text": "학습 모델에는 그 어떤 수정도 가하지 않았죠."}, {"start": 55.3, "end": 58.2, "text": "저희가 한 일이라곤 이 집을 예약하고,"}, {"start": 58.4, "end": 61.0, "text": "로봇을 이곳으로 보낸 것뿐인데,"}, {"start": 61.0, "end": 64.2, "text": "이제 로봇이 실제로 매우 유용한 작업을 수행하고 있습니다."}, {"start": 64.5, "end": 67.8, "text": "로봇은 주변 환경의 실시간 변화에 끊임없이 적응하고 있죠."}, {"start": 68.5, "end": 71.2, "text": "여기서 Figure 03은 이동하며,"}, {"start": 71.2, "end": 74.2, "text": "거실 전체를 깔끔하게 청소하게 됩니다."}, {"start": 74.5, "end": 76.5, "text": "좋습니다, 이제 다음 작업을 보여드리겠습니다."}, {"start": 76.5, "end": 77.8, "text": "함께 가보시죠."}, {"start": 79.8, "end": 83.0, "text": "제 꿈은 침대 정리를 다시는 직접 하지 않는 것입니다."}, {"start": 83.3, "end": 86.6, "text": "이를 실현하려면 어떤 가정이든 로봇을 배치할 수 있어야 하죠."}, {"start": 86.9, "end": 90.2, "text": "여기서 흥미로운 점은 Figure 03이 이 방에 와본 적도 없고,"}, {"start": 90.4, "end": 93.0, "text": "이 침대와 베개도 본 적이 없다는 사실입니다."}, {"start": 93.2, "end": 95.5, "text": "그리고 침대를 정돈하기 위해 처음부터 끝까지,"}, {"start": 95.5, "end": 98.0, "text": "완전한 엔드투엔드 자율 작업을 수행해야 합니다."}, {"start": 102.2, "end": 104.5, "text": "자, 이제 세 번째 작업을 보여드리겠습니다."}, {"start": 110.2, "end": 112.5, "text": "자, 이번 작업은 정말 중요합니다."}, {"start": 112.6, "end": 114.5, "text": "빨래하는 건 정말 귀찮고 힘들죠."}, {"start": 114.6, "end": 117.5, "text": "저희 집에서는 매일같이 빨래를 돌리거든요."}, {"start": 117.8, "end": 120.5, "text": "이 작업은 극도로 정밀한 제어가 필요하기 때문에,"}, {"start": 120.5, "end": 123.8, "text": "로봇 공학 분야에서 매우 까다로운 난제입니다."}, {"start": 125.2, "end": 128.2, "text": "하지만 Helix 2.5를 통해 로봇은 가본 적 없는 집에서,"}, {"start": 128.2, "end": 131.5, "text": "난생처음 보는 수건들을 차곡차곡 개고 있습니다."}, {"start": 140.2, "end": 143.5, "text": "방금 이 집에서 Helix가 3가지 작업을 수행하는 모습을 보셨지만,"}, {"start": 143.5, "end": 145.5, "text": "테스트는 여기서 그치지 않았습니다."}, {"start": 145.5, "end": 148.5, "text": "저희는 베이 에어리어 전역에서 30채의 가정집을 임대했습니다."}, {"start": 148.7, "end": 151.5, "text": "한 번도 발을 들여본 적 없는 집들에 Helix 2.5를 투입했고,"}, {"start": 151.7, "end": 154.7, "text": "그 모든 곳에서 성공적인 결과를 확인했습니다."}, {"start": 154.9, "end": 158.2, "text": "이제 저희 AI 총괄인 코리가 세부 결과를 설명해 드리겠습니다."}, {"start": 158.6, "end": 161.8, "text": "Helix 2.5는 이전의 모든 시스템을 뛰어넘는 획기적인 도약입니다."}, {"start": 162.0, "end": 165.0, "text": "저희가 지금까지 구축한 가장 진보된 신경망이죠."}, {"start": 165.2, "end": 168.2, "text": "가본 적 없는 집에서 한 번도 학습한 적 없는 물건들로,"}, {"start": 168.3, "end": 171.2, "text": "방 전체 정리, 침대 정돈, 빨래 개기를 수행하는,"}, {"start": 171.2, "end": 173.5, "text": "단일 통합 모델입니다."}, {"start": 173.8, "end": 177.0, "text": "이 작업들은 고전적인 로봇 공학의 난제들을,"}, {"start": 177.0, "end": 180.2, "text": "거의 모두 동시에 해결해야 하기에 선정되었습니다."}, {"start": 180.4, "end": 183.2, "text": "인지, 이동, 매니퓰레이션,"}, {"start": 183.2, "end": 186.2, "text": "강체 및 변형 가능한 물체 제어를 모두 실시간으로 처리해야 하죠."}, {"start": 186.5, "end": 189.5, "text": "이 모델은 단순히 한두 곳의 집에서만 가능한 것이 아닙니다."}, {"start": 189.8, "end": 193.0, "text": "베이 에어리어의 30개 가정집에서 평가를 진행했으며,"}, {"start": 193.0, "end": 195.6, "text": "그 어떤 집에서도 사전 데이터를 수집하지 않았습니다."}, {"start": 195.6, "end": 198.8, "text": "그리고 Helix 2.5는 모든 집에서 성공을 거두었습니다."}, {"start": 209.2, "end": 212.5, "text": "로봇 공학에서는 이를 '제로샷 전신 일반화'라고 부르며,"}, {"start": 212.6, "end": 215.5, "text": "이 분야 최초로 거둔 유의미한 성과입니다."}, {"start": 215.7, "end": 218.5, "text": "여기서 특히 독보적인 점은 추가 학습이 전혀 없이도,"}, {"start": 218.5, "end": 221.5, "text": "여러 가정집의 방 전체에서 휴머노이드의 전신 행동이,"}, {"start": 221.5, "end": 224.5, "text": "완벽하게 구현되는 모습을 보고 계신다는 것입니다."}, {"start": 224.8, "end": 227.8, "text": "이 모든 것은 엄청난 양의 사전 경험을 필요로 하는데,"}, {"start": 227.8, "end": 230.2, "text": "과연 이것이 어디서 나온 것일까요?"}, {"start": 230.5, "end": 233.5, "text": "대규모 언어 모델이 비약적으로 발전할 수 있었던 이유는,"}, {"start": 233.5, "end": 236.5, "text": "확장 가능한 사전 학습을 대규모 데이터 및 연산력과 결합했기 때문입니다."}, {"start": 236.8, "end": 239.8, "text": "하지만 로봇 공학에는 인터넷 규모의 데이터가 없습니다."}, {"start": 240.0, "end": 242.8, "text": "그래서 1년 전, 저희는 과감한 결단을 내렸습니다."}, {"start": 243.0, "end": 246.0, "text": "아주 단순한 발상에서 출발한 글로벌 데이터 수집 프로젝트,"}, {"start": 246.0, "end": 248.5, "text": "바로 INDEX를 출범시킨 것입니다."}, {"start": 248.8, "end": 252.0, "text": "휴머노이드 로봇은 특별한 돌파구를 가진 유일한 로봇일 수 있습니다."}, {"start": 252.2, "end": 255.2, "text": "로봇의 신체가 인간과 동일한 방식으로 세상을 움직이기 때문에,"}, {"start": 255.3, "end": 258.5, "text": "인간의 경험으로부터 직접 배울 수 있다는 점입니다."}, {"start": 258.8, "end": 261.8, "text": "현재 매주 9만 명 이상의 인원이 참여하고 있으며,"}, {"start": 261.8, "end": 264.8, "text": "매초 35분의 새로운 인간 경험 데이터가 INDEX에 업로드됩니다."}, {"start": 265.0, "end": 268.0, "text": "이 모든 데이터가 Helix 2.5의 학습 데이터로 전환되죠."}, {"start": 268.2, "end": 271.2, "text": "핵심 질문은 이것이 실제 로봇 행동으로 이어지는가였습니다."}, {"start": 271.4, "end": 274.2, "text": "그래서 저희는 대조군 실험을 진행했습니다."}, {"start": 274.4, "end": 277.5, "text": "동일한 모델 중 하나는 INDEX 데이터 없이 학습시켰는데,"}, {"start": 277.8, "end": 280.0, "text": "전혀 작동하지 않았습니다."}, {"start": 280.2, "end": 283.2, "text": "사전 학습에 INDEX를 추가하고 나서야 비로소,"}, {"start": 283.3, "end": 286.8, "text": "30개 가정집에 걸친 강력한 제로샷 일반화가 나타나기 시작했습니다."}, {"start": 287.0, "end": 290.2, "text": "INDEX가 행동 능력을 로봇에 직접 전이하고 있었던 것입니다."}, {"start": 293.2, "end": 296.5, "text": "LLM에서 얻은 가장 중요한 교훈 중 하나는 바로 스케일링 법칙입니다."}, {"start": 296.8, "end": 298.8, "text": "데이터와 연산량을 두 배로 늘릴 때마다,"}, {"start": 298.8, "end": 300.8, "text": "다음 단어 예측이 얼마나 꾸준히 향상되는지 말이죠."}, {"start": 301.0, "end": 304.0, "text": "이번 실험에서도 저희는 매우 유사한 결과를 발견했습니다."}, {"start": 304.2, "end": 307.2, "text": "INDEX 데이터를 지속해서 2배 늘려감에 따라,"}, {"start": 307.3, "end": 310.5, "text": "다음 로봇 행동 예측 성능 역시 비슷하게 확장되는 것을 확인했습니다."}, {"start": 310.8, "end": 314.0, "text": "이것이 바로 휴머노이드 분야 최초의 '인간-로봇 전이 스케일링 법칙'입니다."}, {"start": 314.5, "end": 317.0, "text": "확장성은 너무나 매끄러워서,"}, {"start": 317.0, "end": 319.5, "text": "학습을 시작하기도 전에 이미,"}, {"start": 319.5, "end": 322.3, "text": "최종 검증 손실값을 소수점 넷째 자리까지 정확히 예측할 수 있었습니다."}, {"start": 322.5, "end": 325.8, "text": "아직 초기 단계이지만 로봇 학습도 마침내,"}, {"start": 325.8, "end": 329.0, "text": "LLM과 유사한 스케일링 경로에 진입했음을 보여주는 고무적인 증거입니다."}, {"start": 329.2, "end": 331.2, "text": "그렇다면 이것이 의미하는 바는 무엇일까요?"}, {"start": 331.5, "end": 334.2, "text": "로봇 학습 문제가 완전히 해결되었다는 뜻은 아닙니다."}, {"start": 334.5, "end": 337.2, "text": "하지만 Helix 2.5를 통해 저희는,"}, {"start": 337.2, "end": 340.2, "text": "더 보편적인 물리적 인공지능의 첫 신호를 목격하고 있습니다."}, {"start": 340.5, "end": 343.8, "text": "저희는 Helix를 위해 35억 달러 규모의 컴퓨팅 투자를 단행하고 있으며,"}, {"start": 344.0, "end": 346.8, "text": "INDEX 학습 데이터는 매일매일 증가하고 있습니다."}, {"start": 347.0, "end": 350.2, "text": "그리고 이 모든 것을 로봇 행동으로 전환하는 비결을 마침내 확보했습니다."}, {"start": 350.5, "end": 354.0, "text": "이것이 바로 모든 가정에 유용한 로봇을 보급하기 위한 Figure의 길입니다."}, {"start": 354.2, "end": 356.2, "text": "이제 본격적으로 스케일을 확장할 때입니다."}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
