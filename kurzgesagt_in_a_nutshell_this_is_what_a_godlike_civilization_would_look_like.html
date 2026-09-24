@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Kurzgesagt – In a Nutshell] This Is What a Godlike Civilization Would Look Like ([Kurzgesagt – 간단히 말해서] 이것이 바로 신과 같은 문명의 모습이다)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Kurzgesagt – In a Nutshell] This Is What a Godlike Civilization Would Look Like ([Kurzgesagt – 간단히 말해서] 이것이 바로 신과 같은 문명의 모습이다)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/QW_jlUn4gA8/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Kurzgesagt – In a Nutshell] This Is What a Godlike Civilization Would Look Like ([Kurzgesagt – 간단히 말해서] 이것이 바로 신과 같은 문명의 모습이다)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/QW_jlUn4gA8/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/QW_jlUn4gA8?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="QW_jlUn4gA8";
+const subs=[{"start": 0.0, "end": 2.3, "text": "외계인에 대해 우리가 생각하는 모든 것은"}, {"start": 2.3, "end": 4.0, "text": "완전히 틀렸을지도 모릅니다."}, {"start": 4.0, "end": 7.0, "text": "인류가 실제로 얼마나 원시적인지를 보여주는 증거일 뿐이죠."}, {"start": 7.0, "end": 9.8, "text": "우리는 다이슨 스피어나"}, {"start": 9.8, "end": 12.0, "text": "성간 여행, 은하 제국 같은 것을 발전이라 상상합니다."}, {"start": 12.0, "end": 14.5, "text": "하지만 이것이 단지 원시인의 상상에 불과하다면 어떨까요?"}, {"start": 14.5, "end": 16.5, "text": "\"더 큰 게 더 좋은 거다!\""}, {"start": 16.5, "end": 20.0, "text": "\"에너지도 더 많이, 공간도 더 많이, 물건도 더 많이 필요해!\""}, {"start": 20.0, "end": 22.2, "text": "만약 우주가 이미"}, {"start": 22.2, "end": 24.5, "text": "신과 같은 고대의 외계 문명들로 가득 차 있는데"}, {"start": 24.5, "end": 27.0, "text": "우리가 알아차리지 못하는 것뿐이라면 어떨까요?"}, {"start": 27.0, "end": 30.0, "text": "진정한 발전이란 외부로 확장하는 것이 아니라,"}, {"start": 30.0, "end": 32.5, "text": "내부로 향하는 것이라면 어떨까요?"}, {"start": 32.5, "end": 35.5, "text": "현실의 가장 미세한 영역을 제어하는 것 말입니다."}, {"start": 35.5, "end": 39.0, "text": "인간은 팽창주의적이며 자원에 굶주려 있습니다."}, {"start": 39.0, "end": 42.5, "text": "우리는 눈 깜짝할 사이에 행성 전체로 퍼져나가,"}, {"start": 42.5, "end": 45.0, "text": "대형 동물을 대부분 먹어 치우고 숲의 3분의 1을 베어냈으며,"}, {"start": 45.0, "end": 48.0, "text": "금속을 얻으려 협곡을 깎아내고"}, {"start": 48.0, "end": 51.0, "text": "에너지를 얻기 위해 산더미 같은 고대 식물을 태웠습니다."}, {"start": 51.0, "end": 53.5, "text": "그리고 우리의 식욕은 줄어들기는커녕,"}, {"start": 53.5, "end": 55.5, "text": "오히려 가속이 붙고 있습니다."}, {"start": 55.5, "end": 57.5, "text": "문명이 발전할수록"}, {"start": 57.5, "end": 59.5, "text": "우리는 지구를 더 빠르게 집어삼킵니다."}, {"start": 59.5, "end": 62.0, "text": "그러니 다음 단계는 명확해 보입니다."}, {"start": 62.0, "end": 64.0, "text": "우주로 나아가,"}, {"start": 64.0, "end": 66.0, "text": "새로운 세계를 차지하고 그곳마저 집어삼키는 것이죠."}, {"start": 66.0, "end": 69.0, "text": "거대하고 넓은 영역으로 뻗어나가는 것이 자연스럽게 느껴지는 이유는,"}, {"start": 69.0, "end": 72.0, "text": "혹독했던 우리 조상들의 세계에서는"}, {"start": 72.0, "end": 75.0, "text": "더 많은 땅을 정복하는 것이 곧 더 많은 식량과 안전을 의미했기 때문입니다."}, {"start": 75.0, "end": 78.0, "text": "인류 역사의 대부분 동안,"}, {"start": 78.0, "end": 80.5, "text": "확장은 더 부유해지고 더 잘살기 위한 핵심 열쇠였습니다."}, {"start": 80.5, "end": 82.5, "text": "거대한 것이 좋은 법이죠."}, {"start": 82.5, "end": 84.8, "text": "이 논리는 외부로 확장하는"}, {"start": 84.8, "end": 86.8, "text": "외계 문명에도 똑같이 적용될 것입니다."}, {"start": 86.8, "end": 88.8, "text": "그들은 모행성을 집어삼키고,"}, {"start": 88.8, "end": 90.5, "text": "그다음엔 우주를 집어삼키겠죠."}, {"start": 90.5, "end": 94.0, "text": "이러한 \"더 많이\"라는 개념에 기반해 과학자들은"}, {"start": 94.0, "end": 96.2, "text": "거시적 차원의 에너지 소비량을 기준으로"}, {"start": 96.2, "end": 98.2, "text": "문명을 분류하는 체계를 고안했습니다."}, {"start": 98.2, "end": 100.0, "text": "바로 카르다쇼프 척도입니다."}, {"start": 100.0, "end": 102.5, "text": "제1유형 문명은 모행성의 에너지를 모두 활용합니다."}, {"start": 102.5, "end": 105.0, "text": "제2유형 문명은 자신이 속한 항성계를 통제하죠."}, {"start": 105.0, "end": 107.5, "text": "그리고 제3유형 문명은 은하 전체를 지배하여,"}, {"start": 107.5, "end": 110.0, "text": "인공적으로 개조된 항성들과"}, {"start": 110.0, "end": 112.5, "text": "테라포밍된 행성들,"}, {"start": 112.5, "end": 115.0, "text": "그리고 성간을 누비는 거대한 우주선들의 거대 제국이 됩니다."}, {"start": 115.0, "end": 118.0, "text": "이 척도는 유용하지만 동시에 매우 제한적이기도 합니다."}, {"start": 118.0, "end": 120.5, "text": "외부로 뻗어나가는 확장은 과거에는 더 중요했을지 모르지만,"}, {"start": 120.5, "end": 123.0, "text": "미래를 생각하면 꼭 그렇지만은 않을지도 모릅니다."}, {"start": 123.0, "end": 126.0, "text": "우리 문명이 기술 발전의 사다리를 올라가면서,"}, {"start": 126.0, "end": 128.5, "text": "진보는 더 이상 거대한 것에서 나오지 않고"}, {"start": 128.5, "end": 130.5, "text": "아주 작은 것에서 시작되었기 때문입니다."}, {"start": 130.5, "end": 133.0, "text": "우리 조상들은 피라미드를 건설했습니다."}, {"start": 133.0, "end": 136.0, "text": "자신들 몸집의 100배에 달하는 거대한 기술적 성취였죠."}, {"start": 136.0, "end": 139.0, "text": "하지만 그보다 100배 더 작은 규모에서,"}, {"start": 139.0, "end": 142.0, "text": "인류는 비교조차 할 수 없을 만큼 강력한 것을 창조해 냈습니다."}, {"start": 142.0, "end": 144.0, "text": "바로 '문자'입니다."}, {"start": 144.0, "end": 147.0, "text": "문자는 지식을 영원하게 만들었고,"}, {"start": 147.0, "end": 150.0, "text": "정보가 시공간을 초월해 이동할 수 있게 해 주었습니다."}, {"start": 150.0, "end": 152.5, "text": "그 후 수천 년에 걸쳐"}, {"start": 152.5, "end": 155.0, "text": "우리는 미시 세계를 점점 더 완벽하게 지배하게 되었고,"}, {"start": 155.0, "end": 158.0, "text": "인류의 역량과 생활 수준도 함께 수직 상승했습니다."}, {"start": 158.0, "end": 161.0, "text": "우리는 금속을 배합해 더 뛰어난 도구를 만드는 법을 배웠고,"}, {"start": 161.0, "end": 164.0, "text": "수백만 명을 질병에서 구해낸 치료제를 개발했습니다."}, {"start": 164.0, "end": 167.0, "text": "공기로 비료를 만들어 수십억 명을 먹여 살리기도 했죠."}, {"start": 167.0, "end": 170.0, "text": "우리는 마침내 양자 수준까지 깊숙이 파고들어"}, {"start": 170.0, "end": 172.5, "text": "모래를 트랜지스터로 변환시켰고,"}, {"start": 172.5, "end": 174.5, "text": "방 하나만 하던 컴퓨터를 초소형 기계로 압축해"}, {"start": 174.5, "end": 177.5, "text": "수억 배나 더 강력하게 진화시켰습니다."}, {"start": 177.5, "end": 181.0, "text": "미시 세계를 통제하면 더 부유해지고, 건강해지며, 윤택하게 살 수 있습니다."}, {"start": 181.0, "end": 184.0, "text": "그렇다면 외계 문명을 분류할 때도"}, {"start": 184.0, "end": 187.5, "text": "미시 세계를 얼마나 깊이 제어할 수 있는지를 기준으로 삼으면 어떨까요?"}, {"start": 187.5, "end": 190.5, "text": "이것이 바로 '배로 척도(Barrow scale)'입니다."}, {"start": 190.5, "end": 194.0, "text": "미시 세계를 제어하는 기술 수준으로 문명의 발전을 측정하는 척도죠."}, {"start": 194.0, "end": 197.0, "text": "배로 척도는 '유형 1-마이너스'에서 시작하는데,"}, {"start": 197.0, "end": 200.5, "text": "19세기 후반에 이르기까지 인류 역사의 거의 전부가 여기에 해당합니다."}, {"start": 200.5, "end": 204.0, "text": "우리는 대략 인간 신체 규모의 물건을 다루고 구조물을 건설하며,"}, {"start": 204.0, "end": 207.0, "text": "광물을 채굴하고, 조합하며, 제련할 수 있었습니다."}, {"start": 207.0, "end": 210.0, "text": "유형 1-마이너스만으로도 인류는 이미 지구의 지배자가 되었지만,"}, {"start": 210.0, "end": 212.5, "text": "이는 그저 아주 작은 시작에 불과했습니다."}, {"start": 212.5, "end": 215.0, "text": "진짜 흥미진진한 단계는 바로 지금부터니까요."}, {"start": 215.0, "end": 218.5, "text": "유형 2-마이너스 – 자연의 불멸하는 신들"}, {"start": 218.5, "end": 221.5, "text": "오늘날 인류는 마침내"}, {"start": 221.5, "end": 224.0, "text": "유형 2-마이너스 문명으로 향하는 여정을 시작했을지도 모릅니다."}, {"start": 224.0, "end": 227.5, "text": "생명의 언어인 DNA를 완벽히 통제하는 단계 말이죠."}, {"start": 227.5, "end": 231.0, "text": "우리가 유전 암호를 해독해 낸 지는 불과 60년밖에 되지 않았고,"}, {"start": 231.0, "end": 233.5, "text": "크리스퍼 유전자 가위를 발견한 것도 겨우 10여 년 전의 일입니다."}, {"start": 233.5, "end": 236.5, "text": "지금까지 인류가 손에 쥔 유전공학 도구 중 가장 강력한 무기 중 하나죠."}, {"start": 236.5, "end": 240.0, "text": "DNA를 완벽하게 이해하고 다룰 수 있게 된다면 그 보상은 실로 엄청납니다."}, {"start": 240.0, "end": 243.5, "text": "작은보호탑해파리는 자신의 세포를 어린 시절의 상태로 되돌릴 수 있어,"}, {"start": 243.5, "end": 246.5, "text": "사실상 불사의 존재나 다름없습니다."}, {"start": 246.5, "end": 249.0, "text": "자연의 진화가 우연히 불멸의 방법을 찾아낼 수 있었다면,"}, {"start": 249.0, "end": 252.5, "text": "세포에게 정확한 명령을 내릴 수 있는 문명은 과연 무엇을 이뤄낼 수 있을까요?"}, {"start": 252.5, "end": 256.0, "text": "거의 모든 질병을 정복해 버릴지도 모릅니다."}, {"start": 256.0, "end": 259.0, "text": "자신의 몸을 마음대로 강화하거나 바꿀 수도 있죠."}, {"start": 259.0, "end": 262.0, "text": "더 뛰어난 혈액과 뼈, 또는 근육처럼 말입니다."}, {"start": 262.0, "end": 265.0, "text": "'초능력 장기'를 개발해 보는 건 어떨까요?"}, {"start": 265.0, "end": 267.5, "text": "더 많은 색을 볼 수 있는 눈이나,"}, {"start": 267.5, "end": 270.0, "text": "흉터 없이 치유되는 피부,"}, {"start": 270.0, "end": 273.0, "text": "자기장을 감지하는 뇌 같은 것들이요."}, {"start": 273.0, "end": 276.0, "text": "아니면 장기 은행을 만들어"}, {"start": 276.0, "end": 279.0, "text": "예비 심장이나 폐, 눈을 길러두는 건 어떨까요?"}, {"start": 279.0, "end": 282.0, "text": "사고가 났을 때 바로 이식할 수 있는 건강한 장기가 항상 준비되어 있도록 말이죠."}, {"start": 282.0, "end": 284.0, "text": "그리고 이건 인간에게만 국한된 이야기가 아닙니다."}, {"start": 284.0, "end": 286.5, "text": "반려동물을 불사신으로 만들 수도 있고"}, {"start": 286.5, "end": 289.0, "text": "우리에게 해를 끼치는 생물종을 개조할 수도 있습니다."}, {"start": 289.0, "end": 292.5, "text": "지구의 생물권을 우리가 원하는 대로 빚어낼 수도 있죠."}, {"start": 292.5, "end": 295.0, "text": "또한 새로운 형태의 생명체를 만들어낼 수도 있습니다."}, {"start": 295.0, "end": 298.5, "text": "단지 자기만족을 위해서든, 더 위대한 목적을 위해서든 말이죠."}, {"start": 298.5, "end": 302.0, "text": "어쩌면 지구상에 새로운 캄브리아기 대폭발을 일으킬 수도 있습니다,"}, {"start": 302.0, "end": 304.0, "text": "유전공학의 힘을 빌려서 말이죠."}, {"start": 304.0, "end": 307.0, "text": "기후 변화는 터무니없이 쉽게 해결될 수도 있습니다."}, {"start": 307.0, "end": 310.0, "text": "엄청나게 빠르게 자라는 식물을 만들어낸다면요."}, {"start": 310.0, "end": 313.0, "text": "대기 중의 이산화탄소를 빨아들이고"}, {"start": 313.0, "end": 315.5, "text": "썩지 않는 물질 속에 가둬두는 식물 말이죠."}, {"start": 315.5, "end": 317.5, "text": "\"잠깐만요, 쿠르츠게자크 씨!"}, {"start": 317.5, "end": 320.5, "text": "듣기엔 좋지만, 그런 슈퍼 식물은 그냥 공상과학일 뿐이잖아요!\""}, {"start": 320.5, "end": 322.0, "text": "맞습니다."}, {"start": 322.0, "end": 324.5, "text": "하지만 자연이 회복하도록 도울 수 있는 현실적이고 효과적인 방법이 있습니다."}, {"start": 324.5, "end": 327.0, "text": "인간이 초래한 피해로부터 말이죠, 바로 오늘날에도요!"}, {"start": 327.0, "end": 330.0, "text": "이것이 바로 저희가 플래닛 와일드 친구들을 사랑하는 이유입니다."}, {"start": 330.0, "end": 333.0, "text": "이들은 온라인 커뮤니티로서"}, {"start": 333.0, "end": 336.0, "text": "전 세계의 자연 보호 프로젝트를 크라우드펀딩합니다."}, {"start": 336.0, "end": 339.0, "text": "저희 팩트체커 중 한 명도 벌써 1년 가까이 회원으로 활동하고 있죠!"}, {"start": 339.0, "end": 342.0, "text": "매달 25,000명이 넘는 플래닛 와일드 회원들이"}, {"start": 342.0, "end": 345.0, "text": "자연을 복원하기 위한 새로운 임무를 후원하고 있습니다."}, {"start": 345.0, "end": 348.0, "text": "이 모든 과정은 유튜브에 기록되므로,"}, {"start": 348.0, "end": 350.5, "text": "여러분의 기여가 어떤 성과를 내는지 직접 확인하실 수 있죠."}, {"start": 350.5, "end": 353.0, "text": "캐나다에서 진행된 야생동물 이동 통로 프로젝트를 예로 들어보겠습니다."}, {"start": 353.0, "end": 356.5, "text": "회색곰이 생존하려면 아주 넓은 공간이 필요하지만,"}, {"start": 356.5, "end": 359.0, "text": "고속도로 때문에 서식지가 갈기갈기 쪼개졌습니다."}, {"start": 359.0, "end": 362.0, "text": "플래닛 와일드는 핵심 인프라 구축을 후원하여"}, {"start": 362.0, "end": 364.5, "text": "보호 구역들을 다시 연결하고"}, {"start": 364.5, "end": 367.0, "text": "거대한 야생동물 생태 통로를 만드는 데 힘을 보탰습니다."}, {"start": 367.0, "end": 370.0, "text": "지구의 생태계를 보호하고 저희 채널을 계속 유지할 수 있도록,"}, {"start": 370.0, "end": 373.0, "text": "플래닛 와일드에 함께해 주세요."}, {"start": 373.0, "end": 376.0, "text": "원하시는 만큼 부담 없이 후원하실 수 있으며, 언제든 취소 가능합니다."}, {"start": 376.0, "end": 379.0, "text": "저희 코드 KURZGESAGT9를 사용해 가입하시는 선착순 100분께는"}, {"start": 379.0, "end": 382.0, "text": "첫 달 후원금을 저희가 대신 지원해 드립니다."}, {"start": 382.0, "end": 385.0, "text": "화면의 QR 코드를 스캔하거나 설명란의 링크를 클릭해 보세요."}, {"start": 385.0, "end": 388.0, "text": "그들이 실제로 활동하는 모습을 먼저 확인하고 싶으시다면,"}, {"start": 388.0, "end": 391.0, "text": "아래 링크된 야생동물 이동 통로 영상을 확인해 보세요."}, {"start": 391.0, "end": 394.0, "text": "이제 다시 맞춤형 동식물 이야기로 돌아가 보죠!"}, {"start": 394.0, "end": 397.5, "text": "2- 마이너스 문명은 이미 공상과학의 영역에 가깝지만,"}, {"start": 397.5, "end": 400.5, "text": "인류는 수십 년에서 수백 년 안에 충분히 도달할 수 있을지도 모릅니다."}, {"start": 400.5, "end": 404.0, "text": "배로 척도에서 더 아래로 내려갈수록,"}, {"start": 404.0, "end": 407.0, "text": "상황은 더욱 비현실적으로 변해갑니다."}, {"start": 407.0, "end": 410.5, "text": "3- 마이너스에서 5- 마이너스 문명 – 물질과 에너지를 지배하는 무적의 신들"}, {"start": 410.5, "end": 414.0, "text": "생명의 기본 벽돌 아래에는 일반 물질을 이루는 기본 구성요소가 있습니다."}, {"start": 414.0, "end": 416.5, "text": "바로 분자와 원자죠."}, {"start": 416.5, "end": 419.5, "text": "오늘날 우리는 화학 작용을 통해 이를 조작할 수 있지만,"}, {"start": 419.5, "end": 423.0, "text": "3- 마이너스와 4- 마이너스 문명은"}, {"start": 423.0, "end": 426.0, "text": "개별 분자를 자유롭게 움직이고 결합하며,"}, {"start": 426.0, "end": 429.0, "text": "나아가 우리가 집을 짓듯 아주 쉽게 원자까지 다룰 수 있는 능력을 갖추게 됩니다."}, {"start": 429.0, "end": 432.5, "text": "이를 달성하면 문명이 할 수 있는 일은 근본적으로 뒤바뀝니다."}, {"start": 432.5, "end": 435.0, "text": "분명히 말씀드리자면, 지금 단계에서는 추측만 가능할 뿐이며"}, {"start": 435.0, "end": 438.0, "text": "미래의 기술 진보를 섣불리 예측하는 건 바보 같아 보이기 십상입니다."}, {"start": 438.0, "end": 441.5, "text": "무엇보다 극미세 규모에서 물질을 조작하는 데는 엄청난 에너지가 드니까요."}, {"start": 441.5, "end": 444.5, "text": "하지만 우리 조상들이 인터넷이나"}, {"start": 444.5, "end": 447.0, "text": "유전 공학, 드론 전쟁을 결코 상상하지 못했듯이,"}, {"start": 447.0, "end": 450.0, "text": "먼 미래의 우리 후손들이 무엇을 이뤄낼지는 알 수 없습니다."}, {"start": 450.0, "end": 453.0, "text": "그러나 우리가 알고 있는 물리학 법칙을 한계까지 밀어붙여 보면,"}, {"start": 453.0, "end": 456.0, "text": "몇 가지 놀라운 가능성들이 모습을 드러냅니다."}, {"start": 456.0, "end": 459.5, "text": "오늘날 우리가 가진 그 어떤 것보다 더 내구성이 뛰어나고 다재다능한"}, {"start": 459.5, "end": 462.0, "text": "새로운 물질에서부터 시작될 수 있죠."}, {"start": 462.0, "end": 465.0, "text": "날씨에 따라 감촉과 질감이 변하는 직물이나"}, {"start": 465.0, "end": 467.5, "text": "순식간에 화면으로 변하는 코팅막처럼 말입니다."}, {"start": 467.5, "end": 470.5, "text": "균열이 번지기 전에 스스로 복구되는 도로와 다리,"}, {"start": 470.5, "end": 473.5, "text": "빛이나 소리, 압력에 반응하여"}, {"start": 473.5, "end": 477.0, "text": "스스로 개방하거나 단열하고 보강하는 건물도 가능합니다."}, {"start": 477.0, "end": 480.0, "text": "미시 세계에 대한 통제력이 더욱 확장되면,"}, {"start": 480.0, "end": 483.0, "text": "물질 그 자체가 프로그래밍 가능해집니다."}, {"start": 483.0, "end": 486.5, "text": "오늘날 지구상에서 가장 밀도 높은 정보 저장 시스템은 DNA입니다."}, {"start": 486.5, "end": 488.5, "text": "하지만 DNA는 마법이 아닙니다."}, {"start": 488.5, "end": 491.5, "text": "세포 하나를 작동시키는 데 필요한 방대한 양의 정보가"}, {"start": 491.5, "end": 495.0, "text": "세포 안에 온전히 들어갈 수 있도록 지극히 정밀하게 배열된 원자들일 뿐이죠."}, {"start": 495.0, "end": 498.5, "text": "만약 우리가 그 수준의 효율로 정보를 압축할 수 있다면,"}, {"start": 498.5, "end": 501.5, "text": "온갖 종류의 임무를 수행하는"}, {"start": 501.5, "end": 504.0, "text": "초미세 나노로봇을 만들어낼 수 있을지도 모릅니다."}, {"start": 504.0, "end": 507.0, "text": "오염된 물을 정화하는 일부터 우리 몸속에서 수술을 집도하는 것까지 말이죠."}, {"start": 507.0, "end": 510.0, "text": "수십억 개의 나노로봇 군집인 '다목적 안개(Utility fog)'는"}, {"start": 510.0, "end": 513.5, "text": "도구나 가구 같은 일상적인 물건의 형태로 뭉칠 수도 있습니다."}, {"start": 513.5, "end": 516.5, "text": "물질이 소프트웨어로 제어할 수 있는 하드웨어가 되는 셈이죠."}, {"start": 516.5, "end": 519.5, "text": "이 모든 이야기가 믿을 수 없을 만큼 위험하게 들린다면,"}, {"start": 519.5, "end": 521.5, "text": "실제로도 위험할 가능성이 높기 때문입니다."}, {"start": 521.5, "end": 524.5, "text": "하지만 그만큼 엄청난 기회와 풍요를 가져다주기도 합니다."}, {"start": 524.5, "end": 527.5, "text": "세상의 모든 물체는 특정한 방식으로 배열된 원자들에 불과하니까요."}, {"start": 527.5, "end": 530.0, "text": "그러니 그 원자 배열을 완전히 통제할 수 있다면,"}, {"start": 530.0, "end": 533.0, "text": "'쓰레기'라는 단어는 그 의미를 잃기 시작합니다."}, {"start": 533.0, "end": 536.0, "text": "오래되거나 부서지고 썩은 물건들도 그저 잘못 조립된 원자이자,"}, {"start": 536.0, "end": 539.0, "text": "다시 재배열되기를 기다리는 대상일 뿐이죠."}, {"start": 539.0, "end": 542.0, "text": "행성에 존재하는 수많은 자원을"}, {"start": 542.0, "end": 544.5, "text": "끝없이 재사용할 수 있으니 자원 부족도 사실상 사라집니다."}, {"start": 544.5, "end": 548.0, "text": "이렇게 되면 자원을 찾아 바깥 우주로 뻗어나갈 필요조차 없어질지도 모릅니다."}, {"start": 548.0, "end": 551.0, "text": "다른 행성을 정복하려 수 광년을 여행할 이유가 있을까요?"}, {"start": 551.0, "end": 554.0, "text": "우리가 바랄 수 있는 대부분의 자원이 이미 눈앞에 있는데 말이죠."}, {"start": 554.0, "end": 557.5, "text": "생명체가 그러하듯 물질 속에 정보를"}, {"start": 557.5, "end": 560.5, "text": "극도로 효율적으로 압축할 수 있는 문명이라면,"}, {"start": 560.5, "end": 563.5, "text": "상상을 초월할 만큼 강력한 컴퓨터 또한 만들어낼 수 있습니다."}, {"start": 563.5, "end": 567.0, "text": "오늘날 모든 데이터센터의 용량이 주먹만 한 기기 하나에 다 들어갈지도 모릅니다 –"}, {"start": 567.0, "end": 570.5, "text": "수십 년 전 세계에서 가장 거대했던 컴퓨터들이 여러분의 아이폰 앞에 무색해졌듯이 말이죠."}, {"start": 570.5, "end": 573.5, "text": "우리는 과연 어떤 인공지능을 만들 수 있을까요?"}, {"start": 573.5, "end": 576.0, "text": "어떤 시뮬레이션을 실행하고,"}, {"start": 576.0, "end": 578.5, "text": "또 어떤 과학적 탐구를 해낼 수 있을까요?"}, {"start": 578.5, "end": 582.0, "text": "현실의 다음 층위를 통제하게 되면 이 모든 가능성은 한층 더 거대해집니다."}, {"start": 582.0, "end": 585.5, "text": "바로 '5- 마이너스 문명'으로의 도약이죠."}, {"start": 585.5, "end": 588.5, "text": "원자보다 1만 배나 더 작은 세계, 바로 원자핵입니다."}, {"start": 588.5, "end": 592.0, "text": "원자의 본질을 규정하고 온 우주를 밝히는 연료가 되는 아주 작은 핵이죠."}, {"start": 592.0, "end": 595.0, "text": "중간 크기 호수 하나의 수소를 핵융합하는 것만으로도,"}, {"start": 595.0, "end": 598.5, "text": "오늘날 전 인류가 수백만 년 동안 살아갈 에너지를 감당할 수 있습니다."}, {"start": 598.5, "end": 602.0, "text": "그러니 원자핵을 제어할 수 있는 문명은"}, {"start": 602.0, "end": 605.0, "text": "필요로 하는 모든 에너지를 언제든 손에 쥐게 됩니다."}, {"start": 605.0, "end": 608.5, "text": "다이슨 스피어나 다른 거대 우주 공학 프로젝트들은"}, {"start": 608.5, "end": 611.5, "text": "이 단계에서는 완전히 불필요할지도 모르죠."}, {"start": 611.5, "end": 614.5, "text": "건강과 물질, 에너지가 모두 풍요로운 문명에게"}, {"start": 614.5, "end": 617.5, "text": "진정한 진보의 원천이자"}, {"start": 617.5, "end": 620.0, "text": "유일하게 남은 미지의 개척지는 우주나 영토가 아닙니다."}, {"start": 620.0, "end": 622.5, "text": "바로 '정보'입니다."}, {"start": 622.5, "end": 626.0, "text": "사실상 무한한 자원을 마음껏 설계하고 재창조하는 능력,"}, {"start": 626.0, "end": 628.5, "text": "바로 '연산' 능력이죠."}, {"start": 628.5, "end": 631.5, "text": "원자핵 속 양성자와 중성자는"}, {"start": 631.5, "end": 634.5, "text": "매초 수십 해 번씩 고동치며 –"}, {"start": 634.5, "end": 638.0, "text": "오늘날 그 어떤 트랜지스터가 비트를 전환하는 것보다 수십억 배나 빠릅니다."}, {"start": 638.0, "end": 641.0, "text": "따라서 만약 이들을 연산에 활용할 방법이 있다면,"}, {"start": 641.0, "end": 644.0, "text": "원자핵은 완전히 새로운 차원의 기계를 탄생시킬 것입니다."}, {"start": 644.0, "end": 647.5, "text": "새로운 형태의 생명과 물질을 창조해내고,"}, {"start": 647.5, "end": 651.0, "text": "우주의 궁극적인 비밀을 밝혀내기 시작할 강력한 컴퓨터를 말이죠."}, {"start": 651.0, "end": 654.5, "text": "여기서부터는 단 하나의 마지막 단계만이 남아 있습니다."}, {"start": 654.5, "end": 658.0, "text": "6- 마이너스에서 오메가(Ω)- 마이너스까지, 바로 실재의 가장 밑바닥입니다."}, {"start": 658.0, "end": 661.5, "text": "이 단계는 오늘날 우리가 할 수 있는 영역을 너무나 아득히 벗어나 있어,"}, {"start": 661.5, "end": 665.0, "text": "과학자들조차 무엇이 가능할지 그저 짐작만 해볼 뿐입니다."}, {"start": 665.0, "end": 668.0, "text": "원자핵보다 훨씬 더 깊은 곳에는"}, {"start": 668.0, "end": 671.0, "text": "전자, 중성미자, 쿼크와 같은 기본 입자들이 존재하며,"}, {"start": 671.0, "end": 674.0, "text": "이곳에 이르면 현실 그 자체가 해체되기 시작합니다."}, {"start": 674.0, "end": 677.5, "text": "기본 입자들은 마치 양자 진공 속에서 나타나는 유령과도 같죠 –"}, {"start": 677.5, "end": 680.5, "text": "우주 어디에나 존재하는 유체이자,"}, {"start": 680.5, "end": 683.5, "text": "그 미세한 진동이 존재하는 모든 것을 만들어내죠."}, {"start": 683.5, "end": 686.5, "text": "우리는 유형 6- 마이너스 문명이"}, {"start": 686.5, "end": 689.5, "text": "이런 척도에서 현실을 조작해 무엇을 이뤄낼지 가늠조차 어렵습니다."}, {"start": 689.5, "end": 693.0, "text": "어쩌면 새로운 공간 차원을 발견해 기상천외한 일들에 활용할지도 모릅니다."}, {"start": 693.0, "end": 696.0, "text": "국소적으로 물리 법칙을 재구성하거나"}, {"start": 696.0, "end": 699.0, "text": "행성 전체, 심지어 항성계 전체의 시간을 늦출 수도 있죠."}, {"start": 699.0, "end": 702.5, "text": "하지만 과학자들이 수십 년간 고민해 온 한 가지 아이디어는 훨씬 더 기묘합니다."}, {"start": 702.5, "end": 706.0, "text": "양자 진공을 완벽히 제어하면 새로운 우주를 창조할 수도 있다는 것이죠."}, {"start": 706.0, "end": 709.0, "text": "우리가 사는 우주 역시 양자 진공의"}, {"start": 709.0, "end": 712.5, "text": "미세한 불안정성에서 시작해 오늘날의 모든 것으로 팽창했을지도 모릅니다."}, {"start": 712.5, "end": 715.5, "text": "이것이 사실이라면, 진공을 완전히 지배함으로써"}, {"start": 715.5, "end": 719.0, "text": "시험관 안에서 완전히 새로운 우주의 씨앗을 뿌릴 힘을 얻게 될 것입니다."}, {"start": 719.0, "end": 722.0, "text": "그 시점에 이르면 마침내 '오메가 마이너스 문명'이 됩니다."}, {"start": 722.0, "end": 724.0, "text": "진정한 우주적 신이 되는 것이죠."}, {"start": 724.0, "end": 726.0, "text": "무한히 작은 세계의 신 말입니다."}, {"start": 726.0, "end": 729.5, "text": "고도 문명은 점점 더 작은 현실의 층위 속으로 숨어드는 걸까요?"}, {"start": 729.5, "end": 732.0, "text": "확언할 수는 없습니다."}, {"start": 732.0, "end": 735.5, "text": "미시 세계에서 우리가 언급한 엄청난 일들을 해내기 위해서라도"}, {"start": 735.5, "end": 738.5, "text": "거대한 규모의 자원을 계속 활용해야 할 수도 있으니까요."}, {"start": 738.5, "end": 741.0, "text": "그러니 둘 다 병행하고 있을지도 모릅니다."}, {"start": 741.0, "end": 744.0, "text": "하지만 이러한 온갖 추측 속에서도 배로 척도를 탐구하는 것은 심오한 사실을 드러냅니다."}, {"start": 744.0, "end": 747.5, "text": "물리 법칙이 허용하는 한"}, {"start": 747.5, "end": 750.0, "text": "가장 불멸하고 강력한 존재가 되는 길이"}, {"start": 750.0, "end": 753.0, "text": "언제나 은하계 너머로만 이어지는 것은 아니라는 점이죠."}, {"start": 753.0, "end": 756.0, "text": "우리를 둘러싼 작은 세계 속으로도 향할 수 있습니다."}, {"start": 756.0, "end": 759.0, "text": "이것이야말로 모든 고도 문명의 최종 단계일지도 모릅니다."}, {"start": 759.0, "end": 762.0, "text": "거대하게 모습을 드러내며 우주의 공허를 가로지르는 대신,"}, {"start": 762.0, "end": 765.5, "text": "은하계 한구석에서 거대한 미시 우주를 지배하는 조용한 신으로 남는 것이죠."}, {"start": 802.0, "end": 805.0, "text": "저희 숍이 10주년을 맞이했습니다!"}, {"start": 805.0, "end": 808.0, "text": "숍은 저희의 가장 중요한 수입원 중 하나가 되었고,"}, {"start": 808.0, "end": 810.5, "text": "덕분에 모든 분께 영상을 무료로 계속 제공해 드릴 수 있죠."}, {"start": 810.5, "end": 813.5, "text": "'인류세 달력'은 여러분이 늘 가장 많이 찾아주시는 제품인데요,"}, {"start": 813.5, "end": 816.5, "text": "새로운 에디션이 곧 출시될 예정입니다."}, {"start": 816.5, "end": 818.5, "text": "하지만 그게 다가 아닙니다!"}, {"start": 818.5, "end": 821.0, "text": "저희 숍을 찾아주시는 모든 새 친구 여러분께 감사하는 마음으로,"}, {"start": 821.0, "end": 823.5, "text": "리워드 프로그램인 '우주 원정대(Cosmic Expedition)'를 시작했습니다."}, {"start": 823.5, "end": 826.5, "text": "경험치(XP)를 쌓고 특별한 보상을 잠금 해제할 수 있죠."}, {"start": 826.5, "end": 829.0, "text": "할인 혜택이나 단독 상품 같은 보상 말입니다."}, {"start": 829.0, "end": 831.5, "text": "달력 출시 소식을 가장 먼저 확인하고,"}, {"start": 831.5, "end": 834.0, "text": "쿠르츠게자크의 모든 최신 소식을 놓치지 않으시려면"}, {"start": 834.0, "end": 836.0, "text": "저희 뉴스레터를 구독해 보세요!"}, {"start": 836.0, "end": 839.0, "text": "아름다운 사운드트랙을"}, {"start": 839.0, "end": 841.0, "text": "제 성가신 목소리 없이 듣고 싶으신가요?"}, {"start": 841.0, "end": 843.0, "text": "음, 그것도 여러분의 선택에 달렸죠."}, {"start": 843.0, "end": 845.5, "text": "아래에서 오디오 트랙을 인터링구아(Interlingua)로 선택하고"}, {"start": 845.5, "end": 848.0, "text": "이 영상을 뮤직비디오처럼 다시 감상해 보세요."}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
