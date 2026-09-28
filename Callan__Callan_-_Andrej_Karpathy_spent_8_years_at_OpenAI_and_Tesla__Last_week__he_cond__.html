@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Callan] Callan - Andrej Karpathy spent 8 years at OpenAI and Tesla  Last week, he cond.. ([Callan] Callan - Andrej Karpathy는 지난 주 OpenAI와 Tesla에서 8년을 보냈습니다..)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[Callan] Callan - Andrej Karpathy spent 8 years at OpenAI and Tesla  Last week, he cond.. ([Callan] Callan - Andrej Karpathy는 지난 주 OpenAI와 Tesla에서 8년을 보냈습니다..)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/3CRtS3bY_D4/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[Callan] Callan - Andrej Karpathy spent 8 years at OpenAI and Tesla  Last week, he cond.. ([Callan] Callan - Andrej Karpathy는 지난 주 OpenAI와 Tesla에서 8년을 보냈습니다..)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/3CRtS3bY_D4/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/3CRtS3bY_D4?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="3CRtS3bY_D4";
+const subs=[{"start": 0.0, "end": 2.5, "text": "대화를 처음부터 다시 시작합니다."}, {"start": 2.6, "end": 5.5, "text": "제가 모델과 대화할 때 머릿속에 그리는 만화 다이어그램은"}, {"start": 5.6, "end": 7.8, "text": "대략 이런 모습입니다."}, {"start": 8.0, "end": 10.5, "text": "우리가 '새 채팅' 버튼을 누르면"}, {"start": 10.6, "end": 12.8, "text": "토큰 시퀀스가 시작되죠."}, {"start": 13.0, "end": 15.5, "text": "이것은 일차원적인 토큰의 배열입니다."}, {"start": 15.6, "end": 18.5, "text": "사용자인 우리는 이 스트림에 토큰을 입력하고,"}, {"start": 18.6, "end": 21.5, "text": "엔터 키를 누르면 제어권이 언어 모델로 넘어갑니다."}, {"start": 21.6, "end": 24.5, "text": "그러면 언어 모델은 자신만의 토큰 스트림으로 응답하죠."}, {"start": 24.6, "end": 27.5, "text": "그리고 언어 모델에는 특별한 토큰이 있어서"}, {"start": 27.6, "end": 30.5, "text": "\"답변이 끝났다\"는 신호를 보냅니다."}, {"start": 30.6, "end": 33.5, "text": "모델이 그 토큰을 내보내면 제어권이 다시 우리에게 넘어오고,"}, {"start": 33.6, "end": 36.5, "text": "우리는 번갈아 가며 대화를 이어가게 됩니다."}, {"start": 36.6, "end": 39.5, "text": "우리가 함께 구축해 나가는 이 토큰 스트림을"}, {"start": 39.6, "end": 42.5, "text": "우리는 '컨텍스트 윈도우'라고 부릅니다."}, {"start": 42.6, "end": 45.5, "text": "컨텍스트 윈도우는 일종의 '작업 메모리(Working Memory)'입니다."}, {"start": 45.6, "end": 48.5, "text": "이 윈도우 안에 들어있는 모든 내용은"}, {"start": 48.6, "end": 51.5, "text": "현재 대화의 작업 메모리에 보관되며"}, {"start": 51.6, "end": 54.5, "text": "모델이 매우 직접적으로 참조할 수 있죠."}, {"start": 55.0, "end": 58.0, "text": "그렇다면 우리가 대화하고 있는 이 개체는 대체 무엇일까요?"}, {"start": 58.1, "end": 60.5, "text": "어떻게 이해해야 할까요?"}, {"start": 61.0, "end": 64.0, "text": "이 언어 모델의 학습 방식은"}, {"start": 64.1, "end": 67.0, "text": "크게 두 가지 주요 단계로 나뉩니다."}, {"start": 67.1, "end": 70.0, "text": "바로 사전 학습(Pre-training)과 사후 학습(Post-training)입니다."}, {"start": 70.5, "end": 73.5, "text": "사전 학습 단계는 인터넷의 모든 문서를 가져와"}, {"start": 73.6, "end": 76.5, "text": "토큰으로 잘게 쪼갠 뒤,"}, {"start": 76.6, "end": 79.5, "text": "하나의 압축 파일(zip)로 압축하는 것과 비슷합니다."}, {"start": 80.0, "end": 83.0, "text": "하지만 이 압축 파일은 정밀하지 않습니다."}, {"start": 83.1, "end": 86.0, "text": "손실이 발생하고 확률적인 압축 파일이죠."}, {"start": 86.5, "end": 89.5, "text": "인터넷의 방대한 정보를 1테라바이트 정도의 파일에"}, {"start": 89.6, "end": 92.5, "text": "모두 완벽히 담아낼 수는 없기 때문입니다."}, {"start": 93.0, "end": 96.0, "text": "그래서 우리는 인터넷의 대략적인 형태와 뉘앙스만 얻게 됩니다."}, {"start": 96.5, "end": 99.5, "text": "압축 파일 내부에 실제로 들어있는 것은 신경망의 파라미터들입니다."}, {"start": 100.0, "end": 103.0, "text": "예를 들어 1테라바이트 크기의 압축 파일은"}, {"start": 103.1, "end": 106.0, "text": "신경망 내부의 약 1조 개 파라미터에 해당하죠."}, {"start": 106.5, "end": 109.5, "text": "이 신경망이 하는 일은 단순합니다."}, {"start": 110.0, "end": 113.0, "text": "연속된 토큰들을 보고 다음 토큰을 예측하는 것입니다."}, {"start": 113.5, "end": 116.5, "text": "인터넷 문서 생성기처럼 작동하는 셈이죠."}, {"start": 117.0, "end": 120.0, "text": "다음 토큰을 예측하는 훈련 과정에서"}, {"start": 120.1, "end": 123.0, "text": "신경망은 세상에 대한 엄청난 양의 지식을 습득하게 됩니다."}, {"start": 123.5, "end": 126.5, "text": "그리고 이 모든 지식은 1조 개의 파라미터 속에 압축되어 담기죠."}, {"start": 127.0, "end": 130.0, "text": "그런데 이 사전 학습 단계는 비용이 매우 많이 듭니다."}, {"start": 130.5, "end": 133.5, "text": "수천만 달러의 비용과 수개월의 훈련 기간이 소요됩니다."}, {"start": 134.0, "end": 137.0, "text": "그렇기 때문에 사전 학습은 자주 진행되지 않습니다."}, {"start": 137.5, "end": 140.5, "text": "예를 들어 GPT-4o 같은 모델도"}, {"start": 141.0, "end": 144.0, "text": "수개월 전, 혹은 1년 전에 사전 학습되었을 가능성이 높습니다."}, {"start": 144.5, "end": 147.5, "text": "그래서 이러한 모델들은 약간 과거의 정보에 머물러 있으며,"}, {"start": 148.0, "end": 151.0, "text": "이를 '지식 컷오프(Knowledge Cutoff)'라고 부릅니다."}, {"start": 151.5, "end": 154.5, "text": "모델의 지식은 사전 학습된 시점까지만 유효한 것이죠."}, {"start": 155.0, "end": 158.0, "text": "물론 사후 학습을 통해 일부 지식이 주입될 수도 있지만,"}, {"start": 158.5, "end": 161.5, "text": "기본적으로 모델의 지식은 최신 상태가 아니라고 보아야 합니다."}, {"start": 162.0, "end": 165.0, "text": "지난주에 발생한 사건 같은 최신 정보에 대해 대화하려면,"}, {"start": 165.5, "end": 168.5, "text": "모델의 고유 지식이 아닌 다른 방식으로 정보를 제공해야 합니다."}, {"start": 169.0, "end": 172.0, "text": "바로 도구(Tools)를 활용하는 것이죠."}, {"start": 172.5, "end": 175.5, "text": "사전 학습 다음 단계는 사후 학습(Post-training)입니다."}, {"start": 176.0, "end": 179.0, "text": "사후 학습은 이 압축 파일에 스마일 얼굴을 붙여주는 작업입니다."}, {"start": 179.5, "end": 182.5, "text": "우리는 인터넷 문서를 그대로 생성하는 것을 원치 않고,"}, {"start": 183.0, "end": 186.0, "text": "사용자 질문에 응답하는 어시스턴트의 인격을 갖추길 원하니까요."}, {"start": 186.5, "end": 189.5, "text": "인간들이 작성한 대화 데이터셋으로 교체하여 훈련을 진행합니다."}, {"start": 190.0, "end": 193.0, "text": "이 과정을 거쳐 모델은 비로소 질문에 친절히 답하는 어시스턴트가 됩니다."}, {"start": 193.5, "end": 196.5, "text": "어시스턴트의 말투와 태도는 사후 학습에서 나오고,"}, {"start": 197.0, "end": 200.0, "text": "세상에 대한 방대한 지식은 사전 학습에서 나오는 것입니다."}, {"start": 200.5, "end": 203.5, "text": "기억해야 할 점은, 기본적으로 모델은 독립적인 개체라는 것입니다."}, {"start": 204.0, "end": 207.0, "text": "디스크에 저장된 1테라바이트짜리 파일이라고 생각하면 됩니다."}, {"start": 207.5, "end": 210.5, "text": "계산기도, 웹 브라우징도, 파이썬 인터프리터도 내장되어 있지 않습니다."}, {"start": 211.0, "end": 214.0, "text": "토큰을 입력받아 다음 토큰을 출력하는 신경망 파일일 뿐이죠."}, {"start": 214.5, "end": 217.5, "text": "이 파일에 토큰을 보내면 모델은 토큰으로 응답을 돌려줍니다."}, {"start": 390.0, "end": 393.0, "text": "제가 실제로 오늘 아침에 ChatGPT에 했던 질문을 예로 들어보겠습니다."}, {"start": 393.5, "end": 396.5, "text": "\"아메리카노 1샷에 카페인이 얼마나 들어있어?\"라고 물었죠."}, {"start": 397.0, "end": 400.0, "text": "ChatGPT는 대략 63mg 정도 들어있다고 답했습니다."}, {"start": 400.5, "end": 403.5, "text": "이런 질문은 최신 지식이 필요하지 않고,"}, {"start": 404.0, "end": 407.0, "text": "인터넷에 매우 빈번하게 언급되는 정보이므로 모델이 잘 기억합니다."}, {"start": 407.5, "end": 410.5, "text": "또 다른 예로 감기약 성분에 대해 물어본 적이 있습니다."}, {"start": 411.0, "end": 414.0, "text": "콧물이 나는데 데이킬과 나이킬 중 어떤 게 효과적인지 물었죠."}, {"start": 414.5, "end": 417.5, "text": "모델은 각 약의 성분과 콧물 완화 효과를 정확하게 설명해 주었습니다."}, {"start": 418.0, "end": 421.0, "text": "실제 약 상자를 확인해 보니 모델의 설명이 모두 맞았죠."}, {"start": 421.5, "end": 424.5, "text": "이처럼 일상적이고 흔한 정보는 모델의 고유 지식으로 충분합니다."}, {"start": 588.0, "end": 591.0, "text": "여기서 첫 번째 중요한 팁을 말씀드리겠습니다."}, {"start": 591.5, "end": 594.5, "text": "대화를 나누다 보면 대화창이 점점 길어지게 마련입니다."}, {"start": 595.0, "end": 598.0, "text": "주제가 바뀔 때는 반드시 '새 채팅(New Chat)'을 시작하세요."}, {"start": 598.5, "end": 601.5, "text": "새 채팅을 누르면 컨텍스트 윈도우의 토큰이 깨끗이 비워집니다."}, {"start": 602.0, "end": 605.0, "text": "윈도우에 남아있는 이전 대화 토큰들은 비용이 들기 때문입니다."}, {"start": 605.5, "end": 608.5, "text": "첫째로, 이전 토큰이 너무 많으면 모델이 주의를 빼앗겨"}, {"start": 609.0, "end": 612.0, "text": "새로운 답변의 정확도가 떨어질 수 있습니다."}, {"start": 612.5, "end": 615.5, "text": "둘째로, 윈도우 내 토큰이 많아질수록 다음 토큰 생성 속도가 느려지고"}, {"start": 616.0, "end": 619.0, "text": "비용도 그만큼 더 비싸집니다."}, {"start": 619.5, "end": 622.5, "text": "컨텍스트 윈도우는 소중한 자원이므로 불필요한 정보로 채우지 마세요."}, {"start": 693.0, "end": 696.0, "text": "두 번째 팁은 현재 사용 중인 모델이 무엇인지 항상 확인하는 것입니다."}, {"start": 696.5, "end": 699.5, "text": "ChatGPT 요금제 페이지를 보면 3가지 기본 티어가 있습니다."}, {"start": 700.0, "end": 703.0, "text": "무료 티어, 월 20달러의 플러스, 그리고 월 200달러의 프로 티어죠."}, {"start": 703.5, "end": 706.5, "text": "무료 티어에서는 주로 GPT-4o mini 모델이 제공됩니다."}, {"start": 707.0, "end": 710.0, "text": "파라미터 수가 적어 덜 똑똑하고 환각이 더 발생할 수 있죠."}, {"start": 710.5, "end": 713.5, "text": "월 20달러를 내면 플래그십인 GPT-4o를 3시간당 80메시지 사용할 수 있습니다."}, {"start": 714.0, "end": 717.0, "text": "그리고 월 200달러 프로 요금제는 무제한 사용과 고급 기능들을 제공합니다."}, {"start": 717.5, "end": 720.5, "text": "다른 제공업체들도 마찬가지입니다."}, {"start": 721.0, "end": 724.0, "text": "앤트로픽의 클로드(Claude)에서는 유료 구독 시 클로드 3.5 소네트를 쓸 수 있고,"}, {"start": 724.5, "end": 727.5, "text": "구글의 제미나이(Gemini), xAI의 그록(Grok 3)도 각각 플래그십 모델이 있습니다."}, {"start": 728.0, "end": 731.0, "text": "저는 여러 모델을 동시에 띄워두고 같은 질문을 던져보곤 하는데,"}, {"start": 731.5, "end": 734.5, "text": "이를 저만의 'LLM 위원회(LLM Council)'라고 부릅니다."}, {"start": 735.0, "end": 738.0, "text": "스위스 체르마트 여행지 추천처럼 모델마다 비교해 보는 재미가 쏠쏠하죠."}, {"start": 995.0, "end": 998.0, "text": "이제 최근 가장 뜨거운 주제인 '생각하는 모델(Thinking Models)'로 넘어가 보죠."}, {"start": 998.5, "end": 1001.5, "text": "최근 모델들은 강화학습(RL)을 통해 추가 훈련을 받습니다."}, {"start": 1002.0, "end": 1005.0, "text": "교과서의 연습문제를 수없이 풀며 스스로 생각하는 전략을 터득하는 것이죠."}, {"start": 1005.5, "end": 1008.5, "text": "이 과정에서 모델은 가설을 세우고, 백트래킹하고, 검증하는"}, {"start": 1009.0, "end": 1012.0, "text": "인간의 내면 독백과 유사한 사고 과정을 형성하게 됩니다."}, {"start": 1012.5, "end": 1015.5, "text": "DeepSeek R1 논문에서도 이러한 강화학습 추론 능력이 잘 설명되어 있습니다."}, {"start": 1016.0, "end": 1019.0, "text": "오픈AI의 o1, o3-mini, o1-pro가 바로 이러한 생각하는 모델들입니다."}, {"start": 1019.5, "end": 1022.5, "text": "실제로 제가 최근 신경망 역전파 경사도 체크에서 버그가 발생했을 때,"}, {"start": 1023.0, "end": 1026.0, "text": "일반 GPT-4o는 문제를 해결하지 못하고 겉도는 답변만 내놓았습니다."}, {"start": 1026.5, "end": 1029.5, "text": "하지만 생각하는 모델인 o1-pro에 코드를 넣자 1분간 깊이 생각한 끝에"}, {"start": 1030.0, "end": 1033.0, "text": "파라미터 패킹 순서의 불일치를 정확히 짚어내며 버그를 해결해 주었죠."}, {"start": 1033.5, "end": 1036.5, "text": "수학, 코딩, 복잡한 논리 문제에서는 생각하는 모델이 큰 힘을 발휘합니다."}, {"start": 1037.0, "end": 1040.0, "text": "Grok에서도 'Think' 토글을 켜면 생각하는 모드로 전환할 수 있습니다."}, {"start": 1502.0, "end": 1505.0, "text": "다음으로 다룰 주제는 '도구 사용(Tool Use)', 그중에서도 웹 검색입니다."}, {"start": 1505.5, "end": 1508.5, "text": "사전 학습된 모델은 최신 정보를 알 수 없습니다."}, {"start": 1509.0, "end": 1512.0, "text": "예를 들어 드라마 '화이트 로투스 시즌 3' 방영일을 물어보면"}, {"start": 1512.5, "end": 1515.5, "text": "모델 혼자서는 알 수 없으므로 인터넷 검색 도구를 호출해야 합니다."}, {"start": 1516.0, "end": 1519.0, "text": "모델이 검색 토큰을 출력하면 앱이 구글 검색을 수행하고,"}, {"start": 1519.5, "end": 1522.5, "text": "해당 웹페이지의 텍스트를 컨텍스트 윈도우에 집어넣어 모델이 답변하게 만듭니다."}, {"start": 1523.0, "end": 1526.0, "text": "퍼플렉시티(Perplexity)가 이 분야를 선도했고,"}, {"start": 1526.5, "end": 1529.5, "text": "지금은 ChatGPT, Grok 등 대부분의 플랫폼이 웹 검색 기능을 탑재했습니다."}, {"start": 1530.0, "end": 1533.0, "text": "오늘 주식 시장 개장 여부, 기업의 최신 공시, 신제품 루머 등"}, {"start": 1533.5, "end": 1536.5, "text": "최신성이 중요한 질문에는 반드시 웹 검색 도구를 활용해야 합니다."}, {"start": 2194.0, "end": 2197.0, "text": "최근 등장한 또 하나의 놀라운 기능은 '딥 리서치(Deep Research)'입니다."}, {"start": 2197.5, "end": 2200.5, "text": "인터넷 검색과 생각하는 모델의 추론 능력을 결합한 기능이죠."}, {"start": 2201.0, "end": 2204.0, "text": "모델이 수십 차례 웹을 검색하고, 논문을 탐색하고, 깊이 생각하여"}, {"start": 2204.5, "end": 2207.5, "text": "10~20분에 걸쳐 완벽한 맞춤형 연구 보고서를 작성해 줍니다."}, {"start": 2208.0, "end": 2211.0, "text": "예를 들어 브라이언 존슨의 장수 보충제 성분인 CaAKG에 대해 조사시켰더니,"}, {"start": 2211.5, "end": 2214.5, "text": "동물 실험 결과부터 작용 기전, 안전성까지 수십 개 출처를 달아 보고서를 만들어냈죠."}, {"start": 2215.0, "end": 2218.0, "text": "브라우저 비교나 연구소 조사 등 복잡한 분석에 매우 유용합니다."}, {"start": 2794.0, "end": 2797.0, "text": "모델에 직접 문서를 제공하는 '파일 업로드' 기능도 필수적입니다."}, {"start": 2797.5, "end": 2800.5, "text": "새로 발표된 유전체 파운데이션 모델인 Evo 2 논문 PDF를 업로드하고,"}, {"start": 2801.0, "end": 2804.0, "text": "논문의 핵심 구조와 기능을 질의응답하며 쉽게 읽을 수 있습니다."}, {"start": 2804.5, "end": 2807.5, "text": "저는 책을 읽을 때도 LLM을 항상 곁에 둡니다."}, {"start": 2808.0, "end": 2811.0, "text": "애덤 스미스의 '국부론' 분업에 관한 챕터를 통째로 복사해 넣고,"}, {"start": 2811.5, "end": 2814.5, "text": "어려운 문맥이나 고전적 표현에 대해 질문하며 함께 읽어 나가죠."}, {"start": 3252.0, "end": 3255.0, "text": "또 하나의 강력한 도구는 파이썬 인터프리터(코드 실행)입니다."}, {"start": 3255.5, "end": 3258.5, "text": "간단한 암산은 모델 자체 기억으로 가능하지만,"}, {"start": 3259.0, "end": 3262.0, "text": "복잡한 곱셈이나 계산은 모델이 머릿속으로 계산하면 틀리기 쉽습니다."}, {"start": 3262.5, "end": 3265.5, "text": "그래서 모델은 파이썬 코드를 작성해 계산을 실행하고 정확한 답을 얻죠."}, {"start": 3266.0, "end": 3269.0, "text": "오픈AI의 고급 데이터 분석(Advanced Data Analysis)을 사용하면"}, {"start": 3269.5, "end": 3272.5, "text": "오픈AI의 연도별 기업가치 데이터를 바탕으로 그래프를 그리고 추세를 예측할 수도 있습니다."}, {"start": 3876.0, "end": 3879.0, "text": "클로드의 아티팩트(Artifacts) 기능도 매우 훌륭합니다."}, {"start": 3879.5, "end": 3882.5, "text": "텍스트 설명뿐만 아니라 브라우저 내에서 직접 실행되는 리액트 컴포넌트를 만들어주죠."}, {"start": 3883.0, "end": 3886.0, "text": "플래시카드 학습 앱이나 국부론 개념을 시각화한 머메이드 다이어그램을 순식간에 제작합니다."}, {"start": 3886.5, "end": 3889.5, "text": "더 나아가 전문 코딩에서는 커서(Cursor)와 컴포저(Composer)를 사용합니다."}, {"start": 3890.0, "end": 3893.0, "text": "자연어로 원하는 기능을 지시하면 에이전트가 코드를 작성하고 수정하는"}, {"start": 3893.5, "end": 3896.5, "text": "이른바 '바이브 코딩(Vibe Coding)'의 시대가 열린 것입니다."}, {"start": 4719.0, "end": 4722.0, "text": "이제 텍스트를 넘어 멀티모달, 특히 음성 기능에 대해 살펴보겠습니다."}, {"start": 4722.5, "end": 4725.5, "text": "타이핑 대신 음성 입력 도구(Superwhisper 등)를 쓰면 생산성이 비약적으로 상승합니다."}, {"start": 4726.0, "end": 4729.0, "text": "그리고 ChatGPT의 고급 음성 모드(Advanced Voice Mode)는"}, {"start": 4729.5, "end": 4732.5, "text": "음성을 텍스트로 변환하지 않고 모델이 오디오 토큰을 직접 주고받는 순수 오디오 방식입니다."}, {"start": 4733.0, "end": 4736.0, "text": "요다나 해적 목소리로 대화하거나, 말하는 속도를 자유자재로 조절할 수 있죠."}, {"start": 4736.5, "end": 4739.5, "text": "Grok에서도 다양한 음성 모드로 유쾌하게 대화를 나눌 수 있습니다."}, {"start": 5635.0, "end": 5638.0, "text": "구글의 노트북LM(NotebookLM)은 오디오를 활용한 또 다른 혁신입니다."}, {"start": 5638.5, "end": 5641.5, "text": "PDF 논문이나 웹페이지를 업로드하면 두 명의 AI 진행자가 대화하는"}, {"start": 5642.0, "end": 5645.0, "text": "생생한 오디오 팟캐스트(Audio Overview)를 자동으로 생성해 줍니다."}, {"start": 5834.0, "end": 5837.0, "text": "시각적 멀티모달, 즉 이미지 기능도 매우 강력합니다."}, {"start": 5837.5, "end": 5840.5, "text": "영양성분표나 혈액검사 결과지를 캡처해 올리면 수치를 분석하고 해석해 줍니다."}, {"start": 5841.0, "end": 5844.0, "text": "치약 성분 분석부터 인터넷 밈(Meme)의 유머 포인트 설명까지 가능하죠."}, {"start": 5844.5, "end": 5847.5, "text": "반대로 DALL-E 3나 아이디오그램(Ideogram)을 통해 고화질 이미지를 생성할 수도 있습니다."}, {"start": 6390.0, "end": 6393.0, "text": "스마트폰 카메라로 주변 사물을 비추며 실시간으로 대화할 수도 있습니다."}, {"start": 6393.5, "end": 6396.5, "text": "책 표지, CO2 측정기 수치, 지도 등을 카메라로 비추면 모델이 즉시 인식하죠."}, {"start": 6397.0, "end": 6400.0, "text": "소라(Sora), 비오 2(Veo 2) 같은 차세대 비디오 생성 도구들도 눈부시게 발전하고 있습니다."}, {"start": 6656.0, "end": 6659.0, "text": "마지막으로 대화의 질을 높여주는 편의 기능들입니다."}, {"start": 6659.5, "end": 6662.5, "text": "ChatGPT의 메모리 기능은 사용자의 선호와 정보를 기억해 매 대화마다 반영해 줍니다."}, {"start": 6663.0, "end": 6666.0, "text": "또한 맞춤 지침(Custom Instructions)과 맞춤형 GPT(Custom GPTs)를 만들면"}, {"start": 6666.5, "end": 6669.5, "text": "한국어 단어 추출기나 상세 번역기처럼 나만의 특화된 AI 도구를 손쉽게 구축할 수 있습니다."}, {"start": 7470.0, "end": 7473.0, "text": "요약하자면, 오늘날 LLM 생태계는 매우 빠르고 다채롭게 진화하고 있습니다."}, {"start": 7473.5, "end": 7476.5, "text": "내가 풀고자 하는 문제의 난이도와 특성에 맞춰 적절한 모델과 도구를 선택하고,"}, {"start": 7477.0, "end": 7480.0, "text": "텍스트를 넘어 음성과 비전 등 멀티모달 도구들을 적극적으로 실험해 보시기 바랍니다."}, {"start": 7480.5, "end": 7483.5, "text": "시청해 주셔서 감사합니다. 다음 영상에서 또 뵙겠습니다."}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
