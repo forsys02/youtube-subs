@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[NVIDIA] NVIDIA GTC Berlin 2026 Keynote With CEO Jensen Huang ([NVIDIA] Jensen Huang CEO와 함께하는 NVIDIA GTC Berlin 2026 기조연설)</title>
+<link rel="preconnect" href="https://youtube-nocookie.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://googlevideo.com">
+<link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="[NVIDIA] NVIDIA GTC Berlin 2026 Keynote With CEO Jensen Huang ([NVIDIA] Jensen Huang CEO와 함께하는 NVIDIA GTC Berlin 2026 기조연설)">
+<meta property="og:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta property="og:image" content="https://img.youtube.com/vi/v-NGxyPjcrE/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[NVIDIA] NVIDIA GTC Berlin 2026 Keynote With CEO Jensen Huang ([NVIDIA] Jensen Huang CEO와 함께하는 NVIDIA GTC Berlin 2026 기조연설)">
+<meta name="twitter:description" content="외국어 유튜브에 자체 제작한 한글 자막을 오버레이한 영상입니다. 클릭해서 감상하세요!">
+<meta name="twitter:image" content="https://img.youtube.com/vi/v-NGxyPjcrE/hqdefault.jpg">
+<style>
+:root{--fsize:4.5vmin;}
+*, *::before, *::after{box-sizing:border-box;}
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000;}
+#player{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* 🎯 [V180.0] 자막 컨테이너: 항상 하단을 기준으로 정렬(Bottom-aligned)되어 윗방향으로 자연 확장 */
+#subtitles{
+    position:absolute;
+    bottom:12%;
+    left:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    pointer-events:none;
+    z-index:9999;
+    padding:0 2vw;
+    transition:bottom 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+#subtitles.ui-hidden{
+    bottom:4%;
+}
+#subtitles.dragging{
+    transition:none !important;
+}
+
+/* 🎦 [V180.0] 자막 박스: 가로폭 대폭 확장 (최대 94vw), 하단 패딩 보강으로 글자 안 짤림 보장 */
+.sub-line{
+    display:inline-block;
+    background:rgba(10, 12, 16, 0.65);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:var(--fsize);
+    font-weight:700;
+    line-height:1.45;
+    letter-spacing:-0.015em;
+    padding:1.2vmin 3vmin 1.6vmin 3vmin;
+    border-radius:12px;
+    margin:0;
+    font-family:'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+    pointer-events:auto;
+    cursor:grab;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none;
+    max-width:94vw;
+    width:fit-content;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    white-space:normal;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 4px 20px rgba(0,0,0,0.55);
+}
+#subtitles.dragging .sub-line{
+    cursor:grabbing !important;
+}
+
+/* 🎛️ [V185.0] 우측 상단 플렉스 컨트롤 바: 겹침 방지 및 모바일 완벽 대응 📱✨ */
+#top-controls{
+    position:absolute;top:20px;right:20px;z-index:10000;
+    display:flex;align-items:center;gap:8px;
+    transition:opacity 0.5s;opacity:1;user-select:none;
+    -webkit-user-select:none;touch-action:none;
+}
+#top-controls.fade-out{opacity:0.15;}
+
+#fs-btn{
+    background:rgba(0,0,0,0.6);color:#fff;padding:8px 14px;
+    border-radius:8px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:background 0.2s, transform 0.2s;border:1px solid rgba(255,255,255,0.15);
+}
+#fs-btn:hover{background:rgba(255,255,255,0.25);transform:scale(1.04);}
+
+#audio-track-btn{
+    background:rgba(18, 14, 28, 0.78);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:0 4px 15px rgba(0,0,0,0.55);
+    padding:5px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:'Pretendard',sans-serif;
+    font-size:3.2vmin;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    user-select:none;
+}
+#audio-track-btn:hover{transform:scale(1.04);border-color:rgba(255, 215, 0, 0.45);}
+.track-opt{
+    padding:3px 8px;
+    border-radius:7px;
+    color:rgba(255, 255, 255, 0.45);
+    transition:all 0.22s cubic-bezier(0.2,0,0,1);
+    font-weight:600;
+}
+/* 🌟 금자색(Imperial Violet & Gold Text) 현재 설정 활성화 스타일 👑✨ */
+.track-opt.active{
+    color:#ffd700;
+    background:linear-gradient(135deg, rgba(142, 36, 170, 0.7), rgba(106, 27, 154, 0.85));
+    border:1px solid rgba(255, 215, 0, 0.65);
+    box-shadow:0 0 10px rgba(255, 215, 0, 0.35), inset 0 0 6px rgba(255, 215, 0, 0.2);
+    text-shadow:0 0 8px rgba(255, 215, 0, 0.6), 0 1px 2px rgba(0,0,0,0.9);
+    font-weight:800;
+}
+.track-sep{
+    color:rgba(255, 255, 255, 0.3);
+    font-size:0.9em;
+    user-select:none;
+}
+
+.audio-hud-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%, -50%) scale(0.85);
+    background:rgba(10, 14, 20, 0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;font-family:'Pretendard',sans-serif;font-weight:800;font-size:4.2vmin;
+    padding:16px 30px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);
+    box-shadow:0 12px 35px rgba(0,0,0,0.75);z-index:10002;pointer-events:none;
+    opacity:0;transition:opacity 0.22s cubic-bezier(0.2,0,0,1), transform 0.22s cubic-bezier(0.2,0,0,1);
+}
+.audio-hud-badge.show{
+    opacity:1;transform:translate(-50%, -50%) scale(1);
+}
+#unmute-badge{
+    position:absolute;top:20px;left:20px;z-index:10000;
+    background:rgba(255,0,80,0.85);color:#fff;padding:8px 16px;
+    border-radius:30px;cursor:pointer;font-family:'Pretendard',sans-serif;
+    font-weight:bold;font-size:3.2vmin;backdrop-filter:blur(5px);
+    box-shadow:0 4px 15px rgba(255,0,80,0.4);transition:opacity 0.5s, transform 0.2s;
+    display:none;user-select:none;
+}
+#unmute-badge:hover{transform:scale(1.05);background:rgba(255,0,80,1);}
+
+@media (max-width: 600px) {
+    #top-controls{ top:12px; right:12px; gap:6px; }
+    #fs-btn, #audio-track-btn{ padding:6px 10px; font-size:3.4vmin; }
+    #unmute-badge{ top:12px; left:12px; padding:6px 12px; font-size:3.2vmin; }
+}
+</style>
+</head>
+<body>
+<iframe id="player" 
+    src="https://www.youtube-nocookie.com/embed/v-NGxyPjcrE?enablejsapi=1&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&cc_load_policy=0&iv_load_policy=3&disablekb=1" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+<div id="subtitles"></div>
+<div id="top-controls">
+    
+    <div id="fs-btn" onclick="toggleFullScreen()">🔲 전체화면</div>
+</div>
+<div id="unmute-badge" onclick="handleUnmute()">🔊 소리 켜기 (화면 클릭)</div>
+
+
+<script>
+async function toggleFullScreen() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (!isFull) {
+        const req = document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen;
+        if (req) {
+            try {
+                await req.call(document.documentElement);
+            } catch (err) {
+                console.log(`Fullscreen error: ${err.message}`);
+            }
+        }
+        // 📱 모바일 환경인 경우 화면을 가로 최대화면(Landscape)으로 자동 회전 고정! 🔄📱✨
+        if (screen.orientation && screen.orientation.lock) {
+            try {
+                await screen.orientation.lock('landscape');
+            } catch (e) {
+                try {
+                    if (screen.lockOrientation) screen.lockOrientation('landscape');
+                } catch (e2) {}
+            }
+        }
+        if (fsBtn) fsBtn.textContent = '🗗 창모드';
+    } else {
+        const exit = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exit) {
+            try {
+                await exit.call(document);
+            } catch (e) {}
+        }
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+        if (fsBtn) fsBtn.textContent = '🔲 전체화면';
+    }
+}
+
+// 🖥️ 전체화면 상태 변경 시 버튼 텍스트 및 화면 방향 락 자동 해제 동기화 🎯
+function handleFullscreenChange() {
+    const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const fsBtn = document.getElementById('fs-btn');
+    if (fsBtn) {
+        fsBtn.textContent = isFull ? '🗗 창모드' : '🔲 전체화면';
+    }
+    if (!isFull) {
+        if (screen.orientation && screen.orientation.unlock) {
+            try { screen.orientation.unlock(); } catch (e) {}
+        }
+    }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+const videoId="v-NGxyPjcrE";
+const subs=[{"start": 9.0, "end": 12.0, "text": "이것이 바로 지능이 만들어지는 방식입니다."}, {"start": 14.2, "end": 16.5, "text": "새로운 종류의 공장이자,"}, {"start": 16.8, "end": 18.8, "text": "토큰의 생성기이며,"}, {"start": 19.0, "end": 21.2, "text": "AI의 핵심 구성 요소입니다."}, {"start": 25.8, "end": 28.3, "text": "토큰은 새로운 개척지를 열었습니다."}, {"start": 29.0, "end": 31.5, "text": "데이터를 지식으로 바꾸고,"}, {"start": 32.0, "end": 34.5, "text": "그 지식을 다시 행동으로 전환합니다."}, {"start": 38.8, "end": 40.9, "text": "토큰은 자연의 암호를 해독하여,"}, {"start": 41.1, "end": 43.5, "text": "숨겨진 치료법을 밝혀냅니다."}, {"start": 48.8, "end": 51.0, "text": "우리의 도시를 그대로 투영하고,"}, {"start": 57.0, "end": 59.8, "text": "지치지 않고 세상을 탐색하며,"}, {"start": 62.0, "end": 64.2, "text": "우리가 계속 나아갈 수 있게 합니다."}, {"start": 66.8, "end": 69.5, "text": "토큰은 우리가 움직이는 방식에서 배우고,"}, {"start": 78.0, "end": 80.5, "text": "우리에게 필요한 돌봄을 제공하며,"}, {"start": 84.8, "end": 87.0, "text": "위험 속으로 직접 걸어 들어가,"}, {"start": 90.8, "end": 93.2, "text": "우리가 사랑하는 이들을 지켜냅니다."}, {"start": 94.0, "end": 96.8, "text": "토큰은 우리가 볼 수 없는 것을 보기에,"}, {"start": 101.8, "end": 105.0, "text": "가장 흔들림 없는 손길도 결코 홀로 일하지 않습니다."}, {"start": 108.8, "end": 111.2, "text": "토큰이 일깨우는 모든 아이디어와,"}, {"start": 112.8, "end": 115.0, "text": "함께 나누는 모든 성공은,"}, {"start": 115.8, "end": 118.8, "text": "소중한 가치를 우리 손이 닿는 곳에 가져다줍니다."}, {"start": 129.0, "end": 130.5, "text": "토큰은,"}, {"start": 130.6, "end": 133.0, "text": "우리가 새로운 영역을 개척하도록 돕고 있습니다,"}, {"start": 135.5, "end": 138.2, "text": "지금까지 본 적 없는 거대한 규모로 말이죠."}, {"start": 144.0, "end": 146.0, "text": "그리하여 우리는 닿을 수 있습니다,"}, {"start": 148.8, "end": 150.5, "text": "저 하늘을 향해,"}, {"start": 151.0, "end": 153.0, "text": "그리고 그 너머까지도요."}, {"start": 160.8, "end": 163.8, "text": "함께 우리는 다음 위대한 도약을 내딛습니다,"}, {"start": 164.0, "end": 166.8, "text": "밝고 새로운 미래를 향해서 말이죠."}, {"start": 168.0, "end": 171.0, "text": "모든 인류를 위해 지어진 미래입니다."}, {"start": 178.0, "end": 179.8, "text": "그리고 바로 이곳에서,"}, {"start": 180.0, "end": 182.5, "text": "그 모든 것이 시작됩니다."}, {"start": 196.0, "end": 198.2, "text": "무대 위로 모시겠습니다, 엔비디아 창립자 겸 CEO,"}, {"start": 198.3, "end": 200.2, "text": "젠슨 황입니다!"}, {"start": 208.8, "end": 211.0, "text": "안녕하세요, 베를린!"}, {"start": 212.2, "end": 214.8, "text": "반갑습니다, 베를린 여러분!"}, {"start": 217.5, "end": 219.2, "text": "GTC에 오신 것을 환영합니다!"}, {"start": 219.5, "end": 221.0, "text": "이곳에 오게 되어 정말 기쁩니다."}, {"start": 221.3, "end": 222.8, "text": "시작하기에 앞서,"}, {"start": 223.2, "end": 224.8, "text": "큰 박수를 보내주십시오,"}, {"start": 225.2, "end": 227.5, "text": "오늘 사전 행사 진행자분들께요!"}, {"start": 238.8, "end": 240.5, "text": "정말 똑똑하고 사랑스럽지 않나요?"}, {"start": 240.7, "end": 242.4, "text": "참 총명하고 멋집니다."}, {"start": 242.5, "end": 244.5, "text": "그분들은 AI 인프라와,"}, {"start": 244.7, "end": 246.0, "text": "소버린 AI,"}, {"start": 246.4, "end": 247.8, "text": "AI 안전성,"}, {"start": 248.0, "end": 249.5, "text": "그리고 피지컬 AI에 대해 이야기했습니다."}, {"start": 249.7, "end": 252.2, "text": "오늘 아침 정말 방대한 주제를 다뤄주었는데요,"}, {"start": 252.6, "end": 254.8, "text": "우리는 여기서 한 걸음 더 나아갈 것입니다."}, {"start": 256.0, "end": 257.8, "text": "참 흥미로운 점이 있습니다."}, {"start": 258.6, "end": 261.6, "text": "로레알, 레볼루트, 스포티파이,"}, {"start": 262.0, "end": 264.5, "text": "머크, 보다폰, 자라,"}, {"start": 264.9, "end": 266.8, "text": "포르쉐, 네슬레,"}, {"start": 267.2, "end": 270.5, "text": "그리고 HSBC의 공통점은 무엇일까요?"}, {"start": 272.3, "end": 274.8, "text": "네, 모두 유럽 기업들이며,"}, {"start": 275.0, "end": 278.0, "text": "모두 엔비디아와 함께 AI를 구축하고 있습니다."}, {"start": 279.6, "end": 282.0, "text": "이곳의 모든 분들이,"}, {"start": 282.4, "end": 285.8, "text": "지금 AI 생태계에서 활발히 움직이고 있으며,"}, {"start": 286.4, "end": 289.5, "text": "AI 경제를 향해 나아가고 있습니다."}, {"start": 290.2, "end": 293.4, "text": "저희는 이곳 유럽에서 33년 동안 일해 왔습니다."}, {"start": 293.8, "end": 295.8, "text": "아마 여러분은 잘 모르실 수도 있는데요,"}, {"start": 296.8, "end": 300.0, "text": "엔비디아의 첫 칩인 NV1과,"}, {"start": 300.2, "end": 303.2, "text": "NV2, 그리고 NV3,"}, {"start": 303.4, "end": 306.2, "text": "즉 우리 회사를 살리고 본격적인 궤도에 올린,"}, {"start": 306.4, "end": 308.5, "text": "리바 128이 된 그 칩들이,"}, {"start": 308.6, "end": 310.5, "text": "모두 유럽에서 만들어졌습니다."}, {"start": 311.0, "end": 313.8, "text": "우리의 첫 파트너는 SGS-톰슨이었습니다."}, {"start": 314.2, "end": 316.8, "text": "프랑스 크롤에서 칩을 제조했고,"}, {"start": 317.0, "end": 318.8, "text": "몰타에서 조립하여,"}, {"start": 319.0, "end": 320.8, "text": "전 세계로 출하했습니다."}, {"start": 321.5, "end": 324.0, "text": "우리의 첫 번째 최대 고객사,"}, {"start": 324.2, "end": 327.65, "text": "지포스 초창기 시절의 가장 큰 고객사는,"}, {"start": 328.5, "end": 331.8, "text": "바로 미디어마크트라는 곳이었습니다."}, {"start": 332.0, "end": 333.5, "text": "혹시 아시나요?"}, {"start": 335.5, "end": 337.6, "text": "미디어마크트는 기막힌 아이디어를,"}, {"start": 337.8, "end": 339.8, "text": "가지고 있었는데요,"}, {"start": 340.0, "end": 342.0, "text": "기억하시겠지만 직접 PC를 조립해 파는 것이었죠."}, {"start": 342.2, "end": 344.8, "text": "그들이 바로 우리의 최대 고객이었습니다."}, {"start": 345.2, "end": 348.0, "text": "또한 독일 기업인 엘사(ELSA)는,"}, {"start": 348.2, "end": 351.5, "text": "2000년에 엔비디아를 워크스테이션 산업으로 이끌어 주었습니다."}, {"start": 352.2, "end": 355.2, "text": "이제 엔비디아는 모든 워크스테이션에 탑재되어,"}, {"start": 355.4, "end": 358.0, "text": "유럽 전역에서 자동차를 설계하고 있습니다."}, {"start": 358.5, "end": 361.5, "text": "스타일링과 디자인, 엔지니어링,"}, {"start": 361.7, "end": 364.5, "text": "시뮬레이션에 이르는 모든 과정은 물론이고,"}, {"start": 364.8, "end": 367.2, "text": "심지어 자동차 내부에까지 들어가 있는데요,"}, {"start": 367.5, "end": 370.0, "text": "이 역시 유럽 기업이 우리를 이끌어 준 덕분입니다,"}, {"start": 370.2, "end": 372.5, "text": "바로 2005년 아우디와 함께였죠."}, {"start": 373.2, "end": 375.5, "text": "그러다 2020년에는,"}, {"start": 375.7, "end": 378.5, "text": "메르세데스와 자율주행차 개발을 시작했습니다."}, {"start": 379.2, "end": 381.5, "text": "보시다시피,"}, {"start": 381.7, "end": 384.0, "text": "엔비디아의 33년 여정 내내,"}, {"start": 384.2, "end": 386.8, "text": "저는 독일에서 정말 많은 시간을 보냈습니다."}, {"start": 387.2, "end": 389.5, "text": "그래서 다시 오게 되어 정말 기쁩니다, 감사합니다."}, {"start": 394.2, "end": 396.8, "text": "이곳에서 GTC를 열게 되어 무척 기쁩니다."}, {"start": 397.2, "end": 399.0, "text": "올해, 그리고 지난 한 해 동안,"}, {"start": 399.2, "end": 401.0, "text": "우리는 새로운 여정을 시작했습니다,"}, {"start": 401.2, "end": 404.0, "text": "바로 이곳 유럽에 새로운 산업을 구축하는 여정이죠."}, {"start": 404.2, "end": 406.8, "text": "AI 경제의 시초입니다."}, {"start": 407.2, "end": 409.5, "text": "지난 1년 동안에만 우리는 투자했습니다,"}, {"start": 409.7, "end": 412.5, "text": "유럽에 거의 100억 달러 가까이를 말이죠."}, {"start": 412.8, "end": 415.5, "text": "스타트업과 대규모 파트너십,"}, {"start": 415.7, "end": 418.5, "text": "그리고 소규모 파트너십까지 유럽 전역에 걸쳐 투자했습니다."}, {"start": 419.2, "end": 421.8, "text": "심지어 지난 일주일 동안에만,"}, {"start": 422.0, "end": 425.5, "text": "제가 프랑스와 영국에서,"}, {"start": 425.7, "end": 428.0, "text": "스웨덴을 거쳐 지금 이곳 베를린에 오기까지,"}, {"start": 428.2, "end": 431.5, "text": "14개 스타트업에 대한 투자를 발표했습니다."}, {"start": 432.2, "end": 435.5, "text": "전체적으로 초창기부터 지금까지,"}, {"start": 435.7, "end": 439.15, "text": "우리는 현재 유럽 전역에 12,000개 이상의 파트너십을 맺고 있습니다."}, {"start": 440.0, "end": 442.8, "text": "그리고 우리 모두는 이제 하나의 목표를 향해 일하고 있습니다."}, {"start": 444.5, "end": 448.0, "text": "수십 년간 이어진 발전 끝에,"}, {"start": 448.2, "end": 450.2, "text": "컴퓨터 산업의 진보를 거쳐,"}, {"start": 450.5, "end": 453.95, "text": "우리는 이제 새로운 산업 혁명의 시작점에 서 있습니다."}, {"start": 455.2, "end": 457.5, "text": "이 이미지는 컴퓨터가 생성한 것인데요,"}, {"start": 457.7, "end": 459.5, "text": "제가 직접 프롬프트를 입력했습니다."}, {"start": 460.0, "end": 463.5, "text": "AI가 동력을 제공하는 모습에 대한 간단하고 멋진 프롬프트였죠,"}, {"start": 463.7, "end": 466.8, "text": "새로운 산업 혁명을 이끄는 모습을 입력했더니 이것이 생성되었습니다."}, {"start": 467.0, "end": 469.8, "text": "제가 강조하고 싶었던 몇몇 파트너사들,"}, {"start": 470.0, "end": 471.8, "text": "우리가 함께 일하는 기업들을 넣었는데,"}, {"start": 472.0, "end": 473.8, "text": "정말 놀라운 결과물이 나왔습니다."}, {"start": 474.0, "end": 476.8, "text": "AI의 마음속에서는 이것이 바로 그 의미인 것입니다."}, {"start": 477.2, "end": 479.5, "text": "새로운 산업을 구축하고,"}, {"start": 480.0, "end": 482.0, "text": "토큰을 생성하며,"}, {"start": 482.2, "end": 485.0, "text": "지능을 생산하여,"}, {"start": 485.2, "end": 487.8, "text": "모든 단일 산업에 통합됨으로써,"}, {"start": 488.0, "end": 490.5, "text": "새로운 산업 혁명에 동력을 불어넣는 것이죠."}, {"start": 491.0, "end": 493.5, "text": "새로운 산업 혁명은 이럴 때 일어납니다,"}, {"start": 494.2, "end": 497.5, "text": "바로 새로운 기술이,"}, {"start": 498.2, "end": 501.5, "text": "우리가 무언가를 만드는 방식과,"}, {"start": 502.0, "end": 504.0, "text": "우리가 만들 수 있는 대상에 영향을 미칠 때입니다."}, {"start": 504.5, "end": 507.5, "text": "무언가를 만드는 방식과 만들 수 있는 대상 말이죠."}, {"start": 508.0, "end": 510.2, "text": "저는 모든 면에서,"}, {"start": 510.4, "end": 513.5, "text": "인공지능이 우리가 만드는 모든 것에 영향을 미치고,"}, {"start": 513.7, "end": 516.0, "text": "실제로 새로운 것들을 만들 수 있게 해줄 것이라 생각합니다."}, {"start": 516.5, "end": 519.8, "text": "이런 식으로 모두가 그것을 사용하게 될 것이기 때문에,"}, {"start": 520.0, "end": 522.2, "text": "모든 기업이 AI로 구동될 것입니다."}, {"start": 523.0, "end": 524.8, "text": "왜냐하면 그것은 디지털 지능이자,"}, {"start": 525.0, "end": 526.8, "text": "모든 것의 기반이기 때문입니다."}, {"start": 527.2, "end": 529.0, "text": "모든 사람이 사용할 것이고,"}, {"start": 529.2, "end": 531.0, "text": "모든 기업이 이로써 움직일 것이며,"}, {"start": 531.2, "end": 533.0, "text": "모든 산업이 변모하고,"}, {"start": 533.2, "end": 535.0, "text": "새로운 산업들이 탄생할 것입니다."}, {"start": 535.5, "end": 538.5, "text": "이런 점에서 마치 전기처럼,"}, {"start": 538.8, "end": 541.0, "text": "이것은 분명 새로운 산업 혁명이며,"}, {"start": 541.2, "end": 543.8, "text": "우리는 지금 그 극초기에 와 있습니다."}, {"start": 545.0, "end": 548.0, "text": "질문은 과연 AI란 무엇인가 하는 점입니다."}, {"start": 548.5, "end": 550.5, "text": "이것은 정말 중요한 문제입니다."}, {"start": 551.0, "end": 554.2, "text": "만약 여러분이 이 미래를 만드는 일원이 되고 싶다면,"}, {"start": 554.5, "end": 557.95, "text": "AI가 무엇인지 이해하는 것이 절대적으로 중요합니다."}, {"start": 558.8, "end": 561.2, "text": "그리고 이것은 사실 아주 단순한 프레임워크입니다."}, {"start": 562.0, "end": 564.2, "text": "우리는 일찍이 관찰했습니다,"}, {"start": 564.4, "end": 566.8, "text": "사실 AI는 제조 산업이라는 것을요."}, {"start": 567.5, "end": 569.8, "text": "AI는 단순한 소프트웨어 기술이 아닙니다."}, {"start": 570.0, "end": 572.8, "text": "물론 소프트웨어 기술이기도 하지만 그게 전부가 아닙니다."}, {"start": 573.2, "end": 575.8, "text": "AI는 당연히 컴퓨터 위에서 돌아갑니다."}, {"start": 576.0, "end": 579.45, "text": "하지만 그 컴퓨터가 작동하는 방식은 근본적으로 다릅니다."}, {"start": 580.2, "end": 582.5, "text": "우리가 사용하는 단순한 도구가 아니라,"}, {"start": 582.7, "end": 585.5, "text": "이제는 거대한 기계 장치의 일부이자,"}, {"start": 585.8, "end": 587.5, "text": "인프라스트럭처이며,"}, {"start": 587.7, "end": 591.2, "text": "지능을 생산해 내는 공장으로서,"}, {"start": 591.5, "end": 594.95, "text": "모든 단일 산업과 애플리케이션에 통합됩니다."}, {"start": 596.2, "end": 598.2, "text": "이해하기 쉬운 단순한 모델은,"}, {"start": 598.4, "end": 600.5, "text": "AI를 5단 케이크로 생각하는 것입니다."}, {"start": 601.0, "end": 604.2, "text": "에너지가 첨단 컴퓨터에 전력을 공급하고,"}, {"start": 604.5, "end": 607.0, "text": "이 컴퓨터들은 AI 공장의 일부가 되어,"}, {"start": 607.2, "end": 610.5, "text": "토큰, 즉 디지털 지능을 생성합니다."}, {"start": 610.8, "end": 612.8, "text": "그 위에서 구동되는 모델들로부터 말이죠,"}, {"start": 613.0, "end": 615.5, "text": "그리고 이는 모든 애플리케이션에 통합됩니다."}, {"start": 616.0, "end": 617.8, "text": "바로 5단 케이크 구조입니다."}, {"start": 618.2, "end": 620.2, "text": "이 AI 경제의 일원이 되기 위해서,"}, {"start": 620.5, "end": 623.8, "text": "여러분은 단지 AI를 소비하는 데 그치지 않고,"}, {"start": 624.0, "end": 626.8, "text": "직접 AI를 생산하기를 원하실 겁니다."}, {"start": 627.2, "end": 629.5, "text": "우리는 그 모든 것을 이곳 유럽에서 해낼 수 있습니다."}, {"start": 629.7, "end": 631.8, "text": "그리고 사실 이미 시작했습니다."}, {"start": 632.2, "end": 635.5, "text": "유럽은 자체적인 AI 경제를 구축하고 있습니다."}, {"start": 636.2, "end": 638.8, "text": "그리고 그 5단 케이크가 여기에 나타나 있습니다."}, {"start": 639.2, "end": 642.5, "text": "우리는 훌륭한 파트너십을 맺고 있으며 이 5단 케이크 전반을 살펴보면,"}, {"start": 642.7, "end": 646.2, "text": "이것이 실제로 새로운 산업임을 인식할 수 있는데요, 왜냐하면,"}, {"start": 647.0, "end": 649.8, "text": "모든 단일 계층에서 성장이 일어나고 있기 때문입니다."}, {"start": 650.2, "end": 653.65, "text": "우리는 놀라운 속도로 일자리를 창출하고 성장을 만들어내고 있습니다."}, {"start": 654.5, "end": 656.8, "text": "유럽의 기업들인 슈나이더 일렉트릭,"}, {"start": 657.0, "end": 660.45, "text": "지멘스 에너지 등은,"}, {"start": 661.0, "end": 663.5, "text": "전 세계적으로 엄청난 성과를 거두고 있습니다."}, {"start": 663.8, "end": 665.5, "text": "우리는 컴퓨팅 계층을 담당하며,"}, {"start": 665.7, "end": 667.8, "text": "AI 공장들에 통합되고 있는데,"}, {"start": 668.0, "end": 670.5, "text": "이 공장들은 현재 유럽 전역에서 번창하고 있습니다."}, {"start": 671.0, "end": 674.2, "text": "네비우스 같은 스타트업들이 정말 잘하고 있고요,"}, {"start": 674.5, "end": 677.2, "text": "파이어버드라는 새로운 기업은,"}, {"start": 677.5, "end": 680.95, "text": "중앙아시아 지역에 네오클라우드를 구축하고 있으며,"}, {"start": 682.0, "end": 684.8, "text": "심지어 아프리카의 카사바까지 함께하고 있습니다."}, {"start": 685.2, "end": 687.8, "text": "미래의 모든 단일 통신사들은,"}, {"start": 688.0, "end": 691.2, "text": "제가 예측하건대 미래의 모든 통신사들은,"}, {"start": 691.5, "end": 694.5, "text": "10만 개의 기지국 사이트를 통해,"}, {"start": 694.7, "end": 697.2, "text": "약 100기가와트 규모의 분산된,"}, {"start": 697.4, "end": 700.0, "text": "통신 기지국과 데이터센터를 보유하고 있는데,"}, {"start": 700.2, "end": 702.2, "text": "장차 이들은 진화할 것입니다,"}, {"start": 702.4, "end": 704.5, "text": "바로 분산형 AI 네트워크로 말이죠."}, {"start": 705.2, "end": 708.5, "text": "이처럼 AI 인프라 계층이 활발히 구축되고 있습니다."}, {"start": 709.0, "end": 711.5, "text": "그 위에 자리 잡는 것이 바로 AI 모델입니다."}, {"start": 712.0, "end": 714.0, "text": "우리가 꼭 인식해야 할 중요한 점은,"}, {"start": 714.2, "end": 716.8, "text": "AI 모델들이 등장하기 훨씬 전부터,"}, {"start": 717.0, "end": 719.0, "text": "인프라가 먼저 존재해야 한다는 사실입니다."}, {"start": 719.5, "end": 722.8, "text": "인터넷이 존재하기 전에 네트워킹이 먼저 있어야 했던 것처럼요."}, {"start": 723.2, "end": 725.5, "text": "마찬가지로 여러분이,"}, {"start": 725.7, "end": 728.0, "text": "전기의 혜택을 진정으로 누리기 전에,"}, {"start": 728.2, "end": 731.65, "text": "전기가 통하는 가정과 발전소가 먼저 있어야 하는 것과 같습니다."}, {"start": 732.5, "end": 735.2, "text": "그래서 모델이 그다음 계층이 되는 것입니다."}, {"start": 735.5, "end": 737.8, "text": "또한 흥미롭게 살펴볼 점은,"}, {"start": 738.0, "end": 741.5, "text": "모델 계층이 단지 언어 모델만이 아니라는 것입니다."}, {"start": 741.8, "end": 744.8, "text": "여기에는 언어, 생물학,"}, {"start": 745.0, "end": 746.8, "text": "화학, 물리학,"}, {"start": 747.0, "end": 749.5, "text": "로봇의 동작과 애니메이션까지 포함되며,"}, {"start": 750.0, "end": 752.8, "text": "모든 크기의 모델들을 아우릅니다."}, {"start": 753.0, "end": 755.2, "text": "이러한 다양한 산업들은,"}, {"start": 755.4, "end": 758.2, "text": "서로 다른 양식의 AI 모델들에 의해 구동될 것이며,"}, {"start": 758.5, "end": 761.95, "text": "이는 다시 AI 네이티브 기업들, 즉 스타트업들로 통합됩니다."}, {"start": 762.5, "end": 764.5, "text": "그리고 이곳 유럽에는 그런 기업들이 정말 많습니다."}, {"start": 765.2, "end": 768.2, "text": "이처럼 유럽의 AI 경제는 이미 시작되었으며,"}, {"start": 768.5, "end": 770.2, "text": "무서운 속도로 가속화되고 있습니다."}, {"start": 770.4, "end": 771.8, "text": "정말 반가운 광경입니다."}, {"start": 772.2, "end": 775.2, "text": "그 기반에서 우리가 기여하는 바를,"}, {"start": 775.5, "end": 777.8, "text": "대부분의 사람들은 GPU라고 생각합니다."}, {"start": 778.0, "end": 779.2, "text": "물론 사실입니다."}, {"start": 779.5, "end": 782.95, "text": "우리는 1993년에 그래픽 칩을 만들며 시작했고,"}, {"start": 783.5, "end": 787.0, "text": "그것이 프로그래밍 가능한 셰이딩 GPU로 발전했습니다."}, {"start": 787.2, "end": 790.5, "text": "시간이 흐르면서 우리는 여기에 쿠다(CUDA) 가속을 더했고,"}, {"start": 791.0, "end": 793.2, "text": "우리가 알던 컴퓨팅을 재발명했으며,"}, {"start": 793.5, "end": 796.5, "text": "그것이 마침내 인공지능을 탄생시켰습니다."}, {"start": 797.2, "end": 799.5, "text": "하지만 오늘날의 엔비디아는,"}, {"start": 799.8, "end": 803.0, "text": "진정한 풀스택 엔드투엔드,"}, {"start": 803.2, "end": 806.2, "text": "완전한 AI 팩토리 플랫폼입니다."}, {"start": 807.5, "end": 810.2, "text": "우리 회사의 기술적 폭은,"}, {"start": 810.4, "end": 812.8, "text": "수년에 걸쳐 엄청나게 확장되었습니다."}, {"start": 813.0, "end": 814.5, "text": "GPU 컴퓨팅부터 시작해서,"}, {"start": 814.7, "end": 816.8, "text": "베라 루빈은 우리의 최신 세대 아키텍처인데요,"}, {"start": 817.5, "end": 819.8, "text": "이들을 하나로 연결해 주는 NV링크 스위치,"}, {"start": 820.0, "end": 822.8, "text": "즉 하나의 거대한 GPU로 묶어주는 기술과,"}, {"start": 823.2, "end": 826.65, "text": "최근 선보인 베라 블루필드-4 컴퓨트,"}, {"start": 827.0, "end": 829.2, "text": "이에 대해서는 잠시 후에 조금 더 말씀드리겠습니다."}, {"start": 829.5, "end": 832.95, "text": "그리고 우리의 이더넷 솔루션인 스펙트럼-X는,"}, {"start": 833.4, "end": 836.5, "text": "오늘날 엔비디아를 세계 최대의 네트워킹 기업으로 만들어 주었습니다."}, {"start": 837.0, "end": 840.45, "text": "여기에 디코드 가속기인 그록 3(Groq 3)는,"}, {"start": 841.5, "end": 844.5, "text": "토큰 생성을 가속화하며,"}, {"start": 844.8, "end": 848.25, "text": "베라 블루필드-4 스토리지 가속기와,"}, {"start": 849.0, "end": 851.5, "text": "이 역시 잠시 후에 말씀드리겠습니다만,"}, {"start": 851.7, "end": 855.15, "text": "베라 RTX 컴퓨트까지 이어집니다, 곧 설명해 드리죠."}, {"start": 856.0, "end": 859.0, "text": "이 모든 것들이 이제,"}, {"start": 859.2, "end": 861.8, "text": "필수적인 기술의 방대한 폭을 보여주며,"}, {"start": 862.0, "end": 864.0, "text": "AI 팩토리를 만들어냅니다."}, {"start": 864.5, "end": 866.5, "text": "하지만 그 어떤 것도,"}, {"start": 866.7, "end": 869.2, "text": "이를 전부 활성화하는 소프트웨어가 없다면 작동하지 않습니다."}, {"start": 869.5, "end": 871.5, "text": "첫 번째 부분은 시스템 소프트웨어로서,"}, {"start": 871.7, "end": 873.8, "text": "AI 팩토리를 구동하는 소프트웨어입니다."}, {"start": 874.2, "end": 876.8, "text": "이 시스템들은 실로 거대합니다."}, {"start": 877.2, "end": 880.65, "text": "1기가와트 규모의 데이터센터, 즉 1기가와트 AI 팩토리는,"}, {"start": 881.0, "end": 883.8, "text": "약 500억 달러의 비용이 듭니다."}, {"start": 884.2, "end": 887.0, "text": "토지, 전력, 건물 외벽,"}, {"start": 887.2, "end": 889.5, "text": "모든 컴퓨팅과 네트워킹, 스토리지,"}, {"start": 889.7, "end": 892.0, "text": "전력 및 냉각 설비가 모두 하나로 연결된,"}, {"start": 892.2, "end": 895.5, "text": "수 에이커 규모의 AI 팩토리입니다."}, {"start": 896.0, "end": 899.45, "text": "단순히 전원을 켜고 운영하는 것 자체만으로도 경이로운 일입니다."}, {"start": 900.2, "end": 903.65, "text": "이 거대한 공장에 생명을 불어넣고,"}, {"start": 904.5, "end": 907.95, "text": "실제 가동하여 토큰을 생산하는 데 필요한 소프트웨어의 양은,"}, {"start": 908.8, "end": 911.8, "text": "실로 엄청난 위업이라 할 수 있습니다."}, {"start": 912.0, "end": 915.0, "text": "엔비디아는 이 전체 풀스택 소프트웨어를 제공합니다."}, {"start": 915.5, "end": 918.8, "text": "그 위에 올라가는 것이 바로 쿠다-X(CUDA-X) 라이브러리입니다."}, {"start": 919.0, "end": 920.8, "text": "우리 회사의 핵심 알고리즘들이죠."}, {"start": 921.2, "end": 924.2, "text": "엔비디아의 진정한 정체성은 알고리즘 기업으로서,"}, {"start": 924.5, "end": 927.0, "text": "그 알고리즘을 가속하기 위해 실리콘 칩을 설계하는 곳입니다."}, {"start": 927.2, "end": 930.2, "text": "물론 그중 하나가 cuDNN인데요,"}, {"start": 930.5, "end": 933.95, "text": "많은 연구자들이 인정하는 핵심 라이브러리로서,"}, {"start": 934.8, "end": 937.5, "text": "현대 AI의 빅뱅을 촉발한 주역이,"}, {"start": 937.7, "end": 939.8, "text": "바로 cuDNN입니다."}, {"start": 940.5, "end": 943.2, "text": "AI 분야에서 cuDNN이 차지하는 위상은,"}, {"start": 943.5, "end": 946.8, "text": "세계 데이터베이스 산업에서 SQL이 차지하는 위상과 같습니다."}, {"start": 947.0, "end": 950.45, "text": "도메인 특화 언어이자 도메인 특화 라이브러리인 셈이죠."}, {"start": 951.5, "end": 953.8, "text": "과거 OpenGL과 DirectX가 가능하게 했던,"}, {"start": 954.0, "end": 956.0, "text": "실시간 컴퓨터 그래픽처럼 말이죠,"}, {"start": 956.5, "end": 959.8, "text": "cuDNN은 AI 컴퓨팅 산업을 가능하게 만들었습니다."}, {"start": 960.5, "end": 964.0, "text": "그리고 350개의 다른 라이브러리들이 있는데요,"}, {"start": 964.5, "end": 967.95, "text": "이 라이브러리들은 사실상 우리 회사의 가장 귀중한 보물입니다."}, {"start": 968.8, "end": 971.2, "text": "연산 리소그래피부터 시작해서,"}, {"start": 971.4, "end": 974.8, "text": "신호 처리, 이미지 처리, 데이터 처리,"}, {"start": 975.0, "end": 976.8, "text": "입자 및 유체 역학,"}, {"start": 977.0, "end": 978.8, "text": "희소 행렬 솔버에 이르기까지,"}, {"start": 979.0, "end": 981.8, "text": "이 경이로운 폭의 라이브러리들을,"}, {"start": 982.0, "end": 985.45, "text": "오늘 객석에 계신 많은 분들이 자사 시스템에 연결해 사용하고 계십니다."}, {"start": 986.0, "end": 988.2, "text": "이것이 바로 우리가 새로운 시장을 여는 방식입니다."}, {"start": 988.5, "end": 991.95, "text": "이렇게 엔비디아를 알고리즘에 연결함으로써,"}, {"start": 992.8, "end": 996.25, "text": "여러분이 엄청난 속도로 연산을 수행할 수 있도록 돕는 것입니다."}, {"start": 997.2, "end": 999.5, "text": "그리고 마지막으로 오른편,"}, {"start": 999.8, "end": 1001.5, "text": "저쪽 편에 있는 것이,"}, {"start": 1002.5, "end": 1004.2, "text": "바로 모델들입니다."}, {"start": 1004.5, "end": 1006.8, "text": "이것은 새로운 소프트웨어이자,"}, {"start": 1007.0, "end": 1009.8, "text": "새로운 애플리케이션의 핵심 엔진입니다."}, {"start": 1010.2, "end": 1013.5, "text": "쿠다-X 라이브러리 위에 자리 잡고 상호 협력하죠."}, {"start": 1013.8, "end": 1017.25, "text": "엔비디아는 여러 도메인에 걸쳐 이 모델들을 개발해 왔습니다."}, {"start": 1017.8, "end": 1020.2, "text": "이 모델들을 통해 새로운 기회들이 열리고 있으며,"}, {"start": 1020.4, "end": 1022.8, "text": "이에 대해서는 잠시 후에 자세히 말씀드리겠습니다."}, {"start": 1024.0, "end": 1026.5, "text": "모든 단일 세대마다,"}, {"start": 1026.8, "end": 1029.5, "text": "엔비디아는 파스칼(Pascal)부터 시작했습니다."}, {"start": 1030.0, "end": 1032.5, "text": "AI 시대는 시작되었습니다,"}, {"start": 1032.7, "end": 1035.0, "text": "파스칼 기반의 새로운 시스템,"}, {"start": 1035.5, "end": 1038.5, "text": "이른바 DGX-1이라는 시스템과 함께 시작되었습니다."}, {"start": 1039.0, "end": 1041.5, "text": "DGX-1은 세상에 선보였습니다,"}, {"start": 1041.7, "end": 1044.0, "text": "세계 최초의 AI 슈퍼컴퓨터를 말이죠."}, {"start": 1044.5, "end": 1047.5, "text": "제가 10년 전에 이를 처음 발표했고,"}, {"start": 1047.8, "end": 1050.8, "text": "그 첫 번째 제품을 오픈AI에 전달하여,"}, {"start": 1051.0, "end": 1053.8, "text": "그들의 컴퓨팅 여정을 시작하게 했습니다."}, {"start": 1054.5, "end": 1057.5, "text": "파스칼에서 볼타(Volta)로,"}, {"start": 1057.8, "end": 1059.8, "text": "암페어(Ampere)로,"}, {"start": 1060.0, "end": 1062.8, "text": "그리고 많은 분들이 우리를 처음 알게 된 계기인,"}, {"start": 1063.0, "end": 1064.5, "text": "호퍼(Hopper),"}, {"start": 1064.7, "end": 1066.8, "text": "현재 세대인 블랙웰(Blackwell),"}, {"start": 1067.0, "end": 1069.8, "text": "그리고 이제 본격 양산에 들어간 베라 루빈까지 이어졌습니다."}, {"start": 1070.2, "end": 1073.0, "text": "총 6세대에 걸친 아키텍처의 진화입니다."}, {"start": 1073.5, "end": 1076.95, "text": "매 세대마다 우리는 기술을 발전시켜 왔습니다."}, {"start": 1078.0, "end": 1081.0, "text": "지난 10년이라는 시간 동안 우리는,"}, {"start": 1081.2, "end": 1084.0, "text": "AI 성능을 무려 100만 배나 향상시켰습니다."}, {"start": 1084.5, "end": 1087.95, "text": "한 걸음 물러서서 무어의 법칙이었다면 어땠을지 생각해 보십시오."}, {"start": 1088.8, "end": 1090.8, "text": "10년이라는 시간 동안,"}, {"start": 1091.0, "end": 1094.0, "text": "첫 5년 동안 10배 향상되었을 것이고,"}, {"start": 1094.2, "end": 1096.8, "text": "다음 5년 동안 또 10배 향상되어,"}, {"start": 1097.0, "end": 1100.2, "text": "10년 동안 총 100배의 성능 향상이 있었을 것입니다."}, {"start": 1100.8, "end": 1102.5, "text": "하지만 같은 기간 동안,"}, {"start": 1102.7, "end": 1105.8, "text": "엔비디아 특유의 극한의 공동 설계(Extreme Co-design) 방식 덕분에,"}, {"start": 1106.0, "end": 1108.5, "text": "우리는 모든 단일 컴퓨터와,"}, {"start": 1108.7, "end": 1111.2, "text": "소프트웨어의 모든 단일 스택에 걸쳐 혁신하고,"}, {"start": 1111.5, "end": 1114.2, "text": "새로운 알고리즘을 최적화하고 창조하는 동시에,"}, {"start": 1114.4, "end": 1116.8, "text": "이를 가속할 아키텍처를 만들어내며,"}, {"start": 1117.0, "end": 1119.8, "text": "그 전체 영역을 아울러 작업했습니다."}, {"start": 1120.0, "end": 1122.2, "text": "우리가 극한의 공동 설계라 부르는 이 방식을 통해,"}, {"start": 1122.4, "end": 1125.8, "text": "우리는 AI를 100만 배나 가속할 수 있었습니다."}, {"start": 1126.0, "end": 1128.2, "text": "그리고 앞으로도 계속 그렇게 해나갈 것입니다."}, {"start": 1129.0, "end": 1131.8, "text": "이것이 오늘날 엔비디아가 구축하는 것이며,"}, {"start": 1132.0, "end": 1135.0, "text": "이를 기반으로 우리는 유럽이,"}, {"start": 1135.2, "end": 1137.5, "text": "AI 생태계의 일원이자,"}, {"start": 1137.7, "end": 1139.5, "text": "AI 경제의 주역이 되도록 지원할 수 있습니다."}, {"start": 1140.2, "end": 1143.5, "text": "각 세대를 돌아보면 초창기에는,"}, {"start": 1143.8, "end": 1145.5, "text": "파스칼도 GPU였고,"}, {"start": 1145.7, "end": 1147.5, "text": "볼타도 GPU였으며,"}, {"start": 1147.7, "end": 1149.5, "text": "암페어도 GPU였고,"}, {"start": 1149.7, "end": 1151.2, "text": "호퍼 역시 GPU였습니다."}, {"start": 1151.5, "end": 1154.8, "text": "우리는 새로운 DGX 폼팩터를 발명했죠."}, {"start": 1155.0, "end": 1158.0, "text": "그러다 블랙웰에 이르러 세상에 처음으로 선보인 것이,"}, {"start": 1158.2, "end": 1161.5, "text": "최초의 랙 스케일(Rack-scale) 컴퓨팅이었습니다, 곧 보여드리겠습니다."}, {"start": 1162.0, "end": 1164.5, "text": "랙 스케일 컴퓨팅은,"}, {"start": 1165.2, "end": 1167.5, "text": "하나의 전체 시스템을,"}, {"start": 1168.0, "end": 1171.5, "text": "하나의 거대한 컴퓨터, 하나의 GPU로 탈바꿈시켰습니다."}, {"start": 1171.8, "end": 1174.8, "text": "그리고 이제 베라 루빈을 통해 이를 더욱 확장하여,"}, {"start": 1175.0, "end": 1178.2, "text": "단순한 모델과 거대 언어 모델 처리를 넘어,"}, {"start": 1178.5, "end": 1181.2, "text": "이제는 전체 에이전트를 처리하는 단계로 나아갑니다."}, {"start": 1183.0, "end": 1186.2, "text": "이 슬라이드는 나중에 다시 살펴보겠지만,"}, {"start": 1186.5, "end": 1188.5, "text": "이 점만은 꼭 기억해 주십시오."}, {"start": 1189.0, "end": 1191.5, "text": "에이전트는 생각을 해야 합니다."}, {"start": 1192.5, "end": 1194.5, "text": "에이전트는 사고를 해야 하고,"}, {"start": 1194.8, "end": 1196.8, "text": "바로 거기서 모델이 등장합니다."}, {"start": 1197.0, "end": 1200.2, "text": "지각, 추론, 계획,"}, {"start": 1200.5, "end": 1202.4, "text": "그리고 도구를 사용하는 것이죠."}, {"start": 1202.7, "end": 1205.0, "text": "그 모든 것이 거대 언어 모델 위에서 실행되며,"}, {"start": 1205.2, "end": 1207.2, "text": "모델들은 바로 그 작업을 수행하도록 설계됩니다."}, {"start": 1207.9, "end": 1210.0, "text": "하지만 에이전트에게는 또한,"}, {"start": 1210.2, "end": 1212.0, "text": "이른바 하네스(Harness)라고 불리는 것이 있습니다."}, {"start": 1212.2, "end": 1215.0, "text": "기본적으로 디지털 에이전트의,"}, {"start": 1215.2, "end": 1217.2, "text": "외골격(Exoskeleton) 역할을 하는 구조물이죠."}, {"start": 1217.6, "end": 1219.5, "text": "마치 우리에게 두뇌가 있고,"}, {"start": 1219.7, "end": 1222.4, "text": "나머지 신체가 우리의 외골격을 이루는 것처럼,"}, {"start": 1222.8, "end": 1226.2, "text": "하네스는 작업을 조율하는 외골격으로서,"}, {"start": 1226.5, "end": 1229.5, "text": "에이전트가 실제로 업무에 참여하고,"}, {"start": 1230.0, "end": 1232.2, "text": "기억 장치와 활성 메모리,"}, {"start": 1232.4, "end": 1234.6, "text": "작업 메모리는 물론 장기 기억까지 활용하며,"}, {"start": 1234.8, "end": 1236.5, "text": "여러 도구들을 작동시킬 수 있게 해줍니다."}, {"start": 1236.8, "end": 1238.5, "text": "그리고 세 번째 부분은,"}, {"start": 1238.8, "end": 1241.2, "text": "지식을 처리하는 컴퓨터입니다."}, {"start": 1241.4, "end": 1243.5, "text": "데이터 처리를 위해 특별히 설계된 컴퓨터이죠."}, {"start": 1243.8, "end": 1245.5, "text": "그리고 마지막으로,"}, {"start": 1245.7, "end": 1248.0, "text": "쿠다-X 라이브러리 전용 컴퓨터가 있습니다."}, {"start": 1248.2, "end": 1250.8, "text": "이 컴퓨터의 역할은 도구를 실행하는 것입니다."}, {"start": 1251.0, "end": 1253.0, "text": "그리고 이 컴퓨터들이 모여,"}, {"start": 1253.2, "end": 1256.2, "text": "이제 전체 에이전틱 시스템을 구성하게 됩니다."}, {"start": 1256.5, "end": 1259.8, "text": "베라 루빈은 현재 전면 양산 중인데요, 직접 보시죠."}, {"start": 1260.5, "end": 1262.5, "text": "이것은 바로,"}, {"start": 1262.7, "end": 1264.8, "text": "우리가 만든 세계 최초의 컴퓨터로,"}, {"start": 1265.0, "end": 1266.8, "text": "케이블도 전혀 없고,"}, {"start": 1267.0, "end": 1268.5, "text": "전선도 없으며,"}, {"start": 1268.7, "end": 1270.5, "text": "완벽하게 100% 수랭식으로 냉각됩니다."}, {"start": 1270.7, "end": 1272.5, "text": "그리고 정말이지 유쾌하게도, 앗,"}, {"start": 1273.0, "end": 1274.5, "text": "잠시만요."}, {"start": 1275.2, "end": 1278.0, "text": "이렇게 쏙 뽑아낼 수 있어서 정말 기분 좋습니다."}, {"start": 1278.5, "end": 1280.2, "text": "바로 이것이,"}, {"start": 1280.5, "end": 1282.2, "text": "하나의 베라 루빈 컴퓨터입니다."}, {"start": 1282.5, "end": 1285.8, "text": "보시다시피 여기에는 두 개의 GPU가 들어 있습니다, 네."}, {"start": 1293.2, "end": 1295.8, "text": "그레이스 블랙웰의 경우에는,"}, {"start": 1296.0, "end": 1298.5, "text": "노드 하나를 조립하는 데 2시간이나 걸렸습니다."}, {"start": 1298.7, "end": 1300.8, "text": "직접 보시면 무슨 말인지 아실 텐데요,"}, {"start": 1301.0, "end": 1303.0, "text": "사방에 케이블과 전선이 가득했고,"}, {"start": 1303.2, "end": 1305.0, "text": "80%만 수랭식이었습니다."}, {"start": 1305.2, "end": 1307.2, "text": "반면 이제 베라 루빈은 100% 수랭식이며,"}, {"start": 1307.4, "end": 1309.8, "text": "조립하는 데 5분도 채 걸리지 않습니다."}, {"start": 1310.2, "end": 1312.8, "text": "정말이지 경이로운 성취입니다."}, {"start": 1313.0, "end": 1316.2, "text": "물론 이는 제조 공정에서 더 빠른 사이클 타임으로 이어지며,"}, {"start": 1316.5, "end": 1319.5, "text": "비교할 수 없을 만큼 훨씬 더 뛰어난 신뢰성과,"}, {"start": 1319.7, "end": 1322.0, "text": "당연히 훨씬 더 높은 성능을 제공합니다."}, {"start": 1323.2, "end": 1326.65, "text": "이것은 NV링크 스위치 트레이인데요,"}, {"start": 1327.0, "end": 1329.0, "text": "이 장치가 하는 역할은,"}, {"start": 1329.2, "end": 1332.2, "text": "이러한 GPU 72개를 연결하는 것입니다."}, {"start": 1332.4, "end": 1334.2, "text": "지금 이 안에는 4개가 들어 있는데요,"}, {"start": 1334.4, "end": 1336.5, "text": "총 72개의 GPU를 하나로 연결하여,"}, {"start": 1336.7, "end": 1339.0, "text": "하나의 거대한 GPU로 만들어줍니다."}, {"start": 1339.5, "end": 1342.2, "text": "각 GPU는 20페타플롭스의 성능을 내며,"}, {"start": 1342.4, "end": 1345.8, "text": "그중 72개를 하나의 거대한 시스템으로 묶어줍니다."}, {"start": 1348.8, "end": 1352.25, "text": "그리고 이것은 우리의 새로운 베라(Vera) 컴퓨터입니다."}, {"start": 1354.2, "end": 1356.8, "text": "지금 이 강당이 꽉 찼는데요,"}, {"start": 1357.2, "end": 1359.5, "text": "우리에게는 100개의 다른 워치 파티가,"}, {"start": 1359.7, "end": 1361.5, "text": "전 세계 곳곳에서 열리고 있습니다."}, {"start": 1362.0, "end": 1363.8, "text": "100곳의 워치 파티에서,"}, {"start": 1364.0, "end": 1366.2, "text": "15,000명의 분들이 지금 우리를 지켜보고 계십니다."}, {"start": 1366.4, "end": 1368.0, "text": "그래서 기조연설을 계속 진행할 텐데요,"}, {"start": 1368.2, "end": 1371.0, "text": "마지막에 여러분께 꼭 보여드리고 싶은 정말 재미있는 것들이 있습니다."}, {"start": 1371.2, "end": 1373.5, "text": "그러니 여러분은 그저,"}, {"start": 1373.7, "end": 1376.8, "text": "제가 먼저 약간의 교육으로 여러분을 조금 괴롭히더라도 참아주셔야 합니다."}, {"start": 1377.2, "end": 1379.5, "text": "그러면 곧 즐거운 볼거리가 찾아올 겁니다."}, {"start": 1379.8, "end": 1382.2, "text": "이것이 바로 우리의 완전히 새로운,"}, {"start": 1382.4, "end": 1384.2, "text": "신형 베라 컴퓨터입니다."}, {"start": 1384.4, "end": 1387.8, "text": "베라 CPU는 실로 괴물 같은 성능을 자랑하는 경이로운 CPU입니다."}, {"start": 1388.0, "end": 1390.8, "text": "클럭당 8개의 명령어를 처리하며,"}, {"start": 1391.0, "end": 1393.2, "text": "세계 최초의 LPDDR 기반,"}, {"start": 1393.4, "end": 1395.5, "text": "메모리 서브시스템을 탑재하여,"}, {"start": 1395.8, "end": 1399.0, "text": "높은 성능과 초고대역폭을 구현하는 동시에,"}, {"start": 1399.2, "end": 1402.65, "text": "극도로 뛰어난 에너지 효율성까지 갖추고 있습니다."}, {"start": 1403.8, "end": 1407.25, "text": "온칩 패브릭은 전 세계 모든 칩 중 가장 빠르며,"}, {"start": 1408.0, "end": 1411.2, "text": "그 결과 데이터 처리 속도는 상상을 초월합니다."}, {"start": 1411.5, "end": 1414.5, "text": "에이전틱 세션의 시작과,"}, {"start": 1414.7, "end": 1417.2, "text": "처리 속도 역시 차트를 뚫고 나갈 만큼 압도적입니다."}, {"start": 1417.4, "end": 1419.8, "text": "바로 그 작업을 수행하기 위해 설계된 것이죠."}, {"start": 1420.0, "end": 1421.8, "text": "이것이 우리의 베라 컴퓨터입니다."}, {"start": 1422.0, "end": 1425.0, "text": "그리고 여기 있는 이 컴퓨터는,"}, {"start": 1425.8, "end": 1427.5, "text": "바로 스펙트럼-X입니다."}, {"start": 1427.8, "end": 1431.25, "text": "이것은 세계 최초의 코패키지드 옵틱스(CPO) 시스템입니다."}, {"start": 1432.0, "end": 1434.8, "text": "여기에서 보실 수 있는데요, 직접 보여드리겠습니다."}, {"start": 1437.5, "end": 1440.95, "text": "이 바닥의 일부 구역은 아래로 푹 꺼지고,"}, {"start": 1441.5, "end": 1444.2, "text": "일부 구역은 걸어 다닐 수 있는데요,"}, {"start": 1444.5, "end": 1446.8, "text": "어느 쪽이 어느 쪽인지 확신이 안 서네요."}, {"start": 1449.5, "end": 1451.5, "text": "자, 그러니,"}, {"start": 1451.8, "end": 1454.5, "text": "만약 제가 실수로 갑자기 시야에서 사라지더라도,"}, {"start": 1454.7, "end": 1456.8, "text": "여러분은 아실 겁니다,"}, {"start": 1457.5, "end": 1459.0, "text": "연출된 묘기가 아니라,"}, {"start": 1459.2, "end": 1460.8, "text": "진짜 사고라는 걸 말이죠."}, {"start": 1461.2, "end": 1463.5, "text": "자, 여기 보시면,"}, {"start": 1463.8, "end": 1465.8, "text": "이것들이 바로 레이저입니다."}, {"start": 1466.5, "end": 1469.5, "text": "이 레이저들이 광학 장치를 통해 올라와서,"}, {"start": 1469.7, "end": 1473.15, "text": "우리 칩에 직접 연결됩니다."}, {"start": 1473.8, "end": 1476.0, "text": "공정 기술을 사용해 연결되는데요,"}, {"start": 1476.2, "end": 1478.2, "text": "우리가 TSMC와 함께 발명한 쿠프(COUPE)입니다."}, {"start": 1478.5, "end": 1481.0, "text": "이처럼 실리콘 포토닉스가,"}, {"start": 1481.2, "end": 1484.0, "text": "우리 칩 바로 위에 직접 부착됩니다."}, {"start": 1484.2, "end": 1486.5, "text": "그렇게 하지 않았다면 이 모든 부분이,"}, {"start": 1486.7, "end": 1488.5, "text": "인쇄회로기판(PCB)이었을 것이고,"}, {"start": 1488.8, "end": 1492.25, "text": "회로기판의 전송 능력은,"}, {"start": 1493.2, "end": 1495.5, "text": "광케이블보다 훨씬 떨어집니다."}, {"start": 1495.8, "end": 1498.2, "text": "덕분에 우리는 이제 초고속 데이터 전송률과,"}, {"start": 1498.4, "end": 1501.0, "text": "초고품질의 데이터를,"}, {"start": 1501.2, "end": 1503.2, "text": "칩 위로 직접 전달받게 되었습니다."}, {"start": 1503.5, "end": 1507.0, "text": "그리고 이것은 기존의 트랜시버를 거칠 필요 없이,"}, {"start": 1507.2, "end": 1510.65, "text": "회로기판과 트랜시버를 통과하지 않고,"}, {"start": 1511.0, "end": 1513.0, "text": "곧장 광학 장치로 직행합니다."}, {"start": 1513.2, "end": 1516.2, "text": "이것이 바로 세계 최초의 CPO이며,"}, {"start": 1516.4, "end": 1518.8, "text": "현재 완벽하게 대량 양산 중입니다."}, {"start": 1519.0, "end": 1521.8, "text": "그리고 512개의 포트가,"}, {"start": 1522.0, "end": 1524.2, "text": "초당 200기가비트의 속도로 작동하는,"}, {"start": 1524.4, "end": 1526.8, "text": "세계에서 가장 진보한 이더넷 스위치입니다."}, {"start": 1527.0, "end": 1529.0, "text": "저희가 정말 자랑스러워하는 제품입니다, 감사합니다."}, {"start": 1535.2, "end": 1538.65, "text": "자, 그렇다면 이것이 우리에게 주는 이점은,"}, {"start": 1539.0, "end": 1542.5, "text": "바로 사고 과정과,"}, {"start": 1542.7, "end": 1544.2, "text": "거대 언어 모델을 처리하고,"}, {"start": 1544.5, "end": 1547.0, "text": "에이전트 하네스를 처리하며,"}, {"start": 1547.2, "end": 1550.65, "text": "지식을 위한 데이터 처리를 실행하고,"}, {"start": 1551.2, "end": 1554.65, "text": "모든 도구들을 위한 가속 컴퓨팅을 구동하는 능력입니다."}, {"start": 1555.0, "end": 1558.2, "text": "이것이 본질적으로 에이전트 워크로드를 대변하며,"}, {"start": 1558.4, "end": 1559.8, "text": "잠시 후에 더 자세히 보여드리겠습니다."}, {"start": 1560.2, "end": 1562.2, "text": "베라 루빈은 전면 양산 중이며,"}, {"start": 1562.4, "end": 1564.8, "text": "그 성능은 차트를 뚫고 나갈 만큼 압도적입니다."}, {"start": 1565.0, "end": 1567.2, "text": "앞서 말씀드렸듯 매 세대마다,"}, {"start": 1567.4, "end": 1569.2, "text": "극한의 공동 설계를 통해,"}, {"start": 1569.4, "end": 1572.8, "text": "우리는 상식을 뛰어넘는 성능을 달성할 수 있었습니다."}, {"start": 1573.0, "end": 1575.8, "text": "무어의 법칙이 예측했던 수준을 아득히 넘어선 것이죠."}, {"start": 1576.0, "end": 1578.8, "text": "아시다시피 무어의 법칙은 사실상 끝났습니다."}, {"start": 1579.0, "end": 1582.2, "text": "그렇기 때문에 우리에게는 이러한 극한의 공동 설계 아이디어가 필요합니다."}, {"start": 1582.4, "end": 1585.2, "text": "칩에서 시스템으로, 시스템에서 시스템 소프트웨어로,"}, {"start": 1585.4, "end": 1588.85, "text": "알고리즘을 거쳐 전체 AI 팩토리에 이르기까지 함께 설계하는 것이죠."}, {"start": 1589.5, "end": 1592.8, "text": "베라 루빈은 또 하나의 거대한 도약입니다,"}, {"start": 1593.0, "end": 1595.2, "text": "블랙웰을 넘어선 도약 말이죠."}, {"start": 1595.5, "end": 1597.8, "text": "블랙웰은 약 30배 더 빨랐습니다,"}, {"start": 1598.0, "end": 1599.8, "text": "호퍼와 비교했을 때 말이죠,"}, {"start": 1600.0, "end": 1603.2, "text": "거대 언어 모델과 에이전틱 처리를 수행하는 데 있어서요."}, {"start": 1603.5, "end": 1605.0, "text": "그런데 이제,"}, {"start": 1605.2, "end": 1607.5, "text": "베라 루빈은 또다시 30배 더 뛰어납니다,"}, {"start": 1607.7, "end": 1609.5, "text": "블랙웰과 비교해서 말이죠,"}, {"start": 1609.7, "end": 1611.8, "text": "불과 2년이라는 시간 만에 말이죠."}, {"start": 1612.2, "end": 1615.5, "text": "베라 루빈이 어떻게 전환되는지 함께 살펴보시죠,"}, {"start": 1615.7, "end": 1619.15, "text": "바로 DSX 풀스택 AI 팩토리로 거듭나는 모습입니다."}, {"start": 1624.2, "end": 1626.8, "text": "AI는 만들어내고 있습니다,"}, {"start": 1627.0, "end": 1629.2, "text": "역사상 최대 규모의 인프라 구축을 말이죠."}, {"start": 1629.4, "end": 1631.0, "text": "공장들은 거대하고,"}, {"start": 1631.2, "end": 1633.0, "text": "투자 규모는 막대합니다."}, {"start": 1633.2, "end": 1635.0, "text": "우리는 이를 제대로 지어야만 합니다."}, {"start": 1635.5, "end": 1638.8, "text": "하지만 훌륭한 칩만으로는 훌륭한 AI 팩토리를 만들 수 없습니다."}, {"start": 1639.5, "end": 1642.95, "text": "엔비디아 DSX는 풀스택 AI 팩토리 레퍼런스 아키텍처로서,"}, {"start": 1643.4, "end": 1646.8, "text": "세계 최고의 인프라 기업들과 공동 혁신으로 탄생했습니다."}, {"start": 1647.2, "end": 1649.5, "text": "컴퓨팅, 네트워킹, 스토리지,"}, {"start": 1649.7, "end": 1652.0, "text": "소프트웨어, 전력 및 냉각까지,"}, {"start": 1652.2, "end": 1654.2, "text": "하나의 시스템으로 공동 설계되었습니다."}, {"start": 1654.5, "end": 1656.8, "text": "설계부터 운영까지 최적화되어 있죠."}, {"start": 1657.5, "end": 1659.8, "text": "DSX는 디지털 트윈에서 시작됩니다."}, {"start": 1660.2, "end": 1663.5, "text": "성능, 전력, 용수 및 확장성이,"}, {"start": 1663.7, "end": 1666.5, "text": "건설이 시작되기 전에 가상으로 먼저 검증됩니다."}, {"start": 1667.2, "end": 1670.65, "text": "PTC는 장비 설계를 시뮬레이션 가능한 에셋으로 전환합니다."}, {"start": 1671.8, "end": 1674.5, "text": "다쏘시스템은 랙과 시설 설계를 연결합니다,"}, {"start": 1674.7, "end": 1677.2, "text": "모델 기반 시스템 엔지니어링을 통해서 말이죠."}, {"start": 1677.8, "end": 1681.25, "text": "슈나이더 일렉트릭은 전력 분배와 액체 냉각을 시뮬레이션합니다."}, {"start": 1682.5, "end": 1685.8, "text": "제이콥스는 이 모든 것을 옴니버스 디지털 트윈 안에서 하나로 통합합니다."}, {"start": 1686.8, "end": 1690.25, "text": "지멘스는 열, 음향 및 전력망 영향을 평가합니다."}, {"start": 1691.8, "end": 1695.0, "text": "그리고 프로코어는 시공 단계의 계획을 지원합니다."}, {"start": 1696.2, "end": 1699.5, "text": "전력은 AI 팩토리의 생산량을 좌우하는 한계 요소입니다."}, {"start": 1700.2, "end": 1703.5, "text": "DSX 맥스 LPS는 엔드투엔드 제어 루프로서,"}, {"start": 1703.7, "end": 1706.8, "text": "워크로드 수요에 맞춰 전력을 역동적으로 조절합니다."}, {"start": 1707.0, "end": 1710.2, "text": "동일한 출력에 대해 전력을 30% 덜 사용하죠."}, {"start": 1711.5, "end": 1713.8, "text": "DSX는 냉각 방식을 재정의합니다."}, {"start": 1714.2, "end": 1716.5, "text": "엔비디아 베라 루빈 시스템은,"}, {"start": 1716.7, "end": 1718.5, "text": "폐쇄 루프 액체 냉각을 위해 설계되었으며,"}, {"start": 1718.7, "end": 1721.8, "text": "최대 섭씨 45도의 냉각수 온도에서 작동합니다."}, {"start": 1723.0, "end": 1726.2, "text": "적합한 기후에서는 실외 건식 냉각기가 열을 공기 중으로 방출하여,"}, {"start": 1726.4, "end": 1729.0, "text": "물을 증발시키지 않고 냉각합니다."}, {"start": 1729.8, "end": 1732.0, "text": "2기가와트 규모에서,"}, {"start": 1732.2, "end": 1735.5, "text": "DSX는 하루에 5,400만 리터의 물을 절약할 수 있습니다."}, {"start": 1735.7, "end": 1739.2, "text": "이는 18만 가구의 일일 물 사용량에 해당합니다."}, {"start": 1740.5, "end": 1743.8, "text": "하지만 AI 팩토리를 짓는 데는 수개월이 걸릴 수 있습니다."}, {"start": 1744.0, "end": 1747.5, "text": "가동되기 전까지는 단 하나의 토큰도 생산하지 못하죠."}, {"start": 1748.5, "end": 1751.8, "text": "오늘 우리는 엔비디아 DSX 파드(Pod)를 발표합니다,"}, {"start": 1752.0, "end": 1755.45, "text": "이 풀스택 플랫폼을 공장에서 사전 제작된 통합 시스템으로 제공하는 것입니다."}, {"start": 1757.0, "end": 1760.45, "text": "그 시작은 베라 루빈 NVL72입니다."}, {"start": 1762.0, "end": 1764.8, "text": "7개의 수랭식 컴퓨팅 랙이,"}, {"start": 1765.0, "end": 1767.5, "text": "17킬로미터의 스펙트럼-X 케이블로 연결되어,"}, {"start": 1767.7, "end": 1770.0, "text": "하나의 베라 루빈 DSX 파드를 형성합니다."}, {"start": 1771.2, "end": 1773.5, "text": "베라 루빈 DSX 파드는 통합 및 케이블 연결과,"}, {"start": 1773.7, "end": 1775.8, "text": "공장 테스트를 모두 마친 후,"}, {"start": 1776.0, "end": 1778.8, "text": "운송 가능한 컨테이너 형태로 배송됩니다."}, {"start": 1779.5, "end": 1782.8, "text": "건식 냉각기가 기존의 증발식 냉각을 대체합니다."}, {"start": 1783.5, "end": 1786.95, "text": "800볼트 직류 전원이 랙에 연결되어 효율적인 전력 공급을 구현합니다."}, {"start": 1788.5, "end": 1790.5, "text": "현장 설비가 준비되면,"}, {"start": 1790.7, "end": 1794.2, "text": "예상 현장 구축 기간이 수개월에서 단 며칠로 단축됩니다."}, {"start": 1795.0, "end": 1798.45, "text": "엔비디아 DSX AI 팩토리는 설계부터 책임감 있게 만들어졌습니다."}, {"start": 1800.2, "end": 1802.5, "text": "그리고 이제 DSX 파드를 통해,"}, {"start": 1802.7, "end": 1805.5, "text": "AI 팩토리를 빛의 속도로 구축할 수 있습니다."}, {"start": 1806.2, "end": 1808.0, "text": "와트당 더 많은 지능을,"}, {"start": 1808.2, "end": 1810.8, "text": "첫 토큰 생성까지의 시간은 더 짧게 만듭니다."}, {"start": 1816.0, "end": 1817.5, "text": "어떠신가요?"}, {"start": 1827.5, "end": 1830.5, "text": "2016년에 우리는 선보였습니다,"}, {"start": 1830.7, "end": 1833.0, "text": "세계 최초의 AI 슈퍼컴퓨터를 말이죠."}, {"start": 1833.2, "end": 1836.2, "text": "단 하나의 노드, 하나의 GPU 노드였습니다."}, {"start": 1836.5, "end": 1839.8, "text": "그러다 3년 전, 우리는 발표했습니다,"}, {"start": 1840.0, "end": 1842.5, "text": "그레이스 블랙웰 NV링크 72,"}, {"start": 1842.7, "end": 1845.0, "text": "랙 스케일 컴퓨터를 말이죠."}, {"start": 1846.0, "end": 1849.5, "text": "두 번 모두 우리는 재발명해야만 했습니다,"}, {"start": 1849.7, "end": 1853.0, "text": "단지 컴퓨터와 소프트웨어, 작동 방식뿐만 아니라,"}, {"start": 1853.2, "end": 1855.2, "text": "공급망 자체를 재발명해야 했습니다."}, {"start": 1856.0, "end": 1859.2, "text": "NV링크 72의 경우,"}, {"start": 1859.5, "end": 1862.5, "text": "우리는 전체 랙을 가져왔는데요,"}, {"start": 1862.7, "end": 1865.2, "text": "원래대로라면 현장에서 조립되었을 전체 랙을,"}, {"start": 1865.5, "end": 1868.2, "text": "공급망 내부에서 사전 조립했습니다."}, {"start": 1868.5, "end": 1871.0, "text": "본질적으로 슈퍼컴퓨터를 제조한 셈입니다,"}, {"start": 1871.2, "end": 1873.2, "text": "대규모로 대량 생산한 것이죠."}, {"start": 1873.5, "end": 1876.5, "text": "바로 그 덕분에 우리가 이토록 빠르게 움직일 수 있었고,"}, {"start": 1876.7, "end": 1880.2, "text": "말 그대로 전 세계 수백 곳의,"}, {"start": 1880.4, "end": 1883.8, "text": "데이터센터 구축 현장에 동시에 공급할 수 있었던 것입니다."}, {"start": 1884.2, "end": 1887.0, "text": "이제 전 세계의 모든 단일 컴퓨터 제조업체가,"}, {"start": 1887.2, "end": 1889.8, "text": "NV링크 72를 제조하고 있습니다."}, {"start": 1890.2, "end": 1893.5, "text": "현재 우리가 컴퓨팅을 생산해 내는 규모는,"}, {"start": 1893.7, "end": 1896.8, "text": "전례가 없으며 상상조차 하기 힘든 수준입니다."}, {"start": 1897.5, "end": 1900.95, "text": "하지만 그럼에도 이 시스템들을 가져다가,"}, {"start": 1901.7, "end": 1904.0, "text": "여러분의 현장에 배치할 때면,"}, {"start": 1904.5, "end": 1907.2, "text": "여전히 수개월에 걸친 조립 과정이 필요합니다."}, {"start": 1907.4, "end": 1910.85, "text": "방금 들으셨겠지만 17,000킬로미터,"}, {"start": 1911.7, "end": 1915.15, "text": "스펙트럼-X를 연결하는 데만 엄청난 배선이 들어갑니다,"}, {"start": 1916.0, "end": 1918.2, "text": "스케일아웃 컴퓨팅을 위해서 말이죠."}, {"start": 1919.0, "end": 1922.5, "text": "17킬로미터군요, 17,000킬로미터라니,"}, {"start": 1922.7, "end": 1924.5, "text": "그건 정말 미친 숫자네요."}, {"start": 1924.7, "end": 1927.0, "text": "네, 17킬로미터입니다, 어마어마한 수치죠."}, {"start": 1927.2, "end": 1929.5, "text": "자, 이제 우리가 그 모든 작업을 수행한다고,"}, {"start": 1929.7, "end": 1931.5, "text": "공급망 안에서 다 해낸다고 생각해 보십시오."}, {"start": 1931.8, "end": 1935.25, "text": "모든 것을 가동하고 조립하여 완벽히 작동하는지 확인하고,"}, {"start": 1935.8, "end": 1938.0, "text": "품질 검증과 번인(Burn-in) 테스트까지 마쳐서,"}, {"start": 1938.5, "end": 1941.8, "text": "출하할 때쯤이면 이미 100% 작동 가능한 상태가 되는 것입니다."}, {"start": 1942.2, "end": 1945.65, "text": "케이블 배선 작업과 현장 조립의 양이,"}, {"start": 1946.0, "end": 1948.0, "text": "획기적으로 줄어들게 됩니다."}, {"start": 1948.2, "end": 1951.2, "text": "하지만 그보다 훨씬 더 중요한 점이 있습니다."}, {"start": 1952.0, "end": 1954.2, "text": "실제로 여기서 일어나게 될 일은,"}, {"start": 1954.4, "end": 1957.2, "text": "이 과정을 공급망 내부로 옮김으로써,"}, {"start": 1958.0, "end": 1961.5, "text": "가동되지 않고 놀고 있는 유휴 컴퓨팅의 양,"}, {"start": 1961.7, "end": 1965.15, "text": "즉 데이터센터에 방치되는 유휴 컴퓨팅이 극적으로 줄어든다는 것입니다."}, {"start": 1966.2, "end": 1968.0, "text": "이 점을 기억해 보십시오."}, {"start": 1968.5, "end": 1971.8, "text": "1기가와트 규모의 각 데이터센터는,"}, {"start": 1972.0, "end": 1974.5, "text": "500억 달러에 달합니다."}, {"start": 1975.0, "end": 1978.2, "text": "여러분이 기대하는 매출 창출 규모는,"}, {"start": 1978.5, "end": 1981.95, "text": "연간 수백억 달러에 이릅니다."}, {"start": 1983.2, "end": 1985.5, "text": "만약 어림잡아,"}, {"start": 1985.7, "end": 1989.15, "text": "그 인프라에서 연간 400억 달러의 매출이 창출된다고 해봅시다."}, {"start": 1989.7, "end": 1992.0, "text": "그 인프라에서 나오는 매출이,"}, {"start": 1992.2, "end": 1994.2, "text": "연간 400억 달러라면,"}, {"start": 1994.5, "end": 1997.5, "text": "단 3개월만 가동이 지연되어도,"}, {"start": 1998.0, "end": 2000.2, "text": "그건 50억 달러, 아니 실례합니다,"}, {"start": 2000.4, "end": 2002.8, "text": "무려 100억 달러어치의 매출 손실입니다."}, {"start": 2003.2, "end": 2005.8, "text": "100억 달러 규모의 매출이 걸려 있다면,"}, {"start": 2006.0, "end": 2008.0, "text": "그 누구라도 초조해질 수밖에 없습니다."}, {"start": 2008.5, "end": 2011.95, "text": "따라서 이 과정을 공급망 안으로 옮김으로써,"}, {"start": 2013.0, "end": 2015.8, "text": "전원을 켜고 가동하기까지의 속도,"}, {"start": 2016.0, "end": 2018.8, "text": "즉 컴퓨팅 장비가 도착해 설치되는 시점부터,"}, {"start": 2019.0, "end": 2020.8, "text": "실제 토큰을 생산하기까지의 기간이,"}, {"start": 2021.0, "end": 2023.0, "text": "수개월에서 대폭 줄어듭니다."}, {"start": 2023.2, "end": 2026.0, "text": "기존에 약 4~5개월 걸리던 것이,"}, {"start": 2026.2, "end": 2027.8, "text": "약 한 달 수준으로 단축될 것이라 봅니다."}, {"start": 2028.0, "end": 2031.45, "text": "이는 전 세계 공급망의 완전한 변혁이며,"}, {"start": 2032.0, "end": 2035.45, "text": "사람들이 데이터센터를 설치하고 구축하는 방식을 바꿀 것입니다."}, {"start": 2036.0, "end": 2039.2, "text": "그 결과 구축 속도는 올라가고,"}, {"start": 2039.5, "end": 2042.0, "text": "낭비되는 유휴 컴퓨팅과,"}, {"start": 2042.2, "end": 2045.0, "text": "낭비되는 유휴 자본 지출(CapEx)은 줄어들며,"}, {"start": 2045.2, "end": 2047.8, "text": "모두가 더 높은 수익성을 얻게 됩니다."}, {"start": 2048.2, "end": 2051.65, "text": "이것이 바로 NV링크 72가,"}, {"start": 2052.0, "end": 2055.2, "text": "대형 캐비닛 시스템으로 통합된 형태이며,"}, {"start": 2055.4, "end": 2057.8, "text": "우리는 이를 DSX 파드라고 부릅니다."}, {"start": 2058.0, "end": 2061.5, "text": "엔비디아 컴퓨팅의 다음 단계로의 도약입니다."}, {"start": 2071.0, "end": 2074.45, "text": "여러분이 무엇을 만들고 어떻게 만드는지가,"}, {"start": 2075.4, "end": 2077.2, "text": "여러분을 특별하게 만듭니다."}, {"start": 2077.5, "end": 2079.5, "text": "바로 이곳 유럽에서,"}, {"start": 2080.0, "end": 2083.2, "text": "여러분이 숙지한 업무 전문성이 여러분을 특별하게 만드는 것처럼 말이죠."}, {"start": 2083.5, "end": 2085.2, "text": "여러분은 기계를 설계하고,"}, {"start": 2085.4, "end": 2087.5, "text": "공장을 운영하며,"}, {"start": 2087.8, "end": 2089.8, "text": "신약을 발견하고,"}, {"start": 2090.0, "end": 2092.5, "text": "경이로운 장인정신을 보유하고 계십니다."}, {"start": 2093.0, "end": 2096.45, "text": "그 장인정신과 전문성이 여러분을 특별하게 만듭니다."}, {"start": 2097.2, "end": 2099.5, "text": "그렇다면 엔비디아를 특별하게 만드는 것은 무엇일까요?"}, {"start": 2099.7, "end": 2101.8, "text": "크게 두 가지가 있습니다."}, {"start": 2102.0, "end": 2105.5, "text": "첫 번째는 우리의 아키텍처가,"}, {"start": 2105.7, "end": 2109.15, "text": "유일하게 범용성을 갖춘 가속 컴퓨팅 아키텍처라는 점입니다."}, {"start": 2110.0, "end": 2113.45, "text": "우리는 단 하나의 알고리즘에만 특화하지 않습니다,"}, {"start": 2114.0, "end": 2115.8, "text": "예를 들어 트랜스포머 하나에만 매달리지 않죠."}, {"start": 2116.0, "end": 2119.45, "text": "우리는 병렬화할 수 있는 모든 것에 특화합니다."}, {"start": 2120.0, "end": 2122.0, "text": "유체나 입자일 수도 있고,"}, {"start": 2122.2, "end": 2123.8, "text": "양자 역학일 수도 있으며,"}, {"start": 2124.0, "end": 2125.8, "text": "양자 화학일 수도 있습니다."}, {"start": 2126.0, "end": 2127.5, "text": "이미지 처리일 수도 있고,"}, {"start": 2127.7, "end": 2130.8, "text": "데이터 처리, 정형 및 벡터 데이터 처리 등,"}, {"start": 2131.0, "end": 2132.8, "text": "모든 종류의 처리를 아우릅니다."}, {"start": 2133.0, "end": 2135.2, "text": "우리가 아주 오랫동안 이 일에 매진해 왔고,"}, {"start": 2135.4, "end": 2138.2, "text": "엔비디아의 아키텍처가 일관성을 유지해 왔기 때문에,"}, {"start": 2138.4, "end": 2140.5, "text": "말 그대로 25년 동안이나 일관되었기에,"}, {"start": 2140.8, "end": 2144.25, "text": "알고리즘의 수와 도메인의 수,"}, {"start": 2144.7, "end": 2148.15, "text": "우리가 지원하고 가속하는 산업의 수가 엄청나게 늘어났습니다."}, {"start": 2149.0, "end": 2150.8, "text": "우리의 설치 기반과,"}, {"start": 2151.0, "end": 2153.0, "text": "범용 아키텍처,"}, {"start": 2153.2, "end": 2155.8, "text": "이 아키텍처에 대한 우리의 헌신,"}, {"start": 2156.0, "end": 2158.5, "text": "그리고 전 세계 모든 산업과의 협력이,"}, {"start": 2158.7, "end": 2162.0, "text": "엔비디아 아키텍처를 말 그대로 어디에나 존재하게 만들었습니다."}, {"start": 2163.2, "end": 2166.2, "text": "두 번째는 우리가 이를 수행하는 방식입니다."}, {"start": 2166.5, "end": 2169.8, "text": "물론 우리가 직접 개발한 아키텍처가 있지만,"}, {"start": 2170.0, "end": 2173.2, "text": "우리는 이제 이를 풀스택으로,"}, {"start": 2173.4, "end": 2176.5, "text": "완전한 AI 팩토리 형태로 구축합니다."}, {"start": 2177.2, "end": 2179.5, "text": "세상에는 많은 기업들이,"}, {"start": 2179.7, "end": 2181.5, "text": "자체 칩을 설계하고 싶어 합니다."}, {"start": 2181.8, "end": 2183.8, "text": "하지만 전 세계 대부분의 기업들은,"}, {"start": 2184.0, "end": 2186.2, "text": "그저 AI 인프라를 구축하여,"}, {"start": 2186.4, "end": 2188.8, "text": "그 위에서 자사 비즈니스를 운영하기를 원합니다."}, {"start": 2189.2, "end": 2192.65, "text": "칩을 설계하고 슈퍼컴퓨터를 만들고 모든 소프트웨어를 작성하는 능력은,"}, {"start": 2193.2, "end": 2195.8, "text": "사실상 전혀 염두에 두지 않는 일입니다,"}, {"start": 2196.0, "end": 2198.2, "text": "전 세계 대부분의 기업들에게는 말이죠."}, {"start": 2198.5, "end": 2201.5, "text": "따라서 우리는 이 두 가지 아이디어의 결합,"}, {"start": 2201.7, "end": 2204.5, "text": "즉 쿠다와 풀스택 AI 팩토리를 갖추고 있으며,"}, {"start": 2204.7, "end": 2207.2, "text": "이를 통해 우리가 다가갈 수 있게 해줍니다,"}, {"start": 2207.4, "end": 2209.5, "text": "다른 방식으로는 불가능했을 시장들에 말이죠."}, {"start": 2210.0, "end": 2213.5, "text": "바로 그 이유 덕분에 우리가 이곳의 수많은 기업들과 협력할 수 있는 것입니다."}, {"start": 2213.8, "end": 2216.5, "text": "이 도표를 따라 둘러보면서,"}, {"start": 2216.7, "end": 2219.8, "text": "클라우드 서비스 제공업체(CSP)부터 시작해 보죠, 이곳은 대부분의 사람들이,"}, {"start": 2220.0, "end": 2222.5, "text": "오늘날 AI의 대다수가 집중되어 있다고 생각하는 영역입니다."}, {"start": 2222.8, "end": 2225.2, "text": "하지만 제 기조연설 초반에 보셨듯이,"}, {"start": 2225.4, "end": 2228.5, "text": "저는 CSP가 아닌 수많은 기업들을 언급했습니다."}, {"start": 2228.8, "end": 2232.25, "text": "물론 CSP는 여전히 전 세계 컴퓨팅에서 매우 큰 비중을 차지하는 비즈니스입니다."}, {"start": 2233.2, "end": 2235.2, "text": "하지만 AI 네이티브 기업들,"}, {"start": 2235.4, "end": 2237.2, "text": "전 세계 곳곳에서 탄생하고 있는 기업들이 있으며,"}, {"start": 2237.4, "end": 2239.8, "text": "이곳 유럽에도 정말 많이 있습니다."}, {"start": 2240.0, "end": 2242.0, "text": "그리고 네오클라우드들도 있는데요,"}, {"start": 2242.2, "end": 2245.2, "text": "모든 지역이 AI 경제에 참여하기를 원하기 때문입니다."}, {"start": 2245.5, "end": 2247.8, "text": "모든 지역은 확실히 보장받기를 원합니다,"}, {"start": 2248.0, "end": 2249.8, "text": "자신들이 보유한 소중한 자원과,"}, {"start": 2250.0, "end": 2252.0, "text": "자신들이 가진 에너지가,"}, {"start": 2252.2, "end": 2254.8, "text": "그 지역의 기업들을 위해 쓰이기를 원합니다."}, {"start": 2255.0, "end": 2258.2, "text": "예를 들어 유럽 프랑스의 미스트랄이나,"}, {"start": 2258.4, "end": 2260.2, "text": "유럽의 네비우스처럼요."}, {"start": 2260.5, "end": 2263.95, "text": "유럽 전역의 수많은 기업들이 네오클라우드를 구축하고 있습니다."}, {"start": 2265.0, "end": 2267.2, "text": "컴퓨터를 제조하는 OEM 및 ODM 기업들과,"}, {"start": 2267.4, "end": 2269.5, "text": "전 세계 엔터프라이즈를 위한 기업들이 있으며,"}, {"start": 2269.8, "end": 2271.8, "text": "AI 연구소들이 있습니다."}, {"start": 2272.0, "end": 2275.5, "text": "물론 작년에는,"}, {"start": 2275.7, "end": 2277.8, "text": "우리가 온통 오픈AI에 대해서만 이야기했었죠."}, {"start": 2278.0, "end": 2281.2, "text": "오늘날 우리는 오픈AI와 앤스로픽뿐만 아니라,"}, {"start": 2281.5, "end": 2285.0, "text": "경이로운 메타의 뮤즈(Muse),"}, {"start": 2285.2, "end": 2287.5, "text": "그록(Grok), 봇(Bot),"}, {"start": 2287.7, "end": 2289.5, "text": "그리고 물론 제미나이(Gemini)에 대해서도 이야기합니다."}, {"start": 2289.7, "end": 2293.2, "text": "이처럼 수많은 AI 연구소들이 이제 최전선에 참여하고 있습니다."}, {"start": 2293.8, "end": 2297.25, "text": "그리고 매우 중요하게도, 궁극적으로 가장 중요한 부분인데요,"}, {"start": 2298.0, "end": 2299.8, "text": "AI가 성공하기 위해서,"}, {"start": 2300.0, "end": 2302.5, "text": "유럽이 AI로부터 혜택을 얻고,"}, {"start": 2302.7, "end": 2306.0, "text": "진정한 AI 생태계와 AI 경제를 창출하기 위해서는,"}, {"start": 2306.5, "end": 2309.8, "text": "모든 최종 시장과 최종 산업들이,"}, {"start": 2310.0, "end": 2312.8, "text": "AI를 도입하고 AI와 함께 성공해야만 합니다."}, {"start": 2313.0, "end": 2316.2, "text": "자율주행차를 만들고 있는 자동차 산업이든,"}, {"start": 2316.5, "end": 2319.2, "text": "로보틱스를 활용하는 제조 방식이든,"}, {"start": 2319.5, "end": 2322.8, "text": "헬스케어 분야에서 신약을 발견하는 방식이든,"}, {"start": 2323.0, "end": 2326.5, "text": "여러분의 금융 서비스 산업이든 간에,"}, {"start": 2326.7, "end": 2330.2, "text": "이 모든 다양한 산업들이 AI 기업이 되어야 합니다."}, {"start": 2330.4, "end": 2332.0, "text": "단 하나도 빠짐없이 말이죠."}, {"start": 2332.5, "end": 2334.8, "text": "우리는 독보적인 능력을 갖추고 있습니다,"}, {"start": 2335.0, "end": 2336.8, "text": "방금 말씀드린 쿠다와,"}, {"start": 2337.0, "end": 2339.0, "text": "컴퓨터를 구축하는 독창적인 방식을 통해,"}, {"start": 2339.2, "end": 2341.5, "text": "독보적인 지원 역량을 발휘하여,"}, {"start": 2341.7, "end": 2343.8, "text": "말 그대로 AI의 모든 단일 부문을 지원합니다."}, {"start": 2348.0, "end": 2351.0, "text": "하나의 아키텍처로 수많은 시장을 지원합니다."}, {"start": 2351.5, "end": 2353.8, "text": "그리고 이러한 인프라는 규모가 매우 크고,"}, {"start": 2354.0, "end": 2355.8, "text": "비용이 많이 들기 때문에,"}, {"start": 2356.0, "end": 2359.45, "text": "우리는 인프라가 가능한 한 생산적이도록,"}, {"start": 2360.0, "end": 2361.8, "text": "최대한 빠르게 가동되도록 해야 하며,"}, {"start": 2362.0, "end": 2363.8, "text": "대체 가능성(Fungible)을 갖추어,"}, {"start": 2364.0, "end": 2366.0, "text": "모든 워크로드에 사용할 수 있도록 해야 합니다."}, {"start": 2366.2, "end": 2368.8, "text": "여러분의 AI 여정의 시작점인,"}, {"start": 2369.0, "end": 2372.2, "text": "데이터 처리부터 사전 훈련, 사후 훈련,"}, {"start": 2372.5, "end": 2374.8, "text": "추론 및 에이전틱 처리에 이르기까지,"}, {"start": 2375.0, "end": 2376.8, "text": "AI 여정의 모든 단일 단계와,"}, {"start": 2377.0, "end": 2379.2, "text": "모든 유형의 AI, 즉 화학과 물리학에서,"}, {"start": 2379.4, "end": 2381.5, "text": "언어 모델에 이르기까지,"}, {"start": 2381.7, "end": 2384.5, "text": "그리고 모든 단일 산업과 그들이 사용하는 알고리즘에 두루 쓰일 수 있어야 합니다."}, {"start": 2385.0, "end": 2388.5, "text": "엔비디아의 아키텍처는 이처럼 범용적으로 호환되며, 그 결과,"}, {"start": 2388.8, "end": 2390.8, "text": "지속적인 혁신과,"}, {"start": 2391.0, "end": 2393.2, "text": "지속적인 소프트웨어 업데이트가 이루어집니다."}, {"start": 2394.5, "end": 2396.8, "text": "설치 기반이 워낙 방대하고,"}, {"start": 2397.0, "end": 2399.5, "text": "엄청나게 풍부한 소프트웨어 생태계를 갖추고 있기 때문에,"}, {"start": 2399.7, "end": 2402.0, "text": "이러한 아키텍처는 또한 오랜 수명(Durable)을 자랑합니다."}, {"start": 2402.2, "end": 2404.8, "text": "범용성, 내구성, 그리고 생산성을 모두 갖춘 것이죠."}, {"start": 2406.0, "end": 2408.5, "text": "자, 이것이 기반을 다져줍니다."}, {"start": 2408.8, "end": 2410.5, "text": "이것이 바로 인프라입니다."}, {"start": 2410.7, "end": 2412.5, "text": "그렇다면 이제 이것으로 무엇을 할까요?"}, {"start": 2412.8, "end": 2415.5, "text": "지난 1년 동안 우리는 AI의 중요한 전환점을 목격했습니다."}, {"start": 2415.8, "end": 2418.2, "text": "AI가 이제 실질적인 생산성을 내기 시작한 것입니다."}, {"start": 2418.7, "end": 2421.5, "text": "가장 중요한 순간 중 하나는,"}, {"start": 2421.7, "end": 2424.8, "text": "올해 초 우리가 오픈클로(OpenClaw)에 대해 이야기했을 때였습니다."}, {"start": 2425.2, "end": 2428.5, "text": "오픈소스 에이전트라는 개념을 처음 도입했고,"}, {"start": 2428.7, "end": 2432.2, "text": "오늘날 우리가 전 세계에서 목격하고 있는 흐름을 본격적으로 촉발했죠."}, {"start": 2432.5, "end": 2435.5, "text": "에이전트는 생각하고,"}, {"start": 2435.7, "end": 2438.2, "text": "추론하며, 반복하고, 도구를 사용합니다."}, {"start": 2438.4, "end": 2441.8, "text": "그 결과 엄청난 양의 토큰을 소비하게 됩니다."}, {"start": 2442.2, "end": 2444.8, "text": "하지만 그 덕분에 실질적인 유용성을 갖게 되죠."}, {"start": 2445.0, "end": 2447.5, "text": "따라서 더 많은 에이전트가 개발되고,"}, {"start": 2447.7, "end": 2449.5, "text": "더 유용해짐에 따라,"}, {"start": 2449.7, "end": 2451.5, "text": "더 많은 사람들이 사용하게 되며,"}, {"start": 2451.7, "end": 2454.2, "text": "생각하기 위해 많은 토큰을 써야 하기 때문에,"}, {"start": 2454.4, "end": 2457.0, "text": "토큰 소비량이 천정부지로 치솟았습니다."}, {"start": 2457.2, "end": 2459.8, "text": "GPU 수요 역시 정말 폭발적으로 급증했죠."}, {"start": 2460.5, "end": 2462.5, "text": "자, 이를 처리하는 구조는 이렇습니다."}, {"start": 2462.7, "end": 2464.5, "text": "이것이 바로 에이전트입니다."}, {"start": 2464.7, "end": 2466.8, "text": "에이전트를 이루는 5가지 핵심 요소인데요,"}, {"start": 2467.0, "end": 2469.8, "text": "첫 번째 부분은 언어 모델입니다."}, {"start": 2470.0, "end": 2473.2, "text": "GPU 위에서 구동되면서 토큰을 생성해 내고,"}, {"start": 2473.4, "end": 2476.8, "text": "그 생성된 토큰들은 에이전트에 의해 소비됩니다."}, {"start": 2477.0, "end": 2479.5, "text": "제가 앞서 외골격이라고 불렀던 부분이죠."}, {"start": 2480.0, "end": 2482.2, "text": "그 오픈클로 하네스는,"}, {"start": 2482.4, "end": 2484.8, "text": "샌드박스 내부에 자리 잡고 있으며,"}, {"start": 2485.0, "end": 2487.2, "text": "그 샌드박스는 에이전트를 시스템의 나머지 부분으로부터 격리합니다."}, {"start": 2487.4, "end": 2490.2, "text": "이것은 매우 중요한 개념이므로 잠시 후에 다시 다루겠습니다."}, {"start": 2490.8, "end": 2492.2, "text": "총 5가지 요소가 있습니다."}, {"start": 2492.4, "end": 2493.8, "text": "모델이 있고,"}, {"start": 2494.0, "end": 2495.2, "text": "하네스가 있으며,"}, {"start": 2495.4, "end": 2497.5, "text": "하네스가 들어가는 샌드박스가 있고,"}, {"start": 2497.7, "end": 2501.2, "text": "나머지 두 가지는 지식과 도구입니다."}, {"start": 2502.0, "end": 2504.5, "text": "모델, 샌드박스,"}, {"start": 2504.7, "end": 2507.0, "text": "하네스, 지식과 도구."}, {"start": 2507.2, "end": 2510.2, "text": "이것들이 에이전트의 5가지 구성 요소입니다."}, {"start": 2510.8, "end": 2513.8, "text": "이제 에이전트를 유용하게 만드는 방법을 이야기하기 전에,"}, {"start": 2514.0, "end": 2517.45, "text": "가장 중요한 것은 에이전트가 안전하도록 보장하는 일입니다."}, {"start": 2518.2, "end": 2520.2, "text": "에이전트는 자율적으로 작동합니다."}, {"start": 2520.4, "end": 2523.5, "text": "파일에 접근할 수 있는 자율 시스템이며,"}, {"start": 2523.7, "end": 2526.8, "text": "자원과 네트워크, 도구에 접근할 수 있습니다."}, {"start": 2527.0, "end": 2530.5, "text": "따라서 우리는 반드시 보장해야 합니다,"}, {"start": 2530.7, "end": 2534.2, "text": "이 자율 시스템에 부여하는 권한을 최소화하도록 말이죠."}, {"start": 2534.8, "end": 2537.8, "text": "또한 이를 지속적으로 모니터링해야 합니다."}, {"start": 2538.2, "end": 2541.5, "text": "그래서 우리는 환상적인 신제품을 선보였습니다."}, {"start": 2541.7, "end": 2544.8, "text": "오픈쉘(OpenShell)이라 불리는 새로운 플랫폼입니다."}, {"start": 2545.2, "end": 2547.8, "text": "오픈쉘은 정말이지 완벽한 시점에 등장했습니다."}, {"start": 2548.0, "end": 2550.2, "text": "이것은 보안 런타임으로서,"}, {"start": 2550.4, "end": 2552.5, "text": "제가 방금 언급한 기능들을 제공합니다."}, {"start": 2553.0, "end": 2556.45, "text": "추가적인 하드웨어 기반 모니터까지 갖추고 있습니다."}, {"start": 2557.0, "end": 2560.0, "text": "제가 설명해 드리기 전에 먼저 영상을 함께 보시죠."}, {"start": 2564.2, "end": 2567.65, "text": "기업들은 수십억 개의 AI 에이전트를 배포할 준비를 하고 있습니다."}, {"start": 2568.0, "end": 2571.0, "text": "유용하게 쓰이기 위해 에이전트는 추론하고, 계획하며,"}, {"start": 2571.2, "end": 2574.5, "text": "도구를 사용하고, 데이터에 접근하며 함께 협력할 것입니다."}, {"start": 2575.2, "end": 2578.5, "text": "오늘날 에이전트가 이 모든 권한을 오용하지 못하게 막는 유일한 방법은,"}, {"start": 2578.7, "end": 2580.5, "text": "정중하게 부탁하는 것뿐입니다."}, {"start": 2580.8, "end": 2582.5, "text": "'제발 아무것도 삭제하지 마.'"}, {"start": 2582.7, "end": 2584.2, "text": "'제발 메인 브랜치에 푸시하지 마.'"}, {"start": 2584.4, "end": 2586.5, "text": "'제발 내 SSH 키는 건드리지 마.'"}, {"start": 2586.8, "end": 2588.5, "text": "이른바 '제발 하지 마' 접근법이죠."}, {"start": 2588.7, "end": 2590.8, "text": "하지만 희망 사항은 보안이 아닙니다."}, {"start": 2591.2, "end": 2593.0, "text": "안전은 막연한 염원이 아니라,"}, {"start": 2593.2, "end": 2595.2, "text": "기술이자 엔지니어링입니다."}, {"start": 2595.5, "end": 2599.0, "text": "엔비디아 오픈쉘과 센트리(Sentry)는 그 철학을 실제로 구현합니다."}, {"start": 2599.8, "end": 2602.8, "text": "각 에이전트가 건드릴 수 있는 대상에 대한 정책을 작성하면,"}, {"start": 2603.0, "end": 2606.2, "text": "오픈쉘이 시스템 호출 단위의 세밀함으로 이를 강제 적용하며,"}, {"start": 2606.4, "end": 2609.5, "text": "파일 접근과 네트워크 연결까지 통제합니다."}, {"start": 2610.2, "end": 2612.4, "text": "정형 검증을 통해 모든 정책 변경 사항을,"}, {"start": 2612.6, "end": 2614.5, "text": "여러분의 권한 상한선과 대조 확인하므로,"}, {"start": 2614.7, "end": 2617.8, "text": "에이전트는 결코 의도된 것 이상의 접근 권한을 얻을 수 없습니다."}, {"start": 2618.5, "end": 2620.2, "text": "이는 마치 초창기 인터넷과 같습니다."}, {"start": 2620.5, "end": 2622.2, "text": "당시에는 바이러스가 도처에 깔려 있었지만,"}, {"start": 2622.4, "end": 2625.85, "text": "브라우저가 웹페이지의 동작에 엄격한 제한을 강제하면서 해결되었죠."}, {"start": 2627.0, "end": 2629.2, "text": "오픈쉘은 에이전트에 대해 똑같은 역할을 수행합니다."}, {"start": 2629.5, "end": 2631.8, "text": "정책 강제는 에이전트 외부에서 이루어지며,"}, {"start": 2632.0, "end": 2634.2, "text": "단순한 LLM 가드레일 수준에 머물지 않고,"}, {"start": 2634.4, "end": 2637.2, "text": "에이전트 네이티브 보안을 인프라에 직접 도입합니다."}, {"start": 2637.8, "end": 2641.25, "text": "모든 에이전트는 자체적으로 격리된 샌드박스 안에서 실행되며,"}, {"start": 2641.7, "end": 2643.8, "text": "네트워크로 나가는 직접적인 경로가 없습니다."}, {"start": 2644.2, "end": 2646.4, "text": "외부로 나가는 모든 네트워크 요청은,"}, {"start": 2646.6, "end": 2648.5, "text": "샌드박스 바깥의 슈퍼바이저를 거칩니다."}, {"start": 2648.8, "end": 2651.0, "text": "슈퍼바이저는 해당 동작을 정책과 대조하고,"}, {"start": 2651.2, "end": 2653.8, "text": "허용되지 않은 요청은 즉시 거부합니다."}, {"start": 2654.2, "end": 2657.0, "text": "보안 키는 샌드박스 외부의 슈퍼바이저에 안전하게 보관되며,"}, {"start": 2657.2, "end": 2659.8, "text": "승인된 엔드포인트로 전달되는 과정에서만 추가됩니다."}, {"start": 2660.2, "end": 2663.2, "text": "에이전트가 침해되더라도 애초에 가진 적 없는 키를 유출할 수는 없죠."}, {"start": 2663.8, "end": 2665.8, "text": "게이트웨이는 컨트롤 플레인 역할을 하고,"}, {"start": 2666.2, "end": 2668.2, "text": "슈퍼바이저는 결정을 내리며,"}, {"start": 2668.5, "end": 2670.8, "text": "샌드박스는 에이전트를 담아두고,"}, {"start": 2671.0, "end": 2674.45, "text": "정책 검증기는 제안된 정책들을 권한 상한선과 대조해 확인합니다."}, {"start": 2675.5, "end": 2677.8, "text": "오픈쉘은 리눅스 커널 격리와,"}, {"start": 2678.0, "end": 2680.2, "text": "런타임 정책 강제를 결합합니다."}, {"start": 2681.0, "end": 2684.2, "text": "엔비디아 센트리는 선택적인 추가 보호 계층을,"}, {"start": 2684.4, "end": 2687.5, "text": "에이전트로부터 떨어진 호스트 외부에 제공합니다."}, {"start": 2688.2, "end": 2690.2, "text": "엔비디아 블루필드-4 위에서 구동되는 센트리는,"}, {"start": 2690.4, "end": 2693.5, "text": "에이전트 활동을 모니터링하고 보안 정책을 강제하며,"}, {"start": 2693.7, "end": 2696.8, "text": "하드웨어로 격리된 신뢰 도메인 안에서 작동합니다."}, {"start": 2697.2, "end": 2700.0, "text": "에이전트의 추론 트래픽이 센트리를 통과하기 때문에,"}, {"start": 2700.2, "end": 2703.2, "text": "에이전트가 의도치 않은 행동을 계획하고 있다면,"}, {"start": 2703.4, "end": 2706.5, "text": "즉시 정책을 업데이트하고 모델과의 연결을 차단하여,"}, {"start": 2706.7, "end": 2709.2, "text": "밀리초 단위로 에이전트를 격리합니다."}, {"start": 2709.8, "end": 2713.2, "text": "또한 운영자가 검증할 수 있는 위변조 방지 기록을 남겨,"}, {"start": 2713.4, "end": 2716.2, "text": "탐지, 조사 및 대응을 지원합니다."}, {"start": 2716.8, "end": 2720.0, "text": "오픈쉘은 아파치 2.0 라이선스 기반의 오픈소스이며,"}, {"start": 2720.2, "end": 2723.2, "text": "엣지부터 클라우드까지 에이전트가 있는 모든 곳에서 실행되고,"}, {"start": 2723.4, "end": 2725.8, "text": "단 두 줄의 명령어로 도입할 수 있습니다."}, {"start": 2726.0, "end": 2728.5, "text": "CLI를 설치하고, 샌드박스를 생성한 뒤,"}, {"start": 2728.7, "end": 2730.8, "text": "선호하는 에이전트를 실행하면 됩니다."}, {"start": 2731.2, "end": 2733.8, "text": "에이전트는 여러분이 부여하는 접근 권한만큼만 유용합니다."}, {"start": 2734.0, "end": 2737.2, "text": "오픈쉘과 센트리는 그 접근 권한을 여러분의 통제하에 둡니다."}, {"start": 2737.5, "end": 2740.95, "text": "이것이 우리가 AI 역량과 안전성을 함께 발전시키는 방식입니다."}, {"start": 2751.0, "end": 2753.5, "text": "에이전트는 자율 시스템입니다."}, {"start": 2753.7, "end": 2756.0, "text": "우리는 구축해야만 합니다,"}, {"start": 2756.2, "end": 2758.2, "text": "극도로 안전한 보안 기술을 말이죠,"}, {"start": 2758.4, "end": 2760.8, "text": "그래야만 이러한 에이전트들을 개발하고,"}, {"start": 2761.0, "end": 2763.0, "text": "안전하게 배포할 수 있습니다."}, {"start": 2763.8, "end": 2766.2, "text": "정말 놀라운 일인데요, 오픈쉘을 발표한 직후,"}, {"start": 2766.4, "end": 2769.85, "text": "프런티어 연구소부터 시작해 전 세계 거의 모든 주요 기업들,"}, {"start": 2770.7, "end": 2773.0, "text": "운영체제 기업들과,"}, {"start": 2773.2, "end": 2775.2, "text": "사이버 보안 기업들,"}, {"start": 2775.4, "end": 2778.8, "text": "플랫폼 기업들이 모두 나서서 오픈쉘을 도입했습니다."}, {"start": 2779.0, "end": 2780.8, "text": "정말 반가운 광경입니다."}, {"start": 2781.0, "end": 2783.8, "text": "그 이유는 이 기술이 정확히 가장 필요한 시점에 등장했기 때문입니다."}, {"start": 2784.0, "end": 2786.8, "text": "전 세계에 에이전트를 배포하고자 하는 바로 이 시점에 말이죠."}, {"start": 2787.2, "end": 2789.5, "text": "기억하실 점은 이것이 단지,"}, {"start": 2789.7, "end": 2791.5, "text": "서비스 제공업체들만의 이야기가 아니라는 것입니다,"}, {"start": 2791.7, "end": 2794.2, "text": "에이전트를 배포할 때 오픈쉘을 쓰는 것만이 아니라는 점입니다."}, {"start": 2794.4, "end": 2797.85, "text": "전 세계의 모든 일반 기업들 또한 오픈쉘을 도입하여,"}, {"start": 2798.7, "end": 2802.15, "text": "외부 에이전트를 받아들여 사내에서 자율적으로 구동시킬 수 있게 하는 것입니다."}, {"start": 2803.5, "end": 2806.8, "text": "모든 단일 수준의 역량과,"}, {"start": 2807.0, "end": 2810.2, "text": "에이전트에게 부여하는 모든 단일 작업,"}, {"start": 2810.4, "end": 2812.8, "text": "그리고 에이전트를 사용하는 모든 사람에 따라,"}, {"start": 2813.0, "end": 2815.5, "text": "그 각각의 조합마다 에이전트에게 부여해야 할,"}, {"start": 2815.7, "end": 2818.8, "text": "권한의 수준이 모두 달라져야 합니다."}, {"start": 2819.5, "end": 2821.8, "text": "에이전트가 실행될 때마다,"}, {"start": 2822.0, "end": 2823.8, "text": "권한이 매번 달라지는 것이죠."}, {"start": 2824.2, "end": 2827.65, "text": "따라서 권한 설정과 정책 강제 적용,"}, {"start": 2828.0, "end": 2831.5, "text": "그리고 모니터링이 모두 동적으로 이루어져야 합니다."}, {"start": 2831.7, "end": 2834.2, "text": "그런 면에서 오픈쉘은 진정 혁명적입니다."}, {"start": 2834.8, "end": 2838.2, "text": "기쁘게도 앤스로픽과 엔비디아는 파트너십을 맺고,"}, {"start": 2838.4, "end": 2841.5, "text": "클로드(Claude) 오픈쉘 에이전트를 함께 만들고 있습니다."}, {"start": 2841.8, "end": 2844.8, "text": "웹사이트에 가보시면 이에 대해 아주 잘 정리된 글이 있습니다."}, {"start": 2845.5, "end": 2848.5, "text": "자, 첫 번째 부분은,"}, {"start": 2848.8, "end": 2851.5, "text": "이러한 하네스들을 어떻게 사용하는가입니다."}, {"start": 2851.7, "end": 2854.8, "text": "오픈클로, 헤르메스(Hermes), 오픈핸즈(OpenHands) 등이 있으며,"}, {"start": 2855.0, "end": 2857.8, "text": "랭체인(LangChain)으로 자체 하네스를 만들 수도 있고,"}, {"start": 2858.0, "end": 2861.5, "text": "딥에이전트(DeepAgents)나 파이썬으로 직접 작성할 수도 있습니다."}, {"start": 2861.7, "end": 2865.15, "text": "에이전트 하네스를 만드는 방법은 아주 다양하며,"}, {"start": 2865.7, "end": 2869.15, "text": "이 하네스가 이제 오픈쉘 보안 환경 안에 들어가게 됩니다."}, {"start": 2870.5, "end": 2872.8, "text": "하네스가 들어가는 샌드박스,"}, {"start": 2873.0, "end": 2875.0, "text": "바로 보안 샌드박스입니다."}, {"start": 2875.8, "end": 2879.25, "text": "그다음으로 모델에 대해 이야기해 보겠습니다."}, {"start": 2880.2, "end": 2882.5, "text": "여러분은 모든 종류의 모델을 활용하셔야 합니다."}, {"start": 2882.7, "end": 2886.2, "text": "미래에는 단 하나의 모델만으로 모든 것을 실행하지 않을 것입니다."}, {"start": 2886.5, "end": 2889.5, "text": "우리는 최고의 모델들을 골라 사용할 텐데요,"}, {"start": 2889.7, "end": 2893.0, "text": "폐쇄형 모델이든, 오픈 모델이든, 맞춤형 모델이든,"}, {"start": 2893.2, "end": 2896.2, "text": "모든 모델을 활용하여 업무를 수행하게 될 것입니다."}, {"start": 2896.8, "end": 2900.2, "text": "때로는 여러분이 하는 일이 꽤 일반적인 작업이어서,"}, {"start": 2900.5, "end": 2903.95, "text": "범용 인공지능(AGI)이 엄청나게 훌륭한 성과를 낼 것입니다."}, {"start": 2904.5, "end": 2907.5, "text": "하지만 때로는 여러분이 하려는 작업이,"}, {"start": 2907.7, "end": 2910.2, "text": "회사의 독점적인 지식을 너무 많이 담고 있거나,"}, {"start": 2910.4, "end": 2912.2, "text": "고도의 전문성을 필요로 해서,"}, {"start": 2912.4, "end": 2915.5, "text": "그 지능을 지속적으로 고도화하고 싶을 때가 있습니다."}, {"start": 2916.0, "end": 2918.2, "text": "미래의 모든 기업은,"}, {"start": 2918.4, "end": 2920.8, "text": "폐쇄형 모델뿐만 아니라,"}, {"start": 2921.0, "end": 2923.8, "text": "직접 맞춤화한 오픈 모델을 함께 사용하게 될 것입니다."}, {"start": 2924.0, "end": 2927.5, "text": "오늘 이 세션이 끝날 때쯤이면 여러분은 자체 AI를 구축하는 것이,"}, {"start": 2927.7, "end": 2929.5, "text": "사실 그리 어렵지 않다는 것을 알게 되실 겁니다."}, {"start": 2929.8, "end": 2932.2, "text": "그 시작은 당연히 모델입니다."}, {"start": 2932.5, "end": 2935.5, "text": "우리는 오픈 모델을 발전시키는 데 헌신해 왔으며,"}, {"start": 2935.7, "end": 2937.8, "text": "새로운 기회를 열고,"}, {"start": 2938.0, "end": 2940.2, "text": "사람들이 자체 맞춤형 AI를 구축할 수 있도록 지원하고 있습니다."}, {"start": 2940.8, "end": 2943.8, "text": "네모트론(Nemotron)은 언어 모델이고,"}, {"start": 2944.0, "end": 2947.5, "text": "코스모스(Cosmos)는 우리의 월드 파운데이션 모델로서,"}, {"start": 2947.7, "end": 2949.5, "text": "우리가 바로 최전선(Frontier)을 이끌고 있습니다."}, {"start": 2950.0, "end": 2952.0, "text": "휴머노이드 로보틱스를 위한 그루트(GR00T) 역시,"}, {"start": 2952.2, "end": 2953.8, "text": "우리가 최전선이며,"}, {"start": 2954.0, "end": 2956.5, "text": "자율주행 내비게이션을 위한 알파마요(Alpamayo)도,"}, {"start": 2956.7, "end": 2958.2, "text": "우리가 최전선입니다."}, {"start": 2958.4, "end": 2961.2, "text": "양자-고전 하이브리드 컴퓨팅을 위한 아이징(Ising)도,"}, {"start": 2961.4, "end": 2963.0, "text": "우리가 최전선이고,"}, {"start": 2963.2, "end": 2965.2, "text": "물리학 AI인 어스-2(Earth-2) 역시,"}, {"start": 2965.4, "end": 2967.0, "text": "우리가 바로 최전선입니다."}, {"start": 2967.5, "end": 2969.5, "text": "이 모든 다양한 영역에서,"}, {"start": 2969.7, "end": 2972.2, "text": "우리는 여러분께 모든 모델들을 제공하며,"}, {"start": 2972.4, "end": 2974.2, "text": "지속적으로 연구 개발을 이어가고 있습니다."}, {"start": 2974.4, "end": 2977.2, "text": "지난 10년간 해왔고 앞으로도 영원히 계속할 것입니다."}, {"start": 2977.5, "end": 2979.8, "text": "우리는 모델을 완전히 오픈 형태로 제공할 뿐만 아니라,"}, {"start": 2980.0, "end": 2982.5, "text": "함께 사용된 데이터까지 제공하므로,"}, {"start": 2982.7, "end": 2985.2, "text": "우리가 만든 모델의 출처(Provenance)를 투명하게 알 수 있으며,"}, {"start": 2985.5, "end": 2988.95, "text": "여러분이 이를 직접 재현하는 데 필요한 스크립트까지 모두 제공합니다."}, {"start": 2990.0, "end": 2992.2, "text": "따라서 단순히 공개된 가중치만 얻는 것이 아니라,"}, {"start": 2992.5, "end": 2995.5, "text": "전체 레시피와 데이터까지 우리에게서 제공받아,"}, {"start": 2995.7, "end": 2998.0, "text": "오픈 모델을 똑같이 다시 만들어낼 수 있습니다."}, {"start": 2998.2, "end": 3000.2, "text": "어디서 유래했는지 정확히 알 수 있고,"}, {"start": 3000.4, "end": 3002.2, "text": "완전한 신뢰를 가질 수 있는 것이죠."}, {"start": 3002.8, "end": 3005.0, "text": "물론 이러한 모델들이,"}, {"start": 3005.2, "end": 3008.65, "text": "처음부터 최전선 중의 최전선 모델은 아닐 수도 있습니다,"}, {"start": 3009.0, "end": 3011.0, "text": "특히 언어 모델의 경우에는 말이죠."}, {"start": 3011.2, "end": 3013.8, "text": "하지만 맞춤화(Customization) 과정을 거치고,"}, {"start": 3014.0, "end": 3017.2, "text": "우리가 함께 일하는 생태계 파트너들과 협력하면,"}, {"start": 3017.4, "end": 3020.0, "text": "이 모델들을 최전선 수준으로 끌어올릴 수 있습니다."}, {"start": 3020.2, "end": 3022.2, "text": "그 결과 여러분의 독점 데이터를,"}, {"start": 3022.4, "end": 3024.8, "text": "소버린 지능으로 전환할 수 있죠."}, {"start": 3025.0, "end": 3028.2, "text": "여기 AI21이 앨리스(Alice)를 도운 사례가 있습니다."}, {"start": 3028.5, "end": 3030.2, "text": "네모트론을 활용하여,"}, {"start": 3030.4, "end": 3033.8, "text": "프런티어 역량을 뛰어넘는 모델로 탈바꿈시켰습니다."}, {"start": 3034.0, "end": 3036.2, "text": "다음은 베이스텐(Baseten)이 코드래빗(CodeRabbit)을 도운 사례입니다."}, {"start": 3036.5, "end": 3038.5, "text": "네모트론 모델을 가져다가,"}, {"start": 3038.7, "end": 3040.8, "text": "자사 데이터로 파인튜닝한 결과,"}, {"start": 3041.0, "end": 3043.5, "text": "프런티어 수준의 역량을 달성했습니다."}, {"start": 3043.7, "end": 3045.2, "text": "베이스텐과 코드래빗이었죠."}, {"start": 3045.4, "end": 3047.5, "text": "여기는 트라젝토리(Trajectory)와 하비(Harvey)의 사례입니다."}, {"start": 3047.8, "end": 3049.5, "text": "역시 네모트론을 사용하여,"}, {"start": 3049.7, "end": 3051.5, "text": "사후 훈련(Post-training)을 거쳐,"}, {"start": 3051.7, "end": 3055.0, "text": "자신들만의 프런티어급 역량을 만들어냈습니다."}, {"start": 3055.2, "end": 3058.0, "text": "여기는 스케일(Scale)이 스카이댄스(Skydance)와 협력하여,"}, {"start": 3058.2, "end": 3059.8, "text": "똑같은 성과를 낸 사례입니다."}, {"start": 3060.0, "end": 3061.8, "text": "사례는 끝도 없이 이어집니다."}, {"start": 3062.0, "end": 3064.5, "text": "핵심은 오픈 모델로 시작할 수 있다는 점입니다."}, {"start": 3064.7, "end": 3067.2, "text": "네모트론처럼 엄청나게 뛰어난 모델을 바탕으로,"}, {"start": 3067.5, "end": 3070.0, "text": "여러분 자신의 데이터를 더해,"}, {"start": 3070.2, "end": 3072.5, "text": "특정 사용 사례에 맞게 사후 훈련을 시키면,"}, {"start": 3072.7, "end": 3075.5, "text": "당연히 초지능(Superintelligence)을 달성할 수 있습니다."}, {"start": 3075.8, "end": 3077.8, "text": "매우 합리적인 접근법이며,"}, {"start": 3078.0, "end": 3079.8, "text": "이에 필요한 모든 기술이 오늘날 존재합니다."}, {"start": 3080.0, "end": 3083.45, "text": "여기는 팔란티어와 탬파 종합병원의 사례입니다."}, {"start": 3084.0, "end": 3085.8, "text": "목록은 계속 이어집니다."}, {"start": 3086.0, "end": 3088.8, "text": "우리는 여러분을 도울 수 있는 풍부한 파트너 생태계를 보유하고 있으며,"}, {"start": 3089.0, "end": 3090.8, "text": "모두 정말 훌륭한 기업들입니다."}, {"start": 3091.0, "end": 3093.5, "text": "전 세계 어디서나 여러분과 함께 일할 수 있죠."}, {"start": 3093.8, "end": 3095.3, "text": "우리가 함께 협력하는 곳들이 너무나 많은데요,"}, {"start": 3095.5, "end": 3098.95, "text": "한 곳만 언급하면 다른 모든 기업들이 서운해할 텐데요,"}, {"start": 3100.2, "end": 3102.5, "text": "여기 앉아서 전부 다 불러야 할 판입니다."}, {"start": 3102.7, "end": 3105.0, "text": "저는 이 모든 기업들을 똑같이 사랑합니다."}, {"start": 3105.5, "end": 3107.5, "text": "자, 정리하자면 첫째,"}, {"start": 3107.8, "end": 3109.5, "text": "에이전트 하네스가,"}, {"start": 3109.7, "end": 3112.8, "text": "보안 샌드박스인 오픈쉘 안에서 실행됩니다."}, {"start": 3113.0, "end": 3116.0, "text": "둘째, 네모트론 거대 언어 모델입니다."}, {"start": 3116.2, "end": 3118.8, "text": "여러분이 필요로 하는 첫 두 가지 구성 요소이죠."}, {"start": 3119.5, "end": 3121.5, "text": "하지만 궁극적으로,"}, {"start": 3121.7, "end": 3124.2, "text": "이 에이전트들을 슈퍼 에이전트로 변화시키는 것은,"}, {"start": 3124.4, "end": 3127.85, "text": "바로 여러분 회사의 지식에 접근할 수 있도록 해주는 것입니다."}, {"start": 3129.0, "end": 3131.8, "text": "그리고 이 부분은 정말 특별합니다."}, {"start": 3132.0, "end": 3135.5, "text": "우리가 구축한 에이전트 지식 파운데이션(Agent Knowledge Foundation)입니다."}, {"start": 3135.8, "end": 3138.8, "text": "완전한 세계 최고 수준의 라이브러리와 모델들로서,"}, {"start": 3139.0, "end": 3141.8, "text": "여러분 회사의 데이터를 변환할 수 있게 해줍니다."}, {"start": 3142.5, "end": 3145.8, "text": "데이터와 에셋은 때로,"}, {"start": 3146.0, "end": 3148.5, "text": "문서 내의 비정형 포맷으로 존재할 수 있어서,"}, {"start": 3148.7, "end": 3151.8, "text": "PDF를 읽는 법을 이해하는 AI가 필요할 수도 있고,"}, {"start": 3152.0, "end": 3153.8, "text": "온갖 비정형 문서를 읽어야 할 수도 있습니다."}, {"start": 3154.0, "end": 3157.0, "text": "또는 데이터베이스 내부의 정형 데이터일 수도 있죠."}, {"start": 3157.5, "end": 3160.5, "text": "우리는 필수적인 라이브러리와 도구를 모두 갖추어,"}, {"start": 3160.7, "end": 3163.8, "text": "여러분이 의미와 이해를 추출하도록 돕습니다,"}, {"start": 3164.0, "end": 3166.2, "text": "바로 여러분 회사의 데이터로부터 말이죠."}, {"start": 3167.0, "end": 3168.5, "text": "하나씩 살펴보겠습니다."}, {"start": 3168.7, "end": 3172.2, "text": "네모트론 파스(Parse)는 완벽한 세계 최고 수준으로 리더보드 1위입니다."}, {"start": 3172.5, "end": 3175.0, "text": "네모트론 임베드(Embed)는 쿼리를 받아,"}, {"start": 3175.2, "end": 3178.65, "text": "벡터 데이터베이스 내부의 지식과 연결해 주는데,"}, {"start": 3179.0, "end": 3180.8, "text": "이 역시 리더보드 최정상입니다."}, {"start": 3181.0, "end": 3183.2, "text": "네모트론 리랭크(Rerank)는,"}, {"start": 3183.4, "end": 3185.2, "text": "수많은 다양한 출처에서,"}, {"start": 3185.4, "end": 3188.5, "text": "쿼리와 연관된 여러 데이터 조각들을 찾아낸 뒤,"}, {"start": 3188.7, "end": 3190.5, "text": "이들을 하나로 모아,"}, {"start": 3190.7, "end": 3193.8, "text": "여러분에게 가장 관련성이 높은 순서대로 순위를 매겨줍니다."}, {"start": 3194.5, "end": 3198.0, "text": "쿠모(Kumo)는 예측을 수행하는데요,"}, {"start": 3198.2, "end": 3200.5, "text": "여러분의 정형 데이터베이스로부터,"}, {"start": 3200.7, "end": 3202.2, "text": "어떤 일이 일어날지 예측합니다."}, {"start": 3202.4, "end": 3204.2, "text": "예를 들어 보겠습니다."}, {"start": 3204.5, "end": 3207.95, "text": "만약 여러분이 통지를 하나 받았다고 해봅시다."}, {"start": 3208.8, "end": 3211.5, "text": "공급업체 중 한 곳이,"}, {"start": 3211.7, "end": 3214.2, "text": "공급량이 부족하거나 납품이 지연될 것이라는 통지이죠."}, {"start": 3214.5, "end": 3217.95, "text": "그 정보 조각은 대개 비정형 데이터,"}, {"start": 3218.4, "end": 3219.8, "text": "즉 문서 형태입니다."}, {"start": 3220.0, "end": 3223.2, "text": "반면 회사 내 주문에 관한 정보는,"}, {"start": 3223.4, "end": 3225.2, "text": "정형 데이터베이스 안에 들어 있죠,"}, {"start": 3225.4, "end": 3227.2, "text": "예를 들면 SQL 데이터베이스 같은 곳 말입니다."}, {"start": 3227.5, "end": 3230.95, "text": "그리고 앞으로 어떤 일이 벌어질지 예측하기 위해,"}, {"start": 3231.7, "end": 3234.5, "text": "즉 이 모든 주문들 중 어떤 것이 부족해질지,"}, {"start": 3234.7, "end": 3236.8, "text": "지연 규모가 얼마나 될지 파악하기 위해,"}, {"start": 3237.0, "end": 3239.2, "text": "쿠모를 사용하여 그 예측을 수행합니다."}, {"start": 3239.5, "end": 3242.95, "text": "그런 다음 이를 무엇으로 대체할지 알아내기 위해,"}, {"start": 3243.4, "end": 3245.5, "text": "벡터 데이터베이스 검색을 사용하여,"}, {"start": 3245.7, "end": 3249.15, "text": "대체 부품의 엔지니어링 문서를 찾아낼 수 있습니다."}, {"start": 3250.0, "end": 3252.2, "text": "이처럼 이 모든 다양한 라이브러리와,"}, {"start": 3252.4, "end": 3254.5, "text": "데이터 처리 역량이 하나로 모여,"}, {"start": 3254.7, "end": 3257.8, "text": "여러분을 위한 지식 파운데이션을 구축합니다."}, {"start": 3258.2, "end": 3261.5, "text": "이제 여러분의 AI를 독점 데이터와,"}, {"start": 3261.7, "end": 3263.8, "text": "독점 지식으로 무장시킨 것입니다."}, {"start": 3264.5, "end": 3267.95, "text": "마지막으로 말씀드릴 부분은 궁극적으로 도구입니다."}, {"start": 3268.8, "end": 3270.8, "text": "전문 분야의 핵심 도구들이죠."}, {"start": 3271.0, "end": 3273.8, "text": "엔비디아는 오랫동안 쿠다-X를 개발해 왔으며,"}, {"start": 3274.0, "end": 3276.2, "text": "여기 계신 대부분의 분들과 AI 이전 시절에는,"}, {"start": 3276.4, "end": 3279.5, "text": "언제나 어떻게 가속할 것인가에 대해 대화해 왔습니다."}, {"start": 3279.7, "end": 3281.8, "text": "시뮬레이터와 솔버,"}, {"start": 3282.0, "end": 3283.8, "text": "데이터 처리 엔진,"}, {"start": 3284.0, "end": 3286.5, "text": "온갖 종류의 도메인 특화 라이브러리들을 말이죠."}, {"start": 3286.7, "end": 3288.8, "text": "이들은 과학적 발견과,"}, {"start": 3289.0, "end": 3291.2, "text": "모든 다양한 과학 분야에 사용됩니다."}, {"start": 3291.5, "end": 3294.2, "text": "엔지니어링에 쓰이고, 연구에 쓰이며,"}, {"start": 3294.5, "end": 3297.8, "text": "설계와 구축, 창작 예술에 이르기까지 두루 사용됩니다."}, {"start": 3298.2, "end": 3301.2, "text": "그 핵심에는 우리의 쿠다-X 라이브러리가 있으며,"}, {"start": 3301.4, "end": 3304.2, "text": "이 쿠다-X 라이브러리는 곧 알고리즘입니다."}, {"start": 3304.4, "end": 3306.2, "text": "그리고 아시다시피 알고리즘은 아름답습니다."}, {"start": 3306.4, "end": 3308.0, "text": "함께 감상해 보시죠."}, {"start": 3463.0, "end": 3464.8, "text": "수학은 아름답습니다."}, {"start": 3465.0, "end": 3466.8, "text": "수학은 참 아름답죠."}, {"start": 3467.2, "end": 3470.2, "text": "쿠다-X 라이브러리는 우리 회사의 가장 귀중한 보물입니다."}, {"start": 3470.4, "end": 3471.8, "text": "그 이유는 이렇습니다."}, {"start": 3472.0, "end": 3474.2, "text": "여러분이 AI 어시스턴트를 구축할 때,"}, {"start": 3474.4, "end": 3476.0, "text": "그것은 연구실 조수가 될 수도 있고,"}, {"start": 3476.2, "end": 3477.8, "text": "리서치 어시스턴트가 될 수도 있으며,"}, {"start": 3478.0, "end": 3479.8, "text": "공동 설계자나,"}, {"start": 3480.0, "end": 3483.2, "text": "여러분과 함께 무언가를 만드는 공동 창작자가 될 수도 있습니다."}, {"start": 3483.5, "end": 3485.8, "text": "궁극적으로 그러한 에이전트들을,"}, {"start": 3486.0, "end": 3487.8, "text": "유용하게 만드는 것,"}, {"start": 3488.0, "end": 3490.5, "text": "그들이 실제 업무를 수행할 수 있게 만드는 것은,"}, {"start": 3490.7, "end": 3492.5, "text": "바로 도구입니다."}, {"start": 3493.2, "end": 3496.65, "text": "이제 우리는 모델들을 보유하고 있어서,"}, {"start": 3497.0, "end": 3500.2, "text": "이 에이전트들이 추론하고,"}, {"start": 3500.4, "end": 3503.2, "text": "정보를 이해하며 사고하고,"}, {"start": 3503.4, "end": 3505.0, "text": "계획을 세울 수 있게 해줍니다."}, {"start": 3505.2, "end": 3508.5, "text": "또한 반복적으로 행동하고 도구를 사용하여 마침내 작업을 완수하게 하죠."}, {"start": 3508.8, "end": 3511.5, "text": "하지만 결국 핵심은 도구로 귀결됩니다."}, {"start": 3511.8, "end": 3514.8, "text": "우리는 이 도구들을 수년 동안 개발해 왔으며,"}, {"start": 3515.0, "end": 3517.5, "text": "제가 오른편에 보여드렸던 한 특별한 컴퓨터가,"}, {"start": 3517.7, "end": 3519.8, "text": "이 모든 단일 도구들을 실행합니다."}, {"start": 3520.0, "end": 3522.8, "text": "유체 역학이나 입자 물리학일 수도 있고,"}, {"start": 3523.0, "end": 3524.5, "text": "양자 화학일 수도 있으며,"}, {"start": 3524.7, "end": 3526.2, "text": "데이터 처리나,"}, {"start": 3526.4, "end": 3528.0, "text": "레이 트레이싱일 수도 있습니다."}, {"start": 3528.2, "end": 3531.5, "text": "이 모든 도구들이 그 하나의 컴퓨터 위에서 구동되며,"}, {"start": 3531.7, "end": 3534.5, "text": "그 컴퓨터는 처리 속도를 가속화합니다."}, {"start": 3534.7, "end": 3537.8, "text": "단순히 CPU에서 기본 실행하는 것과 비교하면,"}, {"start": 3538.0, "end": 3540.8, "text": "10배, 50배, 100배나 더 빠르게 가속하죠."}, {"start": 3541.0, "end": 3543.2, "text": "그리고 쿠다-X 도구들이 바로,"}, {"start": 3543.4, "end": 3545.8, "text": "에이전트에게 전문 분야의 도구를쥐여주는 핵심입니다."}, {"start": 3546.0, "end": 3548.5, "text": "다른 사람들이 이를 어떻게 활용하고 있는지 보면 정말 멋집니다."}, {"start": 3548.7, "end": 3550.2, "text": "함께 보시죠."}, {"start": 3582.2, "end": 3585.65, "text": "이것이 바로 에이전트 이면에 숨겨진 마법입니다."}, {"start": 3586.0, "end": 3588.5, "text": "궁극적으로 에이전트는 도구를 사용해야만 합니다."}, {"start": 3588.8, "end": 3591.5, "text": "물론 에이전틱 활용의 첫 번째 분야 중 하나는,"}, {"start": 3591.7, "end": 3594.0, "text": "소프트웨어 프로그래밍이기 때문에,"}, {"start": 3594.2, "end": 3595.8, "text": "컴파일러나 파이썬만 있으면 충분합니다."}, {"start": 3596.0, "end": 3599.5, "text": "하지만 미래에 이 도구들이 점점 더 많은 일을 하고,"}, {"start": 3599.7, "end": 3602.8, "text": "더 유용한 업무를 수행하게 됨에 따라 우리는 더 많은 도구를 제공해야 할 것입니다."}, {"start": 3603.0, "end": 3604.5, "text": "여기 몇 가지 사례가 있습니다."}, {"start": 3604.7, "end": 3607.2, "text": "라일라 사이언스(Lila Sciences)는 연구실 어시스턴트를 만들고 있는데요,"}, {"start": 3607.4, "end": 3610.5, "text": "엔비디아의 바이오네모(BioNeMo) 모델들을 사용하고 있습니다."}, {"start": 3610.7, "end": 3614.2, "text": "단백질과 세포를 이해하기 위해 설계된 모델들이며,"}, {"start": 3614.4, "end": 3617.8, "text": "신약 개발 과정에서 단백질과 화학 물질을 생성합니다."}, {"start": 3618.0, "end": 3620.5, "text": "이들은 바이오네모와 쿠다-X 도구들을 활용하고 있습니다."}, {"start": 3620.8, "end": 3623.5, "text": "다음은 지멘스 팩토리가 공장 에이전트를 구축한 사례인데요,"}, {"start": 3623.7, "end": 3626.8, "text": "우리의 월드 파운데이션 모델인 엔비디아 코스모스를 사용하여,"}, {"start": 3627.0, "end": 3630.45, "text": "물리적 세계를 이해하고 쿠다-X 도구들을 구동합니다."}, {"start": 3631.0, "end": 3634.45, "text": "그리고 여기는 다쏘시스템이 버추얼 컴패니언을 만든 사례로,"}, {"start": 3635.0, "end": 3637.5, "text": "우리의 언어 모델인 엔비디아 네모트론과,"}, {"start": 3637.7, "end": 3639.2, "text": "쿠다-X 도구들을 사용합니다."}, {"start": 3639.4, "end": 3641.0, "text": "실제 활용 모습을 함께 보시죠."}, {"start": 3645.0, "end": 3648.5, "text": "가장 뛰어난 과학자에게도 여전히 실험실은 필요합니다."}, {"start": 3649.0, "end": 3652.5, "text": "최고의 엔지니어에게도 여전히 시뮬레이터와 솔버가 필요하죠."}, {"start": 3653.0, "end": 3655.5, "text": "AI 에이전트 역시 다르지 않습니다."}, {"start": 3656.5, "end": 3659.5, "text": "에이전트는 5가지 핵심 구성 요소를 하나로 결합합니다."}, {"start": 3659.7, "end": 3662.5, "text": "모델은 지각하고, 추론하며, 계획을 세웁니다."}, {"start": 3663.0, "end": 3665.2, "text": "하네스는 작업을 조율합니다."}, {"start": 3665.5, "end": 3668.5, "text": "지식 파운데이션은 에이전트에게 맥락을 제공합니다,"}, {"start": 3668.7, "end": 3671.0, "text": "회사의 정형 및 비정형 데이터로부터 말이죠."}, {"start": 3671.2, "end": 3674.65, "text": "도구는 에이전트가 시뮬레이션하고, 실험하며, 행동하게 해줍니다."}, {"start": 3675.2, "end": 3678.65, "text": "엔비디아 오픈쉘은 에이전트가 접근하고 실행할 수 있는 범위를 통제합니다."}, {"start": 3679.5, "end": 3681.8, "text": "프런티어 폐쇄형 모델로 시작하거나,"}, {"start": 3682.0, "end": 3683.8, "text": "오픈 모델을 맞춤화해 보십시오."}, {"start": 3684.2, "end": 3686.2, "text": "엔비디아의 에이전트 툴킷과 함께라면,"}, {"start": 3686.4, "end": 3688.8, "text": "어떤 기업이든 자사의 지식과 전문성을,"}, {"start": 3689.0, "end": 3691.5, "text": "맞춤형 슈퍼 에이전트로 전환할 수 있습니다."}, {"start": 3692.0, "end": 3693.8, "text": "세 가지 사례를 살펴보겠습니다."}, {"start": 3694.2, "end": 3696.8, "text": "라일라 사이언스의 목표는 설계하는 것입니다,"}, {"start": 3697.0, "end": 3699.2, "text": "바로 B세포 림프종 치료제를 말이죠."}, {"start": 3699.8, "end": 3703.0, "text": "엔비디아 네모트론을 기반으로 구축된 라일라 아이리스(Iris) 에이전트는,"}, {"start": 3703.2, "end": 3705.8, "text": "그 목표를 구체적인 실험 계획으로 전환합니다."}, {"start": 3706.2, "end": 3708.5, "text": "컴퓨터 시뮬레이션 기반의 드라이 랩(Dry Lab)에서,"}, {"start": 3708.7, "end": 3711.5, "text": "라일라 에이전트는 엔비디아 바이오네모 에이전트 툴킷을 사용하여,"}, {"start": 3711.7, "end": 3715.15, "text": "단백질 설계와 RNA 최적화 모델들을 호출하고,"}, {"start": 3715.7, "end": 3718.2, "text": "수백만 건의 가상 실험을 실행합니다."}, {"start": 3718.8, "end": 3722.25, "text": "가장 유망한 후보 물질들은 라일라의 AI 사이언스 팩토리로 옮겨지며,"}, {"start": 3723.0, "end": 3725.8, "text": "이곳에서 자율 로봇과 실험 장비들이,"}, {"start": 3726.0, "end": 3728.0, "text": "엔비디아 옴니버스와 코스모스를 통해 개발되어,"}, {"start": 3728.2, "end": 3730.0, "text": "후보 물질을 실제로 합성하고 테스트합니다."}, {"start": 3730.5, "end": 3733.95, "text": "그 결과는 다시 아이리스로 돌아가 다음 설계와 실험을 구체화합니다."}, {"start": 3734.5, "end": 3736.2, "text": "이러한 루프가 끊임없이 이어지죠."}, {"start": 3737.2, "end": 3740.0, "text": "지멘스 에를랑겐 전자 공장의 목표는,"}, {"start": 3740.2, "end": 3742.2, "text": "신제품을 양산 단계로 도입하는 것입니다."}, {"start": 3742.5, "end": 3744.8, "text": "공정 준비 X(Process Preparation X) 에이전트는,"}, {"start": 3745.0, "end": 3746.5, "text": "엔비디아 코스모스를 사용하여,"}, {"start": 3746.7, "end": 3749.5, "text": "가상 프로토타입과 합성 데이터를 생성한 뒤,"}, {"start": 3749.8, "end": 3753.25, "text": "실제 양산이 시작되기 전에 비전 검사 모델을 훈련하고 검증합니다."}, {"start": 3754.5, "end": 3756.8, "text": "인텔리전스 센터 X 에이전트는,"}, {"start": 3757.0, "end": 3759.8, "text": "엔비디아의 공장 운영 블루프린트로 구축되어,"}, {"start": 3760.0, "end": 3762.8, "text": "주문량, 부품 공급 및 라인 설정 데이터를 활용해,"}, {"start": 3763.0, "end": 3764.8, "text": "최적의 생산 계획을 추천합니다."}, {"start": 3765.2, "end": 3768.65, "text": "디지털 트윈 컴포저는 엔비디아 옴니버스 라이브러리를 사용하여,"}, {"start": 3769.0, "end": 3771.8, "text": "물리 시뮬레이션으로 해당 계획들을 검증하고,"}, {"start": 3772.2, "end": 3775.65, "text": "실시간 공장 데이터를 반영한 뒤 실제 공장 현장에 변경 사항을 적용합니다."}, {"start": 3777.5, "end": 3780.2, "text": "다쏘시스템 플랫폼에서는 한 엔지니어가,"}, {"start": 3780.4, "end": 3783.85, "text": "폭스바겐 골프의 도어 설계를 티구안에 맞게 변형해야 합니다."}, {"start": 3784.5, "end": 3787.2, "text": "아우라(Aura)와 레오(Leo)는 엔비디아 네모트론을 사용하여,"}, {"start": 3787.4, "end": 3789.8, "text": "엔지니어링 요구사항을 추론합니다."}, {"start": 3790.2, "end": 3793.2, "text": "하네스는 특화된 하위 에이전트들을 조율하고,"}, {"start": 3793.4, "end": 3796.85, "text": "계획, 설계 및 시뮬레이션 전반에 걸쳐 맥락을 유지합니다."}, {"start": 3797.5, "end": 3800.95, "text": "아우라는 에노비아(ENOVIA)를 사용해 차량 치수를 중심으로 작업을 계획하며,"}, {"start": 3801.8, "end": 3805.2, "text": "중량 제한 및 기타 엔지니어링 요구사항을 반영합니다."}, {"start": 3805.5, "end": 3808.95, "text": "레오 설계 에이전트는 호환 가능한 골프 도어 설계를 선택한 뒤,"}, {"start": 3809.7, "end": 3812.8, "text": "카티아(CATIA)를 사용해 티구안에 맞게 형상을 재구성합니다."}, {"start": 3813.2, "end": 3815.5, "text": "레오 시뮬레이션 에이전트는 시물리아(SIMULIA)를 사용하는데,"}, {"start": 3815.7, "end": 3819.2, "text": "엔비디아 쿠다-X 라이브러리로 가속하여 설계 변형들을 테스트하고,"}, {"start": 3819.4, "end": 3821.5, "text": "진동 문제를 발견해 냅니다."}, {"start": 3822.0, "end": 3825.0, "text": "그 결과는 정교한 수정을 위해 다시 설계 에이전트로 전달됩니다."}, {"start": 3825.5, "end": 3829.0, "text": "엔지니어는 개선된 설계안들을 검토하고 최종안을 선택합니다."}, {"start": 3830.0, "end": 3831.2, "text": "서로 다른 목표,"}, {"start": 3831.4, "end": 3832.8, "text": "서로 다른 전문성이지만,"}, {"start": 3833.0, "end": 3834.8, "text": "핵심 구성 요소는 동일합니다."}, {"start": 3835.0, "end": 3838.2, "text": "오픈 모델, 쿠다-X로 가속된 도구들,"}, {"start": 3838.4, "end": 3841.0, "text": "그리고 오픈쉘 보안 런타임이,"}, {"start": 3841.2, "end": 3844.2, "text": "엔비디아 에이전트 툴킷으로 하나로 결합됩니다."}, {"start": 3846.5, "end": 3848.5, "text": "정말 멋지지 않나요?"}, {"start": 3853.0, "end": 3856.45, "text": "어떤 사람들은 AI가 등장했으니 소프트웨어의 종말이 올 것이라 말했습니다."}, {"start": 3857.0, "end": 3858.8, "text": "도구 기업들의 끝이라고 말이죠."}, {"start": 3859.0, "end": 3860.5, "text": "하지만 정반대입니다!"}, {"start": 3860.7, "end": 3863.8, "text": "AI가 등장함으로써 더 많은 사용자들이,"}, {"start": 3864.0, "end": 3866.2, "text": "우리가 오랜 시간 만들어온 이 도구들을,"}, {"start": 3866.4, "end": 3868.0, "text": "그 어느 때보다 많이 쓰게 될 것입니다."}, {"start": 3868.2, "end": 3871.5, "text": "모든 단일 도구 기업들은 이제 AI 기업이 될 것입니다."}, {"start": 3871.7, "end": 3873.2, "text": "에이전트 기업이 될 것이며,"}, {"start": 3873.4, "end": 3875.2, "text": "단순히 도구만 제공하는 것이 아니라,"}, {"start": 3875.4, "end": 3878.2, "text": "특별히 최적화된 에이전트들,"}, {"start": 3878.4, "end": 3880.8, "text": "즉 자사 도구를 다루는 데 엄청나게 능숙한 에이전트를 함께 제공할 것입니다."}, {"start": 3881.0, "end": 3884.5, "text": "케이던스, 크라우드스트라이크, 다쏘, 아이큐비아(IQVIA),"}, {"start": 3884.7, "end": 3888.15, "text": "그리고 세상의 거의 모든 엔터프라이즈 기업들이 다 함께,"}, {"start": 3888.7, "end": 3890.8, "text": "에이전트를 구축하고 있으며 이들과 협력하게 되어 무척 기쁩니다."}, {"start": 3891.0, "end": 3893.5, "text": "에이전트를 만드는 것은 그리 어렵지 않습니다."}, {"start": 3893.8, "end": 3895.5, "text": "5가지 구성 요소만 있으면 됩니다."}, {"start": 3895.7, "end": 3898.2, "text": "모델과 하네스가 있고,"}, {"start": 3898.4, "end": 3900.8, "text": "둘 다 폐쇄형과 오픈 버전이 존재하며,"}, {"start": 3901.0, "end": 3903.8, "text": "오픈쉘 보안 런타임이 있고,"}, {"start": 3904.0, "end": 3907.0, "text": "가장 중요한 지식과 도구가 있습니다."}, {"start": 3907.2, "end": 3909.2, "text": "그 지식과 도구는 바로 여러분의 것입니다."}, {"start": 3909.4, "end": 3911.0, "text": "여러분의 전문성이죠."}, {"start": 3911.2, "end": 3914.65, "text": "이 모든 것이 이제 가능해졌으며, 잠시 후에 더 보여드리겠습니다."}, {"start": 3916.0, "end": 3919.45, "text": "그전에 피지컬 AI에 대해 이야기해 보죠."}, {"start": 3920.0, "end": 3922.5, "text": "이것이 진정한 AI의 다음 물결입니다."}, {"start": 3922.8, "end": 3925.8, "text": "물리적 세계를 이해하고,"}, {"start": 3926.0, "end": 3927.8, "text": "이에 대해 추론할 수 있는 AI입니다."}, {"start": 3928.0, "end": 3930.0, "text": "왜냐하면 물리적 세계는 다양하고,"}, {"start": 3930.2, "end": 3933.5, "text": "복잡하며, 극도로 긴 롱테일(예외 상황)을 가지고 있기 때문이죠."}, {"start": 3933.8, "end": 3936.2, "text": "따라서 이에 대해 추론하고,"}, {"start": 3936.5, "end": 3939.95, "text": "적절한 도구를 사용하여 물리적 세계와 상호작용해야 합니다."}, {"start": 3941.0, "end": 3944.2, "text": "사람들은 물리적 세계를 생각할 때마다 흔히 로보틱스를 떠올립니다."}, {"start": 3944.5, "end": 3947.95, "text": "사실 제가 가장 좋아하는 물리적 세계의 애플리케이션 중 하나는,"}, {"start": 3948.8, "end": 3952.2, "text": "무선 이동통신 기지국 타워입니다."}, {"start": 3952.5, "end": 3954.5, "text": "그 이유는 이렇습니다."}, {"start": 3954.7, "end": 3957.0, "text": "기지국은 카메라 대신,"}, {"start": 3957.5, "end": 3959.5, "text": "스피커나 마이크 대신,"}, {"start": 3959.7, "end": 3963.2, "text": "전파를 사용하여 세상을 감지합니다."}, {"start": 3963.8, "end": 3966.8, "text": "그리고 정보를 처리해 추론한 다음,"}, {"start": 3967.0, "end": 3969.2, "text": "세상과 상호작용하는데요,"}, {"start": 3969.4, "end": 3971.0, "text": "바로 빔포밍(Beamforming)을 사용합니다."}, {"start": 3971.2, "end": 3973.5, "text": "따라서 사실상 이것은,"}, {"start": 3973.7, "end": 3975.8, "text": "하나의 애플리케이션이자 기술로서,"}, {"start": 3976.0, "end": 3978.8, "text": "AI에 완벽하게 부합하는 분야입니다."}, {"start": 3979.0, "end": 3982.45, "text": "AI는 우리가 통신을 수행하는 방식을 혁명적으로 바꿀 것이며,"}, {"start": 3983.0, "end": 3986.5, "text": "주파수 효율성을 엄청나게 향상시킬 것입니다."}, {"start": 3986.7, "end": 3989.0, "text": "우리가 레이 트레이싱에서 해냈던 것과 똑같이 말이죠."}, {"start": 3989.2, "end": 3992.65, "text": "여러분이 보신 모든 그래픽은 100% 레이 트레이싱된 것인데,"}, {"start": 3993.0, "end": 3995.8, "text": "과거에 필요하다고 생각했던 연산량과,"}, {"start": 3996.0, "end": 3998.2, "text": "지금 AI를 적용했을 때의 연산량은,"}, {"start": 3998.4, "end": 4000.2, "text": "무려 100만 대 1의 차이가 납니다."}, {"start": 4000.5, "end": 4003.8, "text": "마찬가지로 우리는 통신 네트워크에,"}, {"start": 4004.0, "end": 4007.5, "text": "주파수 효율성의 거대한 도약을 가져올 것입니다."}, {"start": 4007.8, "end": 4011.25, "text": "하지만 그 이상으로 우리는 이 모든 기지국 타워들을 혁신할 것입니다."}, {"start": 4012.0, "end": 4015.5, "text": "서구권 전역에 약 10만 개의 사이트가 있고,"}, {"start": 4015.7, "end": 4019.2, "text": "약 100기가와트 규모의 분산 데이터센터에 해당하는데,"}, {"start": 4019.5, "end": 4021.8, "text": "이는 장차 미래에 거듭날 것입니다,"}, {"start": 4022.0, "end": 4024.2, "text": "바로 분산형 AI 인프라로 말이죠."}, {"start": 4024.5, "end": 4027.8, "text": "이곳 유럽의 많은 기업들과 파트너십을 맺게 되어 기쁘며,"}, {"start": 4028.0, "end": 4030.0, "text": "바로 지난주에,"}, {"start": 4030.2, "end": 4032.8, "text": "거의 8년 동안 이 기술을 연구한 끝에,"}, {"start": 4033.0, "end": 4036.5, "text": "엔비디아는 최초의 상용 전화 통화에 성공했습니다,"}, {"start": 4036.7, "end": 4039.2, "text": "노키아와 함께 T-모바일 네트워크 상에서 말이죠."}, {"start": 4039.5, "end": 4042.2, "text": "이제 쿠다가 전화를 걸 수 있게 된 것입니다,"}, {"start": 4042.4, "end": 4044.2, "text": "기존의 방식대로요."}, {"start": 4044.5, "end": 4046.2, "text": "일단 그것이 가능해지면,"}, {"start": 4046.4, "end": 4048.2, "text": "그 위에 AI 계층을 얹을 수 있습니다."}, {"start": 4048.4, "end": 4050.0, "text": "이제 진정한 혁명이 시작될 것입니다."}, {"start": 4050.2, "end": 4052.2, "text": "우리에게는 정말 흥미진진한 기회입니다."}, {"start": 4052.5, "end": 4054.8, "text": "또 다른 피지컬 AI 애플리케이션으로,"}, {"start": 4055.0, "end": 4057.0, "text": "제가 엄청나게 기대하고 있는 분야는,"}, {"start": 4057.2, "end": 4060.2, "text": "본질적으로 로봇 방사선 치료입니다."}, {"start": 4060.5, "end": 4063.5, "text": "종양은 모양이 계속 변하고,"}, {"start": 4063.7, "end": 4067.0, "text": "치료를 받는 동안 환자의 신체도 계속 움직입니다."}, {"start": 4067.5, "end": 4070.95, "text": "이 적응형 로봇 방사선 치료 시스템은,"}, {"start": 4071.7, "end": 4074.5, "text": "변화하는 환경을 실시간으로 지각하고,"}, {"start": 4074.7, "end": 4076.8, "text": "종양이 어디에 있는지 파악하여,"}, {"start": 4077.0, "end": 4079.0, "text": "완벽하게 영역을 분할(Segment)한 뒤,"}, {"start": 4079.2, "end": 4082.5, "text": "그에 맞춰 방사선 치료를 정밀하게 조준합니다."}, {"start": 4082.7, "end": 4085.5, "text": "본질적으로 로봇 수술의 일종입니다, 네, 박수 부탁드립니다."}, {"start": 4091.5, "end": 4094.2, "text": "이것은 로봇 수술의 한 형태입니다."}, {"start": 4095.0, "end": 4098.5, "text": "물론 가장 규모가 크고 가장 가까운 시일 내에 실현될,"}, {"start": 4098.7, "end": 4102.2, "text": "모두가 인정하는 로보틱스 및 피지컬 AI 애플리케이션은,"}, {"start": 4102.4, "end": 4105.2, "text": "우리가 10년 넘게 매진해 온 분야입니다."}, {"start": 4105.5, "end": 4108.5, "text": "그리고 이제 우리는 인식하고 있습니다,"}, {"start": 4108.7, "end": 4112.15, "text": "모든 단일 자동차 기업들이 자사의 차량을,"}, {"start": 4112.7, "end": 4115.8, "text": "차량 호출(Ride-hailing) 플릿의 일부로 만들고 싶어 한다는 것을요."}, {"start": 4116.0, "end": 4118.2, "text": "오늘날에도 차량 호출 서비스가 있죠,"}, {"start": 4118.4, "end": 4121.5, "text": "우버가 있고, 이곳 유럽에는,"}, {"start": 4121.7, "end": 4125.2, "text": "볼트(Bolt)가 있으며, 그랩이나 리프트 등,"}, {"start": 4125.4, "end": 4128.0, "text": "다양한 차량 호출 서비스들이 존재합니다."}, {"start": 4128.2, "end": 4131.0, "text": "미래에는 로보택시들이 등장하여,"}, {"start": 4131.2, "end": 4134.5, "text": "그러한 차량 호출 서비스에 똑같이 연결될 것입니다."}, {"start": 4134.8, "end": 4137.0, "text": "하지만 단 하나의 브랜드로만 이루어지지는 않을 것입니다."}, {"start": 4137.8, "end": 4140.5, "text": "우리는 이러한 시스템을 구축하는 것이,"}, {"start": 4140.7, "end": 4144.2, "text": "엄청나게 많은 비용이 든다는 것을 깨달았습니다, 특히 그 위에 올라가는 소프트웨어 말이죠."}, {"start": 4145.0, "end": 4148.5, "text": "그래서 우리는 하나의 표준 아키텍처를 만들기로 결정했습니다."}, {"start": 4150.0, "end": 4152.0, "text": "14개의 서로 다른 카메라와,"}, {"start": 4152.2, "end": 4155.2, "text": "9개의 레이더 시스템, 3개의 라이다,"}, {"start": 4155.4, "end": 4157.2, "text": "수많은 초음파 센서들이,"}, {"start": 4157.4, "end": 4160.8, "text": "센서들로 이루어진 보호 고치(Cocoon)를 형성하고,"}, {"start": 4161.0, "end": 4164.2, "text": "듀얼 엔비디아 GPU 시스템으로 구동되어,"}, {"start": 4164.4, "end": 4166.8, "text": "자율주행(AV) 컴퓨팅 시스템을 이룹니다."}, {"start": 4167.2, "end": 4169.8, "text": "우리는 이를 산업 표준으로 만들었으며,"}, {"start": 4170.0, "end": 4173.45, "text": "이제 수많은 자동차 플릿에 잇달아 설계 반영되고 있습니다."}, {"start": 4174.2, "end": 4177.5, "text": "그 위에는 자율주행 소프트웨어 기업들이 올라가는데,"}, {"start": 4177.7, "end": 4180.2, "text": "사실 우리 역시 그중 하나로서,"}, {"start": 4180.4, "end": 4183.85, "text": "자율주행 로보택시 역량을 구축하고 있으며,"}, {"start": 4184.2, "end": 4187.65, "text": "이는 다시 차량 호출 서비스로 연결됩니다."}, {"start": 4188.2, "end": 4190.5, "text": "이러한 생태계가 현재 구축되고 있습니다."}, {"start": 4190.8, "end": 4194.2, "text": "전 세계는 연간 약 1조 마일을 이동하는데요,"}, {"start": 4194.5, "end": 4197.95, "text": "미래에는 그중 상당수 마일이 마일당 1~2달러 수준으로,"}, {"start": 4198.4, "end": 4201.85, "text": "로보택시를 통해 이루어질 것입니다."}, {"start": 4202.2, "end": 4204.8, "text": "따라서 이것은 하나의 거대한 기회이지만,"}, {"start": 4205.0, "end": 4207.2, "text": "극도로 파편화되어 있습니다."}, {"start": 4207.5, "end": 4210.5, "text": "그래서 산업 표준인 하이페리온(Hyperion)을 만들고,"}, {"start": 4210.7, "end": 4213.0, "text": "전체 생태계와 협력함으로써,"}, {"start": 4213.2, "end": 4215.8, "text": "본질적으로 하나의 거대한 가상 플릿을 구축하여,"}, {"start": 4216.0, "end": 4218.0, "text": "모두가 연결될 수 있게 한 것입니다."}, {"start": 4218.8, "end": 4221.5, "text": "오늘 정말 자랑스럽게 발표합니다,"}, {"start": 4221.7, "end": 4225.15, "text": "4개의 브랜드, 4개의 차량 라인업이 추가로 합류합니다."}, {"start": 4226.0, "end": 4228.0, "text": "폭스바겐 밴(VW Van),"}, {"start": 4228.2, "end": 4231.0, "text": "이보다 더 상징적인 차량은 상상하기조차 힘들죠,"}, {"start": 4231.2, "end": 4233.5, "text": "재규어 랜드로버(JLR)의 신차,"}, {"start": 4234.2, "end": 4236.2, "text": "볼보 플릿,"}, {"start": 4236.4, "end": 4238.8, "text": "그리고 메르세데스의 차세대 차량까지,"}, {"start": 4239.0, "end": 4241.2, "text": "모두 하이페리온 호환 시스템을 갖추고,"}, {"start": 4241.4, "end": 4244.0, "text": "이 네트워크의 일원이 될 것입니다,"}, {"start": 4244.2, "end": 4246.5, "text": "바로 이 차량 호출 네트워크 로보택시 플릿 말이죠."}, {"start": 4246.8, "end": 4248.5, "text": "하이페리온에 오신 것을 환영합니다!"}, {"start": 4254.5, "end": 4257.8, "text": "다음 주요 산업은,"}, {"start": 4258.0, "end": 4261.5, "text": "다음 위대한 산업이자 엄청나게 거대해질 분야는,"}, {"start": 4261.7, "end": 4264.0, "text": "바로 휴머노이드 로보틱스입니다."}, {"start": 4264.2, "end": 4266.8, "text": "로보틱스가 구현하기 어려운 데에는 이유가 있습니다."}, {"start": 4267.0, "end": 4270.5, "text": "수행해야 할 온갖 작업들이 저마다 무척 다양하기 때문입니다."}, {"start": 4271.0, "end": 4273.8, "text": "특수한 형태(Configuration)를 만들다 보면,"}, {"start": 4274.0, "end": 4276.5, "text": "그 다양한 작업 하나하나마다 말이죠,"}, {"start": 4276.7, "end": 4280.15, "text": "로보틱스 산업이 온갖 상이한 형태들로 조각조각 쪼개지게 됩니다."}, {"start": 4281.2, "end": 4284.2, "text": "이는 기술의 선순환 플라이휠이 작동하는 것을 가로막습니다."}, {"start": 4284.5, "end": 4286.8, "text": "휴대전화가 그토록 빠르게 발전한 이유,"}, {"start": 4287.0, "end": 4289.5, "text": "개인용 컴퓨터가 그토록 빠르게 발전한 이유,"}, {"start": 4289.7, "end": 4293.15, "text": "엔비디아의 NV링크 72가 그토록 빠르게 발전한 이유는,"}, {"start": 4293.7, "end": 4295.8, "text": "그러한 표준화된 구성 덕분에,"}, {"start": 4296.0, "end": 4298.2, "text": "수많은 고객이 이를 사용할 수 있었고,"}, {"start": 4298.4, "end": 4301.2, "text": "그로 인해 물량 규모가 확보되었으며,"}, {"start": 4301.4, "end": 4304.0, "text": "그 물량이 기술 플라이휠을 돌려서,"}, {"start": 4304.2, "end": 4307.5, "text": "놀라울 정도로 빠르게 더 빠르고 더 훌륭해졌기 때문입니다."}, {"start": 4308.0, "end": 4311.5, "text": "따라서 우리에게는 로봇 구성 형태가 필요한데,"}, {"start": 4311.7, "end": 4314.2, "text": "가능한 한 가장 표준화된 형태여야 합니다."}, {"start": 4315.0, "end": 4318.2, "text": "휴머노이드 로보틱스는 분명 그런 잠재력을 가지고 있습니다."}, {"start": 4318.4, "end": 4320.8, "text": "모든 작업에 100% 완벽하지는 않겠지만,"}, {"start": 4321.0, "end": 4322.8, "text": "수많은 작업에 두루 적용될 수 있으며,"}, {"start": 4323.0, "end": 4325.5, "text": "그 결과 가장 큰 물량을 차지하는,"}, {"start": 4325.7, "end": 4328.0, "text": "로보틱스 구성 형태가 될 가능성이 높습니다."}, {"start": 4328.5, "end": 4330.8, "text": "여기에 우리가 AI만 만들어낸다면,"}, {"start": 4331.0, "end": 4333.0, "text": "로봇이 아주 빠르게 학습할 수 있게 해주는 AI 말이죠,"}, {"start": 4333.2, "end": 4336.2, "text": "중소·중견기업들의 경우,"}, {"start": 4336.4, "end": 4339.85, "text": "로봇을 가르치고 프로그래밍할 전담 로보틱스 팀이 없더라도,"}, {"start": 4340.5, "end": 4343.8, "text": "이제 로봇에게 해야 할 일을 직접 보여주기만 하면 됩니다."}, {"start": 4344.0, "end": 4347.5, "text": "그러면 로봇은 범용 역량과 범용 지능을 갖추고 있기 때문에,"}, {"start": 4347.7, "end": 4350.2, "text": "빠르게 학습하고 적응할 수 있을 것입니다."}, {"start": 4350.5, "end": 4353.2, "text": "따라서 이 분야가 바로,"}, {"start": 4353.4, "end": 4356.2, "text": "다음 주요 기술 플랫폼이 될 가능성이 매우 높습니다."}, {"start": 4356.5, "end": 4358.5, "text": "우리는 수많은 기업들과 협력하고 있으며,"}, {"start": 4358.7, "end": 4360.2, "text": "이곳 유럽의 많은 기업들도 알아보실 수 있을 겁니다."}, {"start": 4360.5, "end": 4362.8, "text": "이것은 여러분에게 찾아온 위대한 기회입니다."}, {"start": 4363.5, "end": 4366.95, "text": "그 어떤 나라, 그 어떤 지역도 이만큼 헌신한 곳은 없습니다,"}, {"start": 4367.7, "end": 4371.15, "text": "메카트로닉스와 전자공학, 기계 시스템을 만드는 데 있어서,"}, {"start": 4372.0, "end": 4375.45, "text": "유럽 지역만큼 정밀함과 장인정신의 경지에 오른 곳은 없죠."}, {"start": 4376.5, "end": 4379.8, "text": "이곳의 수많은 기업들은 제조 분야에서 타의 추종을 불허합니다."}, {"start": 4380.0, "end": 4383.2, "text": "이 분야가 바로 다음 대규모 양산 산업이 될 것이며,"}, {"start": 4383.4, "end": 4386.2, "text": "보시다시피 이미 수많은 기업들이 참여하고 있습니다."}, {"start": 4386.4, "end": 4389.0, "text": "여러분과 파트너가 되어 정말 기쁩니다."}, {"start": 4397.2, "end": 4399.8, "text": "자, 이제 구축하기 위해서는,"}, {"start": 4400.0, "end": 4402.2, "text": "피지컬 AI 시스템을 구축하려면,"}, {"start": 4402.5, "end": 4404.8, "text": "세 가지 컴퓨터가 필요합니다."}, {"start": 4405.2, "end": 4408.5, "text": "첫 번째 컴퓨터는 우리가 계속 이야기해 왔고 모두가 잘 아는 것,"}, {"start": 4408.7, "end": 4410.8, "text": "바로 AI 모델을 훈련하는 컴퓨터입니다."}, {"start": 4411.2, "end": 4413.2, "text": "두 번째 컴퓨터는,"}, {"start": 4413.4, "end": 4416.8, "text": "AI가 자신의 기술(Skill)을 수행하는 법을 학습하는 곳입니다."}, {"start": 4417.2, "end": 4419.8, "text": "AI를 프로그래밍하자마자 곧바로,"}, {"start": 4420.0, "end": 4423.45, "text": "물리적 세계로 내보내서 마음대로 움직여보라고 할 수는 없습니다."}, {"start": 4424.2, "end": 4426.8, "text": "반드시 디지털 트윈 안에서 먼저 수행해야 합니다."}, {"start": 4427.2, "end": 4430.2, "text": "우리는 옴니버스라는 디지털 트윈을 만들었으며,"}, {"start": 4430.4, "end": 4432.8, "text": "우리가 이에 대해 반복해서 이야기하는 것을 보셨을 겁니다."}, {"start": 4433.0, "end": 4436.45, "text": "실제로 방금 전 모든 쿠다-X 라이브러리를 보셨을 때도,"}, {"start": 4437.0, "end": 4440.2, "text": "그 모든 것이 디지털 트윈 세계 안에서 이루어지고 있었습니다."}, {"start": 4440.4, "end": 4442.0, "text": "그 디지털 트윈 세계가 바로 옴니버스입니다."}, {"start": 4442.2, "end": 4445.5, "text": "옴니버스는 온갖 플랫폼과 도구들에 연결된 라이브러리입니다."}, {"start": 4445.7, "end": 4449.2, "text": "지멘스, 다쏘, 케이던스 등 수많은 곳에 연결되어 있죠."}, {"start": 4449.5, "end": 4452.95, "text": "이처럼 디지털 트윈 시스템들이 구축되는 모습을 보실 수 있습니다."}, {"start": 4453.5, "end": 4455.0, "text": "이것이 두 번째 컴퓨터입니다."}, {"start": 4455.5, "end": 4459.0, "text": "세 번째 컴퓨터는 로보틱스 컴퓨터입니다."}, {"start": 4459.5, "end": 4461.8, "text": "그 컴퓨터는 자율주행차나,"}, {"start": 4462.0, "end": 4463.8, "text": "로보택시의 경우,"}, {"start": 4464.0, "end": 4466.0, "text": "우리가 하이페리온이라고 부릅니다."}, {"start": 4466.2, "end": 4469.5, "text": "하이페리온은 컴퓨터 자체와,"}, {"start": 4469.7, "end": 4473.15, "text": "기능 안전 시스템, 능동 안전 시스템,"}, {"start": 4473.8, "end": 4476.0, "text": "그리고 운영체제로 구성되는데,"}, {"start": 4476.2, "end": 4478.2, "text": "피지컬 AI 안전을 위해 설계된 운영체제입니다."}, {"start": 4478.8, "end": 4482.25, "text": "우리는 로보틱스 시스템에 대해서도 정확히 똑같은 작업을 해내야 합니다."}, {"start": 4483.0, "end": 4486.2, "text": "그리하여 여러분이 연구를 시작하고,"}, {"start": 4486.4, "end": 4488.5, "text": "자체 로보틱스 시스템을 개발하기 시작할 때마다,"}, {"start": 4488.7, "end": 4491.5, "text": "맨바닥부터 시작해 얼기설기 짜맞추느라,"}, {"start": 4491.7, "end": 4494.2, "text": "모든 소프트웨어와 컴퓨팅 시스템,"}, {"start": 4494.4, "end": 4496.2, "text": "센서들과 모든 기계 시스템들을 일일이 결합할 필요가 없게 하는 것이죠."}, {"start": 4496.4, "end": 4498.8, "text": "그 작업만 해도 수년이 걸릴 테니까요."}, {"start": 4499.2, "end": 4502.65, "text": "그래서 우리는 레퍼런스 로봇을 만들기로 결정했습니다."}, {"start": 4503.2, "end": 4505.5, "text": "바로 엔비디아 애자일 원(Agile ONE)으로,"}, {"start": 4505.7, "end": 4507.8, "text": "애자일 로보틱스와의 파트너십으로 탄생했습니다."}, {"start": 4508.0, "end": 4510.5, "text": "이 로봇은 앞으로,"}, {"start": 4516.0, "end": 4519.45, "text": "내년 1분기에 출시될 예정입니다."}, {"start": 4520.2, "end": 4522.8, "text": "내부에 컴퓨터가 탑재되어 사전 조립된 상태로 제공되며,"}, {"start": 4523.0, "end": 4525.0, "text": "소프트웨어가 통합되어 있어서,"}, {"start": 4525.2, "end": 4528.65, "text": "개봉 즉시 꽤 훌륭한 성능을 발휘할 수 있을 것입니다."}, {"start": 4529.5, "end": 4531.8, "text": "따라서 이것은 훌륭한 출발점이 될 것이며,"}, {"start": 4532.0, "end": 4535.0, "text": "로보틱스 개발을 가속화하는 플라이휠이 될 것입니다."}, {"start": 4536.2, "end": 4539.65, "text": "자, 이제 오늘 연설을 마무리하면서,"}, {"start": 4540.0, "end": 4541.8, "text": "우리가 처음 시작했던 곳에서부터 이야기해 보겠습니다."}, {"start": 4542.0, "end": 4544.0, "text": "엔비디아는 PC 혁명에서 시작했습니다."}, {"start": 4544.2, "end": 4546.2, "text": "때는 1993년이었고,"}, {"start": 4546.4, "end": 4549.0, "text": "PC 혁명이 막 시작되려던 참이었습니다."}, {"start": 4549.2, "end": 4552.0, "text": "기억하시겠지만 윈도우 95가 그 흐름에 터보차저를 달아주었죠."}, {"start": 4552.8, "end": 4555.5, "text": "그 이후로 우리는 GPU를 발명했고,"}, {"start": 4555.7, "end": 4559.15, "text": "프로그래밍 가능한 셰이딩과 실시간 레이 트레이싱을 선보였으며,"}, {"start": 4559.7, "end": 4562.0, "text": "컴퓨팅 모델에 쿠다를 추가하여,"}, {"start": 4562.2, "end": 4565.2, "text": "현대 AI 혁명에 불을 지피는 데 기여했습니다."}, {"start": 4566.2, "end": 4569.65, "text": "그리고 4년 전, 우리는 고민하기 시작했습니다,"}, {"start": 4570.0, "end": 4573.45, "text": "이 새로운 시대를 맞아 개인용 컴퓨터를 재구상하려면 무엇을 할 수 있을까 하고 말이죠."}, {"start": 4574.0, "end": 4576.4, "text": "개인용 컴퓨터가 단순히 여러분의 도구,"}, {"start": 4576.6, "end": 4578.8, "text": "즉 개인용 컴퓨터 도구에 그치는 것이 아니라,"}, {"start": 4579.0, "end": 4581.5, "text": "여러분의 개인 에이전트,"}, {"start": 4581.7, "end": 4583.8, "text": "즉 개인 비서가 되는 것입니다."}, {"start": 4584.2, "end": 4586.8, "text": "그리고 이 컴퓨터와 상호작용하는 방식은,"}, {"start": 4587.0, "end": 4589.8, "text": "본질적으로 동반자(Companion)가 되어,"}, {"start": 4590.0, "end": 4593.2, "text": "여러분이 일하는 것을 도와주는 존재가 되는 것입니다."}, {"start": 4594.0, "end": 4596.6, "text": "그러려면 이 컴퓨터에는 들어가야 합니다,"}, {"start": 4596.8, "end": 4599.2, "text": "제가 오늘 말씀드린 5가지 요소가 정확히 다 있어야 하죠."}, {"start": 4600.2, "end": 4602.5, "text": "모델이 있어야 하는데, 로컬에서 실행될 수도 있고,"}, {"start": 4602.7, "end": 4604.8, "text": "클라우드에서 실행될 수도 있습니다."}, {"start": 4605.0, "end": 4606.8, "text": "하네스가 필요하고,"}, {"start": 4607.0, "end": 4610.5, "text": "보안 런타임인 오픈쉘이 필요하며,"}, {"start": 4610.7, "end": 4614.15, "text": "여러분의 PC에 상주하기 때문에 접근 권한이 필요합니다,"}, {"start": 4614.7, "end": 4617.0, "text": "바로 지식과 도구에 대한 접근 권한 말이죠."}, {"start": 4617.5, "end": 4620.0, "text": "좋은 소식은 엔비디아가 가속해 왔다는 점입니다,"}, {"start": 4620.2, "end": 4622.5, "text": "아주 오랫동안 도구들을 가속해 왔죠."}, {"start": 4622.8, "end": 4625.2, "text": "우리가 컴퓨터를 하나 만들어서,"}, {"start": 4625.4, "end": 4628.5, "text": "OpenGL과 DirectX를 가속할 수 있고,"}, {"start": 4628.7, "end": 4631.8, "text": "쿠다의 모든 것과 엔비디아가 그동안 개발한 모든 것이,"}, {"start": 4632.0, "end": 4634.0, "text": "이 컴퓨터 위에서 돌아가게만 할 수 있다면 어떨까요?"}, {"start": 4634.2, "end": 4635.5, "text": "바로 이것입니다!"}, {"start": 4635.7, "end": 4638.0, "text": "마이크로소프트와 4년간의 파트너십 끝에,"}, {"start": 4638.2, "end": 4640.2, "text": "우리는 RTX 스파크(Spark)를 탄생시켰습니다."}, {"start": 4640.4, "end": 4643.0, "text": "이것은 완전히 새로운 컴퓨터 라인업입니다."}, {"start": 4643.2, "end": 4646.65, "text": "말 그대로 수천 년의 엔지니어링 시간이 여기에 투입되었습니다."}, {"start": 4647.2, "end": 4649.8, "text": "우리는 4년 동안 비밀리에 이를 개발해 왔으며,"}, {"start": 4650.0, "end": 4652.8, "text": "N1X라는 칩을 만들어냈고,"}, {"start": 4653.0, "end": 4655.2, "text": "그리고 최근 이를 공식 발표했습니다,"}, {"start": 4655.4, "end": 4657.5, "text": "전체 PC 산업계와 힘을 합쳐서 말이죠."}, {"start": 4658.0, "end": 4660.2, "text": "우리는 데스크톱과 노트북,"}, {"start": 4660.4, "end": 4662.5, "text": "그리고 워크스테이션을 만들었습니다."}, {"start": 4662.8, "end": 4665.0, "text": "이 작은 장치가 무려 1페타플롭스입니다."}, {"start": 4665.2, "end": 4667.5, "text": "1페타플롭스가 어느 정도인지 체감하실 수 있게 말씀드리면,"}, {"start": 4667.7, "end": 4671.15, "text": "2016년에 저는 1페타플롭스의 연산 성능과,"}, {"start": 4672.0, "end": 4674.8, "text": "128기가바이트의 메모리를 갖춘,"}, {"start": 4675.0, "end": 4677.8, "text": "1페타플롭스와 128기가바이트 시스템을,"}, {"start": 4678.0, "end": 4680.8, "text": "오픈AI라는 한 작은 회사에 전달했었습니다."}, {"start": 4681.2, "end": 4683.5, "text": "그런데 지금 제 손에 들린 이것이 바로 1페타플롭스이자,"}, {"start": 4683.7, "end": 4686.0, "text": "128기가바이트입니다."}, {"start": 4694.2, "end": 4696.5, "text": "물론 유일한 차이점이라면,"}, {"start": 4696.7, "end": 4698.5, "text": "이것은 제가 이렇게 한 손으로 들 수 있는 반면,"}, {"start": 4698.7, "end": 4701.8, "text": "DGX-1은 두 사람이 낑낑대며 계단 위로 날라야 했다는 점이죠."}, {"start": 4702.2, "end": 4705.2, "text": "이것이 바로 완전히 새로운 RTX 스파크 PC입니다."}, {"start": 4705.5, "end": 4708.2, "text": "그리고 만약 여러분이 컴패니언 워크스테이션을 원하신다면,"}, {"start": 4708.4, "end": 4711.8, "text": "카티아와 다쏘의 모든 소프트웨어,"}, {"start": 4712.0, "end": 4714.2, "text": "오토데스크와 어도비,"}, {"start": 4714.4, "end": 4716.8, "text": "케이던스와 시놉시스를 모두 돌릴 수 있는,"}, {"start": 4717.0, "end": 4719.2, "text": "직접 장만하실 수도 있습니다,"}, {"start": 4719.4, "end": 4721.5, "text": "윈도우를 구동하는 DGX 스테이션을 말이죠."}, {"start": 4722.0, "end": 4724.5, "text": "이 시스템은 20페타플롭스의 성능과,"}, {"start": 4724.7, "end": 4726.8, "text": "그리고 754기가바이트의,"}, {"start": 4727.0, "end": 4729.0, "text": "메모리를 갖추고 있습니다."}, {"start": 4729.5, "end": 4731.0, "text": "실로 경이롭죠."}, {"start": 4731.2, "end": 4733.5, "text": "그리고 물론 데스크톱 버전도 있습니다."}, {"start": 4733.8, "end": 4736.8, "text": "이 모든 제품들은 현재 출시되어 있으며,"}, {"start": 4737.0, "end": 4739.5, "text": "그리고 RTX 스파크 기반의 DGX 스테이션,"}, {"start": 4739.7, "end": 4741.8, "text": "즉 DGX 스파크 기술이 들어간 모델,"}, {"start": 4742.0, "end": 4745.0, "text": "즉 윈도우 기반 DGX 스테이션은 올해 말에 출시될 예정입니다."}, {"start": 4745.2, "end": 4747.2, "text": "자, 이제 질문은 이것입니다."}, {"start": 4747.5, "end": 4750.8, "text": "지금까지 저는 에이전트의 5가지 구성 요소에 대해 말씀드렸는데요,"}, {"start": 4751.2, "end": 4753.8, "text": "그렇다면 과연 그것을 어떻게 만들까요?"}, {"start": 4754.0, "end": 4756.0, "text": "에이전트는 어떻게 구축하는 걸까요?"}, {"start": 4756.2, "end": 4758.8, "text": "저러한 컴퓨터 위에서 돌아가거나 클라우드에서 돌아가고,"}, {"start": 4759.0, "end": 4761.2, "text": "혹은 온프레미스 어딘가에서 실행되는 에이전트 말이죠."}, {"start": 4761.8, "end": 4764.8, "text": "정답은 정말이지 아주 쉽습니다, 바로 이렇게 하시면 됩니다."}, {"start": 4765.2, "end": 4767.2, "text": "에이전트를 만드는 방법은,"}, {"start": 4767.4, "end": 4770.2, "text": "에이전트에게 대신 만들어 달라고 요청하는 것입니다."}, {"start": 4778.2, "end": 4781.5, "text": "자, 바로 이것이 그 프롬프트인데요,"}, {"start": 4782.0, "end": 4784.4, "text": "바로 앞으로 실행할 프롬프트입니다,"}, {"start": 4784.6, "end": 4786.8, "text": "다음 애플리케이션을 구동할 프롬프트이죠."}, {"start": 4787.0, "end": 4790.45, "text": "지금부터 여러분이 보시게 될 것은 로보틱스 애플리케이션입니다."}, {"start": 4791.2, "end": 4794.2, "text": "이 데모를 보시는 동안 꼭 기억해 주십시오,"}, {"start": 4794.4, "end": 4797.5, "text": "이 개인용 컴퓨터 위에서 에이전트가 실행되고 있으며,"}, {"start": 4798.2, "end": 4801.65, "text": "이 데모는 세 대의 컴퓨터에 걸쳐 구동됩니다."}, {"start": 4802.0, "end": 4804.2, "text": "첫 번째 컴퓨터는 훈련용이고,"}, {"start": 4804.4, "end": 4806.5, "text": "두 번째는 디지털 트윈이며,"}, {"start": 4807.0, "end": 4810.2, "text": "세 번째는 그렇게 만들어진 AI를,"}, {"start": 4810.4, "end": 4813.0, "text": "로봇 컴퓨터 자체에 탑재하는 것입니다."}, {"start": 4813.5, "end": 4816.2, "text": "자, 두 가지 핵심 아이디어입니다."}, {"start": 4816.4, "end": 4819.8, "text": "첫 번째 아이디어는 에이전트를 어떻게 만들고 실행하며,"}, {"start": 4820.0, "end": 4822.2, "text": "무엇을 하는 데 쓸 수 있는가이고,"}, {"start": 4822.8, "end": 4826.25, "text": "두 번째는 세 대의 컴퓨터로 구성되는,"}, {"start": 4827.0, "end": 4829.5, "text": "피지컬 AI 컴퓨팅 모델입니다, 함께 보시죠."}, {"start": 4840.2, "end": 4843.5, "text": "허깅페이스의 로봇인 마이크로덕(MicroDuck)을 만나보십시오."}, {"start": 4843.8, "end": 4847.25, "text": "엔비디아 RTX 스파크로 이 로봇에게 보고 걷는 법을 가르쳐 보겠습니다."}, {"start": 4850.0, "end": 4852.2, "text": "에이전트 하네스로는 헤르메스(Hermes)를 사용하고,"}, {"start": 4852.5, "end": 4855.95, "text": "모델로는 네모트론과 오픈AI의 GPT-6 아스트라(Astra)를 사용하며,"}, {"start": 4856.5, "end": 4859.8, "text": "쿠다-X로 가속된 도구들인 프리캐드(FreeCAD), 블렌더(Blender),"}, {"start": 4860.0, "end": 4863.2, "text": "아이작 심(Isaac Sim), 뉴턴 물리 엔진, 그리고 아이작 랩을 활용합니다."}, {"start": 4863.5, "end": 4865.8, "text": "모든 작업은 제 RTX 스파크에서 실행하되,"}, {"start": 4866.0, "end": 4868.5, "text": "대규모 워크로드가 필요할 때만 클라우드로 확장(Burst)합니다."}, {"start": 4869.2, "end": 4872.65, "text": "먼저, 장애물 코스와 마이크로덕이 배워야 할 내용을 설명합니다."}, {"start": 4874.2, "end": 4877.5, "text": "RTX 스파크에서 헤르메스와 네모트론이 코스를 계획하고,"}, {"start": 4877.7, "end": 4880.2, "text": "필요한 모든 오브젝트 목록을 작성합니다."}, {"start": 4883.0, "end": 4885.2, "text": "그다음부터는 아스트라가 이어받아,"}, {"start": 4885.4, "end": 4888.2, "text": "프리캐드를 사용해 3D 오브젝트를 모델링하고,"}, {"start": 4888.8, "end": 4891.8, "text": "블렌더를 사용해 재질을 입히며,"}, {"start": 4893.0, "end": 4896.45, "text": "옴니버스 심레디(SimReady) 라이브러리로 물리적 속성을 추가합니다."}, {"start": 4898.0, "end": 4901.2, "text": "아이작 심에서 아스트라가 전체 장면을 구성합니다."}, {"start": 4905.0, "end": 4908.45, "text": "아스트라는 마이크로덕의 관절과 액추에이터, 링크를 리깅하고,"}, {"start": 4911.5, "end": 4914.95, "text": "뉴턴 물리 엔진으로 마이크로덕이 어떻게 움직이는지 시뮬레이션합니다."}, {"start": 4917.8, "end": 4920.0, "text": "이제 훈련이 시작됩니다."}, {"start": 4921.0, "end": 4923.2, "text": "클라우드에서 수천 마리의 마이크로덕이,"}, {"start": 4923.4, "end": 4925.5, "text": "아이작 랩에서 병렬로 훈련합니다."}, {"start": 4930.5, "end": 4933.0, "text": "넘어질 때마다 하나씩 교훈을 얻으며,"}, {"start": 4936.0, "end": 4938.8, "text": "매 순간 행동 정책(Policy)을 개선해 나갑니다."}, {"start": 4939.5, "end": 4942.8, "text": "옴니버스 라이브러리는 마이크로덕의 카메라를 시뮬레이션하여,"}, {"start": 4943.0, "end": 4944.8, "text": "사물을 보는 법을 가르칩니다."}, {"start": 4945.2, "end": 4947.8, "text": "지각 능력과 물리 법칙이 함께 작동함에 따라,"}, {"start": 4948.0, "end": 4950.2, "text": "마이크로덕은 장애물을 피하고,"}, {"start": 4950.4, "end": 4953.8, "text": "좁은 공간을 통과하며 주변 환경에 적응할 수 있게 됩니다."}, {"start": 4962.0, "end": 4964.8, "text": "이제 훈련된 정책을 RTX 스파크로 다운로드한 뒤,"}, {"start": 4965.0, "end": 4967.2, "text": "네모트론과 아이작 심을 사용하여,"}, {"start": 4967.4, "end": 4970.5, "text": "다중 로봇 조율 환경에서 마이크로덕을 평가합니다."}, {"start": 4975.0, "end": 4978.2, "text": "검증된 정책을 실제 오리 로봇에 배포하면,"}, {"start": 4979.8, "end": 4981.8, "text": "드디어 힘차게 걸어 나갑니다."}, {"start": 4982.0, "end": 4985.2, "text": "엔비디아 RTX 스파크로 AI 에이전트와,"}, {"start": 4985.4, "end": 4988.5, "text": "가속된 도구들을 여러분의 노트북에서 바로 구축하고 실행해 보십시오."}, {"start": 4998.8, "end": 5001.0, "text": "안녕, 친구들!"}, {"start": 5002.0, "end": 5003.8, "text": "오, 그래요?"}, {"start": 5004.2, "end": 5006.8, "text": "좋아요, 이리 와보세요, 여기로 와봐요."}, {"start": 5007.8, "end": 5010.0, "text": "분들께 걸을 수 있다는 걸 보여주세요."}, {"start": 5011.5, "end": 5013.8, "text": "카메라도 달려 있군요."}, {"start": 5014.8, "end": 5016.5, "text": "오, 그래요?"}, {"start": 5018.8, "end": 5020.8, "text": "넘어지지 않게 조심해요."}, {"start": 5022.0, "end": 5024.0, "text": "다들 앉아볼 수 있나요?"}, {"start": 5032.0, "end": 5033.8, "text": "좋아요, 이제 일어서 보세요."}, {"start": 5034.0, "end": 5035.5, "text": "낮잠 한번 자볼까요?"}, {"start": 5036.0, "end": 5037.8, "text": "낮잠 자보세요."}, {"start": 5039.0, "end": 5041.2, "text": "낮잠을 좀 자야겠네요."}, {"start": 5042.8, "end": 5044.5, "text": "좋아요, 다시 일어서요!"}, {"start": 5045.5, "end": 5048.5, "text": "너희가 바로 이 안에서 만들어졌다는 거 알고 있었니?"}, {"start": 5048.7, "end": 5051.0, "text": "RTX 스파크 위에서 태어났단다."}, {"start": 5051.2, "end": 5053.0, "text": "나도 알아."}, {"start": 5053.2, "end": 5055.5, "text": "그리고 클라우드에서 훈련받았지,"}, {"start": 5055.7, "end": 5058.2, "text": "수많은 엔비디아 슈퍼컴퓨터 위에서 말이야."}, {"start": 5058.5, "end": 5061.5, "text": "그리고 바로 여기 RTX 스파크에서 기술들을 배웠단다,"}, {"start": 5061.7, "end": 5063.8, "text": "옴니버스 디지털 트윈 안에서 말이지."}, {"start": 5064.0, "end": 5065.8, "text": "정말 놀랍지 않니?"}, {"start": 5066.0, "end": 5067.8, "text": "나도 알아."}, {"start": 5068.0, "end": 5069.8, "text": "그렇고말고."}, {"start": 5070.0, "end": 5072.0, "text": "너희들 정말 너무 귀엽구나."}, {"start": 5072.2, "end": 5075.5, "text": "그리고 너희의,"}, {"start": 5075.7, "end": 5077.8, "text": "부모님 회사는 폴렌(Pollen)이라고 불리지,"}, {"start": 5078.0, "end": 5080.2, "text": "철자가 P-O-L-L-E-N 맞니?"}, {"start": 5080.4, "end": 5081.8, "text": "응, 그렇지."}, {"start": 5082.0, "end": 5083.8, "text": "폴렌 로보틱스(Pollen Robotics) 말이야."}, {"start": 5084.0, "end": 5086.2, "text": "그런데 듣자 하니,"}, {"start": 5086.4, "end": 5088.5, "text": "모두가 너희를 너무나 좋아해서 완판되었다더구나."}, {"start": 5090.0, "end": 5093.5, "text": "그러니 여러분, 폴렌 웹사이트에 한번 가보십시오."}, {"start": 5093.8, "end": 5095.5, "text": "이 방송을 보시는 모든 분들,"}, {"start": 5095.7, "end": 5097.8, "text": "아마 2천만 명쯤 시청하고 계실 텐데요,"}, {"start": 5098.0, "end": 5099.8, "text": "보시는 모든 분들은 폴렌 웹사이트에 가셔서,"}, {"start": 5100.0, "end": 5101.8, "text": "주문을 넣어 보십시오."}, {"start": 5102.5, "end": 5105.2, "text": "이 스타트업은 직원이 한 10명 정도인 것 같은데,"}, {"start": 5105.4, "end": 5107.5, "text": "주문 폭주로 서버가 터질지도 모르겠네요, 펑 하고요!"}, {"start": 5107.8, "end": 5109.8, "text": "정말 흥미진진할 겁니다."}, {"start": 5110.0, "end": 5111.5, "text": "모두가 한 마리씩 입양해야 합니다."}, {"start": 5111.7, "end": 5113.2, "text": "너희들 정말 너무 귀엽다."}, {"start": 5113.4, "end": 5116.5, "text": "RTX 스파크만 있으면 너희에게 새로운 기술들을 계속 가르칠 수 있지, 안 그러니?"}, {"start": 5116.8, "end": 5118.2, "text": "어이, 어이!"}, {"start": 5118.8, "end": 5121.5, "text": "오, 저것 좀 보세요, 정말 대단하네요."}, {"start": 5122.0, "end": 5124.2, "text": "공중제비도 돌 수 있니?"}, {"start": 5133.5, "end": 5135.8, "text": "아, 너무 좋네요."}, {"start": 5136.0, "end": 5138.0, "text": "정말 유쾌합니다."}, {"start": 5138.5, "end": 5140.2, "text": "와, 대단해요."}, {"start": 5140.5, "end": 5142.8, "text": "좋습니다, 자, 이제 마무리해 볼까요?"}, {"start": 5143.0, "end": 5145.2, "text": "오늘 우리는 무엇에 대해 이야기했습니까?"}, {"start": 5145.4, "end": 5147.6, "text": "우리는 유럽에 대해 이야기했습니다,"}, {"start": 5147.8, "end": 5149.8, "text": "자체적인 AI 경제를 구축하는 유럽 말이죠."}, {"start": 5150.0, "end": 5152.2, "text": "그리고 그 시작은 바로 인프라입니다."}, {"start": 5152.4, "end": 5154.6, "text": "우리는 또한 완전히 새로운 시스템을 발표했습니다,"}, {"start": 5154.8, "end": 5156.8, "text": "바로 DSX 파드(Pod)라고 불리는 시스템이죠."}, {"start": 5157.0, "end": 5159.5, "text": "여러분이 AI 팩토리를 쉽게 구축할 수 있도록 했습니다."}, {"start": 5159.7, "end": 5162.0, "text": "그리고 이러한 AI 팩토리들은,"}, {"start": 5162.2, "end": 5164.2, "text": "이제 단순히 모델만 실행하는 것이 아니라,"}, {"start": 5164.5, "end": 5166.2, "text": "얘야, 집중해야지!"}, {"start": 5166.5, "end": 5168.8, "text": "집중해, 이리 와봐, 여기로 와."}, {"start": 5169.0, "end": 5170.8, "text": "이리 와서 집중하렴."}, {"start": 5171.0, "end": 5173.2, "text": "이 AI 팩토리들은 단순히,"}, {"start": 5173.4, "end": 5175.2, "text": "그래, 잘했어, 거기 앉아 있으렴."}, {"start": 5175.5, "end": 5178.2, "text": "단순히 AI 모델만 실행하는 데 그치지 않고,"}, {"start": 5178.5, "end": 5180.8, "text": "전체 에이전트를 실행합니다."}, {"start": 5181.0, "end": 5183.8, "text": "그리고 이 에이전트는 5가지 요소로 구성됩니다."}, {"start": 5184.0, "end": 5187.45, "text": "지각과 추론, 계획 및 행동을 수행하는 거대 언어 모델이 있고,"}, {"start": 5188.5, "end": 5190.6, "text": "그리고 이와 함께 맞물려 돌아가는,"}, {"start": 5190.8, "end": 5192.8, "text": "하네스가 있습니다,"}, {"start": 5193.0, "end": 5195.8, "text": "본질적으로 외골격 역할을 하는 그 하네스는,"}, {"start": 5196.0, "end": 5199.2, "text": "보안 런타임 내부에 자리 잡고 실행됩니다,"}, {"start": 5199.4, "end": 5201.5, "text": "우리가 오픈쉘이라고 부르는 보안 환경이죠."}, {"start": 5201.7, "end": 5204.5, "text": "벌써 수많은 기업들이 이를 전폭적으로 지원하고 있습니다."}, {"start": 5204.7, "end": 5208.15, "text": "여기에 지식과 도구에 대한 접근 권한을 부여합니다."}, {"start": 5209.0, "end": 5212.45, "text": "그리고 이 에이전트는 이러한 컴퓨터들 위에서 구동되지만,"}, {"start": 5213.2, "end": 5215.8, "text": "우리는 또한 이를 다음 세대로 확장하고 있으며,"}, {"start": 5216.0, "end": 5219.0, "text": "바로 거기서 너희들이 등장하는 피지컬 AI가 펼쳐집니다."}, {"start": 5219.5, "end": 5221.8, "text": "자, 이것이 오늘 우리가 나눈 이야기입니다."}, {"start": 5222.0, "end": 5224.2, "text": "누구나 에이전트를 구축할 수 있으며,"}, {"start": 5224.4, "end": 5227.8, "text": "유럽의 모든 기업이 AI 기업으로 거듭날 것입니다."}, {"start": 5228.2, "end": 5231.2, "text": "모두가 AI 기업이 될 것이라는 점에는 의심의 여지가 없습니다."}, {"start": 5231.5, "end": 5233.6, "text": "그리고 우리는 번창하는 AI 경제를,"}, {"start": 5233.8, "end": 5235.8, "text": "이곳 유럽에서 맞이하게 될 것입니다."}, {"start": 5236.0, "end": 5239.45, "text": "33년이 흐른 지금, 실로 경이로운 여정이었는데요,"}, {"start": 5240.0, "end": 5242.8, "text": "우리가 정말 멋진 영상을 하나 만들었습니다."}, {"start": 5243.0, "end": 5244.2, "text": "너희도 같이 볼래?"}, {"start": 5244.4, "end": 5246.5, "text": "좋아, 이리 와봐, 여기로 조금만 와봐."}, {"start": 5246.7, "end": 5248.0, "text": "조금만 이쪽으로 오렴."}, {"start": 5248.2, "end": 5250.2, "text": "우리가 길을 비켜줄게, 이리 온."}, {"start": 5251.8, "end": 5254.2, "text": "전속력으로, 전속력으로 달려!"}, {"start": 5257.8, "end": 5260.5, "text": "도대체 저 무대 다음 순서를 우리가 어떻게 이어가죠?"}, {"start": 5261.0, "end": 5264.45, "text": "음, 이 관객들을 훨씬 더 열광하게 만들 수 있는 방법이 딱 하나 있지."}, {"start": 5265.8, "end": 5267.5, "text": "그게 뭔데요?"}, {"start": 5272.0, "end": 5274.0, "text": "분들, 믿기지 않으실 겁니다!"}, {"start": 5274.2, "end": 5277.65, "text": "GTC가 지금 완전 유로비전(Eurovision) 무대로 변신했습니다!"}, {"start": 5280.2, "end": 5283.2, "text": "베를린에서 기조연설이 시작되고,"}, {"start": 5283.4, "end": 5285.8, "text": "AI의 새로운 장이 열립니다."}, {"start": 5286.0, "end": 5288.5, "text": "당신 곁에서 함께 일하는 에이전트들,"}, {"start": 5288.7, "end": 5291.2, "text": "드디어 유럽의 시대가 도래했습니다!"}, {"start": 5291.4, "end": 5293.8, "text": "만약 우리가 GTC에서 한 이야기를 놓치셨다면,"}, {"start": 5294.0, "end": 5296.2, "text": "여러분을 위해 핵심만 쏙쏙 정리해 드리겠습니다,"}, {"start": 5296.4, "end": 5299.0, "text": "독일 여러분!"}, {"start": 5300.2, "end": 5302.8, "text": "이것은 세상이 지금 어떻게,"}, {"start": 5303.0, "end": 5305.2, "text": "새로운 인프라를 구축하고 있는가에 관한 이야기입니다."}, {"start": 5305.4, "end": 5308.0, "text": "처음에는 발전소가 에너지 규모를 키웠고,"}, {"start": 5308.2, "end": 5311.2, "text": "그다음엔 데이터센터가 등장해 메일 알림을 울렸죠."}, {"start": 5311.5, "end": 5314.0, "text": "이제 우리는 석탄을 와트(전력)로 바꾸던 터빈의 시대를 훌쩍 넘어,"}, {"start": 5314.2, "end": 5317.0, "text": "모래(실리콘)를 사고(지능)로 바꾸는 AI 팩토리의 시대에 살고 있습니다."}, {"start": 5317.2, "end": 5319.5, "text": "석유도 비켜나고 S&P 지수도 비켜나세요,"}, {"start": 5319.7, "end": 5322.2, "text": "훨씬 더 투자할 가치가 높은 것이 있습니다, 바로 GPU죠!"}, {"start": 5322.5, "end": 5325.2, "text": "자산처럼 일하며 수익을 창출하고,"}, {"start": 5325.4, "end": 5328.0, "text": "생긴 건 칩 같지만 현금인출기처럼 작동하죠."}, {"start": 5328.2, "end": 5330.5, "text": "여러분이 쉬는 동안에도 매출을 만들어내니,"}, {"start": 5330.7, "end": 5334.0, "text": "현금 흐름이 이 색소폰 연주보다도 더 부드럽게 흘러갑니다!"}, {"start": 5347.8, "end": 5350.5, "text": "에이전트는 코딩을 하고 결정을 내리죠,"}, {"start": 5350.7, "end": 5353.5, "text": "자유를 주되 그들의 임무는 확실히 통제하세요."}, {"start": 5353.8, "end": 5356.2, "text": "베라 위의 오픈쉘이 목록을 꼼꼼히 확인하니,"}, {"start": 5356.4, "end": 5358.8, "text": "인증 정보가 없다면 접근은 즉시 기각됩니다!"}, {"start": 5359.0, "end": 5361.5, "text": "블루필드 위의 센트리는 결코 퇴근하는 법이 없죠,"}, {"start": 5361.7, "end": 5364.2, "text": "데이비드 핫셀호프처럼 든든하게 샌드박스를 지켜냅니다."}, {"start": 5364.5, "end": 5367.0, "text": "우리는 AI를 발전시키되 위험은 엄격히 제한합니다,"}, {"start": 5367.2, "end": 5369.8, "text": "우리는 책임감 있는 낙관주의자니까요!"}, {"start": 5370.0, "end": 5372.8, "text": "RTX 스파크는 에이전트를 안전하고 총명하게 유지하고,"}, {"start": 5373.0, "end": 5375.5, "text": "스팟 요금제는 가격을 딱 알맞게 지켜줍니다."}, {"start": 5375.7, "end": 5378.2, "text": "양자 연산부터 게이밍까지 하나로 모두 해내죠,"}, {"start": 5378.4, "end": 5381.8, "text": "왜냐하면 재미(Fun) 없이는 호환성(Fungible)이라는 단어도 쓸 수 없으니까요!"}, {"start": 5384.5, "end": 5386.5, "text": "AI는 이제 신체를 얻어 법칙을 배우고 있습니다,"}, {"start": 5386.7, "end": 5389.5, "text": "중력과 마찰력을 익히고 실제 도구를 사용하죠."}, {"start": 5389.7, "end": 5392.0, "text": "아이작 랩과 코스모스로 스스로 훈련하니,"}, {"start": 5392.2, "end": 5395.0, "text": "학자금 대출 없는 로봇 전용 대학교나 다름없습니다!"}, {"start": 5395.2, "end": 5397.8, "text": "DSX 파드는 AI를 완벽한 싱크로 맞춰주고,"}, {"start": 5398.0, "end": 5400.8, "text": "더 적은 전력으로 더 뛰어난 두뇌를 구현하는 생각하는 레고 블록 같죠."}, {"start": 5401.0, "end": 5403.8, "text": "cuVS와 네모트론, 그리고 쿠모가 여기에 있으니,"}, {"start": 5404.0, "end": 5406.8, "text": "베를린의 계산원보다도 더 빠르게 지식을 척척 처리해 냅니다!"}, {"start": 5407.0, "end": 5409.5, "text": "유럽의 풀스택, 체크리스트의 모든 준비를 마쳤고,"}, {"start": 5409.7, "end": 5412.2, "text": "AI의 5단 케이크를 아침 식사처럼 거뜬히 해치웁니다."}, {"start": 5412.5, "end": 5415.0, "text": "유럽 생태계가 이제 레이스를 선도하고 있으며,"}, {"start": 5415.2, "end": 5417.8, "text": "오픈소스를 사랑하죠, 허깅페이스에 물어보면 알 수 있습니다!"}, {"start": 5418.0, "end": 5420.2, "text": "유럽 대륙이 비상하고 있으며,"}, {"start": 5420.4, "end": 5423.0, "text": "최고의 순간은 아직 오지 않았습니다!"}, {"start": 5423.5, "end": 5426.0, "text": "자, 유럽의 모든 이들이여,"}, {"start": 5426.2, "end": 5429.5, "text": "하나 되어 함께 노래합시다!"}, {"start": 5434.0, "end": 5435.8, "text": "우리는 유럽입니다!"}, {"start": 5436.0, "end": 5437.5, "text": "우리는 유럽입니다! (독일어: Wir sind Europa!)"}, {"start": 5437.7, "end": 5439.0, "text": "우리는 유럽입니다! (프랑스어: Nous sommes l'Europe!)"}, {"start": 5439.2, "end": 5440.5, "text": "우리는 유럽입니다! (이탈리아어: Siamo l'Europa!)"}, {"start": 5440.7, "end": 5442.0, "text": "우리는 유럽입니다! (스페인어: Somos Europa!)"}, {"start": 5442.2, "end": 5443.5, "text": "우리는 유럽입니다! (폴란드어: Jesteśmy Europą!)"}, {"start": 5443.7, "end": 5444.8, "text": "우리는 유럽입니다! (네덜란드어: Wij zijn Europa!)"}, {"start": 5445.0, "end": 5446.2, "text": "우리는 유럽입니다! (스웨덴어: Vi är Europa!)"}, {"start": 5446.4, "end": 5449.5, "text": "우리는 하나 된 유럽입니다!"}, {"start": 5451.0, "end": 5453.0, "text": "우리는 유럽입니다,"}, {"start": 5453.2, "end": 5456.0, "text": "당신과 나, 우리 모두 말이죠!"}, {"start": 5457.5, "end": 5461.0, "text": "GTC에 오신 여러분 모두를 환영합니다!"}, {"start": 5476.2, "end": 5479.2, "text": "GTC에 오신 것을 환영합니다!"}, {"start": 5479.5, "end": 5482.2, "text": "여러분 모두에게 진심으로 감사드립니다,"}, {"start": 5482.4, "end": 5485.5, "text": "모든 스폰서분들과 이곳에 함께한 모든 기업들,"}, {"start": 5485.7, "end": 5488.8, "text": "우리가 지난 33년 동안 함께 일해 온 모든 파트너분들,"}, {"start": 5489.0, "end": 5491.5, "text": "그리고 마이크로덕!"}, {"start": 5491.7, "end": 5493.8, "text": "나의 새로운 친구들 말이죠."}, {"start": 5494.5, "end": 5497.2, "text": "우리 모두 함께 힘을 합쳐,"}, {"start": 5497.4, "end": 5499.8, "text": "유럽의 AI 경제를 구축하고,"}, {"start": 5500.0, "end": 5501.5, "text": "AI를 실질적인 현장에 투입합시다."}, {"start": 5501.7, "end": 5504.2, "text": "자, 여러분 모두 즐거운 GTC 되십시오!"}];
+const hasDubAudio=false;
+let audioMode='orig'; // 🎬 유튜브 원음이 기본 디폴트!
+let dubAudio=document.getElementById('dub-audio'); // 초기 조기 바인딩 ⚡
+let dubHudTimeout=null;
+let player;
+let isMutedState = true;
+
+function showAudioHud(text) {
+    const hud = document.getElementById('audio-hud');
+    if (!hud) return;
+    hud.textContent = text;
+    hud.classList.add('show');
+    clearTimeout(dubHudTimeout);
+    dubHudTimeout = setTimeout(() => {
+        hud.classList.remove('show');
+    }, 1200);
+}
+
+function updateAudioTrackButtonUI() {
+    const btn = document.getElementById('audio-track-btn');
+    const optOrig = document.getElementById('opt-orig');
+    const optDub = document.getElementById('opt-dub');
+    if (!btn) return;
+    if (audioMode === 'dub') {
+        if (optOrig) optOrig.classList.remove('active');
+        if (optDub) optDub.classList.add('active');
+        btn.title = '🎙️ MP3 더빙 음원 재생 중 (클릭 또는 Alt+A / D: 원음 전환)';
+    } else {
+        if (optDub) optDub.classList.remove('active');
+        if (optOrig) optOrig.classList.add('active');
+        btn.title = '🎬 유튜브 원음 재생 중 (클릭 또는 Alt+A / D: 더빙 전환)';
+    }
+}
+
+function toggleAudioTrack() {
+    if (!hasDubAudio || !dubAudio) return;
+    audioMode = (audioMode === 'dub' ? 'orig' : 'dub');
+    updateAudioTrackButtonUI();
+
+    if (audioMode === 'dub') {
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        showAudioHud('🎙️ 더빙 음원으로 전환');
+    } else {
+        dubAudio.pause();
+        dubAudio.muted = true;
+        if (player && typeof player.unMute === 'function') {
+            try {
+                player.unMute();
+                player.setVolume(100);
+            } catch(e) {}
+        }
+        showAudioHud('🎬 유튜브 원음으로 전환');
+    }
+}
+
+function handleUnmute() {
+    if (!dubAudio && hasDubAudio) dubAudio = document.getElementById('dub-audio');
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        dubAudio.muted = false;
+        if (player && typeof player.getCurrentTime === 'function') {
+            const curT = player.getCurrentTime();
+            dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+        }
+        if (player && typeof player.getPlayerState === 'function' && player.getPlayerState() === 1) {
+            dubAudio.play().catch(e => {});
+        }
+        if (player && typeof player.mute === 'function') {
+            try { player.mute(); } catch(e) {}
+        }
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+        return;
+    }
+    if (player && typeof player.unMute === 'function') {
+        try {
+            player.unMute();
+            player.setVolume(100);
+        } catch(e) {}
+        isMutedState = false;
+        const b = document.getElementById('unmute-badge');
+        if (b) b.style.display = 'none';
+    }
+}
+
+function onYouTubeIframeAPIReady(){
+    dubAudio = document.getElementById('dub-audio');
+    updateAudioTrackButtonUI();
+    player=new YT.Player('player',{
+        events:{
+            'onReady': function(e){ 
+                try {
+                    e.target.playVideo();
+                    if (hasDubAudio && audioMode === 'dub') {
+                        try { e.target.mute(); } catch(err) {}
+                    }
+                    if (e.target.isMuted && e.target.isMuted()) {
+                        const b = document.getElementById('unmute-badge');
+                        if (b) b.style.display = 'block';
+                    }
+                } catch(err) {}
+                try {
+                    if (e.target.setOption) {
+                        e.target.setOption("captions", "track", {});
+                    }
+                } catch(err) {}
+            },
+            'onStateChange':onPlayerStateChange
+        }
+    });
+}
+
+// 사용자의 첫 인터랙션 시 자동 소리 켜기 🔊⚡
+function autoUnmuteOnUserAction() {
+    if (isMutedState) {
+        handleUnmute();
+    }
+}
+window.addEventListener('click', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('keydown', autoUnmuteOnUserAction, {once: true});
+window.addEventListener('touchstart', autoUnmuteOnUserAction, {once: true, passive: true});
+
+// iframe 클릭 시 빼앗긴 포커스를 훔쳐오고, 첫 클릭 시 언뮤트도 자동 실행! 🕵️‍♂️⚡
+window.addEventListener('blur', function() {
+    autoUnmuteOnUserAction();
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+// [V160.1] AI냥: 유튜브 고유 단축키 무력화 후, 'f' 키 등 사용자 편의 조작을 가로채서 자체 전체화면 실행! 🐱✨
+window.addEventListener('keydown', function(e) {
+    // 🛡️ [F1 키: 브라우저 도움말 팝업 차단]
+    if (e.key === 'F1' || e.keyCode === 112) {
+        e.preventDefault();
+        return;
+    }
+    if (!player || !player.getPlayerState || typeof player.getDuration !== 'function') return;
+
+    // 🎙️ Alt+A 또는 D 키: 원음 ↔ 더빙 음원 토글!
+    if ((e.altKey && (e.key === 'a' || e.key === 'A')) || (e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.altKey && !e.metaKey)) {
+        if (hasDubAudio) {
+            toggleAudioTrack();
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + ArrowLeft: Previous Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowLeft') {
+        const t = player.getCurrentTime();
+        let target = Math.max(0, t - 5);
+        for(let i = subs.length - 1; i >= 0; i--) {
+            if(subs[i].start < t - 1.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl + ArrowRight: Next Subtitle (Chapter)
+    if(e.ctrlKey && e.key === 'ArrowRight') {
+        const t = player.getCurrentTime();
+        let target = t + 5;
+        for(let i = 0; i < subs.length; i++) {
+            if(subs[i].start > t + 0.5) {
+                target = subs[i].start;
+                break;
+            }
+        }
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+        return;
+    }
+
+    if (e.key.toLowerCase() === 'f') {
+        toggleFullScreen();
+        e.preventDefault();
+    } else if (e.key === ' ' || e.key.toLowerCase() === 'k') {
+        if (player.getPlayerState() === 1) {
+            player.pauseVideo();
+            if (hasDubAudio && dubAudio) dubAudio.pause();
+        } else {
+            player.playVideo();
+            if (hasDubAudio && dubAudio && audioMode === 'dub') {
+                const curT = player.getCurrentTime();
+                dubAudio.currentTime = dubAudio.duration ? Math.min(curT, dubAudio.duration) : curT;
+                dubAudio.play().catch(e => {});
+            }
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        const target = Math.max(0, player.getCurrentTime() - 5);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        const target = player.getCurrentTime() + 5;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        const curV = player.getVolume();
+        const nextV = Math.min(100, curV + 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔊 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key === 'ArrowDown') {
+        const curV = player.getVolume();
+        const nextV = Math.max(0, curV - 5);
+        player.setVolume(nextV);
+        if (hasDubAudio && dubAudio) dubAudio.volume = nextV / 100;
+        showAudioHud('🔉 볼륨 ' + nextV + '%');
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'm') {
+        if (hasDubAudio && audioMode === 'dub' && dubAudio) {
+            dubAudio.muted = !dubAudio.muted;
+            showAudioHud(dubAudio.muted ? '🔇 더빙 음소거' : '🔊 더빙 소리 켬');
+        } else {
+            player.isMuted() ? player.unMute() : player.mute();
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'j') {
+        const target = Math.max(0, player.getCurrentTime() - 10);
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key.toLowerCase() === 'l') {
+        const target = player.getCurrentTime() + 10;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    } else if (e.key >= '0' && e.key <= '9') {
+        const fraction = parseInt(e.key) / 10;
+        const target = player.getDuration() * fraction;
+        player.seekTo(target, true);
+        if (hasDubAudio && dubAudio) {
+            dubAudio.currentTime = dubAudio.duration ? Math.min(target, dubAudio.duration) : target;
+        }
+        e.preventDefault();
+    }
+});
+
+// iframe 클릭 시 빼앗긴 포커스를 0.1초 뒤에 훔쳐와서 'f' 등 단축키가 계속 먹히도록 유지! 🕵️‍♂️✨
+window.addEventListener('blur', function() {
+    setTimeout(() => {
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            window.focus();
+        }
+    }, 100);
+});
+
+let syncInterval = null;
+let activityTimeout;
+let isUserPositioned = false;
+let userBottomPercent = 12;
+
+function resetActivity() {
+    const topControls = document.getElementById('top-controls');
+    const subsEl = document.getElementById('subtitles');
+    if(topControls) topControls.classList.remove('fade-out');
+    if(subsEl) {
+        subsEl.classList.remove('ui-hidden');
+        if(isUserPositioned) {
+            subsEl.style.bottom = Math.min(88, userBottomPercent + 4) + '%';
+        } else {
+            subsEl.style.bottom = '';
+        }
+    }
+    clearTimeout(activityTimeout);
+    if (player && player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING) {
+        activityTimeout = setTimeout(() => {
+            if(topControls) topControls.classList.add('fade-out');
+            if(subsEl) {
+                subsEl.classList.add('ui-hidden');
+                if(isUserPositioned) {
+                    subsEl.style.bottom = userBottomPercent + '%';
+                } else {
+                    subsEl.style.bottom = '';
+                }
+            }
+        }, 3000);
+    }
+}
+document.addEventListener('mousemove', resetActivity);
+document.addEventListener('touchstart', resetActivity, {passive: true});
+document.addEventListener('keydown', resetActivity);
+window.addEventListener('blur', resetActivity);
+window.addEventListener('focus', resetActivity);
+
+function startSyncTimer(intervalMs) {
+    if (syncInterval) clearInterval(syncInterval);
+    syncInterval = setInterval(updateSubs, intervalMs);
+}
+
+function onPlayerStateChange(event){
+    resetActivity();
+    if(event.data == YT.PlayerState.PLAYING){
+        // 재생 시작 시 브라우저 정책이 풀렸으면 자동 언뮤트 시도
+        if (isMutedState) {
+            autoUnmuteOnUserAction();
+        }
+        if (hasDubAudio && dubAudio && audioMode === 'dub') {
+            try { player.mute(); } catch(e) {}
+            dubAudio.playbackRate = (player.getPlaybackRate && player.getPlaybackRate()) || 1.0;
+            dubAudio.volume = ((player.getVolume && player.getVolume()) || 100) / 100;
+            const curTime = player.getCurrentTime();
+            const maxT = dubAudio.duration ? Math.min(curTime, dubAudio.duration) : curTime;
+            if (Math.abs(dubAudio.currentTime - maxT) > 0.08) {
+                dubAudio.currentTime = maxT;
+            }
+            dubAudio.play().catch(e => {});
+        }
+        // 재생 중일 때는 100ms 정밀 싱크
+        startSyncTimer(100);
+    } else {
+        if (hasDubAudio && dubAudio && !dubAudio.paused) {
+            dubAudio.pause();
+        }
+        // 일시정지나 버퍼링 중에도 시크바 이동 시 자막 갱신 및 오디오 위치 대기를 위해 250ms로 유지! ⏱️
+        startSyncTimer(250);
+    }
+}
+
+function updateSubs(){
+    if (!player || typeof player.getCurrentTime !== 'function') return;
+    const t = player.getCurrentTime();
+
+    if (hasDubAudio && dubAudio && audioMode === 'dub') {
+        const isPlaying = (player.getPlayerState && player.getPlayerState() === YT.PlayerState.PLAYING);
+        // 유튜브 원음 소리가 광고나 외부 조작으로 풀렸을 경우 즉각 차단 🛡️
+        if (player.isMuted && !player.isMuted()) {
+            try { player.mute(); } catch(e) {}
+        }
+        // 유튜브 볼륨 슬라이더 조작 시 더빙 볼륨 실시간 연동 🎚️
+        if (player.getVolume) {
+            const pv = player.getVolume() / 100;
+            if (Math.abs(dubAudio.volume - pv) > 0.02) {
+                dubAudio.volume = pv;
+            }
+        }
+        // 재생 중일 때 동기화
+        if (isPlaying) {
+            // 일시정지 상태였다면 자동 재생 ⚡
+            if (dubAudio.paused) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+                dubAudio.play().catch(e => {});
+            }
+            // 싱크 드리프트 0.12초 이상 시 미세 보정 ⏱️
+            const drift = Math.abs(dubAudio.currentTime - t);
+            if (drift > 0.12) {
+                const maxT = dubAudio.duration ? Math.min(t, dubAudio.duration) : t;
+                dubAudio.currentTime = maxT;
+            }
+            // 배속 동기화
+            if (player.getPlaybackRate && dubAudio.playbackRate !== player.getPlaybackRate()) {
+                dubAudio.playbackRate = player.getPlaybackRate();
+            }
+        } else {
+            // 일시정지 중일 때: 시크바 이동에 대비하여 오디오 위치만 조용히 대기 동기화 🎯
+            if (dubAudio.duration) {
+                const maxT = Math.min(t, dubAudio.duration);
+                if (Math.abs(dubAudio.currentTime - maxT) > 0.15) {
+                    dubAudio.currentTime = maxT;
+                }
+            }
+        }
+    }
+
+    let currentHtml="";
+    let activeSubs = [];
+    for(let i=0;i<subs.length;i++){
+        if(t>=subs[i].start && t<=subs[i].end){
+            activeSubs.push(subs[i]);
+        }
+    }
+    if(activeSubs.length > 0){
+        // [V160.5] AI 번역 생성 시 자막 시간이 미세하게 겹쳐(Overlap) 동일한 내용이 두 줄로 출력되는 현상 방지! 
+        // 겹치는 자막 중 가장 마지막 매칭 항목 하나만 렌더링 🐾
+        let bestSub = activeSubs[activeSubs.length - 1];
+        currentHtml = `<div class="sub-line">${bestSub.text}</div>`;
+    }
+    const subsContainer = document.getElementById('subtitles');
+    if(subsContainer && subsContainer.innerHTML !== currentHtml){
+        subsContainer.innerHTML = currentHtml;
+    }
+}
+
+let isDragging=false, startY, currentBottomPx, subEl=document.getElementById('subtitles');
+document.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchstart', dragStart, {passive:false});
+document.addEventListener('touchmove', dragMove, {passive:false});
+document.addEventListener('touchend', dragEnd);
+
+// 자막 더블 클릭 / 더블 탭 시 기본 위치로 초기화 🔄✨
+document.addEventListener('dblclick', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        isUserPositioned = false;
+        if(subEl) subEl.style.bottom = '';
+        resetActivity();
+    }
+});
+
+function dragStart(e) {
+    if(!e.target.closest('#subtitles') && !e.target.classList.contains('sub-line')) return;
+    isDragging = true;
+    subEl.classList.add('dragging');
+    startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let style = window.getComputedStyle(subEl);
+    currentBottomPx = parseFloat(style.bottom) || 0;
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragMove(e) {
+    if(!isDragging) return;
+    // [FIX] iframe 등에 의해 mouseup 이벤트를 놓쳤지만 마우스 버튼은 떼어진 경우 강제 드래그 종료! 🛡️✨
+    if(e.type.includes('mouse') && e.buttons === 0) {
+        dragEnd(e);
+        return;
+    }
+    let clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+    let dy = clientY - startY;
+    let targetBottomPx = currentBottomPx - dy;
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let bottomPercent = Math.max(2, Math.min(85, (targetBottomPx / vh) * 100));
+    subEl.style.bottom = bottomPercent + '%';
+    if(e.cancelable) e.preventDefault();
+}
+
+function dragEnd(e) {
+    if(!isDragging) return;
+    isDragging = false;
+    subEl.classList.remove('dragging');
+    let vh = window.innerHeight || document.documentElement.clientHeight || 1;
+    let style = window.getComputedStyle(subEl);
+    let bottomPx = parseFloat(style.bottom) || 0;
+    userBottomPercent = Math.max(2, Math.min(85, (bottomPx / vh) * 100));
+    isUserPositioned = true;
+}
+
+// [Wheel / Pinch to Zoom for Font Size]
+let currentFontSize = 4.5;
+let initialDist = 0;
+let initialFontSize = 4.5;
+
+document.addEventListener('wheel', (e) => {
+    if(e.target.closest('#subtitles') || e.target.classList.contains('sub-line')) {
+        e.preventDefault();
+        currentFontSize += e.deltaY < 0 ? 0.2 : -0.2;
+        currentFontSize = Math.max(1.5, Math.min(15, currentFontSize));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+    }
+}, {passive: false});
+
+document.addEventListener('touchstart', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        initialDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        initialFontSize = currentFontSize;
+        e.preventDefault();
+    }
+}, {passive: false});
+
+document.addEventListener('touchmove', (e) => {
+    if(e.touches.length === 2 && (e.target.closest('#subtitles') || e.target.classList.contains('sub-line'))) {
+        let currentDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        let scale = currentDist / (initialDist || 1);
+        currentFontSize = Math.max(1.5, Math.min(15, initialFontSize * scale));
+        document.documentElement.style.setProperty('--fsize', currentFontSize + 'vmin');
+        e.preventDefault();
+    }
+}, {passive: false});
+
+</script>
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>
